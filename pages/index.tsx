@@ -5,7 +5,10 @@ import Image from "next/image";
 
 import MysverseLogo from "public/img/mysverse_mono.svg";
 import FeaturePic from "public/img/beaufort_4k.webp";
+import BeaufortFeaturePic from "public/img/beaufort_feature_2.webp";
+import MafFeaturePic from "public/img/maf_feature.webp";
 import Head from "next/head";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 const navigation = [
   { name: "Roblox", href: "https://roblox.com/groups/1143446" },
@@ -15,6 +18,80 @@ const navigation = [
   { name: "YouTube", href: "https://youtube.com/@mys_verse" },
   { name: "TikTok", href: "https://tiktok.com/@mysver.se" }
 ];
+
+export function ProjectList() {
+  interface Project {
+    name: string;
+    tagline: string;
+    image?: string | StaticImport;
+    link?: string;
+  }
+  const projects: Project[] = [
+    {
+      name: "Daerah",
+      tagline:
+        "Taking place in the fictional town of Beaufort, this brand-new rural experience will be the basis of MYSverse's first significant step in offering gameplay freedom to all players, even those outside the community.",
+      image: BeaufortFeaturePic
+    },
+    {
+      name: "Tentera",
+      tagline:
+        "One of the original MYSverse roleplay experiences, the military community offers authentic recreations of Malaysian Armed Forces assets utilised in dedicated arcade and mil-sim experiences.",
+      image: MafFeaturePic
+    },
+    {
+      name: "Lebuhraya",
+      tagline:
+        "The most relaxing experience in the MYSverse lineup lets players drive around in a variety of vehicles, and socialise with fellow drivers along a sprawling highway. The map was previously released by its original developer."
+      // image: FeaturePic
+    },
+    {
+      name: "Bandar",
+      tagline:
+        "A faithful, detailed and entertaining rendition of Kuala Lumpur redeveloped, redesigned and expanded in-house as MYSverse's major roleplay hub with city gameplay. The map was previously released by its original developer."
+      // image: FeaturePic
+    }
+    // More people...
+  ];
+  return (
+    <div className="py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:mx-0">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+            Our projects
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-gray-300">
+            {`MYSverse developers started off as volunteers passionate about delivering authentic roleplay experiences to the equally dedicated sets of the community. We aim to preserve that same concept moving forward, with the added focus on making those top tier efforts available to all players.`}
+          </p>
+        </div>
+        <ul
+          role="list"
+          className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none"
+        >
+          {projects.map((project) => (
+            <li key={project.name}>
+              {project.image ? (
+                <Image
+                  className="aspect-[3/2] w-full rounded-2xl object-cover"
+                  width={500}
+                  height={250}
+                  src={project.image}
+                  alt=""
+                />
+              ) : null}
+              <h3 className="mt-6 text-xl font-semibold leading-8 tracking-tight text-gray-100">
+                {project.name}
+              </h3>
+              <p className="text-base leading-7 text-white opacity-70">
+                {project.tagline}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
 
 export function OGHead({
   title,
@@ -55,11 +132,11 @@ export default function Example() {
   return (
     <>
       <OGHead
-        title="Landing"
-        site_name="MYSVerse"
+        title="Welcome"
+        site_name="MYSverse"
         url="https://mysver.se"
-        description="Malaysia's premier community on Roblox and metaverse project. Your gateway into our unique brand of fun, culture and education like no other."
-        og_image="https://mysver.se/img/og_image.png"
+        description="The original Malaysian metaverse project and roleplay community. Your gateway into our unique brand of fun, culture and education like no other."
+        og_image="https://mysver.se/img/og_image_v2.png"
       />
       <main className="bg-gray-900 h-full">
         <header className="absolute inset-x-0 top-0 z-50">
@@ -188,22 +265,22 @@ export default function Example() {
                 <div className="mt-10 flex items-center justify-center gap-x-6">
                   <a
                     href="https://www.roblox.com/games/481538620/Bandar"
-                    className="rounded-md bg-cyan-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                    className="rounded-md bg-cyan-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                   >
                     Play Bandar, city simulator
                   </a>
                   <a
                     href="https://www.roblox.com/games/4892731894/Lebuhraya"
-                    className="rounded-md bg-cyan-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                    className="rounded-md bg-cyan-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                   >
                     Play Lebuhraya, highway driving
                   </a>
                 </div>
                 <p
                   // href="#"
-                  className="text-sm font-medium italic leading-6 text-white opacity-80 mt-4"
+                  className="text-sm italic leading-6 tracking-wide text-white opacity-80 mt-4"
                 >
-                  ... and more open experiences for everyone, coming soon!
+                  ...and more open experiences for everyone, coming soon!
                 </p>
               </div>
               <Image
@@ -213,7 +290,15 @@ export default function Example() {
                 height={2376}
                 className="mt-16 rounded-md bg-white/5 shadow-2xl sm:mt-24"
               />
+              {/* <Image
+                src={MAFfeaturePic}
+                alt="Screenshot of a rural area in Beaufort"
+                width={4224}
+                height={2376}
+                className="mt-16 rounded-md bg-white/5 shadow-2xl sm:mt-24"
+              /> */}
             </div>
+            <ProjectList />
           </div>
           <div
             className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
@@ -229,8 +314,12 @@ export default function Example() {
           </div>
         </div>
         <footer className="text-center tracking-widest text-sm text-white pb-20 opacity-50 uppercase">
-          Owned and operated by MYSVerse Digital Ventures (AS0469188-M). All
-          rights reserved.
+          <span className="block mb-1">
+            Owned and operated by MYSverse Digital Ventures (AS0469188-M).
+          </span>
+          <span className="block">
+            All assets used are property of their respective owners.
+          </span>
         </footer>
       </main>
     </>
