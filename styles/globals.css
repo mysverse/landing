@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+/* @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
   img {
     image-rendering: -webkit-optimize-contrast !important;
   }
-}
+} */
 
 /* Unset for Safari 11+ */
-@media not all and (min-resolution: 0.001dpcm) {
+/* @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) and (stroke-color: transparent) {
     img {
       image-rendering: unset !important;
     }
   }
-}
+} */

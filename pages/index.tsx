@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 import MysverseLogo from "public/img/mysverse_mono.svg";
-import FeaturePic from "public/img/beaufort_feature_pic.png";
+import FeaturePic from "public/img/beaufort_4k.webp";
 import Head from "next/head";
 
 const navigation = [
@@ -16,38 +16,51 @@ const navigation = [
   { name: "TikTok", href: "https://tiktok.com/@mysver.se" }
 ];
 
+export function OGHead({
+  title,
+  site_name,
+  url,
+  description,
+  og_image
+}: {
+  title: string;
+  site_name: string;
+  url: string;
+  description: string;
+  og_image: string;
+}) {
+  const fullTitle = `${title} - ${site_name}`;
+  return (
+    <Head>
+      <title>{fullTitle}</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta property="og:title" content={title} />
+      <meta property="og:site_name" content={site_name} />
+      <meta property="og:url" content={url} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content={og_image} />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={og_image} />
+    </Head>
+  );
+}
+
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
-      <Head>
-        <title>MYSverse</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta property="og:title" content="Home" />
-        <meta property="og:site_name" content="MYX Labs" />
-        <meta property="og:url" content="https://myx.yan.gg/" />
-        <meta
-          property="og:description"
-          content="Useful web utilities for the MYS community. A @yan3321 project."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://myx.yan.gg/img/og_image_v2.png"
-        />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="MYX Labs" />
-        <meta
-          name="twitter:description"
-          content="Useful web utilities for the MYS community. A @yan3321 project."
-        />
-        <meta
-          name="twitter:image"
-          content="https://myx.yan.gg/img/og_image_v2.png"
-        />
-      </Head>
+      <OGHead
+        title="Landing"
+        site_name="MYSVerse"
+        url="https://mysver.se"
+        description="Malaysia's premier community on Roblox and metaverse project. Your gateway into our unique brand of fun, culture and education like no other."
+        og_image="https://mysver.se/img/og_image.png"
+      />
       <main className="bg-gray-900 h-full">
         <header className="absolute inset-x-0 top-0 z-50">
           <nav
@@ -177,13 +190,13 @@ export default function Example() {
                     href="https://www.roblox.com/games/481538620/Bandar"
                     className="rounded-md bg-cyan-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                   >
-                    Play Bandar
+                    Play Bandar, city simulator
                   </a>
                   <a
                     href="https://www.roblox.com/games/4892731894/Lebuhraya"
                     className="rounded-md bg-cyan-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                   >
-                    Play Lebuhraya
+                    Play Lebuhraya, highway driving
                   </a>
                 </div>
                 <p
@@ -196,8 +209,8 @@ export default function Example() {
               <Image
                 src={FeaturePic}
                 alt="Screenshot of a rural area in Beaufort"
-                width={2432}
-                height={1442}
+                width={4224}
+                height={2376}
                 className="mt-16 rounded-md bg-white/5 shadow-2xl sm:mt-24"
               />
             </div>
