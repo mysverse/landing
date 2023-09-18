@@ -1,10 +1,11 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { useEffect } from "react";
+// import { useEffect } from "react";
+import PlausibleProvider from "next-plausible";
 import { useRouter } from "next/router";
 
-const elementHasClasses = (element: Element | null, classes: string[]) =>
-  classes.every((value) => element?.classList.contains(value));
+// const elementHasClasses = (element: Element | null, classes: string[]) =>
+//   classes.every((value) => element?.classList.contains(value));
 
 // const classes = [
 //   // {
@@ -70,7 +71,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   //   }
   // });
 
-  return <Component {...pageProps} />;
+  return (
+    <PlausibleProvider
+      domain="mysver.se"
+      customDomain="https://plausible.yan.gg"
+    >
+      <Component {...pageProps} />
+    </PlausibleProvider>
+  );
 }
 
 export default MyApp;

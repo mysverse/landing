@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-
+import { usePlausible } from "next-plausible";
 import MysverseLogo from "public/img/mysverse_mono.svg";
 import FeaturePic from "public/img/beaufort_4k.webp";
 import BeaufortFeaturePic from "public/img/beaufort_feature_2.webp";
@@ -129,7 +129,7 @@ export function OGHead({
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const plausible = usePlausible();
   return (
     <>
       <OGHead
@@ -177,6 +177,14 @@ export default function Example() {
                   key={item.name}
                   href={item.href}
                   className="text-sm font-semibold leading-6 text-white"
+                  onClick={() =>
+                    plausible("navClicked", {
+                      props: {
+                        type: "desktop",
+                        name: item.name
+                      }
+                    })
+                  }
                 >
                   {item.name}
                 </a>
@@ -221,6 +229,14 @@ export default function Example() {
                         key={item.name}
                         href={item.href}
                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
+                        onClick={() =>
+                          plausible("navClicked", {
+                            props: {
+                              type: "mobile",
+                              name: item.name
+                            }
+                          })
+                        }
                       >
                         {item.name}
                       </a>
@@ -267,11 +283,25 @@ export default function Example() {
                   <a
                     href="https://www.roblox.com/games/481538620/Bandar"
                     className="rounded-md bg-cyan-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                    onClick={() =>
+                      plausible("ctaClicked", {
+                        props: {
+                          name: "Bandar"
+                        }
+                      })
+                    }
                   >
                     Play Bandar, city simulator
                   </a>
                   <a
                     href="https://www.roblox.com/games/4892731894/Lebuhraya"
+                    onClick={() =>
+                      plausible("ctaClicked", {
+                        props: {
+                          name: "Lebuhraya"
+                        }
+                      })
+                    }
                     className="rounded-md bg-cyan-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                   >
                     Play Lebuhraya, highway driving
