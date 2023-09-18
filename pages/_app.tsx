@@ -75,6 +75,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <PlausibleProvider
       domain="mysver.se"
       customDomain="https://plausible.yan.gg"
+      selfHosted
     >
       <Component {...pageProps} />
     </PlausibleProvider>

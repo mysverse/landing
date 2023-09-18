@@ -31,7 +31,7 @@ export function ProjectList() {
     {
       name: "Daerah",
       tagline:
-        "Taking place in a rural town inspired by the Sabahan district of Beaufort, this brand-new rural experience will be the basis of MYSverse's first significant step in offering gameplay freedom to all players, even those outside the community.",
+        "Taking place in a rural area inspired by the Sabahan district of Beaufort, this never-before-explored experience will be the basis of MYSverse's first significant step in offering gameplay freedom to all players, even those outside the community.",
       image: BeaufortFeaturePic
     },
     {
@@ -148,13 +148,6 @@ export default function Example() {
             <div className="flex lg:flex-1">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">MYSverse</span>
-                {/* <Image
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-              width={500}
-              height={500}
-              alt=""
-            /> */}
                 <MysverseLogo
                   alt="MYSverse logo"
                   className="mx-auto h-10 w-auto fill-white sm:h-11"
@@ -180,7 +173,6 @@ export default function Example() {
                   onClick={() =>
                     plausible("navClicked", {
                       props: {
-                        type: "desktop",
                         name: item.name
                       }
                     })
@@ -232,7 +224,6 @@ export default function Example() {
                         onClick={() =>
                           plausible("navClicked", {
                             props: {
-                              type: "mobile",
                               name: item.name
                             }
                           })
