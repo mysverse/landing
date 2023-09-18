@@ -26,23 +26,24 @@ export function ProjectList() {
     image?: string | StaticImport;
     link?: string;
   }
+
   const projects: Project[] = [
     {
       name: "Daerah",
       tagline:
-        "Taking place in the fictional town of Beaufort, this brand-new rural experience will be the basis of MYSverse's first significant step in offering gameplay freedom to all players, even those outside the community.",
+        "Taking place in a rural town inspired by the Sabahan district of Beaufort, this brand-new rural experience will be the basis of MYSverse's first significant step in offering gameplay freedom to all players, even those outside the community.",
       image: BeaufortFeaturePic
     },
     {
       name: "Tentera",
       tagline:
-        "One of the original MYSverse roleplay experiences, the military community offers authentic recreations of Malaysian Armed Forces assets utilised in dedicated arcade and mil-sim experiences.",
+        "One of the original MYSverse roleplay agencies, the military community offers heavily-researched, authentic recreations of Malaysian Armed Forces assets and procedures utilised in dedicated mil-sim experiences.",
       image: MafFeaturePic
     },
     {
       name: "Lebuhraya",
       tagline:
-        "The most relaxing experience in the MYSverse lineup lets players drive around in a variety of vehicles, and socialise with fellow drivers along a sprawling highway. The map was previously released by its original developer."
+        "The most relaxing game in the MYSverse lineup lets players drive around in a variety of vehicles, and socialise with fellow drivers along a sprawling highway. The map was previously released by its original developer."
       // image: FeaturePic
     },
     {
