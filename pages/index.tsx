@@ -4,19 +4,53 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { usePlausible } from "next-plausible";
 import MysverseLogo from "public/img/mysverse_mono.svg";
+import RobloxLogo from "public/img/Roblox_Logo.svg";
 import FeaturePic from "public/img/beaufort_4k.webp";
 import BeaufortFeaturePic from "public/img/beaufort_feature_2.webp";
 import MafFeaturePic from "public/img/maf_feature.webp";
 import Head from "next/head";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faDiscord,
+  faInstagram,
+  faTiktok,
+  faXTwitter,
+  faYoutube
+} from "@fortawesome/free-brands-svg-icons";
+
 const navigation = [
-  { name: "Roblox", href: "https://roblox.com/groups/1143446" },
-  { name: "Discord", href: "https://discord.com/invite/uPkrYWd" },
-  { name: "X", href: "https://x.com/mys_verse" },
-  { name: "Instagram", href: "https://instagram.com/mysver.se/" },
-  { name: "YouTube", href: "https://youtube.com/@mys_verse" },
-  { name: "TikTok", href: "https://tiktok.com/@mysver.se" }
+  {
+    name: "Roblox",
+    href: "https://roblox.com/groups/1143446",
+    icon: <RobloxLogo className="inline-flex h-[1em] mb-1" />
+  },
+  {
+    name: "Discord",
+    href: "https://discord.com/invite/uPkrYWd",
+    icon: <FontAwesomeIcon icon={faDiscord} />
+  },
+  {
+    name: "X",
+    href: "https://x.com/mys_verse",
+    icon: <FontAwesomeIcon icon={faXTwitter} />
+  },
+  {
+    name: "Instagram",
+    href: "https://instagram.com/mysver.se/",
+    icon: <FontAwesomeIcon icon={faInstagram} />
+  },
+  {
+    name: "YouTube",
+    href: "https://youtube.com/@mys_verse",
+    icon: <FontAwesomeIcon icon={faYoutube} />
+  },
+  {
+    name: "TikTok",
+    href: "https://tiktok.com/@mysver.se",
+    icon: <FontAwesomeIcon icon={faTiktok} />
+  }
 ];
 
 function Contact() {
@@ -187,6 +221,7 @@ export default function Main() {
         description="The original Malaysian metaverse project and roleplay community. Your gateway into our unique brand of fun, culture and education like no other."
         og_image="https://mysver.se/img/og_image_v2.png"
       />
+
       <main className="bg-gray-900 h-full">
         <header className="absolute inset-x-0 top-0 z-50">
           <nav
@@ -217,7 +252,7 @@ export default function Main() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-semibold leading-6 text-white"
+                  className="text-sm font-semibold leading-6 text-white opacity-100 hover:opacity-50"
                   onClick={() =>
                     plausible("navClicked", {
                       props: {
@@ -226,6 +261,7 @@ export default function Main() {
                     })
                   }
                 >
+                  {item.icon ? <span className="mr-2">{item.icon}</span> : null}
                   {item.name}
                 </a>
               ))}
@@ -277,6 +313,9 @@ export default function Main() {
                           })
                         }
                       >
+                        {item.icon ? (
+                          <span className="mr-2">{item.icon}</span>
+                        ) : null}
                         {item.name}
                       </a>
                     ))}
@@ -318,6 +357,29 @@ export default function Main() {
                   MYSverse is your gateway to our unique brand of fun, Malaysian
                   culture, and education on Roblox.
                 </p>
+                <div className="mt-6 flex flex-row justify-center space-x-4">
+                  {navigation.map((item) => {
+                    const icon = item.icon;
+                    if (icon) {
+                      return (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="text-xl font-semibold leading-6 text-white opacity-100 hover:opacity-50"
+                          onClick={() =>
+                            plausible("navClicked", {
+                              props: {
+                                name: item.name
+                              }
+                            })
+                          }
+                        >
+                          {icon}
+                        </a>
+                      );
+                    }
+                  })}
+                </div>
                 <div className="mt-10 flex items-center justify-center gap-x-6">
                   <a
                     href="https://www.roblox.com/games/481538620/Bandar"
