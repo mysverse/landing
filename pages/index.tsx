@@ -19,6 +19,54 @@ const navigation = [
   { name: "TikTok", href: "https://tiktok.com/@mysver.se" }
 ];
 
+function Contact() {
+  return (
+    <div className="py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-100">
+                Get in touch
+              </h2>
+              <p className="mt-4 leading-7 text-gray-300">
+                For legal, commercial, collaborations, and other general
+                enquiries. Our in-house development studio Hornbill Interactive
+                is also open to any other metaverse-style projects on Roblox,
+                with battle-tested community and development skills.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-6 lg:col-span-2 lg:gap-8">
+              <div className="rounded-2xl bg-slate-800 p-10 flex flex-col justify-center place-content-center">
+                <h3 className="text-base font-semibold leading-7 text-gray-100">
+                  MYSverse Digital Ventures
+                </h3>
+                <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-100">
+                  <div>
+                    <dt className="sr-only">Email</dt>
+                    <dd>
+                      <a
+                        className="font-semibold text-indigo-600"
+                        href="mailto:mysverse@yan.gg"
+                      >
+                        mysverse@yan.gg
+                      </a>
+                    </dd>
+                  </div>
+                  {/* <div className="mt-1">
+                    <dt className="sr-only">Phone number</dt>
+                    <dd>+1 (555) 905-2345</dd>
+                  </div> */}
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function ProjectList() {
   interface Project {
     name: string;
@@ -127,7 +175,7 @@ export function OGHead({
   );
 }
 
-export default function Example() {
+export default function Main() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const plausible = usePlausible();
   return (
@@ -321,6 +369,7 @@ export default function Example() {
               /> */}
             </div>
             <ProjectList />
+            <Contact />
           </div>
           <div
             className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
