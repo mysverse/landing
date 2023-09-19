@@ -225,10 +225,10 @@ export default function Main() {
       <main className="bg-gray-900 h-full">
         <header className="absolute inset-x-0 top-0 z-50">
           <nav
-            className="flex items-center justify-between p-6 lg:px-8"
+            className="flex items-center justify-between p-6 xl:px-8"
             aria-label="Global"
           >
-            <div className="flex lg:flex-1">
+            <div className="flex xl:flex-1">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">MYSverse</span>
                 <MysverseLogo
@@ -237,7 +237,7 @@ export default function Main() {
                 />
               </a>
             </div>
-            <div className="flex lg:hidden">
+            <div className="flex xl:hidden">
               <button
                 type="button"
                 className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
@@ -247,7 +247,7 @@ export default function Main() {
                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
               </button>
             </div>
-            <div className="hidden lg:flex lg:gap-x-12">
+            <div className="hidden xl:flex xl:gap-x-12">
               {navigation.map((item) => (
                 <a
                   key={item.name}
@@ -266,7 +266,7 @@ export default function Main() {
                 </a>
               ))}
             </div>
-            <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <div className="hidden xl:flex xl:flex-1 xl:justify-end">
               {/* <a href="#" className="text-sm font-semibold leading-6 text-white">
             Log in <span aria-hidden="true">&rarr;</span>
           </a> */}
@@ -274,7 +274,7 @@ export default function Main() {
           </nav>
           <Dialog
             as="div"
-            className="lg:hidden"
+            className="xl:hidden"
             open={mobileMenuOpen}
             onClose={setMobileMenuOpen}
           >
@@ -357,7 +357,7 @@ export default function Main() {
                   MYSverse is your gateway to our unique brand of fun, Malaysian
                   culture, and education on Roblox.
                 </p>
-                <div className="mt-6 flex flex-row justify-center space-x-4">
+                <div className="mt-6 flex flex-row justify-center space-x-5">
                   {navigation.map((item) => {
                     const icon = item.icon;
                     if (icon) {
