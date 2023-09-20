@@ -7,6 +7,9 @@ import MysverseLogo from "public/img/mysverse_mono.svg";
 import RobloxLogo from "public/img/Roblox_Logo.svg";
 import FeaturePic from "public/img/beaufort_4k.webp";
 import BeaufortFeaturePic from "public/img/beaufort_feature_2.webp";
+import RumahFeaturePic from "public/img/rumah_feature_image.webp";
+import LebuhrayaFeaturePic from "public/img/lebuhraya_feature.webp";
+import BandarFeaturePic from "public/img/bandar_feature_image.webp";
 import MafFeaturePic from "public/img/maf_feature.webp";
 import Head from "next/head";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
@@ -83,13 +86,20 @@ function Contact() {
                 <h3 className="text-base font-semibold leading-7 text-gray-100">
                   MYSverse Digital Ventures
                 </h3>
+                <h4 className="text-sm font-medium leading-5 text-gray-100">
+                  202303234965 (AS0469188-M)
+                </h4>
                 <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-100">
+                  {/* <div>
+                    <dt className="sr-only">Registration</dt>
+                    <dd>202303234965 (AS0469188-M)</dd>
+                  </div> */}
                   <div>
                     <dt className="sr-only">Email</dt>
                     <dd>
                       <a
-                        className="font-semibold text-indigo-600"
-                        href="mailto:mysverse@yan.gg"
+                        className="font-semibold text-cyan-500"
+                        href="mailto:yan@mysver.se"
                         onClick={() =>
                           plausible("contactClicked", {
                             props: {
@@ -98,7 +108,7 @@ function Contact() {
                           })
                         }
                       >
-                        mysverse@yan.gg
+                        yan@mysver.se
                       </a>
                     </dd>
                   </div>
@@ -114,10 +124,10 @@ function Contact() {
                 </h3>
                 <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-100">
                   <div>
-                    <dt className="sr-only">Email</dt>
+                    <dt className="sr-only">Cal.com</dt>
                     <dd>
                       <a
-                        className="font-semibold text-indigo-600"
+                        className="font-semibold text-cyan-500"
                         href="https://cal.com/yan3321"
                         onClick={() =>
                           plausible("contactClicked", {
@@ -148,7 +158,10 @@ function Contact() {
 function ProjectList() {
   interface Project {
     name: string;
-    tagline: string;
+    tagline: string | JSX.Element;
+    wip?: boolean;
+    launched?: string;
+    type: "MYSverse" | "Sim";
     image?: string | StaticImport;
     link?: string;
   }
@@ -158,28 +171,108 @@ function ProjectList() {
       name: "Daerah",
       tagline:
         "Taking place in a rural area inspired by the Sabahan district of Beaufort, this never-before-explored experience will be the basis of MYSverse's first significant step in offering gameplay freedom to all players, even those outside the community.",
-      image: BeaufortFeaturePic
+      image: BeaufortFeaturePic,
+      type: "MYSverse",
+      wip: true
     },
     {
-      name: "Tentera",
-      tagline:
-        "One of the original MYSverse roleplay agencies, the military community offers heavily-researched, authentic recreations of Malaysian Armed Forces assets and procedures utilised in dedicated mil-sim experiences.",
-      image: MafFeaturePic
+      name: "Rumah v2",
+      launched: "Released 2021",
+      tagline: (
+        <>
+          An authentic <i>kampung</i> setting, replete with seaside, open house
+          (tasty food!), and traditional celebrations, this exquisite embodiment
+          of Malaysian culture unites every community member to gather during
+          periods of festitvities.
+        </>
+      ),
+      image: RumahFeaturePic,
+      type: "MYSverse"
     },
     {
       name: "Lebuhraya",
+      launched: "Released 2020",
+      image: LebuhrayaFeaturePic,
+      type: "MYSverse",
       tagline:
         "The most relaxing game in the MYSverse lineup lets players drive around in a variety of vehicles, and socialise with fellow drivers along a sprawling highway. The map was previously released by its original developer."
       // image: FeaturePic
     },
     {
       name: "Bandar",
+      launched: "Released Sep 2020",
+      image: BandarFeaturePic,
+      type: "Sim",
       tagline:
         "A faithful, detailed and entertaining rendition of Kuala Lumpur redeveloped, redesigned and expanded in-house as MYSverse's major roleplay hub with city gameplay. The map was previously released by its original developer."
       // image: FeaturePic
+    },
+    {
+      name: "Tentera",
+      launched: "Since 2016",
+      tagline:
+        "One of the original MYSverse roleplay agencies, the military community offers heavily-researched, authentic recreations of Malaysian Armed Forces assets and procedures utilised in dedicated mil-sim experiences.",
+      image: MafFeaturePic,
+      type: "Sim"
     }
-    // More people...
   ];
+
+  function ItemList(type: Project["type"]) {
+    return (
+      <ul
+        role="list"
+        className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none"
+      >
+        {projects
+          .filter((item) => item.type === type)
+          .map((project) => (
+            <li key={project.name}>
+              {project.image ? (
+                <Image
+                  className="aspect-[3/2] w-full rounded-2xl object-cover mb-6"
+                  width={500}
+                  height={250}
+                  src={project.image}
+                  alt=""
+                />
+              ) : null}
+              <div className="flex gap-x-4">
+                <h3 className="text-xl font-semibold leading-8 tracking-tight text-gray-100">
+                  {project.name}
+                </h3>
+                {project.wip ? (
+                  <span className="inline-flex items-center gap-x-1.5 my-0.5 rounded-md px-2 text-xs font-medium text-gray-100 ring-1 ring-inset ring-gray-800">
+                    <svg
+                      className="h-1.5 w-1.5 fill-red-400"
+                      viewBox="0 0 6 6"
+                      aria-hidden="true"
+                    >
+                      <circle cx={3} cy={3} r={3} />
+                    </svg>
+                    Work in progress
+                  </span>
+                ) : project.launched ? (
+                  <span className="inline-flex items-center gap-x-1.5 my-0.5 rounded-md px-2 text-xs font-medium text-gray-100 ring-1 ring-inset ring-gray-800">
+                    <svg
+                      className="h-1.5 w-1.5 fill-green-400"
+                      viewBox="0 0 6 6"
+                      aria-hidden="true"
+                    >
+                      <circle cx={3} cy={3} r={3} />
+                    </svg>
+                    {project.launched}
+                  </span>
+                ) : null}
+              </div>
+
+              <p className="text-base leading-7 text-white opacity-70">
+                {project.tagline}
+              </p>
+            </li>
+          ))}
+      </ul>
+    );
+  }
   return (
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -191,30 +284,18 @@ function ProjectList() {
             {`MYSverse developers started off as volunteers passionate about delivering authentic roleplay experiences to the equally dedicated sets of the community. We aim to preserve that same concept moving forward, with the added focus on making those top tier efforts available to all players.`}
           </p>
         </div>
-        <ul
-          role="list"
-          className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none"
-        >
-          {projects.map((project) => (
-            <li key={project.name}>
-              {project.image ? (
-                <Image
-                  className="aspect-[3/2] w-full rounded-2xl object-cover"
-                  width={500}
-                  height={250}
-                  src={project.image}
-                  alt=""
-                />
-              ) : null}
-              <h3 className="mt-6 text-xl font-semibold leading-8 tracking-tight text-gray-100">
-                {project.name}
-              </h3>
-              <p className="text-base leading-7 text-white opacity-70">
-                {project.tagline}
-              </p>
-            </li>
-          ))}
-        </ul>
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold tracking-tight text-gray-100 sm:text-3xl">
+            MYSverse
+          </h3>
+          {ItemList("MYSverse")}
+        </div>
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold tracking-tight text-gray-100 sm:text-3xl">
+            MYSverse Sim
+          </h3>
+          {ItemList("Sim")}
+        </div>
       </div>
     </div>
   );
@@ -475,6 +556,32 @@ export default function Main() {
             </div>
             <ProjectList />
             <Contact />
+            <div className="mt-6 flex flex-row justify-center space-x-8 lg:space-x-16">
+              {socials.map((item) => {
+                const icon = item.icon;
+                if (icon) {
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="font-semibold text-lg leading-6 text-gray-300 fill-gray-300   opacity-100 hover:opacity-50"
+                      onClick={() =>
+                        plausible("navClicked", {
+                          props: {
+                            name: item.name
+                          }
+                        })
+                      }
+                    >
+                      {icon}
+                      <span className="hidden ml-2 text-base sm:inline-block">
+                        {item.name}
+                      </span>
+                    </a>
+                  );
+                }
+              })}
+            </div>
           </div>
           <div
             className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
