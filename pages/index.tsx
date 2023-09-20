@@ -424,7 +424,7 @@ export default function Main() {
               <div className="mt-6 flow-root">
                 <div className="-my-6 divide-y divide-gray-500/25">
                   <div className="space-y-2 py-6">
-                    {socials.map((item) => (
+                    {navigation.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
@@ -437,9 +437,6 @@ export default function Main() {
                           })
                         }
                       >
-                        {item.icon ? (
-                          <span className="mr-2">{item.icon}</span>
-                        ) : null}
                         {item.name}
                       </a>
                     ))}
