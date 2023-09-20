@@ -54,6 +54,7 @@ const navigation = [
 ];
 
 function Contact() {
+  const plausible = usePlausible();
   return (
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -70,7 +71,7 @@ function Contact() {
                 with battle-tested community and development skills.
               </p>
             </div>
-            <div className="grid grid-cols-1 gap-6 lg:col-span-2 lg:gap-8">
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:col-span-2 lg:gap-8">
               <div className="rounded-2xl bg-slate-800 p-10 flex flex-col justify-center place-content-center">
                 <h3 className="text-base font-semibold leading-7 text-gray-100">
                   MYSverse Digital Ventures
@@ -82,8 +83,44 @@ function Contact() {
                       <a
                         className="font-semibold text-indigo-600"
                         href="mailto:mysverse@yan.gg"
+                        onClick={() =>
+                          plausible("contactClicked", {
+                            props: {
+                              type: "email"
+                            }
+                          })
+                        }
                       >
                         mysverse@yan.gg
+                      </a>
+                    </dd>
+                  </div>
+                  {/* <div className="mt-1">
+                    <dt className="sr-only">Phone number</dt>
+                    <dd>+1 (555) 905-2345</dd>
+                  </div> */}
+                </dl>
+              </div>
+              <div className="rounded-2xl bg-slate-800 p-10 flex flex-col justify-center place-content-center">
+                <h3 className="text-base font-semibold leading-7 text-gray-100">
+                  Speak to the co-founder
+                </h3>
+                <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-100">
+                  <div>
+                    <dt className="sr-only">Email</dt>
+                    <dd>
+                      <a
+                        className="font-semibold text-indigo-600"
+                        href="https://cal.com/yan3321"
+                        onClick={() =>
+                          plausible("contactClicked", {
+                            props: {
+                              type: "meeting"
+                            }
+                          })
+                        }
+                      >
+                        Book a Cal.com meeting
                       </a>
                     </dd>
                   </div>
