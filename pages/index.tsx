@@ -27,6 +27,10 @@ const navigation = [
   {
     name: "Blog",
     href: "https://blog.mysver.se"
+  },
+  {
+    name: "Sentral",
+    href: "https://sentral.mysver.se"
   }
 ];
 
