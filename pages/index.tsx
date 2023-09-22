@@ -187,7 +187,7 @@ function ProjectList() {
           An authentic <i>kampung</i> setting, replete with seaside, open house
           (tasty food!), and traditional celebrations, this exquisite embodiment
           of Malaysian culture unites every community member to gather during
-          periods of festitvities.
+          periods of festivities.
         </>
       ),
       image: RumahFeaturePic,
