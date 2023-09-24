@@ -13,6 +13,7 @@ import BandarFeaturePic from "public/img/bandar_feature_image.webp";
 import MafFeaturePic from "public/img/maf_feature.webp";
 import Head from "next/head";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import CountUp from "react-countup";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -338,6 +339,46 @@ function OGHead({
   );
 }
 
+const stats = [
+  {
+    id: 1,
+    name: "times games played",
+    value: <CountUp end={15000000} suffix="+" />
+  },
+  {
+    id: 3,
+    name: "members on Roblox",
+    value: <CountUp end={300000} suffix="+" />
+  },
+  {
+    id: 2,
+    name: "followers across social media",
+    value: <CountUp end={30000} suffix="+" />
+  }
+];
+
+function Stats() {
+  return (
+    <div className="py-8 sm:py-12">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <dl className="grid grid-cols-1 gap-x-4 gap-y-8 text-center lg:grid-cols-3">
+          {stats.map((stat) => (
+            <div
+              key={stat.id}
+              className="mx-auto flex max-w-xs flex-col gap-y-4"
+            >
+              <dt className="text-base leading-7 text-gray-400">{stat.name}</dt>
+              <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+                {stat.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </div>
+  );
+}
+
 export default function Main() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const plausible = usePlausible();
@@ -482,6 +523,7 @@ export default function Main() {
                   MYSverse is your gateway to our unique brand of fun, Malaysian
                   culture, and education on Roblox.
                 </p>
+
                 <div className="mt-6 flex flex-row justify-center space-x-5">
                   {socials.map((item) => {
                     const icon = item.icon;
@@ -555,6 +597,7 @@ export default function Main() {
                 className="mt-16 rounded-md bg-white/5 shadow-2xl sm:mt-24"
               /> */}
             </div>
+            <Stats />
             <ProjectList />
             <Contact />
             <div className="mt-6 flex flex-row justify-center space-x-8 lg:space-x-16">
