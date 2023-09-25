@@ -343,17 +343,38 @@ const stats = [
   {
     id: 1,
     name: "times games played",
-    value: <CountUp end={15000000} suffix="+" />
+    value: (
+      <CountUp
+        end={15000000}
+        enableScrollSpy={true}
+        scrollSpyOnce={true}
+        suffix="+"
+      />
+    )
   },
   {
     id: 3,
     name: "members on Roblox",
-    value: <CountUp end={300000} suffix="+" />
+    value: (
+      <CountUp
+        end={300000}
+        enableScrollSpy={true}
+        scrollSpyOnce={true}
+        suffix="+"
+      />
+    )
   },
   {
     id: 2,
     name: "followers across social media",
-    value: <CountUp end={30000} suffix="+" />
+    value: (
+      <CountUp
+        end={30000}
+        enableScrollSpy={true}
+        scrollSpyOnce={true}
+        suffix="+"
+      />
+    )
   }
 ];
 
