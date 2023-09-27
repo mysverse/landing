@@ -10,6 +10,7 @@
     "format": "prettier --config .prettierrc \"{pages,components}/**/*.{ts,tsx}\" --write"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.3.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.13",

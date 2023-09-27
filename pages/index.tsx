@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dialog } from "@headlessui/react";
+import { getCalApi } from "@calcom/embed-react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { usePlausible } from "next-plausible";
@@ -14,6 +15,8 @@ import MafFeaturePic from "public/img/maf_feature.webp";
 import Head from "next/head";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import CountUp from "react-countup";
+
+import BookCal from "public/img/book_us_with_cal_com.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -79,6 +82,29 @@ const socials = [
     icon: <FontAwesomeIcon icon={faTiktok} />
   }
 ];
+
+function CalButton() {
+  const plausible = usePlausible();
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi();
+      cal("ui", {
+        styles: { branding: { brandColor: "#000000" } },
+        hideEventTypeDetails: false,
+        layout: "month_view"
+      });
+    })();
+  }, []);
+
+  return (
+    <button
+      data-cal-link="yan3321/ventures"
+      data-cal-config='{"layout":"month_view"}'
+    >
+      <BookCal className="pointer-events-none" />
+    </button>
+  );
+}
 
 function Contact() {
   const plausible = usePlausible();
@@ -146,19 +172,7 @@ function Contact() {
                   <div>
                     <dt className="sr-only">Cal.com</dt>
                     <dd>
-                      <a
-                        className="font-semibold text-cyan-500"
-                        href="https://cal.com/yan3321"
-                        onClick={() =>
-                          plausible("contactClicked", {
-                            props: {
-                              type: "meeting"
-                            }
-                          })
-                        }
-                      >
-                        Book a Cal.com meeting
-                      </a>
+                      <CalButton />
                     </dd>
                   </div>
                   {/* <div className="mt-1">
