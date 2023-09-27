@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePlausible } from "next-plausible";
 import MysverseLogo from "public/img/mysverse_mono.svg";
 import RobloxLogo from "public/img/Roblox_Logo.svg";
-import FeaturePic from "public/img/beaufort_4k.webp";
+import FeaturePic from "public/img/mysverse_feature.webp";
 import BeaufortFeaturePic from "public/img/beaufort_feature_2.webp";
 import RumahFeaturePic from "public/img/rumah_feature_image.webp";
 import LebuhrayaFeaturePic from "public/img/lebuhraya_feature.webp";
@@ -383,10 +383,10 @@ const stats = [
   },
   {
     id: 3,
-    name: "members on Roblox",
+    name: "players across Roblox groups",
     value: (
       <CountUp
-        end={300000}
+        end={331000}
         enableScrollSpy={true}
         scrollSpyOnce={true}
         suffix="+"
@@ -588,8 +588,8 @@ export default function Main() {
                   Enter a mysterious Malaysian metaverse.
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-300">
-                  MYSverse is your gateway to our unique brand of fun, Malaysian
-                  culture, and education on Roblox.
+                  MYSverse is your gateway to our unique brand of fun, education
+                  and Malaysian culture on Roblox and beyond.
                 </p>
 
                 <div className="mt-6 flex flex-row justify-center space-x-5">
@@ -650,13 +650,7 @@ export default function Main() {
                   ...and more open experiences for everyone, coming soon!
                 </p>
               </div>
-              <Image
-                src={FeaturePic}
-                alt="Screenshot of a rural area in Beaufort"
-                width={4224}
-                height={2376}
-                className="mt-16 rounded-md bg-white/5 shadow-2xl sm:mt-24"
-              />
+
               {/* <Image
                 src={MAFfeaturePic}
                 alt="Screenshot of a rural area in Beaufort"
@@ -665,6 +659,13 @@ export default function Main() {
                 className="mt-16 rounded-md bg-white/5 shadow-2xl sm:mt-24"
               /> */}
             </div>
+            <Image
+              src={FeaturePic}
+              alt="Screenshot of a rural area in Beaufort"
+              width={1024}
+              height={512}
+              className="mt-16 rounded-md bg-white/5 shadow-2xl sm:mt-24 mx-auto mb-12"
+            />
             <Stats />
             <ProjectList />
             <Contact />
