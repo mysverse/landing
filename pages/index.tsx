@@ -23,6 +23,7 @@ import {
   faXTwitter,
   faYoutube
 } from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
 
 const navigation = [
   {
@@ -32,6 +33,17 @@ const navigation = [
   {
     name: "Sentral",
     href: "https://sentral.mysver.se"
+  }
+];
+
+const pageNavigation = [
+  {
+    name: "Projects",
+    href: "#projects"
+  },
+  {
+    name: "Contact",
+    href: "#contact"
   }
 ];
 
@@ -76,7 +88,10 @@ function Contact() {
         <div className="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
           <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-100">
+              <h2
+                className="text-3xl font-bold tracking-tight text-gray-100"
+                id="contact"
+              >
                 Get in touch
               </h2>
               <p className="mt-4 leading-7 text-gray-300">
@@ -279,7 +294,7 @@ function ProjectList() {
     );
   }
   return (
-    <div className="py-24 sm:py-32">
+    <div className="py-24 sm:py-32" id="projects">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
@@ -440,7 +455,7 @@ export default function Main() {
             </div>
             <div className="hidden xl:flex xl:gap-x-12">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="text-sm font-semibold leading-6 text-white opacity-100 hover:opacity-50"
@@ -453,7 +468,16 @@ export default function Main() {
                   }
                 >
                   {item.name}
-                </a>
+                </Link>
+              ))}
+              {pageNavigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-sm font-semibold leading-6 text-white opacity-100 hover:opacity-50"
+                >
+                  {item.name}
+                </Link>
               ))}
             </div>
             <div className="hidden xl:flex xl:flex-1 xl:justify-end">
@@ -491,7 +515,7 @@ export default function Main() {
                 <div className="-my-6 divide-y divide-gray-500/25">
                   <div className="space-y-2 py-6">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
                         href={item.href}
                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-800"
@@ -504,7 +528,16 @@ export default function Main() {
                         }
                       >
                         {item.name}
-                      </a>
+                      </Link>
+                    ))}
+                    {pageNavigation.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-800"
+                      >
+                        {item.name}
+                      </Link>
                     ))}
                   </div>
                   {/* <div className="py-6">
