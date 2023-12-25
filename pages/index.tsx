@@ -27,6 +27,7 @@ import {
   faYoutube
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
+import Banner from "components/banner";
 
 const navigation = [
   {
@@ -84,7 +85,6 @@ const socials = [
 ];
 
 function CalButton() {
-  const plausible = usePlausible();
   useEffect(() => {
     (async function () {
       const cal = await getCalApi();
@@ -202,12 +202,13 @@ function ProjectList() {
 
   const projects: Project[] = [
     {
-      name: "Daerah",
-      tagline:
-        "Taking place in a rural area inspired by the Sabahan district of Beaufort, this never-before-explored experience will be the basis of MYSverse's first significant step in offering gameplay freedom to all players, even those outside the community.",
-      image: BeaufortFeaturePic,
+      name: "Lebuhraya Refreshed",
+      launched: "Released 2020, Refreshed 2023",
+      image: LebuhrayaFeaturePic,
       type: "MYSverse",
-      wip: true
+      tagline:
+        "The most relaxing game in the MYSverse lineup lets players drive around in a variety of vehicles, and socialise with fellow drivers along a sprawling highway. The map was previously released by its original developer."
+      // image: FeaturePic
     },
     {
       name: "Rumah v2",
@@ -224,13 +225,12 @@ function ProjectList() {
       type: "MYSverse"
     },
     {
-      name: "Lebuhraya",
-      launched: "Released 2020",
-      image: LebuhrayaFeaturePic,
-      type: "MYSverse",
+      name: "Daerah",
       tagline:
-        "The most relaxing game in the MYSverse lineup lets players drive around in a variety of vehicles, and socialise with fellow drivers along a sprawling highway. The map was previously released by its original developer."
-      // image: FeaturePic
+        "Taking place in a rural area inspired by the Sabahan district of Beaufort, this never-before-explored experience will be the basis of MYSverse's first significant step in offering gameplay freedom to all players, even those outside the community.",
+      image: BeaufortFeaturePic,
+      type: "MYSverse",
+      wip: true
     },
     {
       name: "Bandar",
@@ -431,6 +431,7 @@ function Stats() {
 
 export default function Main() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const plausible = usePlausible();
   return (
     <>
@@ -444,6 +445,7 @@ export default function Main() {
 
       <main className="bg-gray-900 h-full">
         <header className="absolute inset-x-0 top-0 z-50">
+          <Banner />
           <nav
             className="flex items-center justify-between p-6 xl:px-8"
             aria-label="Global"
