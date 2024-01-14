@@ -16,6 +16,8 @@ import Head from "next/head";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import CountUp from "react-countup";
 
+import MYSverseSimLogo from "public/img/mysverse_sim.svg";
+
 import BookCal from "public/img/book_us_with_cal_com.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -251,7 +253,7 @@ function ProjectList() {
     }
   ];
 
-  function ItemList(type: Project["type"]) {
+  function ItemList({ type }: { type: "MYSverse" | "Sim" }) {
     return (
       <ul
         role="list"
@@ -308,7 +310,7 @@ function ProjectList() {
     );
   }
   return (
-    <div className="py-24 sm:py-32" id="projects">
+    <div className="py-24 sm:py-32 text-gray-300" id="projects">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
@@ -322,13 +324,21 @@ function ProjectList() {
           <h3 className="text-2xl font-bold tracking-tight text-gray-100 sm:text-3xl">
             MYSverse
           </h3>
-          {ItemList("MYSverse")}
+          <ItemList type="MYSverse" />
         </div>
         <div className="mt-16">
           <h3 className="text-2xl font-bold tracking-tight text-gray-100 sm:text-3xl">
-            MYSverse Sim
+            <MYSverseSimLogo className="inline-block h-12 w-auto fill-white" />
+            <span className="sr-only">MYSverse Sim</span>
           </h3>
-          {ItemList("Sim")}
+          <p className="mt-6 text-lg leading-8">
+            {`MYSverse Sim is an immersive, realism-based virtual experience that
+            is part of the broader MYSverse platform. It is a form of "serious
+            roleplay" that offers a more mature, disciplined and educational experience,
+            which may require players to go off-platform (Discord)
+            and participate in training and certification to participate in certain activities.`}
+          </p>
+          <ItemList type="Sim" />
         </div>
       </div>
     </div>
