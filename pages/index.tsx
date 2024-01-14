@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, JSX } from "react";
 import { Dialog } from "@headlessui/react";
 import { getCalApi } from "@calcom/embed-react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";

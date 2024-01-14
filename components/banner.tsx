@@ -1,6 +1,5 @@
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import useDismissableBanner from "./useDismissableBanner";
-import { MouseEventHandler } from "react"; // Import MouseEventHandler type
 import Link from "next/link";
 
 export default function Banner() {

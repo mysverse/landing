@@ -1,4 +1,4 @@
-import React, { useState, useEffect, MouseEventHandler } from "react";
+import { useState, useEffect, MouseEventHandler } from "react";
 
 // Custom hook for dismissable banner
 export default function useDismissableBanner(bannerId: string) {
