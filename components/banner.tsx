@@ -1,10 +1,12 @@
+"use client";
+
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import useDismissableBanner from "./useDismissableBanner";
 import Link from "next/link";
 
 export default function Banner() {
   const { isVisible, isLoading, dismissBanner } =
-    useDismissableBanner("LebuhrayaRefresh3");
+    useDismissableBanner("LebuhrayaRefresh4");
 
   if (!isVisible || isLoading) return null;
 
