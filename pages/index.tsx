@@ -233,7 +233,7 @@ function ProjectList() {
       wip: true
     },
     {
-      name: "Bandar",
+      name: "Bandaraya",
       launched: "Released Sep 2020",
       image: BandarFeaturePic,
       type: "Sim",
@@ -629,7 +629,7 @@ export default function Main() {
                       })
                     }
                   >
-                    Play Bandar, city simulator
+                    Play Bandaraya, city simulator
                   </a>
                   <a
                     href="https://www.roblox.com/games/4892731894/Lebuhraya"
