@@ -61,7 +61,7 @@ export default function Banner() {
         <button
           type="button"
           className="-m-3 p-3 focus-visible:outline-offset-[-4px]"
-          onClick={dismissBanner as MouseEventHandler<HTMLButtonElement>}
+          onClick={dismissBanner}
         >
           <span className="sr-only">Dismiss</span>
           <XMarkIcon className="h-5 w-5 text-white" aria-hidden="true" />

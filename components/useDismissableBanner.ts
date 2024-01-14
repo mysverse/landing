@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, MouseEventHandler } from "react";
 
 // Custom hook for dismissable banner
 export default function useDismissableBanner(bannerId: string) {
@@ -17,7 +17,7 @@ export default function useDismissableBanner(bannerId: string) {
   }, [bannerId]);
 
   // Function to dismiss the banner
-  const dismissBanner = () => {
+  const dismissBanner: MouseEventHandler = () => {
     localStorage.setItem(bannerId, "dismissed");
     setIsVisible(false);
   };
