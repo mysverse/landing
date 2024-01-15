@@ -14,5 +14,14 @@ export default function PlausibleWrapper({
   children
 }: PlausibleWrapperProps) {
   const plausible = usePlausible();
-  return <div onClick={plausible(eventName, eventProps)}>{children}</div>;
+  return (
+    <div
+      className="flex"
+      onClick={() => {
+        if (typeof window !== "undefined") plausible(eventName, eventProps);
+      }}
+    >
+      {children}
+    </div>
+  );
 }

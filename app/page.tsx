@@ -25,10 +25,7 @@ import CalButton from "./_components/CalButton";
 import Header from "./_components/header";
 
 const PlausibleWrapper = dynamic(
-  () => import("./_components/PlausibleWrapper"),
-  {
-    ssr: false
-  }
+  () => import("./_components/PlausibleWrapper")
 );
 
 import Stats from "./_components/Stats";
