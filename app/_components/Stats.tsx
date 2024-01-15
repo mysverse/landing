@@ -1,6 +1,4 @@
-"use client";
-
-import CountUp from "react-countup";
+import CountUp from "./Countup";
 
 const stats = [
   {
