@@ -12,6 +12,7 @@ import MafFeaturePic from "public/img/maf_feature.webp";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 import MYSverseSimLogo from "public/img/mysverse_sim.svg";
+import WhatsappButton from "public/ChatOnWhatsAppButton/WhatsAppButtonGreenMedium.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -163,10 +164,16 @@ function Contact() {
               </div>
               <div className="rounded-2xl bg-slate-800 p-10 flex flex-col justify-center place-content-center">
                 <h3 className="text-base font-semibold leading-7 text-gray-100">
-                  Speak to the co-founder
+                  Chat or call, your choice
                 </h3>
                 <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-100">
-                  <div>
+                  <div className=" flex flex-col gap-y-4">
+                    <dt className="sr-only">WhatsApp</dt>
+                    <dd>
+                      <Link href="https://wa.me/+601154156978" target="_blank">
+                        <WhatsappButton />
+                      </Link>
+                    </dd>
                     <dt className="sr-only">Cal.com</dt>
                     <dd>
                       <CalButton />
