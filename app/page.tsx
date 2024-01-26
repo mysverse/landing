@@ -30,6 +30,8 @@ const PlausibleWrapper = dynamic(
 
 import Stats from "./_components/Stats";
 import dynamic from "next/dynamic";
+import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 const socials = [
   {
@@ -89,16 +91,28 @@ function Contact() {
                 <h3 className="text-base font-semibold leading-7 text-gray-100">
                   MYSverse Digital Ventures
                 </h3>
-                <h4 className="text-sm font-medium leading-5 text-gray-100">
-                  202303234965 (AS0469188-M)
+                <h4 className="text-sm font-medium leading-5 text-cyan-500">
+                  <Link href="/ssm_cert.pdf" target="_blank">
+                    202303234965 (AS0469188-M)
+                  </Link>
                 </h4>
                 <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-100">
                   {/* <div>
                     <dt className="sr-only">Registration</dt>
                     <dd>202303234965 (AS0469188-M)</dd>
                   </div> */}
-                  <div>
-                    <dt className="sr-only">Email</dt>
+                  <div className="flex flex-col gap-y-2">
+                    <dt className="sr-only">Address</dt>
+                    <dd>
+                      <div className="flex items-center gap-x-2">
+                        <MapIcon className="h-4 flex-none" />
+                        <span className="leading-5">
+                          A-5-10 Empire Tower SS16/1, 47500 Subang Jaya,
+                          Selangor, Malaysia
+                        </span>
+                      </div>
+                    </dd>
+                    <dt className="sr-only">Address</dt>
                     <dd>
                       <PlausibleWrapper
                         eventName="contactClicked"
@@ -108,12 +122,36 @@ function Contact() {
                           }
                         }}
                       >
-                        <a
-                          className="font-semibold text-cyan-500"
-                          href="mailto:yan@mysver.se"
-                        >
-                          yan@mysver.se
-                        </a>
+                        <div className="font-semibold text-cyan-500">
+                          <a
+                            className="flex items-center gap-x-2"
+                            href="mailto:yan@mysver.se"
+                          >
+                            <EnvelopeIcon className="h-4" />
+                            <span>yan@mysver.se</span>
+                          </a>
+                        </div>
+                      </PlausibleWrapper>
+                    </dd>
+                    <dt className="sr-only">Email</dt>
+                    <dd>
+                      <PlausibleWrapper
+                        eventName="contactClicked"
+                        eventProps={{
+                          props: {
+                            type: "phone"
+                          }
+                        }}
+                      >
+                        <div className="font-semibold text-cyan-500">
+                          <a
+                            className="flex items-center gap-x-2"
+                            href="tel:0350219170"
+                          >
+                            <PhoneIcon className="h-4" />
+                            <span className="tracking-wide">03-50219170</span>
+                          </a>
+                        </div>
                       </PlausibleWrapper>
                     </dd>
                   </div>
