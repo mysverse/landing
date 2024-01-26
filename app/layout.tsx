@@ -53,10 +53,8 @@ export default function RootLayout({ children }: PropsWithChildren) {
           customDomain="https://plausible.yan.gg"
         />
       </head>
-      <body>
-        <main className={`${quicksand.className} bg-gray-900 h-full`}>
-          {children}
-        </main>
+      <body className={`${quicksand.className} bg-gray-900 h-full`}>
+        <main>{children}</main>
       </body>
     </html>
   );
