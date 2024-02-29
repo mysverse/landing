@@ -6,7 +6,7 @@ const stats = [
     name: "times games played",
     value: (
       <CountUp
-        end={15000000}
+        end={18100000}
         enableScrollSpy={true}
         scrollSpyOnce={true}
         suffix="+"
@@ -18,7 +18,7 @@ const stats = [
     name: "players across Roblox groups",
     value: (
       <CountUp
-        end={331000}
+        end={346000}
         enableScrollSpy={true}
         scrollSpyOnce={true}
         suffix="+"
@@ -30,7 +30,7 @@ const stats = [
     name: "followers across social media",
     value: (
       <CountUp
-        end={30000}
+        end={31000}
         enableScrollSpy={true}
         scrollSpyOnce={true}
         suffix="+"
