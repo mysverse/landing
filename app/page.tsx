@@ -274,12 +274,12 @@ function ProjectList() {
                   alt=""
                 />
               ) : null}
-              <div className="flex gap-x-4">
+              <div className="sm:flex-row sm:flex gap-x-4">
                 <h3 className="text-xl font-semibold leading-8 tracking-tight text-gray-100">
                   {project.name}
                 </h3>
                 {project.wip ? (
-                  <span className="inline-flex items-center gap-x-1.5 my-0.5 rounded-md px-2 text-xs font-medium text-gray-100 ring-1 ring-inset ring-gray-800">
+                  <span className="inline-flex items-center gap-x-1.5 my-0.5 py-2 rounded-md px-2 text-xs font-medium text-gray-100 ring-1 ring-inset ring-gray-800">
                     <svg
                       className="h-1.5 w-1.5 fill-red-400"
                       viewBox="0 0 6 6"
@@ -290,7 +290,7 @@ function ProjectList() {
                     Work in progress
                   </span>
                 ) : project.launched ? (
-                  <span className="inline-flex items-center gap-x-1.5 my-0.5 rounded-md px-2 text-xs font-medium text-gray-100 ring-1 ring-inset ring-gray-800">
+                  <span className="inline-flex items-center gap-x-1.5 py-2 my-0.5 rounded-md px-2 text-xs font-medium text-gray-100 ring-1 ring-inset ring-gray-800">
                     <svg
                       className="h-1.5 w-1.5 fill-green-400"
                       viewBox="0 0 6 6"
@@ -334,11 +334,7 @@ function ProjectList() {
             <span className="sr-only">MYSverse Sim</span>
           </h3>
           <p className="mt-6 text-lg leading-8">
-            {`MYSverse Sim is an immersive, realism-based virtual experience that
-            is part of the broader MYSverse platform. It is a form of "serious
-            roleplay" that offers a more mature, disciplined and educational experience,
-            which may require players to go off-platform (Discord)
-            and participate in training and certification to participate in certain activities.`}
+            {`A sophisticated and realistic virtual experience, MYSverse Sim offers serious roleplay with an educational twist. Engage in disciplined activities, requiring off-platform training and certification for a deeper immersive experience.`}
           </p>
           <ItemList type="Sim" />
         </div>
@@ -371,8 +367,10 @@ export default function Main() {
                 Enter a mysterious Malaysian metaverse.
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-300">
-                MYSverse is your gateway to our unique brand of fun, education
-                and Malaysian culture on Roblox and beyond.
+                Embark on an extraordinary journey with MYSverse, where fun,
+                education, and Malaysian culture converge in our Roblox and
+                beyond experiences. Dive into our diverse world of virtual
+                adventures today!
               </p>
 
               <div className="mt-6 flex flex-row justify-center space-x-5">
