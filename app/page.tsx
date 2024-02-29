@@ -9,6 +9,10 @@ import RumahFeaturePic from "public/img/rumah_feature_image.webp";
 import LebuhrayaFeaturePic from "public/img/lebuhraya_feature.webp";
 import BandarFeaturePic from "public/img/bandar_feature_image.webp";
 import MafFeaturePic from "public/img/maf_feature.webp";
+
+import PlayLebuhraya from "public/img/play_lebuhraya.svg";
+import PlayBandaraya from "public/img/play_bandaraya.svg";
+
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 import MYSverseSimLogo from "public/img/mysverse_sim.svg";
@@ -399,7 +403,7 @@ export default function Main() {
                   }
                 })}
               </div>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
+              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
                 <PlausibleWrapper
                   eventName="ctaClicked"
                   eventProps={{
@@ -410,9 +414,9 @@ export default function Main() {
                 >
                   <a
                     href="https://www.roblox.com/games/481538620/Bandar"
-                    className="rounded-md bg-gradient-to-r from-[#476075] to-[#27374D] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                    className="group rounded-md bg-gradient-to-r from-[#476075] to-[#27374D] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                   >
-                    Play Bandaraya, city simulator
+                    <PlayBandaraya className="fill-white inline-flex h-[3em] px-1 group-hover:fill-[#476075]" />
                   </a>
                 </PlausibleWrapper>
                 <PlausibleWrapper
@@ -425,9 +429,9 @@ export default function Main() {
                 >
                   <a
                     href="https://www.roblox.com/games/4892731894/Lebuhraya"
-                    className="rounded-md bg-gradient-to-r from-[#65ad56] to-[#13863f] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                    className="group rounded-md bg-gradient-to-r from-[#65ad56] to-[#13863f] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                   >
-                    Play Lebuhraya, highway driving
+                    <PlayLebuhraya className="fill-white inline-flex h-[3em] px-1 group-hover:fill-[#65ad56]" />
                   </a>
                 </PlausibleWrapper>
               </div>
