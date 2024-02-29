@@ -1,11 +1,12 @@
 "use client";
 import { usePlausible } from "next-plausible";
-import Banner from "components/banner";
+
 import { useState } from "react";
 import MysverseLogo from "public/img/mysverse_mono.svg";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+// import Banner from "components/banner";
 
 const navigation = [
   {
@@ -34,7 +35,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <header className="absolute inset-x-0 top-0 z-50">
-      <Banner />
+      {/* <Banner /> */}
       <nav
         className="flex items-center justify-between p-6 xl:px-8"
         aria-label="Global"
