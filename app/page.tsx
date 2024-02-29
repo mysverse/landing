@@ -33,6 +33,7 @@ import Stats from "./_components/Stats";
 import dynamic from "next/dynamic";
 import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
+import Blog from "./_components/Blog";
 
 const socials = [
   {
@@ -448,13 +449,14 @@ export default function Main() {
           </div>
           <Image
             src={FeaturePic}
-            alt="Screenshot of a rural area in Beaufort"
+            alt="Screenshot of MYSverse experiences"
             width={1024}
             height={512}
             className="mt-16 rounded-md bg-white/5 shadow-2xl sm:mt-24 mx-auto mb-12"
           />
           <Stats />
           <ProjectList />
+          <Blog />
           <Contact />
           <div className="mt-6 flex flex-row justify-center space-x-8 lg:space-x-16">
             {socials.map((item) => {
