@@ -5,6 +5,7 @@ import Image from "next/image";
 import RobloxLogo from "public/img/Roblox_Logo.svg";
 import FeaturePic from "public/img/mysverse_feature.webp";
 import BeaufortFeaturePic from "public/img/beaufort_feature_2.webp";
+import DaerahFeaturePic from "public/img/daerah_1.webp";
 import RumahFeaturePic from "public/img/rumah_feature_image.webp";
 import LebuhrayaFeaturePic from "public/img/lebuhraya_feature.webp";
 import BandarFeaturePic from "public/img/bandar_feature_image.webp";
@@ -232,7 +233,7 @@ function ProjectList() {
       name: "Daerah",
       tagline:
         "Taking place in a rural area inspired by the Sabahan district of Beaufort, this never-before-explored experience will be the basis of MYSverse's first significant step in offering gameplay freedom to all players, even those outside the community.",
-      image: BeaufortFeaturePic,
+      image: DaerahFeaturePic,
       type: "MYSverse",
       wip: true
     },
