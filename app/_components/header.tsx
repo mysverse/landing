@@ -2,7 +2,7 @@
 import { usePlausible } from "next-plausible";
 
 import { useState } from "react";
-import MysverseLogo from "public/img/mysverse_mono.svg";
+import MysverseLogo from "public/img/ComboLogoW.svg";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
