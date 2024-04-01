@@ -8,7 +8,9 @@ import DaerahFeaturePic from "public/img/daerah_1.webp";
 import RumahFeaturePic from "public/img/rumah_feature_image.webp";
 import LebuhrayaFeaturePic from "public/img/lebuhraya_feature.webp";
 import BandarFeaturePic from "public/img/bandar_feature_image.webp";
-import MafFeaturePic from "public/img/maf_feature.webp";
+import MafFeaturePic from "public/img/feature_mys_tentera.webp";
+import PolisFeaturePic from "public/img/feature_mys_polis.webp";
+import BombaFeaturePic from "public/img/feature_mys_bomba.webp";
 
 import PlayLebuhraya from "public/img/play_lebuhraya.svg";
 import PlayBandaraya from "public/img/play_bandaraya.svg";
@@ -257,6 +259,23 @@ function ProjectList() {
         "One of the original MYSverse roleplay agencies, the military community offers heavily-researched, authentic recreations of Malaysian Armed Forces assets and procedures utilised in dedicated mil-sim experiences.",
       image: MafFeaturePic,
       type: "Sim"
+    },
+    {
+      name: "Polis",
+      launched: "Since 2017",
+      tagline:
+        "The police roleplay community enforces virtual laws in MYSverse Sim experiences such as Bandaraya, conducting duties across disciplines in traffic, community policing, and high risk crime interventions.",
+      image: PolisFeaturePic,
+      type: "Sim"
+    },
+    {
+      name: "Bomba",
+      launched: "Coming 2024",
+      tagline:
+        "The roleplay firefighters of MYSverse Sim use one of the platforms most detailed complement of fire equipment and vehicles to put out fires and perform rescue operations.",
+      image: BombaFeaturePic,
+      type: "Sim",
+      wip: true
     }
   ];
 
