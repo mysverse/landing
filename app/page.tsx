@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import RobloxLogo from "public/img/Roblox_Logo.svg";
 import FeaturePic from "public/img/mysverse_feature.webp";
-import DaerahFeaturePic from "public/img/daerah_1.webp";
+import DaerahFeaturePic from "public/img/daerah_feature_image.webp";
 import RumahFeaturePic from "public/img/rumah_feature_image.webp";
 import Rumah3FeaturePic from "public/img/rumah3.webp";
 import LebuhrayaFeaturePic from "public/img/lebuhraya_feature.webp";
