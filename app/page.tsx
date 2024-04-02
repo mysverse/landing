@@ -223,7 +223,7 @@ function ProjectList() {
       // image: FeaturePic
     },
     {
-      name: "Rumah v2",
+      name: "Ruumah v2",
       launched: "Released 2021",
       tagline: (
         <>
@@ -237,7 +237,7 @@ function ProjectList() {
       type: "MYSverse"
     },
     {
-      name: "Rumah v3",
+      name: "Ruumah v3",
       launched: "Coming April 2024",
       tagline: (
         <>
