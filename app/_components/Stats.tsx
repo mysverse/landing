@@ -18,7 +18,7 @@ const stats = [
     name: "players across Roblox groups",
     value: (
       <CountUp
-        end={346000}
+        end={350000}
         enableScrollSpy={true}
         scrollSpyOnce={true}
         suffix="+"
