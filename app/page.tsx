@@ -6,6 +6,7 @@ import RobloxLogo from "public/img/Roblox_Logo.svg";
 import FeaturePic from "public/img/mysverse_feature.webp";
 import DaerahFeaturePic from "public/img/daerah_1.webp";
 import RumahFeaturePic from "public/img/rumah_feature_image.webp";
+import Rumah3FeaturePic from "public/img/rumah3.webp";
 import LebuhrayaFeaturePic from "public/img/lebuhraya_feature.webp";
 import BandarFeaturePic from "public/img/bandar_feature_image.webp";
 import MafFeaturePic from "public/img/feature_mys_tentera.webp";
@@ -218,7 +219,7 @@ function ProjectList() {
       image: LebuhrayaFeaturePic,
       type: "MYSverse",
       tagline:
-        "The most relaxing game in the MYSverse lineup lets players drive around in a variety of vehicles, and socialise with fellow drivers along a sprawling highway. The map was previously released by its original developer."
+        "The most relaxing game in the MYSverse lineup lets players drive around in a variety of vehicles, and socialise with fellow drivers along a sprawling highway, in addition to police and firefighter roleplays."
       // image: FeaturePic
     },
     {
@@ -236,6 +237,20 @@ function ProjectList() {
       type: "MYSverse"
     },
     {
+      name: "Rumah v3",
+      launched: "Coming April 2024",
+      tagline: (
+        <>
+          Iterating upon our annual tradition of virtual Raya celebrations,
+          experience a festive open house set in an entirely new locale,
+          featuring food, culture and plenty of MYSverse community references!
+        </>
+      ),
+      image: Rumah3FeaturePic,
+      type: "MYSverse",
+      wip: true
+    },
+    {
       name: "Daerah",
       tagline:
         "Taking place in a rural area inspired by the Sabahan district of Beaufort, this never-before-explored experience will be the basis of MYSverse's first significant step in offering gameplay freedom to all players, even those outside the community.",
@@ -249,8 +264,7 @@ function ProjectList() {
       image: BandarFeaturePic,
       type: "Sim",
       tagline:
-        "A faithful, detailed and entertaining rendition of Kuala Lumpur redeveloped, redesigned and expanded in-house as MYSverse's major roleplay hub with city gameplay. The map was previously released by its original developer."
-      // image: FeaturePic
+        "A faithful, detailed and entertaining rendition of Kuala Lumpur redeveloped, redesigned and expanded in-house as MYSverse's major roleplay hub with city gameplay."
     },
     {
       name: "Tentera",
