@@ -223,6 +223,21 @@ function ProjectList() {
       // image: FeaturePic
     },
     {
+      name: "Ruumah v3",
+      launched: "Released April 2024",
+      tagline: (
+        <>
+          Iterating upon our annual tradition of virtual Raya celebrations,
+          experience a festive open house set in an entirely new suburban
+          locale, featuring food, culture and plenty of MYSverse community
+          references!
+        </>
+      ),
+      image: Rumah3FeaturePic,
+      type: "MYSverse",
+      wip: false
+    },
+    {
       name: "Ruumah v2",
       launched: "Released 2021",
       tagline: (
@@ -237,21 +252,8 @@ function ProjectList() {
       type: "MYSverse"
     },
     {
-      name: "Ruumah v3",
-      launched: "Coming April 2024",
-      tagline: (
-        <>
-          Iterating upon our annual tradition of virtual Raya celebrations,
-          experience a festive open house set in an entirely new locale,
-          featuring food, culture and plenty of MYSverse community references!
-        </>
-      ),
-      image: Rumah3FeaturePic,
-      type: "MYSverse",
-      wip: true
-    },
-    {
       name: "Daerah",
+      launched: "Coming 2024",
       tagline:
         "Taking place in a rural area inspired by the Sabahan district of Beaufort, this never-before-explored experience will be the basis of MYSverse's first significant step in offering gameplay freedom to all players, even those outside the community.",
       image: DaerahFeaturePic,
@@ -325,7 +327,7 @@ function ProjectList() {
                     >
                       <circle cx={3} cy={3} r={3} />
                     </svg>
-                    Work in progress
+                    {project.launched}
                   </span>
                 ) : project.launched ? (
                   <span className="inline-flex items-center gap-x-1.5 py-2 my-0.5 rounded-md px-2 text-xs font-medium text-gray-100 ring-1 ring-inset ring-gray-800">
