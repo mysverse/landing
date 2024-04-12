@@ -11,34 +11,34 @@
   },
   "dependencies": {
     "@calcom/embed-react": "^1.3.2",
-    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.3",
     "@tailwindcss/forms": "^0.5.7",
     "@tryghost/content-api": "^1.11.20",
     "autoprefixer": "^10.4.19",
-    "next": "^14.1.4",
+    "next": "^14.2.0",
     "next-plausible": "^3.12.0",
     "react": "^18.2.0",
     "react-countup": "^6.5.3",
     "react-dom": "^18.2.0",
-    "sass": "^1.72.0",
+    "sass": "^1.75.0",
     "sharp": "^0.33.3",
     "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/typography": "^0.5.12",
-    "@types/node": "^20.12.2",
-    "@types/react": "^18.2.73",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.77",
     "@types/tryghost__content-api": "^1.3.16",
-    "@typescript-eslint/eslint-plugin": "^7.5.0",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "^14.1.4",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^14.2.0",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.2.5",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.5"
   },
   "packageManager": "pnpm@8.15.5+sha256.4b4efa12490e5055d59b9b9fc9438b7d581a6b7af3b5675eb5c5f447cee1a589"
 }
