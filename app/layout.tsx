@@ -39,10 +39,10 @@ export const metadata: Metadata = {
   }
 };
 
-import { Quicksand } from "next/font/google";
+import { Public_Sans } from "next/font/google";
 import { PropsWithChildren } from "react";
 
-const quicksand = Quicksand({ subsets: ["latin"] });
+const font = Public_Sans({ subsets: ["latin"] });
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
@@ -53,7 +53,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           customDomain="https://plausible.yan.gg"
         />
       </head>
-      <body className={`${quicksand.className} bg-gray-900 h-full`}>
+      <body className={`${font.className} bg-gray-900 h-full`}>
         <main>{children}</main>
       </body>
     </html>
