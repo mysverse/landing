@@ -24,6 +24,7 @@ import WhatsappButton from "public/ChatOnWhatsAppButton/WhatsAppButtonGreenMediu
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDiscord,
+  faGuilded,
   faInstagram,
   faTiktok,
   faXTwitter,
@@ -52,6 +53,11 @@ const socials = [
     name: "Discord",
     href: "https://discord.com/invite/uPkrYWd",
     icon: <FontAwesomeIcon icon={faDiscord} />
+  },
+  {
+    name: "Guilded",
+    href: "https://guilded.gg/mys",
+    icon: <FontAwesomeIcon icon={faGuilded} />
   },
   {
     name: "X",
