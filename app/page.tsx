@@ -37,11 +37,13 @@ const PlausibleWrapper = dynamic(
   () => import("./_components/PlausibleWrapper")
 );
 
-import Stats from "./_components/Stats";
 import dynamic from "next/dynamic";
 import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
+import { Transition } from "@headlessui/react";
+// import { ReactNode } from "react";
 import Blog from "./_components/Blog";
+import Stats from "./_components/Stats";
 
 const socials = [
   {
@@ -409,79 +411,114 @@ export default function Main() {
         <div className="py-24 sm:py-32 lg:pb-40">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                Enter a mysterious Malaysian metaverse.
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-300">
-                Embark on an extraordinary journey with MYSverse, where fun,
-                education, and Malaysian culture converge in our Roblox and
-                beyond experiences. Dive into our diverse world of virtual
-                adventures today!
-              </p>
-
-              <div className="mt-6 flex flex-row justify-center space-x-5">
-                {socials.map((item) => {
-                  const icon = item.icon;
-                  if (icon) {
-                    return (
-                      <PlausibleWrapper
-                        key={item.name}
-                        eventName="navClicked"
-                        eventProps={{
-                          props: {
-                            name: item.name
-                          }
-                        }}
-                      >
-                        <a
-                          href={item.href}
-                          className="text-xl font-semibold leading-6 text-gray-100 fill-gray-100 opacity-100 hover:opacity-50"
-                        >
-                          {icon}
-                        </a>
-                      </PlausibleWrapper>
-                    );
-                  }
-                })}
-              </div>
-              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
-                <PlausibleWrapper
-                  eventName="ctaClicked"
-                  eventProps={{
-                    props: {
-                      name: "Bandar"
-                    }
-                  }}
-                >
-                  <a
-                    href="https://www.roblox.com/games/481538620/Bandar"
-                    className="group rounded-md bg-gradient-to-r from-[#476075] to-[#27374D] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-                  >
-                    <PlayBandaraya className="fill-white inline-flex h-[3em] px-1 group-hover:fill-[#476075]" />
-                  </a>
-                </PlausibleWrapper>
-                <PlausibleWrapper
-                  eventName="ctaClicked"
-                  eventProps={{
-                    props: {
-                      name: "Lebuhraya"
-                    }
-                  }}
-                >
-                  <a
-                    href="https://www.roblox.com/games/4892731894/Lebuhraya"
-                    className="group rounded-md bg-gradient-to-r from-[#65ad56] to-[#13863f] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-                  >
-                    <PlayLebuhraya className="fill-white inline-flex h-[3em] px-1 group-hover:fill-[#65ad56]" />
-                  </a>
-                </PlausibleWrapper>
-              </div>
-              <p
-                // href="#"
-                className="text-sm italic leading-6 tracking-wide text-white opacity-80 mt-4"
+              <Transition
+                show={true}
+                appear={true}
+                enter="transform transition duration-500"
+                enterFrom="opacity-0 -translate-y-36 scale-80"
+                enterTo="opacity-100 translate-y-0 scale-100"
               >
-                ...and more open experiences for everyone, coming soon!
-              </p>
+                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                  Enter a mysterious Malaysian metaverse.
+                </h1>
+              </Transition>
+
+              <Transition
+                show={true}
+                appear={true}
+                enter="transform transition duration-500 delay-200"
+                enterFrom="opacity-0 -translate-y-36 scale-80"
+                enterTo="opacity-100 translate-y-0 scale-100"
+              >
+                <p className="mt-6 text-lg leading-8 text-gray-300">
+                  Embark on an extraordinary journey with MYSverse, where fun,
+                  education, and Malaysian culture converge in our Roblox and
+                  beyond experiences. Dive into our diverse world of virtual
+                  adventures today!
+                </p>
+              </Transition>
+
+              <Transition
+                show={true}
+                appear={true}
+                enter="transform transition duration-500 delay-300"
+                enterFrom="opacity-0 -translate-y-36 scale-80"
+                enterTo="opacity-100 translate-y-0 scale-100"
+              >
+                <div className="mt-6 flex flex-row justify-center space-x-5">
+                  {socials.map((item) => {
+                    const icon = item.icon;
+                    if (icon) {
+                      return (
+                        <PlausibleWrapper
+                          key={item.name}
+                          eventName="navClicked"
+                          eventProps={{
+                            props: {
+                              name: item.name
+                            }
+                          }}
+                        >
+                          <a
+                            href={item.href}
+                            className="text-xl font-semibold leading-6 text-gray-100 fill-gray-100 opacity-100 hover:opacity-50"
+                          >
+                            {icon}
+                          </a>
+                        </PlausibleWrapper>
+                      );
+                    }
+                  })}
+                </div>
+              </Transition>
+
+              <Transition
+                as="div"
+                show={true}
+                appear={true}
+                enter="transform transition duration-500 delay-500"
+                enterFrom="opacity-0 -translate-y-36 scale-80"
+                enterTo="opacity-100 translate-y-0 scale-100"
+              >
+                <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
+                  <PlausibleWrapper
+                    eventName="ctaClicked"
+                    eventProps={{
+                      props: {
+                        name: "Bandar"
+                      }
+                    }}
+                  >
+                    <a
+                      href="https://www.roblox.com/games/481538620/Bandar"
+                      className="group rounded-md bg-gradient-to-r from-[#476075] to-[#27374D] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                    >
+                      <PlayBandaraya className="fill-white inline-flex h-[3em] px-1 group-hover:fill-[#476075]" />
+                    </a>
+                  </PlausibleWrapper>
+                  <PlausibleWrapper
+                    eventName="ctaClicked"
+                    eventProps={{
+                      props: {
+                        name: "Lebuhraya"
+                      }
+                    }}
+                  >
+                    <a
+                      href="https://www.roblox.com/games/4892731894/Lebuhraya"
+                      className="group rounded-md bg-gradient-to-r from-[#65ad56] to-[#13863f] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                    >
+                      <PlayLebuhraya className="fill-white inline-flex h-[3em] px-1 group-hover:fill-[#65ad56]" />
+                    </a>
+                  </PlausibleWrapper>
+                </div>
+                <p
+                  // href="#"
+                  className="text-sm italic leading-6 tracking-wide text-white opacity-80 mt-4"
+                >
+                  ...and more open experiences for everyone, coming soon!
+                </p>
+              </Transition>
             </div>
 
             {/* <Image
