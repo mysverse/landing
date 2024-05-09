@@ -412,11 +412,11 @@ export default function Main() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <Transition
-                show={true}
-                appear={true}
                 enter="transform transition duration-500"
                 enterFrom="opacity-0 -translate-y-36 scale-80"
                 enterTo="opacity-100 translate-y-0 scale-100"
+                show
+                appear
               >
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                   Enter a mysterious Malaysian metaverse.
@@ -424,11 +424,11 @@ export default function Main() {
               </Transition>
 
               <Transition
-                show={true}
-                appear={true}
                 enter="transform transition duration-500 delay-200"
                 enterFrom="opacity-0 -translate-y-36 scale-80"
                 enterTo="opacity-100 translate-y-0 scale-100"
+                show
+                appear
               >
                 <p className="mt-6 text-lg leading-8 text-gray-300">
                   Embark on an extraordinary journey with MYSverse, where fun,
@@ -439,11 +439,11 @@ export default function Main() {
               </Transition>
 
               <Transition
-                show={true}
-                appear={true}
                 enter="transform transition duration-500 delay-300"
                 enterFrom="opacity-0 -translate-y-36 scale-80"
                 enterTo="opacity-100 translate-y-0 scale-100"
+                show
+                appear
               >
                 <div className="mt-6 flex flex-row justify-center space-x-5">
                   {socials.map((item) => {
@@ -474,11 +474,11 @@ export default function Main() {
 
               <Transition
                 as="div"
-                show={true}
-                appear={true}
                 enter="transform transition duration-500 delay-500"
                 enterFrom="opacity-0 -translate-y-36 scale-80"
                 enterTo="opacity-100 translate-y-0 scale-100"
+                show
+                appear
               >
                 <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
                   <PlausibleWrapper
