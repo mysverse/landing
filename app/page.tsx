@@ -26,6 +26,7 @@ import {
   faDiscord,
   faGuilded,
   faInstagram,
+  faLinkedin,
   faTiktok,
   faXTwitter,
   faYoutube
@@ -80,6 +81,11 @@ const socials = [
     name: "TikTok",
     href: "https://tiktok.com/@mysver.se",
     icon: <FontAwesomeIcon icon={faTiktok} />
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/mysverse/",
+    icon: <FontAwesomeIcon icon={faLinkedin} />
   }
 ];
 
