@@ -535,13 +535,23 @@ export default function Main() {
               className="mt-16 rounded-md bg-white/5 shadow-2xl sm:mt-24"
             /> */}
           </div>
-          <Image
-            src={FeaturePic}
-            alt="Screenshot of MYSverse experiences"
-            width={1024}
-            height={512}
-            className="mt-16 rounded-md bg-white/5 shadow-2xl sm:mt-24 mx-auto mb-12"
-          />
+          <Transition
+            as="div"
+            enter="transform transition duration-1000 delay-300"
+            enterFrom="opacity-0 translate-y-72 scale-80"
+            enterTo="opacity-100 translate-y-0 scale-100"
+            show
+            appear
+          >
+            <Image
+              src={FeaturePic}
+              alt="Screenshot of MYSverse experiences"
+              width={1024}
+              height={512}
+              className="mt-12 rounded-md bg-white/5 shadow-2xl sm:mt-24 mx-auto mb-12"
+            />
+          </Transition>
+
           <Stats />
           <ProjectList />
           <Blog />
