@@ -188,6 +188,9 @@ function Contact() {
                 <h3 className="text-base font-semibold leading-7 text-gray-100">
                   Chat or call, your choice
                 </h3>
+                <h4 className="text-sm font-normal opacity-80 leading-7 text-gray-100">
+                  For businesses and organisations
+                </h4>
                 <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-100">
                   <div className=" flex flex-col gap-y-4">
                     <dt className="sr-only">WhatsApp</dt>
@@ -199,6 +202,37 @@ function Contact() {
                     <dt className="sr-only">Cal.com</dt>
                     <dd>
                       <CalButton />
+                    </dd>
+                  </div>
+                  {/* <div className="mt-1">
+                    <dt className="sr-only">Phone number</dt>
+                    <dd>+1 (555) 905-2345</dd>
+                  </div> */}
+                </dl>
+              </div>
+              <div className="rounded-2xl bg-slate-800 p-10 flex flex-col justify-center place-content-center">
+                <h3 className="text-base font-semibold leading-7 text-gray-100">
+                  Join the community
+                </h3>
+                <h4 className="text-sm font-normal opacity-80 leading-7 text-gray-100">
+                  For game-related matters
+                </h4>
+                <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-100">
+                  <div className="flex flex-row gap-x-4">
+                    <dt className="sr-only">Discord</dt>
+                    <dd>
+                      <Link
+                        href="https://discord.com/invite/uPkrYWd"
+                        target="_blank"
+                      >
+                        <FontAwesomeIcon icon={faDiscord} size="xl" />
+                      </Link>
+                    </dd>
+                    <dt className="sr-only">Guilded</dt>
+                    <dd>
+                      <Link href="https://guilded.gg/mys" target="_blank">
+                        <FontAwesomeIcon icon={faGuilded} size="xl" />
+                      </Link>
                     </dd>
                   </div>
                   {/* <div className="mt-1">
