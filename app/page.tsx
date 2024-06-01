@@ -41,7 +41,7 @@ const PlausibleWrapper = dynamic(
 import dynamic from "next/dynamic";
 import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
-import { Transition } from "@headlessui/react";
+import { Transition, TransitionChild } from "@headlessui/react";
 // import { ReactNode } from "react";
 import Blog from "./_components/Blog";
 import Stats from "./_components/Stats";
@@ -521,36 +521,50 @@ export default function Main() {
                 appear
               >
                 <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
-                  <PlausibleWrapper
-                    eventName="ctaClicked"
-                    eventProps={{
-                      props: {
-                        name: "Bandar"
-                      }
-                    }}
+                  <TransitionChild
+                    as="div"
+                    enter="transform transition duration-700 delay-700"
+                    enterFrom="opacity-0 -translate-x-48"
+                    enterTo="opacity-100 translate-x-0"
                   >
-                    <a
-                      href="https://www.roblox.com/games/481538620/Bandar"
-                      className="group rounded-md bg-gradient-to-r from-[#476075] to-[#27374D] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                    <PlausibleWrapper
+                      eventName="ctaClicked"
+                      eventProps={{
+                        props: {
+                          name: "Bandar"
+                        }
+                      }}
                     >
-                      <PlayBandaraya className="fill-white inline-flex h-[3em] px-1 group-hover:fill-[#476075]" />
-                    </a>
-                  </PlausibleWrapper>
-                  <PlausibleWrapper
-                    eventName="ctaClicked"
-                    eventProps={{
-                      props: {
-                        name: "Lebuhraya"
-                      }
-                    }}
+                      <a
+                        href="https://www.roblox.com/games/481538620/Bandar"
+                        className="group rounded-md bg-gradient-to-r from-[#476075] to-[#27374D] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                      >
+                        <PlayBandaraya className="fill-white inline-flex h-[3em] px-1 group-hover:fill-[#476075]" />
+                      </a>
+                    </PlausibleWrapper>
+                  </TransitionChild>
+                  <TransitionChild
+                    as="div"
+                    enter="transform transition duration-700 delay-1000"
+                    enterFrom="opacity-0 translate-x-48"
+                    enterTo="opacity-100 translate-x-0"
                   >
-                    <a
-                      href="https://www.roblox.com/games/4892731894/Lebuhraya"
-                      className="group rounded-md bg-gradient-to-r from-[#65ad56] to-[#13863f] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                    <PlausibleWrapper
+                      eventName="ctaClicked"
+                      eventProps={{
+                        props: {
+                          name: "Lebuhraya"
+                        }
+                      }}
                     >
-                      <PlayLebuhraya className="fill-white inline-flex h-[3em] px-1 group-hover:fill-[#65ad56]" />
-                    </a>
-                  </PlausibleWrapper>
+                      <a
+                        href="https://www.roblox.com/games/4892731894/Lebuhraya"
+                        className="group rounded-md bg-gradient-to-r from-[#65ad56] to-[#13863f] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                      >
+                        <PlayLebuhraya className="fill-white inline-flex h-[3em] px-1 group-hover:fill-[#65ad56]" />
+                      </a>
+                    </PlausibleWrapper>
+                  </TransitionChild>
                 </div>
                 <p
                   // href="#"
