@@ -16,6 +16,10 @@ const navigation = [
   {
     name: "Sentral",
     href: "https://sentral.mysver.se"
+  },
+  {
+    name: "Brand Kit",
+    href: "https://blog.mysver.se/brand-kit/"
   }
 ];
 
