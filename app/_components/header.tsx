@@ -6,7 +6,7 @@ import MysverseLogo from "public/img/ComboLogoW.svg";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-// import Banner from "components/banner";
+import Banner from "components/banner";
 
 const navigation = [
   {
@@ -39,9 +39,9 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <header className="absolute inset-x-0 top-0 z-50">
-      {/* <Banner /> */}
+      <Banner />
       <nav
-        className="flex items-center justify-between p-6 xl:px-8"
+        className="relative flex items-center justify-between p-6 xl:px-8"
         aria-label="Global"
       >
         <div className="flex xl:flex-1">
