@@ -9,14 +9,15 @@ export default function Banner() {
   const { isVisible, isLoading, dismissBanner } =
     useDismissableBanner("Merdeka24");
 
-  if (!isVisible || isLoading) return null;
-
   return (
     <Transition
       enter="transform transition duration-1000 delay-1000"
       enterFrom="opacity-0 translate-y-36 scale-80"
       enterTo="opacity-100 translate-y-0 scale-100"
-      show
+      leave="transform transition duration-500"
+      leaveFrom="opacity-100 translate-y-0 scale-100"
+      leaveTo="opacity-0 translate-y-36 scale-80"
+      show={isVisible && !isLoading}
       appear
     >
       <div className="pointer-events-none fixed inset-x-0 bottom-0 sm:flex sm:justify-center sm:px-6 sm:pb-5 lg:px-8">
