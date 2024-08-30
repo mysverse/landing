@@ -10,17 +10,8 @@ export default function Banner() {
     useDismissableBanner("Merdeka24");
 
   return (
-    <Transition
-      enter="transform transition duration-1000 delay-1000"
-      enterFrom="opacity-0 translate-y-36 scale-80"
-      enterTo="opacity-100 translate-y-0 scale-100"
-      leave="transform transition duration-500"
-      leaveFrom="opacity-100 translate-y-0 scale-100"
-      leaveTo="opacity-0 translate-y-36 scale-80"
-      show={isVisible && !isLoading}
-      appear
-    >
-      <div className="pointer-events-none fixed inset-x-0 bottom-0 sm:flex sm:justify-center sm:px-6 sm:pb-5 lg:px-8">
+    <Transition show={isVisible && !isLoading}>
+      <div className="transition data-[enter]:duration-700 data-[enter]:delay-1000 data-[leave]:duration-700 data-[closed]:opacity-0 data-[closed]:translate-y-36 data-[closed]:scale-80 pointer-events-none fixed inset-x-0 bottom-0 sm:flex sm:justify-center sm:px-6 sm:pb-5 lg:px-8">
         <div className="pointer-events-auto flex items-center justify-between gap-x-6 bg-gradient-to-r from-blue-800  to-yellow-600 px-6 py-2.5 sm:rounded-xl sm:py-3 sm:pl-4 sm:pr-3.5">
           <p className="text-sm leading-6 text-white">
             <Link href="https://www.roblox.com/games/977876625" target="_blank">
