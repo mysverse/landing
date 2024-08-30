@@ -4,6 +4,7 @@ import { XMarkIcon } from "@heroicons/react/20/solid";
 import useDismissableBanner from "./useDismissableBanner";
 import Link from "next/link";
 import { Transition } from "@headlessui/react";
+import clsx from "clsx";
 
 export default function Banner() {
   const { isVisible, isLoading, dismissBanner } =
@@ -11,7 +12,14 @@ export default function Banner() {
 
   return (
     <Transition show={isVisible && !isLoading}>
-      <div className="transition data-[enter]:duration-700 data-[enter]:delay-1000 data-[leave]:duration-700 data-[closed]:opacity-0 data-[closed]:translate-y-36 data-[closed]:scale-80 pointer-events-none fixed inset-x-0 bottom-0 sm:flex sm:justify-center sm:px-6 sm:pb-5 lg:px-8">
+      <div
+        className={clsx(
+          "transition data-[transition]:duration-700",
+          "data-[enter]:duration-700 data-[enter]:delay-1000",
+          "data-[closed]:opacity-0 data-[closed]:translate-y-36 data-[closed]:scale-80",
+          " pointer-events-none fixed inset-x-0 bottom-0 sm:flex sm:justify-center sm:px-6 sm:pb-5 lg:px-8"
+        )}
+      >
         <div className="pointer-events-auto flex items-center justify-between gap-x-6 bg-gradient-to-r from-blue-800  to-yellow-600 px-6 py-2.5 sm:rounded-xl sm:py-3 sm:pl-4 sm:pr-3.5">
           <p className="text-sm leading-6 text-white">
             <Link href="https://www.roblox.com/games/977876625" target="_blank">
