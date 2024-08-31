@@ -8,7 +8,7 @@ import clsx from "clsx";
 
 export default function Banner() {
   const { isVisible, isLoading, dismissBanner } =
-    useDismissableBanner("Merdeka24");
+    useDismissableBanner("merdeka-24");
 
   return (
     <Transition show={isVisible && !isLoading}>
@@ -22,7 +22,10 @@ export default function Banner() {
       >
         <div className="pointer-events-auto flex items-center justify-between gap-x-6 bg-gradient-to-r from-blue-800  to-yellow-600 px-6 py-2.5 sm:rounded-xl sm:py-3 sm:pl-4 sm:pr-3.5">
           <p className="text-sm leading-6 text-white">
-            <Link href="https://www.roblox.com/games/977876625" target="_blank">
+            <Link
+              href="https://www.roblox.com/events/50786779760689290"
+              target="_blank"
+            >
               <strong className="font-semibold">Merdeka &apos;24</strong>
               <svg
                 viewBox="0 0 2 2"
@@ -31,8 +34,8 @@ export default function Banner() {
               >
                 <circle r={1} cx={1} cy={1} />
               </svg>
-              Join us virtually on Roblox to celebrate 67 years of Malaysian
-              independence, starting 12pm MYT!&nbsp;
+              Join our virtual event on Roblox to celebrate 67 years of
+              Malaysian independence!&nbsp;
               <span aria-hidden="true">&rarr;</span>
             </Link>
           </p>
