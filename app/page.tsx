@@ -91,7 +91,7 @@ const socials = [
 
 function Contact() {
   return (
-    <div className="py-24 sm:py-32">
+    <div className="py-12 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
           <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
@@ -401,7 +401,7 @@ function ProjectList() {
     );
   }
   return (
-    <div className="py-24 sm:py-32 text-gray-300" id="projects">
+    <div className="py-12 sm:py-32 text-gray-300" id="projects">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
@@ -449,7 +449,7 @@ export default function Main() {
             }}
           />
         </div>
-        <div className="py-24 sm:py-32 lg:pb-40">
+        <div className="py-12 sm:py-32 lg:pb-40">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <Transition
@@ -605,7 +605,7 @@ export default function Main() {
           <ProjectList />
           <Blog />
           <Contact />
-          <div className="mt-6 flex flex-row justify-center space-x-8 lg:space-x-16">
+          <div className="mt-6 flex flex-row justify-center space-x-6 sm:space-x-12 md:space-x-16">
             {socials.map((item) => {
               const icon = item.icon;
               if (icon) {
@@ -621,10 +621,10 @@ export default function Main() {
                   >
                     <a
                       href={item.href}
-                      className="font-semibold text-lg leading-6 text-gray-300 fill-gray-300   opacity-100 hover:opacity-50"
+                      className="font-semibold text-xl leading-6 text-gray-300 fill-gray-300 opacity-100 hover:opacity-50"
                     >
                       {icon}
-                      <span className="hidden ml-2 text-base sm:inline-block">
+                      <span className="hidden ml-2 text-base xl:inline-block">
                         {item.name}
                       </span>
                     </a>
@@ -647,7 +647,7 @@ export default function Main() {
           />
         </div>
       </div>
-      <footer className="text-center tracking-widest text-sm text-white pb-20 opacity-50 uppercase">
+      <footer className="text-center tracking-widest text-sm text-white pb-20 opacity-50 uppercase mx-4">
         <span className="block mb-1">
           Owned and operated by MYSverse Digital Ventures (AS0469188-M).
         </span>
