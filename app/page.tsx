@@ -28,6 +28,7 @@ import {
   faInstagram,
   faLinkedin,
   faTiktok,
+  faWhatsapp,
   faXTwitter,
   faYoutube
 } from "@fortawesome/free-brands-svg-icons";
@@ -66,6 +67,11 @@ const socials = [
     name: "X",
     href: "https://x.com/mys_verse",
     icon: <FontAwesomeIcon icon={faXTwitter} />
+  },
+  {
+    name: "WhatsApp",
+    href: "https://whatsapp.com/channel/0029VaqTaIj59PwIN60Zxf1J",
+    icon: <FontAwesomeIcon icon={faWhatsapp} />
   },
   {
     name: "Instagram",
@@ -605,7 +611,7 @@ export default function Main() {
           <ProjectList />
           <Blog />
           <Contact />
-          <div className="mt-6 flex flex-row justify-center space-x-6 sm:space-x-12 md:space-x-16">
+          <div className="mt-6 flex flex-row justify-center space-x-6 md:space-x-12">
             {socials.map((item) => {
               const icon = item.icon;
               if (icon) {
