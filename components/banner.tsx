@@ -6,11 +6,12 @@ import Link from "next/link";
 import { Transition } from "@headlessui/react";
 import clsx from "clsx";
 
-const enabled = false;
+const enabled = true;
 
 export default function Banner() {
-  const { isVisible, isLoading, dismissBanner } =
-    useDismissableBanner("merdeka-24");
+  const { isVisible, isLoading, dismissBanner } = useDismissableBanner(
+    "whatsapp-channel-promo"
+  );
 
   if (!enabled) {
     return null;
@@ -26,13 +27,15 @@ export default function Banner() {
           " pointer-events-none fixed inset-x-0 bottom-0 sm:flex sm:justify-center sm:px-6 sm:pb-5 lg:px-8"
         )}
       >
-        <div className="pointer-events-auto flex items-center justify-between gap-x-6 bg-gradient-to-r from-blue-800  to-yellow-600 px-6 py-2.5 sm:rounded-xl sm:py-3 sm:pl-4 sm:pr-3.5">
+        <div className="pointer-events-auto flex items-center justify-between gap-x-6 bg-gradient-to-r from-green-600  to-green-700 px-6 py-2.5 sm:rounded-xl sm:py-3 sm:pl-4 sm:pr-3.5">
           <p className="text-sm leading-6 text-white">
             <Link
-              href="https://www.roblox.com/events/50786779760689290"
+              href="https://whatsapp.com/channel/0029VaqTaIj59PwIN60Zxf1J"
               target="_blank"
             >
-              <strong className="font-semibold">Merdeka &apos;24</strong>
+              <strong className="font-semibold">
+                We&apos;re now on WhatsApp!
+              </strong>
               <svg
                 viewBox="0 0 2 2"
                 aria-hidden="true"
@@ -40,8 +43,7 @@ export default function Banner() {
               >
                 <circle r={1} cx={1} cy={1} />
               </svg>
-              Join our virtual event on Roblox to celebrate 67 years of
-              Malaysian independence!&nbsp;
+              Get exclusive news and updates via our new WhatsApp channel!&nbsp;
               <span aria-hidden="true">&rarr;</span>
             </Link>
           </p>
