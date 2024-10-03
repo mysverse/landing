@@ -19,7 +19,7 @@ import PlayBandaraya from "public/img/play_bandaraya.svg";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 import MYSverseSimLogo from "public/img/mysverse_sim_new.svg";
-// import WhatsappButton from "public/ChatOnWhatsAppButton/WhatsAppButtonGreenMedium.svg";
+import WhatsappButton from "public/ChatOnWhatsAppButton/WhatsAppButtonGreenMedium.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -200,12 +200,12 @@ function Contact() {
                 <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-100">
                   <div className=" flex flex-col gap-y-4">
                     {/* Hidden due to too much misuse of the WhatsApp Business channel */}
-                    {/* <dt className="sr-only">WhatsApp</dt>
+                    <dt className="sr-only">WhatsApp</dt>
                     <dd>
                       <Link href="https://wa.me/+601154156978" target="_blank">
                         <WhatsappButton />
                       </Link>
-                    </dd> */}
+                    </dd>
                     <dt className="sr-only">Cal.com</dt>
                     <dd>
                       <CalButton />
