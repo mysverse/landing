@@ -202,7 +202,7 @@ function Contact() {
                     {/* Hidden due to too much misuse of the WhatsApp Business channel */}
                     <dt className="sr-only">WhatsApp</dt>
                     <dd>
-                      <Link href="https://wa.me/+601154156978" target="_blank">
+                      <Link href="https://wa.me/601154156978" target="_blank">
                         <WhatsappButton />
                       </Link>
                     </dd>
