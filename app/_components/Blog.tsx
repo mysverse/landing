@@ -17,7 +17,7 @@ const Blog = () => {
 
   useEffect(() => {
     api.posts
-      .browse({ limit: 3, include: ["tags", "authors"] })
+      .browse({ limit: 4, include: ["tags", "authors"] })
       .then((posts) => {
         setPosts(posts);
       })
