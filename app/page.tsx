@@ -18,7 +18,7 @@ import PlayBandaraya from "public/img/play_bandaraya.svg";
 
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-import MYSverseSimLogo from "public/img/mysverse_sim_new.svg";
+import MYSverseSimLogo from "public/img/MYSverse_Sim_Colour.svg";
 import WhatsappButton from "public/ChatOnWhatsAppButton/WhatsAppButtonGreenMedium.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
