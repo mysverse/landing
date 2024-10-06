@@ -613,7 +613,7 @@ export default function Main() {
           <Blog />
           {/* <Bento /> */}
           <Contact />
-          <div className="mt-6 flex flex-row justify-center space-x-5 md:space-x-12">
+          <div className="mt-6 flex flex-row justify-center space-x-4 sm:space-x-8 md:space-x-12">
             {socials.map((item) => {
               const icon = item.icon;
               if (icon) {
