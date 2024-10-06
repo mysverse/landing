@@ -49,8 +49,8 @@ export default function Stats() {
               key={stat.id}
               className="mx-auto flex max-w-xs flex-col gap-y-4"
             >
-              <dt className="leading-7 text-gray-400 text-lg">{stat.name}</dt>
-              <dd className="order-first text-5xl font-semibold tracking-tight text-white">
+              <dt className="leading-7 text-gray-600 text-lg">{stat.name}</dt>
+              <dd className="order-first text-5xl font-semibold tracking-tight text-gray-800">
                 {stat.value}
               </dd>
             </div>

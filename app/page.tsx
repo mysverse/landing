@@ -18,7 +18,7 @@ import PlayBandaraya from "public/img/play_bandaraya.svg";
 
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-import MYSverseSimLogo from "public/img/mysverse_sim_new.svg";
+import MYSverseSimLogo from "public/img/MYSverse_Sim_Colour.svg";
 import WhatsappButton from "public/ChatOnWhatsAppButton/WhatsAppButtonGreenMedium.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -46,12 +46,13 @@ import { Transition, TransitionChild } from "@headlessui/react";
 // import { ReactNode } from "react";
 import Blog from "./_components/Blog";
 import Stats from "./_components/Stats";
+// import Bento from "./_components/Bento";
 
 const socials = [
   {
     name: "Roblox",
     href: "https://roblox.com/groups/1143446",
-    icon: <RobloxLogo className="inline-flex h-[1em] mb-1" />
+    icon: <RobloxLogo className="inline-flex h-[1em] mb-1 fill-black" />
   },
   {
     name: "Discord",
@@ -103,12 +104,12 @@ function Contact() {
           <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
             <div>
               <h2
-                className="text-3xl font-bold tracking-tight text-gray-100"
+                className="text-3xl font-bold tracking-tight text-black"
                 id="contact"
               >
                 Get in touch
               </h2>
-              <p className="mt-4 leading-7 text-gray-300">
+              <p className="mt-4 leading-7 text-gray-800">
                 For legal, commercial, collaborations, and other general
                 enquiries. Our in-house development studio Hornbill Interactive
                 is also open to any other metaverse-style projects on Roblox,
@@ -116,16 +117,16 @@ function Contact() {
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:col-span-2 lg:gap-8">
-              <div className="rounded-2xl bg-slate-800 p-10 flex flex-col justify-center place-content-center">
-                <h3 className="text-base font-semibold leading-7 text-gray-100">
+              <div className="rounded-2xl bg-white p-10 flex flex-col justify-center place-content-center">
+                <h3 className="text-base font-semibold leading-7 text-black-100">
                   MYSverse Digital Ventures
                 </h3>
-                <h4 className="text-sm font-medium leading-5 text-cyan-500">
+                <h4 className="text-sm font-medium leading-5 text-red-600">
                   <Link href="/ssm_cert.pdf" target="_blank">
                     202303234965 (AS0469188-M)
                   </Link>
                 </h4>
-                <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-100">
+                <dl className="mt-3 space-y-1 text-sm leading-6 text-black-100">
                   {/* <div>
                     <dt className="sr-only">Registration</dt>
                     <dd>202303234965 (AS0469188-M)</dd>
@@ -151,7 +152,7 @@ function Contact() {
                           }
                         }}
                       >
-                        <div className="font-semibold text-cyan-500">
+                        <div className="font-semibold text-red-600">
                           <a
                             className="flex items-center gap-x-2"
                             href="mailto:yan@mysver.se"
@@ -172,7 +173,7 @@ function Contact() {
                           }
                         }}
                       >
-                        <div className="font-semibold text-cyan-500">
+                        <div className="font-semibold text-red-600">
                           <a
                             className="flex items-center gap-x-2"
                             href="tel:0350219170"
@@ -190,14 +191,14 @@ function Contact() {
                   </div> */}
                 </dl>
               </div>
-              <div className="rounded-2xl bg-slate-800 p-10 flex flex-col justify-center place-content-center">
-                <h3 className="text-base font-semibold leading-7 text-gray-100">
+              <div className="rounded-2xl bg-white p-10 flex flex-col justify-center place-content-center">
+                <h3 className="text-base font-semibold leading-7 text-black-100">
                   Chat or call, your choice
                 </h3>
-                <h4 className="text-sm font-normal opacity-80 leading-7 text-gray-100">
+                <h4 className="text-sm font-normal opacity-80 leading-7 text-black-100">
                   For businesses and organisations
                 </h4>
-                <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-100">
+                <dl className="mt-3 space-y-1 text-sm leading-6 text-black-100">
                   <div className=" flex flex-col gap-y-4">
                     {/* Hidden due to too much misuse of the WhatsApp Business channel */}
                     <dt className="sr-only">WhatsApp</dt>
@@ -217,14 +218,14 @@ function Contact() {
                   </div> */}
                 </dl>
               </div>
-              <div className="rounded-2xl bg-slate-800 p-10 flex flex-col justify-center place-content-center">
-                <h3 className="text-base font-semibold leading-7 text-gray-100">
+              <div className="rounded-2xl bg-white p-10 flex flex-col justify-center place-content-center">
+                <h3 className="text-base font-semibold leading-7 text-black-100">
                   Join the community
                 </h3>
-                <h4 className="text-sm font-normal opacity-80 leading-7 text-gray-100">
+                <h4 className="text-sm font-normal opacity-80 leading-7 text-black-100">
                   For game-related matters
                 </h4>
-                <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-100">
+                <dl className="mt-3 space-y-1 text-sm leading-6 text-black-100">
                   <div className="flex flex-row gap-x-4">
                     <dt className="sr-only">Discord</dt>
                     <dd>
@@ -370,11 +371,11 @@ function ProjectList() {
                 />
               ) : null}
               <div className="sm:flex-row sm:flex gap-x-4">
-                <h3 className="text-xl font-semibold leading-8 tracking-tight text-gray-100">
+                <h3 className="text-xl font-semibold leading-8 tracking-tight text-black-100">
                   {project.name}
                 </h3>
                 {project.wip ? (
-                  <span className="inline-flex items-center gap-x-1.5 my-0.5 py-2 rounded-md px-2 text-xs font-medium text-gray-100 ring-1 ring-inset ring-gray-800">
+                  <span className="inline-flex items-center gap-x-1.5 my-0.5 py-2 rounded-md px-2 text-xs font-medium text-black-100 ring-1 ring-inset ring-gray-300">
                     <svg
                       className="h-1.5 w-1.5 fill-red-400"
                       viewBox="0 0 6 6"
@@ -385,7 +386,7 @@ function ProjectList() {
                     {project.launched}
                   </span>
                 ) : project.launched ? (
-                  <span className="inline-flex items-center gap-x-1.5 py-2 my-0.5 rounded-md px-2 text-xs font-medium text-gray-100 ring-1 ring-inset ring-gray-800">
+                  <span className="inline-flex items-center gap-x-1.5 py-2 my-0.5 rounded-md px-2 text-xs font-medium text-black-100 ring-1 ring-inset ring-gray-300">
                     <svg
                       className="h-1.5 w-1.5 fill-green-400"
                       viewBox="0 0 6 6"
@@ -398,7 +399,7 @@ function ProjectList() {
                 ) : null}
               </div>
 
-              <p className="text-base leading-7 text-white opacity-70">
+              <p className="text-base leading-7 text-black opacity-70">
                 {project.tagline}
               </p>
             </li>
@@ -407,25 +408,25 @@ function ProjectList() {
     );
   }
   return (
-    <div className="py-12 sm:py-32 text-gray-300" id="projects">
+    <div className="py-12 sm:py-32 text-gray-800" id="projects">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-black-100 sm:text-4xl">
             Our projects
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
+          <p className="mt-6 text-lg leading-8 text-gray-800">
             {`MYSverse developers started off as volunteers passionate about delivering authentic roleplay experiences to the equally dedicated sets of the community. We aim to preserve that same concept moving forward, with the added focus on making those top tier efforts available to all players.`}
           </p>
         </div>
         <div className="mt-16">
-          <h3 className="text-2xl font-bold tracking-tight text-gray-100 sm:text-3xl">
+          <h3 className="text-2xl font-bold tracking-tight text-black-100 sm:text-3xl">
             MYSverse
           </h3>
           <ItemList type="MYSverse" />
         </div>
         <div className="mt-16">
-          <h3 className="text-2xl font-bold tracking-tight text-gray-100 sm:text-3xl">
-            <MYSverseSimLogo className="inline-block h-12 w-auto fill-white" />
+          <h3 className="text-2xl font-bold tracking-tight text-black-100 sm:text-3xl">
+            <MYSverseSimLogo className="inline-block h-12 w-auto fill-black" />
             <span className="sr-only">MYSverse Sim</span>
           </h3>
           <p className="mt-6 text-lg leading-8">
@@ -448,7 +449,7 @@ export default function Main() {
           aria-hidden="true"
         >
           <div
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#020024] to-[#00d4ff] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#6459ff69] to-[#ff0000] opacity-10 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
             style={{
               clipPath:
                 "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
@@ -465,8 +466,8 @@ export default function Main() {
                 show
                 appear
               >
-                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                  Enter a mysterious Malaysian metaverse.
+                <h1 className="text-4xl font-bold tracking-tight text-black sm:text-6xl">
+                  Step into our faithfully Malaysian metaverse.
                 </h1>
               </Transition>
 
@@ -477,11 +478,11 @@ export default function Main() {
                 show
                 appear
               >
-                <p className="mt-6 text-lg leading-8 text-gray-300">
-                  Embark on an extraordinary journey with MYSverse, where fun,
-                  education, and Malaysian culture converge in our Roblox and
-                  beyond experiences. Dive into our diverse world of virtual
-                  adventures today!
+                <p className="mt-6 text-lg leading-8 text-gray-800">
+                  Embark on an extraordinary journey with MYSverse, where{" "}
+                  <b>fun</b>, <b>education</b>, and Malaysian <b>culture</b>{" "}
+                  converge in our Roblox and beyond experiences. <br />
+                  Dive into our diverse world of virtual adventures today!
                 </p>
               </Transition>
 
@@ -492,7 +493,7 @@ export default function Main() {
                 show
                 appear
               >
-                <div className="mt-6 flex flex-row justify-center space-x-5">
+                <div className="mt-6 flex flex-row justify-center space-x-4 sm:space-x-5 md:space-x-6">
                   {socials.map((item) => {
                     const icon = item.icon;
                     if (icon) {
@@ -508,7 +509,7 @@ export default function Main() {
                         >
                           <a
                             href={item.href}
-                            className="text-xl font-semibold leading-6 text-gray-100 fill-gray-100 opacity-100 hover:opacity-50"
+                            className="text-xl font-semibold leading-6 text-black-100 fill-gray-100 opacity-100 hover:opacity-50"
                           >
                             {icon}
                           </a>
@@ -544,7 +545,7 @@ export default function Main() {
                     >
                       <a
                         href="https://www.roblox.com/games/481538620/Bandar"
-                        className="group rounded-md bg-gradient-to-r from-[#476075] to-[#27374D] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                        className="group rounded-md bg-gradient-to-r from-[#476075] to-[#27374D] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                       >
                         <PlayBandaraya className="fill-white inline-flex h-[3em] px-1 group-hover:fill-[#476075]" />
                       </a>
@@ -566,7 +567,7 @@ export default function Main() {
                     >
                       <a
                         href="https://www.roblox.com/games/4892731894/Lebuhraya"
-                        className="group rounded-md bg-gradient-to-r from-[#65ad56] to-[#13863f] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                        className="group rounded-md bg-gradient-to-r from-[#65ad56] to-[#13863f] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                       >
                         <PlayLebuhraya className="fill-white inline-flex h-[3em] px-1 group-hover:fill-[#65ad56]" />
                       </a>
@@ -575,7 +576,7 @@ export default function Main() {
                 </div>
                 <p
                   // href="#"
-                  className="text-sm italic leading-6 tracking-wide text-white opacity-80 mt-4"
+                  className="text-sm italic leading-6 tracking-wide text-black opacity-80 mt-4"
                 >
                   ...and more open experiences for everyone, coming soon!
                 </p>
@@ -587,7 +588,7 @@ export default function Main() {
               alt="Screenshot of a rural area in Beaufort"
               width={4224}
               height={2376}
-              className="mt-16 rounded-md bg-white/5 shadow-2xl sm:mt-24"
+              className="mt-16 rounded-md bg-black/5 shadow-2xl sm:mt-24"
             /> */}
           </div>
           <Transition
@@ -603,15 +604,16 @@ export default function Main() {
               alt="Screenshot of MYSverse experiences"
               width={1024}
               height={512}
-              className="mt-12 rounded-md bg-white/5 shadow-2xl sm:mt-24 mx-auto mb-12"
+              className="mt-12 rounded-md bg-black/5 shadow-2xl sm:mt-24 mx-auto mb-12"
             />
           </Transition>
 
           <Stats />
           <ProjectList />
           <Blog />
+          {/* <Bento /> */}
           <Contact />
-          <div className="mt-6 flex flex-row justify-center space-x-6 md:space-x-12">
+          <div className="mt-6 flex flex-row justify-center space-x-5 md:space-x-12">
             {socials.map((item) => {
               const icon = item.icon;
               if (icon) {
@@ -627,7 +629,7 @@ export default function Main() {
                   >
                     <a
                       href={item.href}
-                      className="font-semibold text-xl leading-6 text-gray-300 fill-gray-300 opacity-100 hover:opacity-50"
+                      className="font-semibold text-xl leading-6 text-gray-800 fill-gray-300 opacity-100 hover:opacity-50"
                     >
                       {icon}
                       <span className="hidden ml-2 text-base xl:inline-block">
@@ -653,7 +655,7 @@ export default function Main() {
           />
         </div>
       </div>
-      <footer className="text-center tracking-widest text-sm text-white pb-20 opacity-50 uppercase mx-4">
+      <footer className="text-center tracking-widest text-sm text-black pb-20 opacity-50 uppercase mx-4">
         <span className="block mb-1">
           Owned and operated by MYSverse Digital Ventures (AS0469188-M).
         </span>

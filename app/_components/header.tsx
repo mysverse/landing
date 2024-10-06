@@ -2,7 +2,7 @@
 import { usePlausible } from "next-plausible";
 
 import { useState } from "react";
-import MysverseLogo from "public/img/ComboLogoW.svg";
+import MysverseLogo from "public/img/mysverse_logo_colour.svg";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
@@ -49,7 +49,7 @@ export default function Header() {
             <span className="sr-only">MYSverse</span>
             <MysverseLogo
               alt="MYSverse logo"
-              className="mx-auto h-10 w-auto fill-white sm:h-11"
+              className="mx-auto h-12 w-auto fill-black sm:h-14"
             />
           </a>
         </div>
@@ -68,7 +68,7 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-white opacity-100 hover:opacity-50"
+              className="text-sm font-semibold leading-6 text-gray-800 opacity-100 hover:opacity-50"
               onClick={() =>
                 plausible("navClicked", {
                   props: {
@@ -84,14 +84,14 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-white opacity-100 hover:opacity-50"
+              className="text-sm font-semibold leading-6 text-gray-800 opacity-100 hover:opacity-50"
             >
               {item.name}
             </Link>
           ))}
         </div>
         <div className="hidden xl:flex xl:flex-1 xl:justify-end">
-          {/* <a href="#" className="text-sm font-semibold leading-6 text-white">
+          {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-800">
           Log in <span aria-hidden="true">&rarr;</span>
         </a> */}
         </div>
@@ -103,7 +103,7 @@ export default function Header() {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">MYSverse</span>
@@ -128,7 +128,7 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-800"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-800 hover:bg-gray-100"
                     onClick={() => {
                       plausible("navClicked", {
                         props: {
@@ -144,7 +144,7 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-800"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-800 hover:bg-gray-100"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -154,7 +154,7 @@ export default function Header() {
               {/* <div className="py-6">
               <a
                 href="#"
-                className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-800"
+                className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-800 hover:bg-gray-800"
               >
                 Log in
               </a>
