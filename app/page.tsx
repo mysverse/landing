@@ -467,7 +467,7 @@ export default function Main() {
                 appear
               >
                 <h1 className="text-4xl font-bold tracking-tight text-black sm:text-6xl">
-                  Enter a mysterious Malaysian metaverse.
+                  Step into our faithfully Malaysian metaverse.
                 </h1>
               </Transition>
 
@@ -479,10 +479,10 @@ export default function Main() {
                 appear
               >
                 <p className="mt-6 text-lg leading-8 text-gray-800">
-                  Embark on an extraordinary journey with MYSverse, where fun,
-                  education, and Malaysian culture converge in our Roblox and
-                  beyond experiences. Dive into our diverse world of virtual
-                  adventures today!
+                  Embark on an extraordinary journey with MYSverse, where{" "}
+                  <b>fun</b>, <b>education</b>, and Malaysian <b>culture</b>{" "}
+                  converge in our Roblox and beyond experiences. <br />
+                  Dive into our diverse world of virtual adventures today!
                 </p>
               </Transition>
 
@@ -493,7 +493,7 @@ export default function Main() {
                 show
                 appear
               >
-                <div className="mt-6 flex flex-row justify-center space-x-3 sm:space-x-5">
+                <div className="mt-6 flex flex-row justify-center space-x-4 sm:space-x-5 md:space-x-6">
                   {socials.map((item) => {
                     const icon = item.icon;
                     if (icon) {
@@ -613,7 +613,7 @@ export default function Main() {
           <Blog />
           {/* <Bento /> */}
           <Contact />
-          <div className="mt-6 flex flex-row justify-center space-x-6 md:space-x-12">
+          <div className="mt-6 flex flex-row justify-center space-x-5 md:space-x-12">
             {socials.map((item) => {
               const icon = item.icon;
               if (icon) {
