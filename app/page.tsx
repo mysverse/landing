@@ -46,6 +46,7 @@ import { Transition, TransitionChild } from "@headlessui/react";
 // import { ReactNode } from "react";
 import Blog from "./_components/Blog";
 import Stats from "./_components/Stats";
+import IntersectionTransition from "./_components/IntersectionTransition";
 // import Bento from "./_components/Bento";
 
 const socials = [
@@ -608,39 +609,50 @@ export default function Main() {
             />
           </Transition>
 
-          <Stats />
-          <ProjectList />
-          <Blog />
+          <IntersectionTransition>
+            <Stats />
+          </IntersectionTransition>
+          <IntersectionTransition>
+            <ProjectList />
+          </IntersectionTransition>
+          <IntersectionTransition>
+            <Blog />
+          </IntersectionTransition>
+
           {/* <Bento /> */}
-          <Contact />
-          <div className="mt-6 flex flex-row justify-center space-x-5 md:space-x-12">
-            {socials.map((item) => {
-              const icon = item.icon;
-              if (icon) {
-                return (
-                  <PlausibleWrapper
-                    key={item.name}
-                    eventName="navClicked"
-                    eventProps={{
-                      props: {
-                        name: item.name
-                      }
-                    }}
-                  >
-                    <a
-                      href={item.href}
-                      className="font-semibold text-xl leading-6 text-gray-800 fill-gray-300 opacity-100 hover:opacity-50"
+          <IntersectionTransition>
+            <Contact />
+          </IntersectionTransition>
+          <IntersectionTransition>
+            <div className="mt-6 flex flex-row justify-center space-x-5 md:space-x-12">
+              {socials.map((item) => {
+                const icon = item.icon;
+                if (icon) {
+                  return (
+                    <PlausibleWrapper
+                      key={item.name}
+                      eventName="navClicked"
+                      eventProps={{
+                        props: {
+                          name: item.name
+                        }
+                      }}
                     >
-                      {icon}
-                      <span className="hidden ml-2 text-base xl:inline-block">
-                        {item.name}
-                      </span>
-                    </a>
-                  </PlausibleWrapper>
-                );
-              }
-            })}
-          </div>
+                      <a
+                        href={item.href}
+                        className="font-semibold text-xl leading-6 text-gray-800 fill-gray-300 opacity-100 hover:opacity-50"
+                      >
+                        {icon}
+                        <span className="hidden ml-2 text-base xl:inline-block">
+                          {item.name}
+                        </span>
+                      </a>
+                    </PlausibleWrapper>
+                  );
+                }
+              })}
+            </div>
+          </IntersectionTransition>
         </div>
         <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
