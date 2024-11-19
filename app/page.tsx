@@ -411,30 +411,34 @@ function ProjectList() {
   return (
     <div className="py-12 sm:py-32 text-gray-800" id="projects">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-black-100 sm:text-4xl">
-            Our projects
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-800">
-            {`MYSverse developers started off as volunteers passionate about delivering authentic roleplay experiences to the equally dedicated sets of the community. We aim to preserve that same concept moving forward, with the added focus on making those top tier efforts available to all players.`}
-          </p>
-        </div>
-        <div className="mt-16">
-          <h3 className="text-2xl font-bold tracking-tight text-black-100 sm:text-3xl">
-            MYSverse
-          </h3>
-          <ItemList type="MYSverse" />
-        </div>
-        <div className="mt-16">
-          <h3 className="text-2xl font-bold tracking-tight text-black-100 sm:text-3xl">
-            <MYSverseSimLogo className="inline-block h-12 w-auto fill-black" />
-            <span className="sr-only">MYSverse Sim</span>
-          </h3>
-          <p className="mt-6 text-lg leading-8">
-            {`A sophisticated and realistic virtual experience, MYSverse Sim offers serious roleplay with an educational twist. Engage in disciplined activities, requiring off-platform training and certification for a deeper immersive experience.`}
-          </p>
-          <ItemList type="Sim" />
-        </div>
+        <IntersectionTransition>
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-3xl font-bold tracking-tight text-black-100 sm:text-4xl">
+              Our projects
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-800">
+              {`MYSverse developers started off as volunteers passionate about delivering authentic roleplay experiences to the equally dedicated sets of the community. We aim to preserve that same concept moving forward, with the added focus on making those top tier efforts available to all players.`}
+            </p>
+          </div>
+          <div className="mt-16">
+            <h3 className="text-2xl font-bold tracking-tight text-black-100 sm:text-3xl">
+              MYSverse
+            </h3>
+            <ItemList type="MYSverse" />
+          </div>
+        </IntersectionTransition>
+        <IntersectionTransition>
+          <div className="mt-16">
+            <h3 className="text-2xl font-bold tracking-tight text-black-100 sm:text-3xl">
+              <MYSverseSimLogo className="inline-block h-12 w-auto fill-black" />
+              <span className="sr-only">MYSverse Sim</span>
+            </h3>
+            <p className="mt-6 text-lg leading-8">
+              {`A sophisticated and realistic virtual experience, MYSverse Sim offers serious roleplay with an educational twist. Engage in disciplined activities, requiring off-platform training and certification for a deeper immersive experience.`}
+            </p>
+            <ItemList type="Sim" />
+          </div>
+        </IntersectionTransition>
       </div>
     </div>
   );
@@ -612,9 +616,9 @@ export default function Main() {
           <IntersectionTransition>
             <Stats />
           </IntersectionTransition>
-          <IntersectionTransition>
-            <ProjectList />
-          </IntersectionTransition>
+
+          <ProjectList />
+
           <IntersectionTransition>
             <Blog />
           </IntersectionTransition>
