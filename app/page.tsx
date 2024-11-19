@@ -546,9 +546,9 @@ export default function Main() {
                     >
                       <a
                         href="https://www.roblox.com/games/481538620/Bandar"
-                        className="group rounded-md bg-gradient-to-r from-[#476075] to-[#27374D] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                        className="transition group rounded-md bandaraya-button px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                       >
-                        <PlayBandaraya className="fill-white inline-flex h-[3em] px-1 group-hover:fill-[#476075]" />
+                        <PlayBandaraya className="transition ease-out duration-300 fill-white inline-flex h-[3em] px-1 group-hover:fill-[#476075]" />
                       </a>
                     </PlausibleWrapper>
                   </TransitionChild>
@@ -568,9 +568,9 @@ export default function Main() {
                     >
                       <a
                         href="https://www.roblox.com/games/4892731894/Lebuhraya"
-                        className="group rounded-md bg-gradient-to-r from-[#65ad56] to-[#13863f] hover:bg-white hover:bg-none px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                        className="group rounded-md lebuhraya-button px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                       >
-                        <PlayLebuhraya className="fill-white inline-flex h-[3em] px-1 group-hover:fill-[#65ad56]" />
+                        <PlayLebuhraya className="transition duration-300 ease-out fill-white inline-flex h-[3em] px-1 group-hover:fill-[#65ad56]" />
                       </a>
                     </PlausibleWrapper>
                   </TransitionChild>

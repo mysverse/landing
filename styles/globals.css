@@ -2,6 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  @property --bdColor1 {
+    syntax: "<color>";
+    initial-value: #476075;
+    inherits: false;
+  }
+
+  @property --bdColor2 {
+    syntax: "<color>";
+    initial-value: #27374d;
+    inherits: false;
+  }
+
+  @property --lbColor1 {
+    syntax: "<color>";
+    initial-value: #65ad56;
+    inherits: false;
+  }
+
+  @property --lbColor2 {
+    syntax: "<color>";
+    initial-value: #13863f;
+    inherits: false;
+  }
+
+  .bandaraya-button {
+    background: linear-gradient(to right, var(--bdColor1), var(--bdColor2));
+    transition:
+      --bdColor1 0.3s ease-out,
+      --bdColor2 0.3s ease-out;
+  }
+
+  .bandaraya-button:hover {
+    --bdColor1: theme(colors.white);
+    --bdColor2: theme(colors.white);
+  }
+
+  .lebuhraya-button {
+    background: linear-gradient(to right, var(--lbColor1), var(--lbColor2));
+    transition:
+      --lbColor1 0.3s ease-out,
+      --lbColor2 0.3s ease-out;
+  }
+
+  .lebuhraya-button:hover {
+    --lbColor1: theme(colors.white);
+    --lbColor2: theme(colors.white);
+  }
+}
+
 /* @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
   img {
     image-rendering: -webkit-optimize-contrast !important;
