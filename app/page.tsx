@@ -32,7 +32,7 @@ import {
   faXTwitter,
   faYoutube
 } from "@fortawesome/free-brands-svg-icons";
-import CalButton from "./_components/CalButton";
+// import CalButton from "./_components/CalButton";
 import Header from "./_components/header";
 
 const PlausibleWrapper = dynamic(
@@ -194,14 +194,13 @@ function Contact() {
               </div>
               <div className="rounded-2xl bg-white p-10 flex flex-col justify-center place-content-center">
                 <h3 className="text-base font-semibold leading-7 text-black-100">
-                  Chat or call, your choice
+                  Shoot us a message
                 </h3>
                 <h4 className="text-sm font-normal opacity-80 leading-7 text-black-100">
                   For businesses and organisations
                 </h4>
                 <dl className="mt-3 space-y-1 text-sm leading-6 text-black-100">
                   <div className=" flex flex-col gap-y-4">
-                    {/* Hidden due to too much misuse of the WhatsApp Business channel */}
                     <dt className="sr-only">WhatsApp</dt>
                     <dd>
                       <Link href="https://wa.me/601154156978" target="_blank">
@@ -209,9 +208,9 @@ function Contact() {
                       </Link>
                     </dd>
                     <dt className="sr-only">Cal.com</dt>
-                    <dd>
+                    {/* <dd>
                       <CalButton />
-                    </dd>
+                    </dd> */}
                   </div>
                   {/* <div className="mt-1">
                     <dt className="sr-only">Phone number</dt>
@@ -368,7 +367,7 @@ function ProjectList() {
                   width={500}
                   height={250}
                   src={project.image}
-                  alt=""
+                  alt="Project image"
                 />
               ) : null}
               <div className="sm:flex-row sm:flex gap-x-4">
@@ -549,7 +548,7 @@ export default function Main() {
                       }}
                     >
                       <a
-                        href="https://www.roblox.com/games/481538620/Bandar"
+                        href="https://www.roblox.com/games/481538620/Bandaraya"
                         className="transition group rounded-md bandaraya-button px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                       >
                         <PlayBandaraya className="transition ease-out duration-300 fill-white inline-flex h-[3em] px-1 group-hover:fill-[#476075]" />

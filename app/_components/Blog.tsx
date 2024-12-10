@@ -44,7 +44,7 @@ const Blog = () => {
               className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
             >
               <Image
-                alt={post.feature_image_alt!}
+                alt={post.feature_image_alt ?? "Image of blog post"}
                 src={post.feature_image!}
                 className="absolute inset-0 -z-10 h-full w-full object-cover"
                 width={1024}
@@ -67,7 +67,7 @@ const Blog = () => {
                   <div className="flex gap-x-2.5">
                     {post.authors && post.authors[0].profile_image && (
                       <Image
-                        alt=""
+                        alt="Image of author"
                         src={post.authors[0].profile_image}
                         className="h-6 w-6 flex-none rounded-full bg-white/10"
                         width={32}
