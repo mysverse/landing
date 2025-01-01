@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Transition } from "@headlessui/react";
 import clsx from "clsx";
 
-const enabled = true;
+const enabled = false;
 
 export default function Banner() {
   const { isVisible, isLoading, dismissBanner } =
