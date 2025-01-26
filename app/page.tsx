@@ -363,7 +363,7 @@ function ProjectList() {
             <li key={project.name}>
               {project.image ? (
                 <Image
-                  className="aspect-[3/2] w-full rounded-2xl object-cover mb-6"
+                  className="aspect-3/2 w-full rounded-2xl object-cover mb-6"
                   width={500}
                   height={250}
                   src={project.image}
@@ -453,7 +453,7 @@ export default function Main() {
           aria-hidden="true"
         >
           <div
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#6459ff69] to-[#ff0000] opacity-10 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#6459ff69] to-[#ff0000] opacity-10 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
             style={{
               clipPath:
                 "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
@@ -549,7 +549,7 @@ export default function Main() {
                     >
                       <a
                         href="https://www.roblox.com/games/481538620/Bandaraya"
-                        className="transition group rounded-md bandaraya-button px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                        className="transition group rounded-md bandaraya-button px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                       >
                         <PlayBandaraya className="transition ease-out duration-300 fill-white inline-flex h-[3em] px-1 group-hover:fill-[#476075]" />
                       </a>
@@ -571,7 +571,7 @@ export default function Main() {
                     >
                       <a
                         href="https://www.roblox.com/games/4892731894/Lebuhraya"
-                        className="group rounded-md lebuhraya-button px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                        className="group rounded-md lebuhraya-button px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                       >
                         <PlayLebuhraya className="transition duration-300 ease-out fill-white inline-flex h-[3em] px-1 group-hover:fill-[#65ad56]" />
                       </a>
@@ -662,7 +662,7 @@ export default function Main() {
           aria-hidden="true"
         >
           <div
-            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(50%+3rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
             style={{
               clipPath:
                 "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"

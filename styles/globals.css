@@ -1,6 +1,110 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility bandaraya-button {
+  @property --bdColor1 {
+    syntax: '<color>';
+    initial-value: #476075;
+    inherits: false;
+  }
+
+  @property --bdColor2 {
+    syntax: '<color>';
+    initial-value: #27374d;
+    inherits: false;
+  }
+
+  @property --lbColor1 {
+    syntax: '<color>';
+    initial-value: #65ad56;
+    inherits: false;
+  }
+
+  @property --lbColor2 {
+    syntax: '<color>';
+    initial-value: #13863f;
+    inherits: false;
+  }
+  background: linear-gradient(to right, var(--bdColor1), var(--bdColor2));
+  transition:
+    --bdColor1 0.3s ease-out,
+    --bdColor2 0.3s ease-out;
+
+  &:hover {
+    --bdColor1: var(--color-white);
+    --bdColor2: var(--color-white);
+  }
+}
+
+@utility lebuhraya-button {
+  @property --bdColor1 {
+    syntax: '<color>';
+    initial-value: #476075;
+    inherits: false;
+  }
+
+  @property --bdColor2 {
+    syntax: '<color>';
+    initial-value: #27374d;
+    inherits: false;
+  }
+
+  @property --lbColor1 {
+    syntax: '<color>';
+    initial-value: #65ad56;
+    inherits: false;
+  }
+
+  @property --lbColor2 {
+    syntax: '<color>';
+    initial-value: #13863f;
+    inherits: false;
+  }
+  background: linear-gradient(to right, var(--lbColor1), var(--lbColor2));
+  transition:
+    --lbColor1 0.3s ease-out,
+    --lbColor2 0.3s ease-out;
+
+  &:hover {
+    --lbColor1: var(--color-white);
+    --lbColor2: var(--color-white);
+  }
+}
+
+/* @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  img {
+    image-rendering: -webkit-optimize-contrast !important;
+  }
+} */
+
+/* Unset for Safari 11+ */
+/* @media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    img {
+      image-rendering: unset !important;
+    }
+  }
+} */
 
 @layer utilities {
   @property --bdColor1 {
@@ -26,43 +130,4 @@
     initial-value: #13863f;
     inherits: false;
   }
-
-  .bandaraya-button {
-    background: linear-gradient(to right, var(--bdColor1), var(--bdColor2));
-    transition:
-      --bdColor1 0.3s ease-out,
-      --bdColor2 0.3s ease-out;
-  }
-
-  .bandaraya-button:hover {
-    --bdColor1: theme(colors.white);
-    --bdColor2: theme(colors.white);
-  }
-
-  .lebuhraya-button {
-    background: linear-gradient(to right, var(--lbColor1), var(--lbColor2));
-    transition:
-      --lbColor1 0.3s ease-out,
-      --lbColor2 0.3s ease-out;
-  }
-
-  .lebuhraya-button:hover {
-    --lbColor1: theme(colors.white);
-    --lbColor2: theme(colors.white);
-  }
 }
-
-/* @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
-  img {
-    image-rendering: -webkit-optimize-contrast !important;
-  }
-} */
-
-/* Unset for Safari 11+ */
-/* @media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    img {
-      image-rendering: unset !important;
-    }
-  }
-} */
