@@ -19,6 +19,7 @@
     "@tailwindcss/postcss": "^4.0.6",
     "@tryghost/content-api": "^1.11.21",
     "clsx": "^2.1.1",
+    "motion-number": "^1.0.0",
     "next": "^15.1.7",
     "next-plausible": "^3.12.4",
     "react": "^19.0.0",

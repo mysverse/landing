@@ -1,11 +1,12 @@
-import CountUp from "./Countup";
+import { AnimateCountUp } from "./AnimateCountUp";
+// import CountUp from "./Countup";
 
 const stats = [
   {
     id: 1,
     name: "times games played",
     value: (
-      <CountUp
+      <AnimateCountUp
         end={23500000}
         enableScrollSpy={true}
         scrollSpyOnce={true}
@@ -17,7 +18,7 @@ const stats = [
     id: 3,
     name: "players across Roblox groups",
     value: (
-      <CountUp
+      <AnimateCountUp
         end={367000}
         enableScrollSpy={true}
         scrollSpyOnce={true}
@@ -29,7 +30,7 @@ const stats = [
     id: 2,
     name: "followers across social media",
     value: (
-      <CountUp
+      <AnimateCountUp
         end={35000}
         enableScrollSpy={true}
         scrollSpyOnce={true}
