@@ -30,17 +30,16 @@ export function AnimateCountUp(props: AnimateNumberProps) {
   });
   return (
     <AnimateNumber
-      children={
-        props.enableScrollSpy
-          ? inView
-            ? props.end
-            : (props.start ?? getCountingStartValue(props.end))
-          : props.end
-      }
       transition={{ duration: 1 }}
       prefix={props.prefix}
       suffix={props.suffix}
       ref={ref}
-    />
+    >
+      {props.enableScrollSpy
+        ? inView
+          ? props.end
+          : (props.start ?? getCountingStartValue(props.end))
+        : props.end}
+    </AnimateNumber>
   );
 }
