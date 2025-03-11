@@ -23,7 +23,9 @@ import WhatsappButton from "public/ChatOnWhatsAppButton/WhatsAppButtonGreenMediu
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faBluesky,
   faDiscord,
+  faFacebook,
   faGuilded,
   faInstagram,
   faLinkedin,
@@ -66,9 +68,19 @@ const socials = [
     icon: <FontAwesomeIcon icon={faGuilded} />
   },
   {
+    name: "Facebook",
+    href: "https://facebook.com/people/MYSverse/61573938995837/",
+    icon: <FontAwesomeIcon icon={faFacebook} />
+  },
+  {
     name: "X",
     href: "https://x.com/mys_verse",
     icon: <FontAwesomeIcon icon={faXTwitter} />
+  },
+  {
+    name: "Bluesky",
+    href: "https://bsky.app/profile/mysver.se",
+    icon: <FontAwesomeIcon icon={faBluesky} />
   },
   {
     name: "WhatsApp",
@@ -154,13 +166,13 @@ function Contact() {
                         }}
                       >
                         <div className="font-semibold text-red-600">
-                          <a
+                          <Link
                             className="flex items-center gap-x-2"
                             href="mailto:yan@mysver.se"
                           >
                             <EnvelopeIcon className="h-4" />
                             <span>yan@mysver.se</span>
-                          </a>
+                          </Link>
                         </div>
                       </PlausibleWrapper>
                     </dd>
@@ -175,13 +187,13 @@ function Contact() {
                         }}
                       >
                         <div className="font-semibold text-red-600">
-                          <a
+                          <Link
                             className="flex items-center gap-x-2"
                             href="tel:0350219170"
                           >
                             <PhoneIcon className="h-4" />
                             <span className="tracking-wide">03-50219170</span>
-                          </a>
+                          </Link>
                         </div>
                       </PlausibleWrapper>
                     </dd>
@@ -511,12 +523,13 @@ export default function Main() {
                             }
                           }}
                         >
-                          <a
+                          <Link
                             href={item.href}
+                            target="_blank"
                             className="text-xl font-semibold leading-6 text-black-100 fill-gray-100 opacity-100 hover:opacity-50"
                           >
                             {icon}
-                          </a>
+                          </Link>
                         </PlausibleWrapper>
                       );
                     }
@@ -547,12 +560,12 @@ export default function Main() {
                         }
                       }}
                     >
-                      <a
+                      <Link
                         href="https://www.roblox.com/games/481538620/Bandaraya"
-                        className="transition group rounded-md bandaraya-button px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                        className="transition group rounded-md bandaraya-button px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                       >
                         <PlayBandaraya className="transition ease-out duration-300 fill-white inline-flex h-[3em] px-1 group-hover:fill-[#476075]" />
-                      </a>
+                      </Link>
                     </PlausibleWrapper>
                   </TransitionChild>
                   <TransitionChild
@@ -569,12 +582,12 @@ export default function Main() {
                         }
                       }}
                     >
-                      <a
+                      <Link
                         href="https://www.roblox.com/games/4892731894/Lebuhraya"
-                        className="group rounded-md lebuhraya-button px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                        className="group rounded-md lebuhraya-button px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs  focus-visible:outline  focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                       >
                         <PlayLebuhraya className="transition duration-300 ease-out fill-white inline-flex h-[3em] px-1 group-hover:fill-[#65ad56]" />
-                      </a>
+                      </Link>
                     </PlausibleWrapper>
                   </TransitionChild>
                 </div>
@@ -641,15 +654,16 @@ export default function Main() {
                         }
                       }}
                     >
-                      <a
+                      <Link
                         href={item.href}
+                        target="_blank"
                         className="font-semibold text-xl leading-6 text-gray-800 fill-gray-300 opacity-100 hover:opacity-50"
                       >
                         {icon}
                         <span className="hidden ml-2 text-base xl:inline-block">
                           {item.name}
                         </span>
-                      </a>
+                      </Link>
                     </PlausibleWrapper>
                   );
                 }
