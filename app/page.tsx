@@ -509,7 +509,7 @@ export default function Main() {
                 show
                 appear
               >
-                <div className="mt-6 flex flex-row justify-center space-x-4 sm:space-x-5 md:space-x-6">
+                <div className="mt-6 flex flex-row flex-wrap justify-center gap-x-4 gap-y-4 sm:gap-x-5 md:gap-x-6">
                   {socials.map((item) => {
                     const icon = item.icon;
                     if (icon) {
@@ -518,9 +518,7 @@ export default function Main() {
                           key={item.name}
                           eventName="navClicked"
                           eventProps={{
-                            props: {
-                              name: item.name
-                            }
+                            props: { name: item.name }
                           }}
                         >
                           <Link
@@ -640,7 +638,7 @@ export default function Main() {
             <Contact />
           </IntersectionTransition>
           <IntersectionTransition>
-            <div className="mt-6 flex flex-row justify-center space-x-5 md:space-x-12">
+            <div className="mt-6 flex flex-row flex-wrap justify-center gap-x-5 gap-y-4 md:gap-x-12">
               {socials.map((item) => {
                 const icon = item.icon;
                 if (icon) {
