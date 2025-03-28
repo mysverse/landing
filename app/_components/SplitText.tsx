@@ -11,15 +11,15 @@ interface SplitTextProps {
 }
 
 export default function SplitText(props: SplitTextProps) {
-  const containerRef = useRef<HTMLHeadingElement>(null);
+  const headerRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     document.fonts.ready.then(() => {
-      if (!containerRef.current) return;
+      if (!headerRef.current) return;
 
       // Hide the container until the fonts are loaded
-      containerRef.current.style.visibility = "visible";
+      headerRef.current.style.visibility = "visible";
 
-      const { words } = splitText(containerRef.current!);
+      const { words } = splitText(headerRef.current!);
 
       // Animate the words in the h1
       animate(
@@ -39,7 +39,7 @@ export default function SplitText(props: SplitTextProps) {
     <h1
       className="flex justify-center items-center w-full text-center invisible text-4xl font-bold tracking-tight text-black sm:text-6xl"
       style={{ willChange: "transform, opacity" }}
-      ref={containerRef}
+      ref={headerRef}
     >
       {props.children}
     </h1>

@@ -1,6 +1,9 @@
-import { JSX } from "react";
-
+import type { JSX } from "react";
+import type { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { Transition, TransitionChild } from "@headlessui/react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+import Link from "next/link";
 
 import RobloxLogo from "public/img/Roblox_Logo.svg";
 import FeaturePic from "public/img/mysverse_feature.webp";
@@ -15,9 +18,6 @@ import BombaFeaturePic from "public/img/feature_mys_bomba.webp";
 
 import PlayLebuhraya from "public/img/play_lebuhraya.svg";
 import PlayBandaraya from "public/img/play_bandaraya.svg";
-
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-
 import MYSverseSimLogo from "public/img/MYSverse_Sim_Colour.svg";
 import WhatsappButton from "public/ChatOnWhatsAppButton/WhatsAppButtonGreenMedium.svg";
 
@@ -35,22 +35,20 @@ import {
   faYoutube
 } from "@fortawesome/free-brands-svg-icons";
 // import CalButton from "./_components/CalButton";
-import Header from "./_components/header";
 
 const PlausibleWrapper = dynamic(
   () => import("./_components/PlausibleWrapper")
 );
 
-import dynamic from "next/dynamic";
 import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/20/solid";
-import Link from "next/link";
-import { Transition, TransitionChild } from "@headlessui/react";
-// import { ReactNode } from "react";
+
+import Header from "./_components/header";
 import Blog from "./_components/Blog";
 import Stats from "./_components/Stats";
 import IntersectionTransition from "./_components/IntersectionTransition";
 import SplitText from "./_components/SplitText";
 // import Bento from "./_components/Bento";
+// import { ReactNode } from "react";
 
 const socials = [
   {
