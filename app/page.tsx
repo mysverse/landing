@@ -320,7 +320,7 @@ function ProjectList() {
     },
     {
       name: "Daerah",
-      launched: "Coming 2024",
+      launched: "Coming 2025",
       tagline:
         "Taking place in a rural area inspired by the Sabahan district of Beaufort, this never-before-explored experience will be the basis of MYSverse's first significant step in offering gameplay freedom to all players, even those outside the community.",
       image: DaerahFeaturePic,
@@ -353,12 +353,11 @@ function ProjectList() {
     },
     {
       name: "Bomba",
-      launched: "Coming 2024",
+      launched: "Since 2024",
       tagline:
         "The roleplay firefighters of MYSverse Sim use one of the platforms most detailed complement of fire equipment and vehicles to put out fires and perform rescue operations.",
       image: BombaFeaturePic,
-      type: "Sim",
-      wip: true
+      type: "Sim"
     }
   ];
 
