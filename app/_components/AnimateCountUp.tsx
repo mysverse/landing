@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimateNumber } from "motion-number";
+import { AnimateNumber } from "motion-plus-react";
 import { useInView } from "react-intersection-observer";
 
 function getCountingStartValue(endValue: number): number {

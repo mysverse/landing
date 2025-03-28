@@ -49,6 +49,7 @@ import { Transition, TransitionChild } from "@headlessui/react";
 import Blog from "./_components/Blog";
 import Stats from "./_components/Stats";
 import IntersectionTransition from "./_components/IntersectionTransition";
+import SplitText from "./_components/SplitText";
 // import Bento from "./_components/Bento";
 
 const socials = [
@@ -475,18 +476,9 @@ export default function Main() {
         <div className="py-12 sm:py-32 lg:pb-40">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <Transition
-                enter="transform transition duration-500"
-                enterFrom="opacity-0 -translate-y-36 scale-80"
-                enterTo="opacity-100 translate-y-0 scale-100"
-                show
-                appear
-              >
-                <h1 className="text-4xl font-bold tracking-tight text-black sm:text-6xl">
-                  Step into our faithfully Malaysian metaverse.
-                </h1>
-              </Transition>
-
+              <SplitText>
+                Step into our faithfully Malaysian metaverse.
+              </SplitText>
               <Transition
                 enter="transform transition duration-500 delay-200"
                 enterFrom="opacity-0 -translate-y-36 scale-80"
