@@ -1,46 +1,99 @@
-import { AnimateCountUp } from "./AnimateCountUp";
-// import CountUp from "./Countup";
+"use client";
 
-const stats = [
-  {
-    id: 1,
-    name: "times games played",
-    value: (
-      <AnimateCountUp
-        end={23500000}
-        enableScrollSpy={true}
-        scrollSpyOnce={true}
-        suffix="+"
-      />
-    )
-  },
-  {
-    id: 3,
-    name: "players across Roblox groups",
-    value: (
-      <AnimateCountUp
-        end={383000}
-        enableScrollSpy={true}
-        scrollSpyOnce={true}
-        suffix="+"
-      />
-    )
-  },
-  {
-    id: 2,
-    name: "followers across social media",
-    value: (
-      <AnimateCountUp
-        end={35000}
-        enableScrollSpy={true}
-        scrollSpyOnce={true}
-        suffix="+"
-      />
-    )
-  }
-];
+import { useState, useEffect, ReactNode } from "react";
+import { AnimateCountUp } from "./AnimateCountUp";
+
+interface GameMetric {
+  id: number;
+  name: string;
+  playing: number;
+  visits: number;
+  favoritedCount: number;
+}
+
+interface GroupMetric {
+  id: string;
+  displayName: string;
+  memberCount: number;
+}
+
+interface Metrics {
+  games: GameMetric[];
+  group: GroupMetric;
+}
+
+interface Stat {
+  id: number;
+  name: string;
+  value: ReactNode;
+}
 
 export default function Stats() {
+  const [metrics, setMetrics] = useState<Metrics | null>(null);
+
+  useEffect(() => {
+    async function fetchMetrics() {
+      try {
+        const res = await fetch(
+          "https://mysverse-engagement-metrics.yan3321.workers.dev/"
+        );
+        if (!res.ok) {
+          throw new Error("Failed to fetch metrics");
+        }
+        const data: Metrics = await res.json();
+        setMetrics(data);
+      } catch (err) {
+        console.error("Error fetching metrics:", err);
+      }
+    }
+    fetchMetrics();
+  }, []);
+
+  // Use fallback values if the API data isn't available.
+  const totalGamePlays = metrics
+    ? metrics.games.reduce((sum, game) => sum + game.visits, 0)
+    : 23500000;
+  const groupMembers = metrics ? metrics.group.memberCount : 383000;
+
+  const stats: Stat[] = [
+    {
+      id: 1,
+      name: "times games played",
+      value: (
+        <AnimateCountUp
+          end={totalGamePlays}
+          enableScrollSpy={true}
+          scrollSpyOnce={true}
+          suffix={metrics ? undefined : "+"}
+        />
+      )
+    },
+    {
+      id: 3,
+      name: "Roblox group members",
+      value: (
+        <AnimateCountUp
+          end={groupMembers}
+          enableScrollSpy={true}
+          scrollSpyOnce={true}
+          suffix={metrics ? undefined : "+"}
+        />
+      )
+    },
+    {
+      id: 2,
+      name: "followers across social media",
+      value: (
+        <AnimateCountUp
+          end={35000} // This remains static as it isn't fetched.
+          enableScrollSpy={true}
+          scrollSpyOnce={true}
+          suffix="+"
+        />
+      )
+    }
+  ];
+
   return (
     <div className="py-8 sm:py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
