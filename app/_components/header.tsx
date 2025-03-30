@@ -7,6 +7,7 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Banner from "components/banner";
+import NewsModal from "./NewsModal";
 
 const navigation = [
   {
@@ -54,6 +55,7 @@ export default function Header() {
           </a>
         </div>
         <div className="flex xl:hidden">
+          <NewsModal />
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
@@ -91,6 +93,7 @@ export default function Header() {
           ))}
         </div>
         <div className="hidden xl:flex xl:flex-1 xl:justify-end">
+          <NewsModal />
           {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-800">
           Log in <span aria-hidden="true">&rarr;</span>
         </a> */}
