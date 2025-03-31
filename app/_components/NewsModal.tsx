@@ -5,7 +5,7 @@ import { useState, useEffect, Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import { NewspaperIcon } from "@heroicons/react/24/outline";
+import { NewspaperIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 interface NewsItem {
   Name: string;
@@ -47,8 +47,8 @@ export default function NewsModal() {
 
   // Handle mouse wheel (desktop)
   const handleWheel = (event: WheelEvent<HTMLDivElement>) => {
-    // Scroll down triggers the top card to animate out
-    if (event.deltaY > 0 && !animating && deck.length > 0) {
+    // Scroll in any direction triggers the top card to animate out
+    if (Math.abs(event.deltaY) > 0 && !animating && deck.length > 0) {
       setAnimating(true);
     }
   };
@@ -109,6 +109,15 @@ export default function NewsModal() {
                 onWheel={handleWheel}
                 className="relative h-[70vh] max-h-[90vh] w-[90vw] max-w-3xl overflow-hidden"
               >
+                {/* Close button - repositioned to bottom center */}
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-50 rounded-full bg-black/20 p-1.5 backdrop-blur-sm hover:bg-black/40 transition-colors"
+                  aria-label="Close"
+                >
+                  <XMarkIcon className="h-5 w-5 text-white" />
+                </button>
+
                 <AnimatePresence initial={false}>
                   {deck.slice(0, 3).map((card, index) => {
                     // Each card's default offset & scale
@@ -146,12 +155,21 @@ export default function NewsModal() {
                             setAnimating(false);
                           }
                         }}
-                        // For mobile "swipe" or "drag" support:
-                        drag={index === 0 ? "y" : false}
-                        dragConstraints={{ top: 0, bottom: 0 }}
+                        // Allow dragging in any direction, not just vertical
+                        drag={index === 0 ? true : false}
+                        dragConstraints={{
+                          top: 0,
+                          bottom: 0,
+                          left: 0,
+                          right: 0
+                        }}
                         onDragEnd={(e, info) => {
-                          // If user drags the top card down far enough, animate out
-                          if (info.offset.y > DRAG_THRESHOLD && !animating) {
+                          // Detect swipes in any direction by checking both x and y offsets
+                          const totalOffset = Math.sqrt(
+                            Math.pow(info.offset.x, 2) +
+                              Math.pow(info.offset.y, 2)
+                          );
+                          if (totalOffset > DRAG_THRESHOLD && !animating) {
                             setAnimating(true);
                           }
                         }}

@@ -619,8 +619,14 @@ export default function Main() {
           <ProjectList />
 
           <IntersectionTransition>
-            <Blog />
+            <Blog blogType="MYSverse" />
           </IntersectionTransition>
+
+          <div className="mt-16">
+            <IntersectionTransition>
+              <Blog blogType="NWS" />
+            </IntersectionTransition>
+          </div>
 
           {/* <Bento /> */}
           <IntersectionTransition>
