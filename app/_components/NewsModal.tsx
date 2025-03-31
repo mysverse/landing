@@ -2,7 +2,12 @@
 
 import type { WheelEvent } from "react";
 import { useState, useEffect, Fragment } from "react";
-import { Dialog, Transition } from "@headlessui/react";
+import {
+  Dialog,
+  DialogPanel,
+  Transition,
+  TransitionChild
+} from "@headlessui/react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { NewspaperIcon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -77,7 +82,7 @@ export default function NewsModal() {
           onClose={() => setIsOpen(false)}
         >
           {/* Overlay (semi-transparent) */}
-          <Transition.Child
+          <TransitionChild
             as={Fragment}
             enter="ease-out duration-300"
             enterFrom="opacity-0"
@@ -87,11 +92,11 @@ export default function NewsModal() {
             leaveTo="opacity-0"
           >
             <div className="fixed inset-0 bg-black/40" aria-hidden="true" />
-          </Transition.Child>
+          </TransitionChild>
 
           {/* Center the deck horizontally & vertically */}
           <div className="fixed inset-0 flex items-center justify-center p-4">
-            <Transition.Child
+            <TransitionChild
               as={Fragment}
               enter="ease-out duration-300"
               enterFrom="opacity-0 scale-95"
@@ -101,10 +106,10 @@ export default function NewsModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* 
-                Use Dialog.Panel so that clicking outside this panel
+                Use DialogPanel so that clicking outside this panel
                 automatically closes the dialog 
               */}
-              <Dialog.Panel
+              <DialogPanel
                 // Catch wheel events here
                 onWheel={handleWheel}
                 className="relative h-[70vh] max-h-[90vh] w-[90vw] max-w-3xl overflow-hidden"
@@ -115,7 +120,7 @@ export default function NewsModal() {
                   className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-50 rounded-full bg-black/20 p-1.5 backdrop-blur-sm hover:bg-black/40 transition-colors"
                   aria-label="Close"
                 >
-                  <XMarkIcon className="h-5 w-5 text-white" />
+                  <XMarkIcon className="size-6 text-white" />
                 </button>
 
                 <AnimatePresence initial={false}>
@@ -195,8 +200,8 @@ export default function NewsModal() {
                     );
                   })}
                 </AnimatePresence>
-              </Dialog.Panel>
-            </Transition.Child>
+              </DialogPanel>
+            </TransitionChild>
           </div>
         </Dialog>
       </Transition>
