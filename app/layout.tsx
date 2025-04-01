@@ -41,6 +41,7 @@ export const metadata: Metadata = {
 
 import { Public_Sans } from "next/font/google";
 import { PropsWithChildren } from "react";
+import Header from "./_components/header";
 
 const font = Public_Sans({ subsets: ["latin"] });
 
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         />
       </head>
       <body className={`${font.className} bg-gray-100 h-full`}>
+        <Header />
         <main>{children}</main>
       </body>
     </html>

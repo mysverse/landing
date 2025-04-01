@@ -4,9 +4,11 @@ import { Transition, TransitionChild } from "@headlessui/react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import BackgroundVideo from "next-video/background-video";
+import bgVideo from "videos/spres.mp4";
 
 import RobloxLogo from "public/img/Roblox_Logo.svg";
-import FeaturePic from "public/img/mysverse_feature.webp";
+// import FeaturePic from "public/img/mysverse_feature.webp";
 import DaerahFeaturePic from "public/img/daerah_feature_image.webp";
 import RumahFeaturePic from "public/img/rumah_feature_image.webp";
 import Rumah3FeaturePic from "public/img/rumah3.webp";
@@ -42,7 +44,6 @@ const PlausibleWrapper = dynamic(
 
 import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/20/solid";
 
-import Header from "./_components/header";
 import Blog from "./_components/Blog";
 import Stats from "./_components/Stats";
 import IntersectionTransition from "./_components/IntersectionTransition";
@@ -456,7 +457,6 @@ function ProjectList() {
 export default function Main() {
   return (
     <>
-      <Header />
       <div className="isolate pt-14">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -603,13 +603,14 @@ export default function Main() {
             show
             appear
           >
-            <Image
+            {/* <Image
               src={FeaturePic}
               alt="Screenshot of MYSverse experiences"
               width={1024}
               height={512}
               className="mt-12 rounded-md bg-black/5 shadow-2xl sm:mt-24 mx-auto mb-12"
-            />
+            /> */}
+            <BackgroundVideo src={bgVideo} autoPlay={true} />
           </Transition>
 
           <IntersectionTransition>
