@@ -2,25 +2,8 @@
 
 import { useState, useEffect, ReactNode } from "react";
 import { AnimateCountUp } from "./AnimateCountUp";
-
-interface GameMetric {
-  id: number;
-  name: string;
-  playing: number;
-  visits: number;
-  favoritedCount: number;
-}
-
-interface GroupMetric {
-  id: string;
-  displayName: string;
-  memberCount: number;
-}
-
-interface Metrics {
-  games: GameMetric[];
-  group: GroupMetric;
-}
+import type { Metrics } from "utils/stats";
+import { fetchMetrics } from "utils/stats";
 
 interface Stat {
   id: number;
@@ -28,25 +11,15 @@ interface Stat {
   value: ReactNode;
 }
 
-export default function Stats() {
-  const [metrics, setMetrics] = useState<Metrics | null>(null);
+export default function Stats({ initialStats }: { initialStats?: Metrics }) {
+  const [metrics, setMetrics] = useState<Metrics | undefined>();
 
   useEffect(() => {
-    async function fetchMetrics() {
-      try {
-        const res = await fetch(
-          "https://mysverse-engagement-metrics.yan3321.workers.dev/"
-        );
-        if (!res.ok) {
-          throw new Error("Failed to fetch metrics");
-        }
-        const data: Metrics = await res.json();
+    fetchMetrics().then((data) => {
+      if (data) {
         setMetrics(data);
-      } catch (err) {
-        console.error("Error fetching metrics:", err);
       }
-    }
-    fetchMetrics();
+    });
   }, []);
 
   // Use fallback values if the API data isn't available.

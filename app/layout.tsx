@@ -42,10 +42,12 @@ export const metadata: Metadata = {
 import { Public_Sans } from "next/font/google";
 import { PropsWithChildren } from "react";
 import Header from "./_components/header";
+import { getNews } from "utils/news";
 
 const font = Public_Sans({ subsets: ["latin"] });
 
-export default function RootLayout({ children }: PropsWithChildren) {
+export default async function RootLayout({ children }: PropsWithChildren) {
+  const news = await getNews();
   return (
     <html lang="en">
       <head>
@@ -55,7 +57,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         />
       </head>
       <body className={`${font.className} bg-gray-100 h-full`}>
-        <Header />
+        <Header initialNews={news.News} />
         <main>{children}</main>
       </body>
     </html>

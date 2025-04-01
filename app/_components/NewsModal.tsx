@@ -10,39 +10,23 @@ import {
 } from "@headlessui/react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import { NewspaperIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { getNews, NewsItem, NewsResponse } from "utils/news";
 
-interface NewsItem {
-  Name: string;
-  Image: string;
-  Url: string;
-  Content?: string;
-  AspectRatio?: number;
-}
-
-interface NewsResponse {
-  NotifyCount: number;
-  Timestamp: string;
-  LastUpdated: string;
-  Notify: boolean;
-  Announcements: any[];
-  News: NewsItem[];
-  Event: {
-    Name: string;
-    Date: string;
-    BackgroundImage: string;
-    EventImage: string;
-  };
-}
-
-export default function NewsModal() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [deck, setDeck] = useState<NewsItem[]>([]);
+export default function NewsModal({
+  initialNews,
+  isOpen,
+  setIsOpen
+}: {
+  initialNews?: NewsItem[];
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+}) {
+  const [deck, setDeck] = useState<NewsItem[]>(initialNews ?? []);
   const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
-    fetch("https://mysverse-news.yan3321.workers.dev/")
-      .then((res) => res.json())
+    getNews()
       .then((data: NewsResponse) => {
         setDeck(data.News);
         // setIsOpen(true); // Automatically open modal after fetching
@@ -67,14 +51,6 @@ export default function NewsModal() {
 
   return (
     <>
-      {/* Optional manual trigger */}
-      <button onClick={() => setIsOpen(true)} className="px-2 lg:mx-0 mx-3">
-        <NewspaperIcon
-          onClick={() => setIsOpen(true)}
-          className="lg:stroke-black stroke-black/30 transition hover:opacity-50 size-9"
-        />
-      </button>
-
       <Transition show={isOpen} as={Fragment}>
         <Dialog
           as="div"

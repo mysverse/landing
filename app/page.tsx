@@ -47,6 +47,7 @@ import Stats from "./_components/Stats";
 import IntersectionTransition from "./_components/IntersectionTransition";
 import SplitText from "./_components/SplitText";
 import VideoPlayer from "./_components/VideoPlayer";
+import { fetchMetrics } from "utils/stats";
 // import Bento from "./_components/Bento";
 // import { ReactNode } from "react";
 
@@ -453,7 +454,8 @@ function ProjectList() {
   );
 }
 
-export default function Main() {
+export default async function Main() {
+  const initialStats = await fetchMetrics();
   return (
     <>
       <div className="isolate pt-14">
@@ -616,7 +618,7 @@ export default function Main() {
           </Transition>
 
           <IntersectionTransition>
-            <Stats />
+            <Stats initialStats={initialStats} />
           </IntersectionTransition>
 
           <ProjectList />

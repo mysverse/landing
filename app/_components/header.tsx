@@ -4,10 +4,15 @@ import { usePlausible } from "next-plausible";
 import { useState } from "react";
 import MysverseLogo from "public/img/mysverse_logo_colour.svg";
 import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  NewspaperIcon,
+  XMarkIcon
+} from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Banner from "components/banner";
 import NewsModal from "./NewsModal";
+import { NewsItem } from "utils/news";
 
 const navigation = [
   {
@@ -35,9 +40,21 @@ const pageNavigation = [
   }
 ];
 
-export default function Header() {
+function NewsButton({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) {
+  return (
+    <button onClick={() => setIsOpen(true)} className="px-2 lg:mx-0 mx-3">
+      <NewspaperIcon
+        onClick={() => setIsOpen(true)}
+        className="lg:stroke-black stroke-black/30 transition hover:opacity-50 size-9"
+      />
+    </button>
+  );
+}
+
+export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
   const plausible = usePlausible();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [newsOpen, setNewsOpen] = useState(false);
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <Banner />
@@ -55,7 +72,7 @@ export default function Header() {
           </a>
         </div>
         <div className="flex xl:hidden">
-          <NewsModal />
+          <NewsButton setIsOpen={setNewsOpen} />
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
@@ -93,7 +110,7 @@ export default function Header() {
           ))}
         </div>
         <div className="hidden xl:flex xl:flex-1 xl:justify-end">
-          <NewsModal />
+          <NewsButton setIsOpen={setNewsOpen} />
           {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-800">
           Log in <span aria-hidden="true">&rarr;</span>
         </a> */}
@@ -166,6 +183,11 @@ export default function Header() {
           </div>
         </Dialog.Panel>
       </Dialog>
+      <NewsModal
+        isOpen={newsOpen}
+        setIsOpen={setNewsOpen}
+        initialNews={initialNews}
+      />
     </header>
   );
 }
