@@ -4,8 +4,6 @@ import { Transition, TransitionChild } from "@headlessui/react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import BackgroundVideo from "next-video/background-video";
-import bgVideo from "videos/spres.mp4";
 
 import RobloxLogo from "public/img/Roblox_Logo.svg";
 // import FeaturePic from "public/img/mysverse_feature.webp";
@@ -48,6 +46,7 @@ import Blog from "./_components/Blog";
 import Stats from "./_components/Stats";
 import IntersectionTransition from "./_components/IntersectionTransition";
 import SplitText from "./_components/SplitText";
+import VideoPlayer from "./_components/VideoPlayer";
 // import Bento from "./_components/Bento";
 // import { ReactNode } from "react";
 
@@ -610,7 +609,10 @@ export default function Main() {
               height={512}
               className="mt-12 rounded-md bg-black/5 shadow-2xl sm:mt-24 mx-auto mb-12"
             /> */}
-            <BackgroundVideo src={bgVideo} autoPlay={true} />
+            <VideoPlayer
+              src="https://r2.mysver.se/websiteFeature.webm"
+              className="w-full md:max-w-7xl mx-auto mt-12 rounded-md bg-black/5 shadow-2xl sm:mt-24 mb-12"
+            />
           </Transition>
 
           <IntersectionTransition>

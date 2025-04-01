@@ -1,7 +1,4 @@
-@import 'tailwindcss';
-
-@plugin '@tailwindcss/forms';
-@plugin '@tailwindcss/typography';
+@import "tailwindcss";
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -23,25 +20,25 @@
 
 @utility bandaraya-button {
   @property --bdColor1 {
-    syntax: '<color>';
+    syntax: "<color>";
     initial-value: #476075;
     inherits: false;
   }
 
   @property --bdColor2 {
-    syntax: '<color>';
+    syntax: "<color>";
     initial-value: #27374d;
     inherits: false;
   }
 
   @property --lbColor1 {
-    syntax: '<color>';
+    syntax: "<color>";
     initial-value: #65ad56;
     inherits: false;
   }
 
   @property --lbColor2 {
-    syntax: '<color>';
+    syntax: "<color>";
     initial-value: #13863f;
     inherits: false;
   }
@@ -58,25 +55,25 @@
 
 @utility lebuhraya-button {
   @property --bdColor1 {
-    syntax: '<color>';
+    syntax: "<color>";
     initial-value: #476075;
     inherits: false;
   }
 
   @property --bdColor2 {
-    syntax: '<color>';
+    syntax: "<color>";
     initial-value: #27374d;
     inherits: false;
   }
 
   @property --lbColor1 {
-    syntax: '<color>';
+    syntax: "<color>";
     initial-value: #65ad56;
     inherits: false;
   }
 
   @property --lbColor2 {
-    syntax: '<color>';
+    syntax: "<color>";
     initial-value: #13863f;
     inherits: false;
   }
