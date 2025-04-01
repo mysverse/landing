@@ -7,7 +7,15 @@ type VideoPlayerProps = {
 
 function VideoPlayer({ src, className }: VideoPlayerProps) {
   return (
-    <video src={src} autoPlay loop muted playsInline className={className}>
+    <video
+      src={src}
+      autoPlay
+      loop
+      muted
+      playsInline
+      onContextMenu={(e) => e.preventDefault()}
+      className={className}
+    >
       Your browser does not support the video tag.
     </video>
   );

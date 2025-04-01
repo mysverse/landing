@@ -611,7 +611,7 @@ export default function Main() {
             /> */}
             <VideoPlayer
               src="https://r2.mysver.se/websiteFeature.webm"
-              className="w-full md:max-w-7xl mx-auto mt-12 rounded-md bg-black/5 shadow-2xl sm:mt-24 mb-12"
+              className="w-full md:max-w-7xl mx-auto mt-12 rounded-xl shadow-2xl mb-12"
             />
           </Transition>
 
