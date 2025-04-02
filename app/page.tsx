@@ -612,7 +612,20 @@ export default async function Main() {
               className="mt-12 rounded-md bg-black/5 shadow-2xl sm:mt-24 mx-auto mb-12"
             /> */}
             <VideoPlayer
-              src="https://r2.mysver.se/websiteFeature.webm"
+              src={[
+                {
+                  src: "https://r2.mysver.se/websiteFeature.webm",
+                  type: "video/webm"
+                },
+                {
+                  src: "https://r2.mysver.se/websiteFeature-vp9.webm",
+                  type: "video/webm"
+                },
+                {
+                  src: "https://r2.mysver.se/websiteFeature.mp4",
+                  type: "video/mp4"
+                }
+              ]}
               className="mx-auto mt-12 mb-12 w-full shadow-2xl xl:max-w-7xl xl:rounded-xl"
             />
           </Transition>
