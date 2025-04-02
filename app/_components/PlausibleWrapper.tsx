@@ -5,6 +5,7 @@ import { PropsWithChildren } from "react";
 
 interface PlausibleWrapperProps extends PropsWithChildren {
   eventName: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   eventProps?: any;
 }
 

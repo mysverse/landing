@@ -12,7 +12,7 @@ interface Stat {
 }
 
 export default function Stats({ initialStats }: { initialStats?: Metrics }) {
-  const [metrics, setMetrics] = useState<Metrics | undefined>();
+  const [metrics, setMetrics] = useState<Metrics | undefined>(initialStats);
 
   useEffect(() => {
     fetchMetrics().then((data) => {
@@ -26,6 +26,7 @@ export default function Stats({ initialStats }: { initialStats?: Metrics }) {
   const totalGamePlays = metrics
     ? metrics.games.reduce((sum, game) => sum + game.visits, 0)
     : 23500000;
+
   const groupMembers = metrics ? metrics.group.memberCount : 383000;
 
   const stats: Stat[] = [

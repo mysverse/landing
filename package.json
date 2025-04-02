@@ -15,7 +15,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
-    "@tailwindcss/postcss": "^4.1.0",
+    "@tailwindcss/postcss": "^4.1.1",
     "@tryghost/content-api": "^1.11.21",
     "clsx": "^2.1.1",
     "motion": "^12.6.3",
