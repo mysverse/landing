@@ -35,7 +35,7 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
     <motion.article
       ref={cardRef}
       key={post.id}
-      className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 aspect-video"
+      className="relative isolate flex aspect-video flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8"
       style={{
         rotateX,
         rotateY,
@@ -65,7 +65,7 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
         height={1024}
       />
       <div className="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/30" />
-      <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+      <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-gray-900/10 ring-inset" />
 
       <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
         <time
@@ -96,7 +96,7 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
           </div>
         </div>
       </div>
-      <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
+      <h3 className="mt-3 text-lg leading-6 font-semibold text-white">
         <a href={post.url}>
           <span className="absolute inset-0" />
           {post.title}

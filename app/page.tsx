@@ -55,7 +55,7 @@ const socials = [
   {
     name: "Roblox",
     href: "https://roblox.com/groups/1143446",
-    icon: <RobloxLogo className="inline-flex h-[1em] mb-1 fill-black" />
+    icon: <RobloxLogo className="mb-1 inline-flex h-[1em] fill-black" />
   },
   {
     name: "Discord",
@@ -129,17 +129,17 @@ function Contact() {
                 with battle-tested community and development skills.
               </p>
             </div>
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:col-span-2 lg:gap-8">
-              <div className="rounded-2xl bg-white p-10 flex flex-col justify-center place-content-center">
-                <h3 className="text-base font-semibold leading-7 text-black-100">
+            <div className="grid grid-cols-1 gap-6 lg:col-span-2 lg:grid-cols-2 lg:gap-8">
+              <div className="flex flex-col place-content-center justify-center rounded-2xl bg-white p-10">
+                <h3 className="text-black-100 text-base leading-7 font-semibold">
                   MYSverse Digital Ventures
                 </h3>
-                <h4 className="text-sm font-medium leading-5 text-red-600">
+                <h4 className="text-sm leading-5 font-medium text-red-600">
                   <Link href="/ssm_cert.pdf" target="_blank">
                     202303234965 (AS0469188-M)
                   </Link>
                 </h4>
-                <dl className="mt-3 space-y-1 text-sm leading-6 text-black-100">
+                <dl className="text-black-100 mt-3 space-y-1 text-sm leading-6">
                   {/* <div>
                     <dt className="sr-only">Registration</dt>
                     <dd>202303234965 (AS0469188-M)</dd>
@@ -204,15 +204,15 @@ function Contact() {
                   </div> */}
                 </dl>
               </div>
-              <div className="rounded-2xl bg-white p-10 flex flex-col justify-center place-content-center">
-                <h3 className="text-base font-semibold leading-7 text-black-100">
+              <div className="flex flex-col place-content-center justify-center rounded-2xl bg-white p-10">
+                <h3 className="text-black-100 text-base leading-7 font-semibold">
                   Shoot us a message
                 </h3>
-                <h4 className="text-sm font-normal opacity-80 leading-7 text-black-100">
+                <h4 className="text-black-100 text-sm leading-7 font-normal opacity-80">
                   For businesses and organisations
                 </h4>
-                <dl className="mt-3 space-y-1 text-sm leading-6 text-black-100">
-                  <div className=" flex flex-col gap-y-4">
+                <dl className="text-black-100 mt-3 space-y-1 text-sm leading-6">
+                  <div className="flex flex-col gap-y-4">
                     <dt className="sr-only">WhatsApp</dt>
                     <dd>
                       <Link href="https://wa.me/601154156978" target="_blank">
@@ -230,14 +230,14 @@ function Contact() {
                   </div> */}
                 </dl>
               </div>
-              <div className="rounded-2xl bg-white p-10 flex flex-col justify-center place-content-center">
-                <h3 className="text-base font-semibold leading-7 text-black-100">
+              <div className="flex flex-col place-content-center justify-center rounded-2xl bg-white p-10">
+                <h3 className="text-black-100 text-base leading-7 font-semibold">
                   Join the community
                 </h3>
-                <h4 className="text-sm font-normal opacity-80 leading-7 text-black-100">
+                <h4 className="text-black-100 text-sm leading-7 font-normal opacity-80">
                   For game-related matters
                 </h4>
-                <dl className="mt-3 space-y-1 text-sm leading-6 text-black-100">
+                <dl className="text-black-100 mt-3 space-y-1 text-sm leading-6">
                   <div className="flex flex-row gap-x-4">
                     <dt className="sr-only">Discord</dt>
                     <dd>
@@ -374,19 +374,19 @@ function ProjectList() {
             <li key={project.name}>
               {project.image ? (
                 <Image
-                  className="aspect-3/2 w-full rounded-2xl object-cover mb-6"
+                  className="mb-6 aspect-3/2 w-full rounded-2xl object-cover"
                   width={500}
                   height={250}
                   src={project.image}
                   alt="Project image"
                 />
               ) : null}
-              <div className="sm:flex-row sm:flex gap-x-4">
-                <h3 className="text-xl font-semibold leading-8 tracking-tight text-black-100">
+              <div className="gap-x-4 sm:flex sm:flex-row">
+                <h3 className="text-black-100 text-xl leading-8 font-semibold tracking-tight">
                   {project.name}
                 </h3>
                 {project.wip ? (
-                  <span className="inline-flex items-center gap-x-1.5 my-0.5 py-2 rounded-md px-2 text-xs font-medium text-black-100 ring-1 ring-inset ring-gray-300">
+                  <span className="text-black-100 my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset">
                     <svg
                       className="h-1.5 w-1.5 fill-red-400"
                       viewBox="0 0 6 6"
@@ -397,7 +397,7 @@ function ProjectList() {
                     {project.launched}
                   </span>
                 ) : project.launched ? (
-                  <span className="inline-flex items-center gap-x-1.5 py-2 my-0.5 rounded-md px-2 text-xs font-medium text-black-100 ring-1 ring-inset ring-gray-300">
+                  <span className="text-black-100 my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset">
                     <svg
                       className="h-1.5 w-1.5 fill-green-400"
                       viewBox="0 0 6 6"
@@ -419,11 +419,11 @@ function ProjectList() {
     );
   }
   return (
-    <div className="py-12 sm:py-32 text-gray-800" id="projects">
+    <div className="py-12 text-gray-800 sm:py-32" id="projects">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <IntersectionTransition>
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-black-100 sm:text-4xl">
+            <h2 className="text-black-100 text-3xl font-bold tracking-tight sm:text-4xl">
               Our projects
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-800">
@@ -431,7 +431,7 @@ function ProjectList() {
             </p>
           </div>
           <div className="mt-16">
-            <h3 className="text-2xl font-bold tracking-tight text-black-100 sm:text-3xl">
+            <h3 className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl">
               MYSverse
             </h3>
             <ItemList type="MYSverse" />
@@ -439,7 +439,7 @@ function ProjectList() {
         </IntersectionTransition>
         <IntersectionTransition>
           <div className="mt-16">
-            <h3 className="text-2xl font-bold tracking-tight text-black-100 sm:text-3xl">
+            <h3 className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl">
               <MYSverseSimLogo className="inline-block h-12 w-auto fill-black" />
               <span className="sr-only">MYSverse Sim</span>
             </h3>
@@ -514,7 +514,7 @@ export default async function Main() {
                           <Link
                             href={item.href}
                             target="_blank"
-                            className="text-xl font-semibold leading-6 text-black-100 fill-gray-100 opacity-100 hover:opacity-50"
+                            className="text-black-100 fill-gray-100 text-xl leading-6 font-semibold opacity-100 hover:opacity-50"
                           >
                             {icon}
                           </Link>
@@ -533,7 +533,7 @@ export default async function Main() {
                 show
                 appear
               >
-                <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
+                <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
                   <TransitionChild
                     as="div"
                     enter="transform transition duration-700 delay-700"
@@ -550,9 +550,9 @@ export default async function Main() {
                     >
                       <Link
                         href="https://www.roblox.com/games/481538620/Bandaraya"
-                        className="transition group rounded-md bandaraya-button px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                        className="group bandaraya-button rounded-md px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs transition focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                       >
-                        <PlayBandaraya className="transition ease-out duration-300 fill-white inline-flex h-[3em] px-1 group-hover:fill-[#476075]" />
+                        <PlayBandaraya className="inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#476075]" />
                       </Link>
                     </PlausibleWrapper>
                   </TransitionChild>
@@ -572,16 +572,16 @@ export default async function Main() {
                     >
                       <Link
                         href="https://www.roblox.com/games/4892731894/Lebuhraya"
-                        className="group rounded-md lebuhraya-button px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs  focus-visible:outline  focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                        className="group lebuhraya-button rounded-md px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                       >
-                        <PlayLebuhraya className="transition duration-300 ease-out fill-white inline-flex h-[3em] px-1 group-hover:fill-[#65ad56]" />
+                        <PlayLebuhraya className="inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#65ad56]" />
                       </Link>
                     </PlausibleWrapper>
                   </TransitionChild>
                 </div>
                 <p
                   // href="#"
-                  className="text-sm italic leading-6 tracking-wide text-black opacity-80 mt-4"
+                  className="mt-4 text-sm leading-6 tracking-wide text-black italic opacity-80"
                 >
                   ...and more open experiences for everyone, coming soon!
                 </p>
@@ -613,7 +613,7 @@ export default async function Main() {
             /> */}
             <VideoPlayer
               src="https://r2.mysver.se/websiteFeature.webm"
-              className="w-full xl:max-w-7xl mx-auto mt-12 xl:rounded-xl shadow-2xl mb-12"
+              className="mx-auto mt-12 mb-12 w-full shadow-2xl xl:max-w-7xl xl:rounded-xl"
             />
           </Transition>
 
@@ -655,10 +655,10 @@ export default async function Main() {
                       <Link
                         href={item.href}
                         target="_blank"
-                        className="font-semibold text-xl leading-6 text-gray-800 fill-gray-300 opacity-100 hover:opacity-50"
+                        className="fill-gray-300 text-xl leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50"
                       >
                         {icon}
-                        <span className="hidden ml-2 text-base xl:inline-block">
+                        <span className="ml-2 hidden text-base xl:inline-block">
                           {item.name}
                         </span>
                       </Link>
@@ -682,8 +682,8 @@ export default async function Main() {
           />
         </div>
       </div>
-      <footer className="text-center tracking-widest text-sm text-black pb-20 opacity-50 uppercase mx-4">
-        <span className="block mb-1">
+      <footer className="mx-4 pb-20 text-center text-sm tracking-widest text-black uppercase opacity-50">
+        <span className="mb-1 block">
           Owned and operated by MYSverse Digital Ventures (AS0469188-M).
         </span>
         <span className="block">

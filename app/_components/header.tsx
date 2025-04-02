@@ -42,10 +42,10 @@ const pageNavigation = [
 
 function NewsButton({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) {
   return (
-    <button onClick={() => setIsOpen(true)} className="px-2 lg:mx-0 mx-3">
+    <button onClick={() => setIsOpen(true)} className="mx-3 px-2 xl:mx-0">
       <NewspaperIcon
         onClick={() => setIsOpen(true)}
-        className="lg:stroke-black stroke-black/30 transition hover:opacity-50 size-9"
+        className="size-9 stroke-gray-400 transition hover:opacity-50 xl:stroke-black"
       />
     </button>
   );
@@ -87,7 +87,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-800 opacity-100 hover:opacity-50"
+              className="text-sm leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50"
               onClick={() =>
                 plausible("navClicked", {
                   props: {
@@ -103,7 +103,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-800 opacity-100 hover:opacity-50"
+              className="text-sm leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50"
             >
               {item.name}
             </Link>
@@ -148,7 +148,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-800 hover:bg-gray-100"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-100"
                     onClick={() => {
                       plausible("navClicked", {
                         props: {
@@ -164,7 +164,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-800 hover:bg-gray-100"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-100"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}

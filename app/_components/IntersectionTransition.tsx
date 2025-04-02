@@ -17,8 +17,8 @@ export default function IntersectionTransition(props: Props) {
     <div
       ref={ref}
       className={clsx(
-        "transition duration-500 ease-out delay-150",
-        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        "transition delay-150 duration-500 ease-out",
+        inView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       )}
     >
       {props.children}

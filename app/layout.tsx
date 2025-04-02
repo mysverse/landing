@@ -56,7 +56,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
           customDomain="https://plausible.yan.gg"
         />
       </head>
-      <body className={`${font.className} bg-gray-100 h-full`}>
+      <body className={`${font.className} h-full bg-gray-100`}>
         <Header initialNews={news.News} />
         <main>{children}</main>
       </body>
