@@ -42,18 +42,23 @@ export async function generateMetadata(
   const { blogType, slug } = await params;
   const post = await getPost(blogType, slug);
   // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || [];
+  const metadata = await parent;
+  const previousImages = metadata.openGraph?.images || [];
   const primaryAuthor = post.authors?.[0].name;
 
   return {
-    title: post.title,
-    publisher: blogType === "mys" ? "MYSverse" : "NWS",
+    title: post.title ?? metadata.title,
+    description: post.excerpt ?? metadata.description,
+    keywords: post.tags?.map((tag) => tag.name).join(", "),
+    applicationName: blogType === "mys" ? "MYSverse" : "NWS",
     authors: [
       {
         name: primaryAuthor
       }
     ],
     openGraph: {
+      siteName: blogType === "mys" ? "MYSverse" : "NWS",
+      type: "website",
       images: post.feature_image ?? previousImages
     }
   };
