@@ -1,9 +1,16 @@
 "use client";
 
 import type { PropsWithChildren } from "react";
+import { useEffect } from "react";
 import { motion } from "motion/react";
 
 export default function MotionArticle(props: PropsWithChildren) {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }, []);
   return (
     <motion.article
       initial={{ y: 128, opacity: 0 }}
