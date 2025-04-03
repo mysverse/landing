@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { PostsOrPages } from "@tryghost/content-api";
 
+import type { BlogType } from "utils/ghost";
 import { getPosts } from "utils/ghost";
 import { BlogPostCard } from "./BlogPostCard";
 
@@ -10,7 +11,7 @@ export default function BlogClient({
   blogType,
   initialPosts
 }: {
-  blogType: "MYSverse" | "NWS";
+  blogType: BlogType;
   initialPosts?: PostsOrPages;
 }) {
   const [posts, setPosts] = useState<PostsOrPages | undefined>(initialPosts);
@@ -26,9 +27,7 @@ export default function BlogClient({
   }, [blogType]);
 
   return posts?.map((post) => {
-    if (blogType === "MYSverse") {
-      post.url = `/blog/${post.slug}`;
-    }
+    post.url = `/blog/${blogType}/${post.slug}`;
     return <BlogPostCard key={post.id} post={post} />;
   });
 }

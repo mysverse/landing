@@ -58,51 +58,54 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
         z.set(-10);
       }}
     >
-      <Image
-        alt={post.feature_image_alt ?? "Image of blog post"}
-        src={post.feature_image ?? ""}
-        className="absolute inset-0 -z-10 h-full w-full object-cover"
-        width={1024}
-        height={1024}
-      />
-      <div className="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/30" />
-      <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-gray-900/10 ring-inset" />
+      <Link
+        href={post.url ?? "#"}
+        className={post.url ? "" : "pointer-events-none"}
+      >
+        <Image
+          alt={post.feature_image_alt ?? "Image of blog post"}
+          src={post.feature_image ?? ""}
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+          width={1024}
+          height={1024}
+        />
+        <div className="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/30" />
+        <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-gray-900/10 ring-inset" />
 
-      <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-        <time
-          dateTime={post.published_at!}
-          className="mr-8"
-          suppressHydrationWarning
-        >
-          {new Date(post.published_at!).toLocaleDateString()}
-        </time>
-        <div className="-ml-4 flex items-center gap-x-4">
-          <svg
-            viewBox="0 0 2 2"
-            className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50"
+        <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
+          <time
+            dateTime={post.published_at!}
+            className="mr-8"
+            suppressHydrationWarning
           >
-            <circle r={1} cx={1} cy={1} />
-          </svg>
-          <div className="flex gap-x-2.5">
-            {post.authors && post.authors[0].profile_image && (
-              <Image
-                alt="Image of author"
-                src={post.authors[0].profile_image}
-                className="h-6 w-6 flex-none rounded-full bg-white/10"
-                width={32}
-                height={32}
-              />
-            )}
-            {post.authors![0].name}
+            {new Date(post.published_at!).toLocaleDateString()}
+          </time>
+          <div className="-ml-4 flex items-center gap-x-4">
+            <svg
+              viewBox="0 0 2 2"
+              className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50"
+            >
+              <circle r={1} cx={1} cy={1} />
+            </svg>
+            <div className="flex gap-x-2.5">
+              {post.authors && post.authors[0].profile_image && (
+                <Image
+                  alt="Image of author"
+                  src={post.authors[0].profile_image}
+                  className="h-6 w-6 flex-none rounded-full bg-white/10"
+                  width={32}
+                  height={32}
+                />
+              )}
+              {post.authors![0].name}
+            </div>
           </div>
         </div>
-      </div>
-      <h3 className="mt-3 text-lg leading-6 font-semibold text-white">
-        <Link href={post.url ?? "#"} className="relative">
+        <h3 className="mt-3 text-lg leading-6 font-semibold text-white">
           <span className="absolute inset-0" />
           {post.title}
-        </Link>
-      </h3>
+        </h3>
+      </Link>
     </motion.article>
   );
 };

@@ -457,7 +457,7 @@ function ProjectList() {
 export default async function Main() {
   const initialStats = await fetchMetrics();
   return (
-    <div className="py-12 sm:py-32 lg:pb-40">
+    <>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <SplitText>Step into our faithfully Malaysian metaverse.</SplitText>
@@ -621,12 +621,12 @@ export default async function Main() {
       <ProjectList />
 
       <IntersectionTransition>
-        <Blog blogType="MYSverse" />
+        <Blog blogType="mys" />
       </IntersectionTransition>
 
       <div className="mt-16">
         <IntersectionTransition>
-          <Blog blogType="NWS" />
+          <Blog blogType="nws" />
         </IntersectionTransition>
       </div>
 
@@ -665,6 +665,6 @@ export default async function Main() {
           })}
         </div>
       </IntersectionTransition>
-    </div>
+    </>
   );
 }

@@ -1,22 +1,17 @@
+import type { BlogType } from "utils/ghost";
 import { getPosts } from "utils/ghost";
 import BlogClient from "./BlogClient";
 
-export default async function Blog({
-  blogType
-}: {
-  blogType: "MYSverse" | "NWS";
-}) {
+export default async function Blog({ blogType }: { blogType: BlogType }) {
   const initialPosts = await getPosts(blogType);
-
   return (
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          From{" "}
-          {blogType === "MYSverse" ? "our real-world blog" : " MYSverse Sim"}
+          From {blogType === "mys" ? "our real-world blog" : " MYSverse Sim"}
         </h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
-          {blogType === "MYSverse"
+          {blogType === "mys"
             ? "Delve deeper into the world of MYSverse with our latest blog posts."
             : "Explore in-universe news by our virtual media service NWS."}
         </p>

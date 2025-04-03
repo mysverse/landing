@@ -5,7 +5,7 @@ const config = {
     css: (text: string) =>
       [...text.matchAll(/(?<=@)(import|plugin)[^;]+/g)]
         .join("\n")
-        .replace("plugin", "import")
+        .replaceAll("plugin", "import")
   },
   ignoreDependencies: [
     "@svgr/webpack",
