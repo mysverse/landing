@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { PostOrPage } from "@tryghost/content-api";
 import { motion, useSpring } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 
 // BlogPostCard component to handle the tilt effect
 export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
@@ -97,10 +98,10 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
         </div>
       </div>
       <h3 className="mt-3 text-lg leading-6 font-semibold text-white">
-        <a href={post.url}>
+        <Link href={post.url ?? "#"} className="relative">
           <span className="absolute inset-0" />
           {post.title}
-        </a>
+        </Link>
       </h3>
     </motion.article>
   );

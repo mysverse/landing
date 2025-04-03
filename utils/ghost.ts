@@ -35,7 +35,12 @@ const api_nws = new GhostContentAPI({
   makeRequest
 });
 
-export async function getPosts(blogType: "MYSverse" | "NWS") {
+export async function getPosts(blogType: "MYSverse" | "NWS", limit = 4) {
   const ghostApi = blogType === "MYSverse" ? api : api_nws;
-  return ghostApi.posts.browse({ limit: 4, include: ["tags", "authors"] });
+  return ghostApi.posts.browse({ limit, include: ["tags", "authors"] });
+}
+
+export async function getPost(blogType: "MYSverse" | "NWS", slug: string) {
+  const ghostApi = blogType === "MYSverse" ? api : api_nws;
+  return ghostApi.posts.read({ slug });
 }

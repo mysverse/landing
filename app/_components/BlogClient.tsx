@@ -25,5 +25,10 @@ export default function BlogClient({
       });
   }, [blogType]);
 
-  return posts?.map((post) => <BlogPostCard key={post.id} post={post} />);
+  return posts?.map((post) => {
+    if (blogType === "MYSverse") {
+      post.url = `/blog/${post.slug}`;
+    }
+    return <BlogPostCard key={post.id} post={post} />;
+  });
 }
