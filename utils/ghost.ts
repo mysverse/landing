@@ -39,7 +39,11 @@ export type BlogType = "mys" | "nws";
 
 export async function getPosts(blogType: BlogType, limit = 4) {
   const ghostApi = blogType === "mys" ? api : api_nws;
-  return ghostApi.posts.browse({ limit, include: ["tags", "authors"] });
+  return ghostApi.posts.browse({
+    limit,
+    include: ["tags", "authors"],
+    filter: ["visibility:public"]
+  });
 }
 
 export async function getPost(blogType: BlogType, slug: string) {
