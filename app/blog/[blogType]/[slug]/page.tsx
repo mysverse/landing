@@ -32,17 +32,24 @@ export default async function BlogPost({ params }: Props) {
   const blogUrl =
     blogType === "mys" ? "https://blog.mysver.se" : "https://nws.mys.gg";
   const primaryTag = post.tags?.[0];
+
   const pages = [
     {
       name: blogName,
-      href: blogUrl
-    },
-    {
-      name: primaryTag?.name,
-      href: `${blogUrl}/tag/${primaryTag?.slug}`,
-      current: true
+      href: blogUrl,
+      current: false
     }
   ];
+
+  if (primaryTag && primaryTag.slug && primaryTag.name) {
+    pages.push({
+      name: primaryTag.name,
+      href: `${blogUrl}/tag/${primaryTag.slug}`,
+      current: false
+    });
+  }
+
+  pages[pages.length - 1].current = true;
 
   return (
     <MotionArticle>
