@@ -39,7 +39,7 @@ export default async function BlogPost({ params }: Props) {
           // @ts-expect-error onerror is not a valid prop
           attributes.onerror = undefined;
         }
-        if (attributes.name === "a") {
+        if (domNode.name === "a") {
           const props = attributesToProps(attributes);
           return (
             <Link href={attributes.href} target="_blank" {...props}>
