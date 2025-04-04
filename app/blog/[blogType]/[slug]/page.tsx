@@ -29,8 +29,7 @@ export default async function BlogPost({ params }: Props) {
   const html = parse(post.html!);
   const blogName =
     blogType === "mys" ? "MYSverse Blog" : "National Wire Service";
-  const blogUrl =
-    blogType === "mys" ? "https://blog.mysver.se" : "https://nws.mys.gg";
+  const blogUrl = blogType === "mys" ? "/blog/mys" : "/blog/nws";
   const primaryTag = post.tags?.[0];
 
   const pages = [
@@ -76,7 +75,7 @@ export default async function BlogPost({ params }: Props) {
                 </svg>
                 <Link
                   href={page.href}
-                  target={"_blank"}
+                  // target={"_blank"}
                   aria-current={page.current ? "page" : undefined}
                   className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
                 >
