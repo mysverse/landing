@@ -1,6 +1,8 @@
+import "styles/ghost.css";
+
 import type { Metadata, ResolvingMetadata } from "next";
+import parse, { Element } from "html-react-parser";
 import Image from "next/image";
-import parse from "html-react-parser";
 
 import type { BlogType } from "utils/ghost";
 import { getPost, getPosts } from "utils/ghost";
@@ -26,7 +28,20 @@ const getColour = (blogType: BlogType) => {
 export default async function BlogPost({ params }: Props) {
   const { blogType, slug } = await params;
   const post = await getPost(blogType, slug);
-  const html = parse(post.html!);
+  const html = parse(post.html!, {
+    replace: (domNode) => {
+      if (domNode instanceof Element) {
+        const attributes = domNode.attribs;
+        if (attributes.class === "kg-bookmark-thumbnail") {
+          attributes.class = "kg-bookmark-thumbnail not-prose";
+        }
+        if (attributes.onerror) {
+          // @ts-expect-error onerror is not a valid prop
+          domNode.attribs.onerror = undefined;
+        }
+      }
+    }
+  });
   const blogName =
     blogType === "mys" ? "MYSverse Blog" : "National Wire Service";
   const blogUrl = blogType === "mys" ? "/blog/mys" : "/blog/nws";
