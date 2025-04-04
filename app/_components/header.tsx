@@ -3,7 +3,7 @@ import { usePlausible } from "next-plausible";
 
 import { useState } from "react";
 import MysverseLogo from "public/img/mysverse_logo_colour.svg";
-import { Dialog } from "@headlessui/react";
+import { Dialog, DialogPanel } from "@headlessui/react";
 import {
   Bars3Icon,
   NewspaperIcon,
@@ -45,7 +45,7 @@ function NewsButton({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) {
     <button onClick={() => setIsOpen(true)} className="mx-3 px-2 xl:mx-0">
       <NewspaperIcon
         onClick={() => setIsOpen(true)}
-        className="size-9 stroke-gray-400 transition hover:opacity-50 xl:stroke-black"
+        className="size-9 stroke-gray-400 transition hover:cursor-pointer hover:opacity-50 xl:stroke-black"
       />
     </button>
   );
@@ -111,9 +111,6 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
         </div>
         <div className="hidden xl:flex xl:flex-1 xl:justify-end">
           <NewsButton setIsOpen={setNewsOpen} />
-          {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-800">
-          Log in <span aria-hidden="true">&rarr;</span>
-        </a> */}
         </div>
       </nav>
       <Dialog
@@ -123,7 +120,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">MYSverse</span>
@@ -171,17 +168,9 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
                   </Link>
                 ))}
               </div>
-              {/* <div className="py-6">
-              <a
-                href="#"
-                className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-800 hover:bg-gray-800"
-              >
-                Log in
-              </a>
-            </div> */}
             </div>
           </div>
-        </Dialog.Panel>
+        </DialogPanel>
       </Dialog>
       <NewsModal
         isOpen={newsOpen}

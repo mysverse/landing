@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 
 import RobloxLogo from "public/img/Roblox_Logo.svg";
-// import FeaturePic from "public/img/mysverse_feature.webp";
+
 import DaerahFeaturePic from "public/img/daerah_feature_image.webp";
 import RumahFeaturePic from "public/img/rumah_feature_image.webp";
 import Rumah3FeaturePic from "public/img/rumah3.webp";
@@ -34,7 +34,6 @@ import {
   faXTwitter,
   faYoutube
 } from "@fortawesome/free-brands-svg-icons";
-// import CalButton from "./_components/CalButton";
 
 const PlausibleWrapper = dynamic(
   () => import("./_components/PlausibleWrapper")
@@ -48,8 +47,6 @@ import IntersectionTransition from "./_components/IntersectionTransition";
 import SplitText from "./_components/SplitText";
 import VideoPlayer from "./_components/VideoPlayer";
 import { fetchMetrics } from "utils/stats";
-// import Bento from "./_components/Bento";
-// import { ReactNode } from "react";
 
 const socials = [
   {

@@ -94,7 +94,7 @@ export default function NewsModal({
               {/* Close button - repositioned to bottom center */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute bottom-4 left-1/2 z-50 -translate-x-1/2 transform rounded-full bg-black/20 p-2 backdrop-blur-sm transition-colors hover:bg-black/40"
+                className="absolute bottom-4 left-1/2 z-50 -translate-x-1/2 transform rounded-full bg-black/20 p-2 backdrop-blur-sm transition-colors hover:cursor-pointer hover:bg-black/40"
                 aria-label="Close"
               >
                 <XMarkIcon className="size-8 text-white" />
