@@ -121,7 +121,8 @@ export async function generateMetadata(
     title: post.title ?? metadata.title,
     description: post.excerpt ?? metadata.description,
     keywords: post.tags?.map((tag) => tag.name).join(", "),
-    applicationName: blogType === "mys" ? "MYSverse" : "NWS",
+    applicationName:
+      blogType === "mys" ? "MYSverse Blog" : "National Wire Service",
     authors: [
       {
         name: primaryAuthor
