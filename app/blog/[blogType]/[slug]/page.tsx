@@ -5,18 +5,82 @@ import parse from "html-react-parser";
 import type { BlogType } from "utils/ghost";
 import { getPost, getPosts } from "utils/ghost";
 import MotionArticle from "./MotionArticle";
+import { HomeIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 interface Props {
   params: Promise<{ blogType: BlogType; slug: string }>;
 }
 
+const getColour = (blogType: BlogType) => {
+  switch (blogType) {
+    case "mys":
+      return "#FF2A2A";
+    case "nws":
+      return "#2527B5";
+    default:
+      return "#000000";
+  }
+};
+
 export default async function BlogPost({ params }: Props) {
   const { blogType, slug } = await params;
   const post = await getPost(blogType, slug);
   const html = parse(post.html!);
+  const blogName =
+    blogType === "mys" ? "MYSverse Blog" : "National Wire Service";
+  const blogUrl =
+    blogType === "mys" ? "https://blog.mysver.se" : "https://nws.mys.gg";
+  const primaryTag = post.tags?.[0];
+  const pages = [
+    {
+      name: blogName,
+      href: blogUrl
+    },
+    {
+      name: primaryTag?.name,
+      href: `${blogUrl}/tag/${primaryTag?.slug}`,
+      current: true
+    }
+  ];
+
   return (
     <MotionArticle>
-      <h2 className="mb-4 text-3xl font-bold lg:text-4xl">{post.title}</h2>
+      <nav aria-label="Breadcrumb" className="flex">
+        <ol role="list" className="flex items-center space-x-1 lg:space-x-4">
+          <li>
+            <div>
+              <Link href="/" className="text-gray-400 hover:text-gray-500">
+                <HomeIcon aria-hidden="true" className="size-5 shrink-0" />
+                <span className="sr-only">Home</span>
+              </Link>
+            </div>
+          </li>
+          {pages.map((page) => (
+            <li key={page.name}>
+              <div className="flex items-center">
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  aria-hidden="true"
+                  className="size-5 shrink-0 text-gray-300"
+                >
+                  <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                </svg>
+                <Link
+                  href={page.href}
+                  target={"_blank"}
+                  aria-current={page.current ? "page" : undefined}
+                  className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+                >
+                  {page.name}
+                </Link>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </nav>
+      <h2 className="mt-6 mb-4 text-3xl font-bold lg:text-4xl">{post.title}</h2>
       <p className="mb-4 text-base text-gray-500 xl:text-lg">
         Published on {new Date(post.published_at!).toLocaleDateString()}
       </p>
@@ -61,6 +125,13 @@ export async function generateMetadata(
       type: "website",
       images: post.feature_image ?? previousImages
     }
+  };
+}
+
+export async function generateViewport({ params }: Props) {
+  const { blogType } = await params;
+  return {
+    themeColor: getColour(blogType)
   };
 }
 
