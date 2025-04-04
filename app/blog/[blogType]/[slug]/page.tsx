@@ -1,7 +1,7 @@
 import "styles/ghost.css";
 
 import type { Metadata, ResolvingMetadata } from "next";
-import parse, { Element } from "html-react-parser";
+import parse, { attributesToProps, Element } from "html-react-parser";
 import Image from "next/image";
 
 import type { BlogType } from "utils/ghost";
@@ -38,6 +38,14 @@ export default async function BlogPost({ params }: Props) {
         if (attributes.onerror) {
           // @ts-expect-error onerror is not a valid prop
           domNode.attribs.onerror = undefined;
+        }
+        if (attributes.name === "a") {
+          const props = attributesToProps(attributes);
+          return (
+            <Link href={attributes.href} target="_blank" {...props}>
+              <>{domNode.children}</>
+            </Link>
+          );
         }
       }
     }
