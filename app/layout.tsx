@@ -43,6 +43,9 @@ import { Public_Sans } from "next/font/google";
 import { PropsWithChildren } from "react";
 import Header from "./_components/header";
 import { getNews } from "utils/news";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const font = Public_Sans({ subsets: ["latin"] });
 
@@ -87,7 +90,15 @@ export default async function RootLayout({ children }: PropsWithChildren) {
             </div>
           </div>
         </main>
-        <footer className="mx-4 pb-20 text-center text-sm tracking-widest text-black uppercase opacity-50">
+        <footer className="mx-4 pb-20 text-center text-sm text-black opacity-50">
+          <Link
+            href="https://github.com/mysverse/landing"
+            target="_blank"
+            className="mb-4 block text-base transition hover:opacity-50"
+          >
+            <FontAwesomeIcon icon={faGithub} className="mr-1 text-lg" /> Source
+            code available with &lt;3
+          </Link>
           <span className="mb-1 block">
             Owned and operated by MYSverse Digital Ventures (AS0469188-M).
           </span>
