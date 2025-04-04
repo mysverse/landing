@@ -1,34 +1,118 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# mysverse/landing
+
+![OpenGraph Image](./public/landing_og.png)
+
+## Overview
+
+The **MYSverse Landing Page** is a **Next.js-based** web application that serves as the entry point to the MYSverse ecosystem. MYSverse is a Malaysian metaverse project and roleplay community that combines fun, education, and culture through immersive virtual experiences. This landing page highlights the various projects, blogs, and contact options for MYSverse, providing users with a gateway to explore its offerings.
+
+## Features
+
+### Dynamic Blog System
+
+- Displays blog posts from the real-world MYSverse blog and the in-universe National Wire Service (NWS).
+- Supports metadata generation for SEO and social sharing.
+
+### Interactive Components
+
+- Includes animated blog post cards, project showcases, and contact forms.
+- Features a breadcrumb navigation system for blog posts.
+
+### Responsive Design
+
+- Optimized for various screen sizes, ensuring a seamless experience across devices.
+
+### Analytics Integration
+
+- Tracks user interactions using **Plausible Analytics**.
+
+### Customizable Metadata
+
+- Dynamically generates metadata for SEO and social sharing.
+
+### Project Highlights
+
+- Showcases MYSverse projects, including roleplay experiences on Roblox.
+
+### Contact Options
+
+- Provides multiple ways to get in touch, including email, phone, WhatsApp, and social media links.
+
+---
+
+## Technologies Used
+
+- **Framework:** Next.js
+- **Styling:** Tailwind CSS
+- **Analytics:** Plausible Analytics
+- **Icons:** FontAwesome and Heroicons
+- **Image Handling:** Next.js Image component
+- **Dynamic Imports:** Used for performance optimization
+
+---
+
+## Project Structure
+
+### Key Files and Directories
+
+- `_components`: Contains reusable UI components like `BlogPostCard`, `Header`, and `VideoPlayer`.
+- `blog`: Handles blog-related pages and dynamic routing for blog types and slugs.
+- `app/layout.tsx`: Defines the root layout, including metadata and global styles.
+- `app/page.tsx`: The main landing page, showcasing projects, blogs, and contact options.
+- `public`: Static assets like images and icons.
+- `styles`: Global CSS and styling files.
+- `utils`: Utility functions for fetching data and other reusable logic.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Ensure you have the following installed:
+
+- Node.js (version 22 or higher)
+- [pnpm](https://pnpm.io/)
+
+### Installation
+
+Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/mysverse/landing.git
+cd landing
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install dependencies:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Running the Development Server
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Start the development server:
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the site.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Building for Production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To build the project for production:
 
-## Deploy on Vercel
+```bash
+pnpm build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+After building, you can start the production server:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+pnpm start
+```
+
+## License
+
+This project is licensed under the MIT License.
