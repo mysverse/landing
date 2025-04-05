@@ -90,11 +90,11 @@ export default async function RootLayout({ children }: PropsWithChildren) {
             </div>
           </div>
         </main>
-        <footer className="mx-4 pb-20 text-center text-sm text-black opacity-50">
+        <footer className="mx-4 mt-10 pb-20 text-center text-sm text-black opacity-50 md:mt-0">
           <Link
             href="https://github.com/mysverse/landing"
             target="_blank"
-            className="mb-4 block text-base transition hover:opacity-50"
+            className="mb-4 block text-sm transition hover:opacity-50 md:text-base"
           >
             <FontAwesomeIcon icon={faGithub} className="mr-1 text-lg" /> Source
             code available with &lt;3

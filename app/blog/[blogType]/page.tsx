@@ -2,9 +2,9 @@ import Image from "next/image";
 
 import type { BlogType } from "utils/ghost";
 import { getPosts } from "utils/ghost";
-import { HomeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import MotionArticle from "./[slug]/MotionArticle";
+import { Breadcrumbs } from "app/_components/Blog/Breadcrumbs";
 
 interface Props {
   params: Promise<{ blogType: BlogType }>;
@@ -30,40 +30,7 @@ export default async function BlogList({ params }: Props) {
 
   return (
     <MotionArticle>
-      <nav aria-label="Breadcrumb" className="flex">
-        <ol role="list" className="flex items-center space-x-1 lg:space-x-4">
-          <li>
-            <div>
-              <Link href="/" className="text-gray-400 hover:text-gray-500">
-                <HomeIcon aria-hidden="true" className="size-5 shrink-0" />
-                <span className="sr-only">Home</span>
-              </Link>
-            </div>
-          </li>
-          {pages.map((page) => (
-            <li key={page.name}>
-              <div className="flex items-center">
-                <svg
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  aria-hidden="true"
-                  className="size-5 shrink-0 text-gray-300"
-                >
-                  <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
-                </svg>
-                <Link
-                  href={page.href}
-                  target={"_blank"}
-                  aria-current={page.current ? "page" : undefined}
-                  className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
-                >
-                  {page.name}
-                </Link>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </nav>
+      <Breadcrumbs blogType={blogType} />
       {posts.map((post) => (
         <Link
           key={post.id}

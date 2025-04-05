@@ -41,7 +41,7 @@ const PlausibleWrapper = dynamic(
 
 import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/20/solid";
 
-import Blog from "./_components/Blog";
+import Blog from "./_components/Blog/Blog";
 import Stats from "./_components/Stats";
 import IntersectionTransition from "./_components/IntersectionTransition";
 import SplitText from "./_components/SplitText";
