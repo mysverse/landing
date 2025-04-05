@@ -32,11 +32,11 @@ const navigation = [
 const pageNavigation = [
   {
     name: "Projects",
-    href: "#projects"
+    href: "/#projects"
   },
   {
     name: "Contact",
-    href: "#contact"
+    href: "/#contact"
   }
 ];
 
@@ -87,6 +87,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
             <Link
               key={item.name}
               href={item.href}
+              target="_blank"
               className="text-sm leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50"
               onClick={() =>
                 plausible("navClicked", {

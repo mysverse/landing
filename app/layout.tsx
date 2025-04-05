@@ -46,6 +46,9 @@ import { getNews } from "utils/news";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { socials } from "data/socials";
+import IntersectionTransition from "./_components/IntersectionTransition";
+import PlausibleWrapper from "./_components/PlausibleWrapper";
 
 const font = Public_Sans({ subsets: ["latin"] });
 
@@ -92,21 +95,55 @@ export default async function RootLayout({ children }: PropsWithChildren) {
             </div>
           </div>
         </main>
-        <footer className="mx-4 mt-10 pb-20 text-center text-sm text-black opacity-50 md:mt-0">
-          <Link
-            href="https://github.com/mysverse/landing"
-            target="_blank"
-            className="mb-4 block text-sm transition hover:opacity-50 md:text-base"
-          >
-            <FontAwesomeIcon icon={faGithub} className="mr-1 text-lg" /> Source
-            code available with &lt;3
-          </Link>
-          <span className="mb-1 block">
-            Owned and operated by MYSverse Digital Ventures (AS0469188-M).
-          </span>
-          <span className="block">
-            All assets used are property of their respective owners.
-          </span>
+        <footer className="mx-4 mt-10 flex flex-col gap-10 pb-20 text-center md:mt-0">
+          <hr />
+          <IntersectionTransition>
+            <div className="mx-8 mt-6 flex flex-row flex-wrap justify-center gap-x-5 gap-y-4 md:gap-x-12">
+              {socials.map((item) => {
+                const icon = item.icon;
+                if (icon) {
+                  return (
+                    <PlausibleWrapper
+                      key={item.name}
+                      eventName="navClicked"
+                      eventProps={{
+                        props: {
+                          name: item.name
+                        }
+                      }}
+                    >
+                      <Link
+                        href={item.href}
+                        target="_blank"
+                        className="fill-gray-500 text-2xl leading-6 font-semibold text-gray-500 opacity-100 transition hover:opacity-50 sm:text-xl"
+                      >
+                        {icon}
+                        <span className="ml-2 hidden text-base xl:inline-block">
+                          {item.name}
+                        </span>
+                      </Link>
+                    </PlausibleWrapper>
+                  );
+                }
+              })}
+            </div>
+          </IntersectionTransition>
+          <div className="text-sm text-black opacity-50">
+            <Link
+              href="https://github.com/mysverse/landing"
+              target="_blank"
+              className="mb-4 block text-sm transition hover:opacity-50 md:text-base"
+            >
+              <FontAwesomeIcon icon={faGithub} className="mr-1 text-lg" />{" "}
+              Source code available with &lt;3
+            </Link>
+            <span className="mb-1 block">
+              Owned and operated by MYSverse Digital Ventures (AS0469188-M).
+            </span>
+            <span className="block">
+              All assets used are property of their respective owners.
+            </span>
+          </div>
         </footer>
       </body>
     </html>
