@@ -64,7 +64,7 @@ export default async function Main() {
                       <Link
                         href={item.href}
                         target="_blank"
-                        className="text-black-100 fill-gray-100 text-2xl leading-6 font-semibold opacity-100 hover:opacity-50"
+                        className="text-black-100 fill-gray-800 text-2xl leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50"
                       >
                         {icon}
                       </Link>

@@ -37,7 +37,7 @@ export default function SplitText(props: SplitTextProps) {
 
   return (
     <h1
-      className="invisible flex w-full items-center justify-center text-center text-4xl font-bold tracking-tight text-black sm:text-6xl"
+      className="invisible flex w-full items-center justify-center text-center text-4xl font-bold tracking-tight text-gray-800 sm:text-6xl"
       style={{ willChange: "transform, opacity" }}
       ref={headerRef}
     >
