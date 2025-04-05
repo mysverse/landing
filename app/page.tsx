@@ -465,11 +465,10 @@ export default async function Main() {
             show
             appear
           >
-            <p className="mt-6 text-lg leading-8 text-gray-800">
+            <p className="mt-6 text-lg leading-8 text-gray-800 sm:mt-5">
               Embark on an extraordinary journey with MYSverse, where <b>fun</b>
               , <b>education</b>, and Malaysian <b>culture</b> converge in our
-              Roblox and beyond experiences. <br />
-              Dive into our diverse world of virtual adventures today!
+              Roblox and beyond experiences.
             </p>
           </Transition>
 
@@ -480,7 +479,7 @@ export default async function Main() {
             show
             appear
           >
-            <div className="mt-6 flex flex-row flex-wrap justify-center gap-x-4 gap-y-4 sm:gap-x-5 md:gap-x-6">
+            <div className="mt-6 flex flex-row flex-wrap justify-center gap-x-5 gap-y-4 sm:gap-x-6 md:gap-x-7">
               {socials.map((item) => {
                 const icon = item.icon;
                 if (icon) {
@@ -495,7 +494,7 @@ export default async function Main() {
                       <Link
                         href={item.href}
                         target="_blank"
-                        className="text-black-100 fill-gray-100 text-xl leading-6 font-semibold opacity-100 hover:opacity-50"
+                        className="text-black-100 fill-gray-100 text-2xl leading-6 font-semibold opacity-100 hover:opacity-50"
                       >
                         {icon}
                       </Link>
@@ -632,7 +631,7 @@ export default async function Main() {
         <Contact />
       </IntersectionTransition>
       <IntersectionTransition>
-        <div className="mt-6 flex flex-row flex-wrap justify-center gap-x-5 gap-y-4 md:gap-x-12">
+        <div className="mx-8 mt-6 flex flex-row flex-wrap justify-center gap-x-5 gap-y-4 md:gap-x-12">
           {socials.map((item) => {
             const icon = item.icon;
             if (icon) {
@@ -649,7 +648,7 @@ export default async function Main() {
                   <Link
                     href={item.href}
                     target="_blank"
-                    className="fill-gray-300 text-xl leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50"
+                    className="fill-gray-300 text-2xl leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50 sm:text-xl"
                   >
                     {icon}
                     <span className="ml-2 hidden text-base xl:inline-block">
