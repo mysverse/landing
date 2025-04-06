@@ -1,7 +1,7 @@
 "use client";
 
 import type { WheelEvent } from "react";
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, useRef, Fragment } from "react";
 import {
   Dialog,
   DialogPanel,
@@ -27,6 +27,10 @@ export default function NewsModal({
   const [deck, setDeck] = useState<NewsItem[]>(initialNews ?? []);
   const [animating, setAnimating] = useState(false);
 
+  // Using a ref to accumulate scroll delta values
+  const scrollAccumulator = useRef(0);
+  const SCROLL_THRESHOLD = 50; // Adjust this value as needed
+
   useEffect(() => {
     getNews()
       .then((data: NewsResponse) => {
@@ -36,11 +40,18 @@ export default function NewsModal({
       .catch((err) => console.error("Error fetching news:", err));
   }, []);
 
-  // Handle mouse wheel (desktop)
+  // Modified handleWheel to accumulate delta values
   const handleWheel = (event: WheelEvent<HTMLDivElement>) => {
-    // Scroll in any direction triggers the top card to animate out
-    if (Math.abs(event.deltaY) > 0 && !animating && deck.length > 0) {
+    scrollAccumulator.current += event.deltaY;
+
+    if (
+      Math.abs(scrollAccumulator.current) >= SCROLL_THRESHOLD &&
+      !animating &&
+      deck.length > 0
+    ) {
       setAnimating(true);
+      // Reset the accumulator after triggering the animation
+      scrollAccumulator.current = 0;
     }
   };
 
@@ -82,16 +93,10 @@ export default function NewsModal({
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            {/* 
-                Use DialogPanel so that clicking outside this panel
-                automatically closes the dialog 
-              */}
             <DialogPanel
-              // Catch wheel events here
               onWheel={handleWheel}
               className="relative h-[70vh] max-h-[90vh] w-[90vw] max-w-3xl overflow-hidden"
             >
-              {/* Close button - repositioned to bottom center */}
               <button
                 onClick={() => setIsOpen(false)}
                 className="absolute bottom-4 left-1/2 z-50 -translate-x-1/2 transform rounded-full bg-black/20 p-2 backdrop-blur-sm transition-colors hover:cursor-pointer hover:bg-black/40"
@@ -102,15 +107,10 @@ export default function NewsModal({
 
               <AnimatePresence initial={false}>
                 {deck.slice(0, 3).map((card, index) => {
-                  // Each card's default offset & scale
                   const offsetY = index * CARD_OFFSET;
                   const scale = 1 - index * SCALE_FACTOR;
-
-                  // Progressive transparency for cards after the first one
                   const baseOpacity =
                     index === 0 ? 1 : 1 - index * OPACITY_STEP;
-
-                  // If top card is animating, it slides up & fades out
                   const animateProps =
                     index === 0 && animating
                       ? { y: ANIMATION_Y, opacity: 0 }
@@ -128,7 +128,6 @@ export default function NewsModal({
                         damping: 30
                       }}
                       onAnimationComplete={() => {
-                        // When the top card finishes animating out, move it to the back
                         if (index === 0 && animating) {
                           setDeck((prev) => {
                             const [first, ...rest] = prev;
@@ -137,7 +136,6 @@ export default function NewsModal({
                           setAnimating(false);
                         }
                       }}
-                      // Allow dragging in any direction, not just vertical
                       drag={index === 0 ? true : false}
                       dragConstraints={{
                         top: 0,
@@ -146,7 +144,6 @@ export default function NewsModal({
                         right: 0
                       }}
                       onDragEnd={(e, info) => {
-                        // Detect swipes in any direction by checking both x and y offsets
                         const totalOffset = Math.sqrt(
                           Math.pow(info.offset.x, 2) +
                             Math.pow(info.offset.y, 2)
@@ -158,17 +155,12 @@ export default function NewsModal({
                       className="absolute inset-0 flex items-center justify-center"
                       style={{ zIndex: deck.length - index }}
                     >
-                      {/* 
-                          Each card is a full bounding box, with the image 
-                          contained so it won't be cut off. Different aspect 
-                          ratios will letterbox/pillarbox automatically. 
-                        */}
                       <div className="relative">
                         <Image
                           src={card.Url}
                           alt={card.Name}
-                          width={1920} // use the actual image width
-                          height={1080} // use the actual image height
+                          width={1920}
+                          height={1080}
                           className="rounded-xl shadow-lg"
                           unoptimized
                         />

@@ -42,7 +42,7 @@
     "eslint": "^9.24.0",
     "eslint-config-next": "15.2.4",
     "eslint-config-prettier": "^10.1.1",
-    "knip": "^5.46.5",
+    "knip": "^5.47.0",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "typescript": "^5.8.3"
