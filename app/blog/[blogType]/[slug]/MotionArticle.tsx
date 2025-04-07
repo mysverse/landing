@@ -19,10 +19,12 @@ export default function MotionArticle(props: PropsWithChildren) {
 
     // Define the click handler
     const handleToggle = (event: Event) => {
-      const card = event.currentTarget as HTMLElement;
-      const currentState = card.getAttribute("data-kg-toggle-state");
-      const newState = currentState === "open" ? "close" : "open";
-      card.setAttribute("data-kg-toggle-state", newState);
+      const card = event.currentTarget;
+      if (card && card instanceof HTMLElement) {
+        const currentState = card.getAttribute("data-kg-toggle-state");
+        const newState = currentState === "open" ? "close" : "open";
+        card.setAttribute("data-kg-toggle-state", newState);
+      }
     };
 
     // Attach the event listener to each card
