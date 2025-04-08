@@ -6,6 +6,7 @@ import { blogData, getPosts } from "utils/ghost";
 import { Breadcrumbs } from "app/_components/Blog/Breadcrumbs";
 import { formatDistanceToNowStrict } from "date-fns";
 import { processBio } from "utils/bio";
+import RotatingCard from "app/_components/RotatingCard";
 
 interface Props {
   params: Promise<{ blogType: BlogType }>;
@@ -17,8 +18,8 @@ export default async function BlogList({ params }: Props) {
 
   return (
     <>
-      <Breadcrumbs blogType={blogType} className="not-prose" />
-      <div className="mt-6 flex flex-col gap-10">
+      <Breadcrumbs blogType={blogType} />
+      <div className="mx-auto mt-8 grid grid-cols-1 gap-x-8 gap-y-20 sm:mt-16">
         {posts.map((post) => {
           const primaryTag = post.tags?.[0];
           const primaryAuthor = post.authors?.[0];
@@ -28,19 +29,23 @@ export default async function BlogList({ params }: Props) {
               key={post.id}
               className="flex flex-col items-start justify-between"
             >
-              <Link
-                href={`/blog/${blogType}/${post.slug}`}
-                className="relative w-full"
-              >
-                <Image
-                  alt={post.feature_image_alt ?? post.title ?? "feature_image"}
-                  src={post.feature_image!}
-                  width={1920}
-                  height={1080}
-                  className="w-full rounded-2xl bg-gray-100 object-cover"
-                />
-                <div className="absolute inset-0 rounded-2xl ring-1 ring-gray-900/10 ring-inset" />
-              </Link>
+              <RotatingCard>
+                <Link
+                  href={`/blog/${blogType}/${post.slug}`}
+                  className="relative w-full"
+                >
+                  <Image
+                    alt={
+                      post.feature_image_alt ?? post.title ?? "feature_image"
+                    }
+                    src={post.feature_image!}
+                    width={1920}
+                    height={1080}
+                    className="w-full rounded-2xl bg-gray-100 object-cover"
+                  />
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-gray-900/10 ring-inset" />
+                </Link>
+              </RotatingCard>
 
               <div>
                 <div className="mt-8 flex items-center gap-x-4 text-sm">
