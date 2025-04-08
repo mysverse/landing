@@ -4,7 +4,8 @@ import Link from "next/link";
 import type { BlogType } from "utils/ghost";
 import { blogData, getPosts } from "utils/ghost";
 import { Breadcrumbs } from "app/_components/Blog/Breadcrumbs";
-import { formatDistanceToNow } from "date-fns";
+import { formatDistanceToNowStrict } from "date-fns";
+import { processBio } from "utils/bio";
 
 interface Props {
   params: Promise<{ blogType: BlogType }>;
@@ -48,9 +49,8 @@ export default async function BlogList({ params }: Props) {
                     className="text-gray-500"
                     suppressHydrationWarning
                   >
-                    {formatDistanceToNow(publishDate, {
-                      addSuffix: true,
-                      includeSeconds: true
+                    {formatDistanceToNowStrict(publishDate, {
+                      addSuffix: true
                     })}
                   </time>
                   {primaryTag && (
@@ -91,7 +91,7 @@ export default async function BlogList({ params }: Props) {
                         </Link>
                       </p>
                       <p className="text-xs text-gray-600 sm:text-sm">
-                        {primaryAuthor.bio}
+                        {processBio(primaryAuthor.bio?.toString())}
                       </p>
                     </div>
                   </div>

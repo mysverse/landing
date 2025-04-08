@@ -7,7 +7,8 @@ import { getColour } from "utils/themeColour";
 import { Breadcrumbs } from "app/_components/Blog/Breadcrumbs";
 import PostOrPage from "app/_components/ghost/PostOrPage";
 import Link from "next/link";
-import { format } from "date-fns";
+import { format } from "date-fns/format";
+import { processBio } from "utils/bio";
 
 interface Props {
   params: Promise<{ blogType: BlogType; slug: string }>;
@@ -23,10 +24,10 @@ export default async function BlogPost({ params }: Props) {
     <PostOrPage post={post}>
       <div className="not-prose">
         <Breadcrumbs blogType={blogType} primaryTag={post.tags?.[0]} />
-        <p className="mt-6 text-base text-gray-500 xl:text-lg">
+        <p className="mt-6 text-sm text-gray-500 xl:text-base">
           {format(publishDate, "MMMM dd, yyyy")}
         </p>
-        <h2 className="mt-4 text-2xl font-bold lg:text-3xl">{post.title}</h2>
+        <h2 className="mt-2 text-2xl font-bold lg:text-3xl">{post.title}</h2>
         {primaryAuthor && (
           <div className="relative mt-6 flex items-center gap-x-4">
             <Image
@@ -36,17 +37,16 @@ export default async function BlogPost({ params }: Props) {
               height={32}
               className="size-10 rounded-full bg-gray-100"
             />
-            <div className="text-base/6">
-              <p className="font-semibold text-gray-900">
-                <Link href={primaryAuthor.url!} target="_blank">
-                  <span className="absolute inset-0" />
-                  {primaryAuthor.name}
-                </Link>
+            <Link
+              href={primaryAuthor.url!}
+              target="_blank"
+              className="text-base/6 transition hover:opacity-50"
+            >
+              <p className="font-semibold">{primaryAuthor.name}</p>
+              <p className="text-xs text-gray-500 sm:text-sm">
+                {processBio(primaryAuthor.bio?.toString())}
               </p>
-              <p className="text-xs text-gray-600 sm:text-sm">
-                {primaryAuthor.bio}
-              </p>
-            </div>
+            </Link>
           </div>
         )}
       </div>

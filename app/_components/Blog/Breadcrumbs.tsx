@@ -63,7 +63,7 @@ export function Breadcrumbs({
 
   return (
     <nav aria-label="Breadcrumb" className={clsx("not-prose flex", className)}>
-      <ol role="list" className="flex items-center space-x-1 lg:space-x-4">
+      <ol role="list" className="flex items-center space-x-2 sm:space-x-4">
         <li>
           <div>
             <Link
@@ -75,19 +75,20 @@ export function Breadcrumbs({
             </Link>
           </div>
         </li>
-        {pages.map((page) => {
-          const content = (
-            <>
-              <span className="hidden lg:inline">
-                {typeof page.name === "string" ? page.name : page.name.name}
-              </span>
-              <span className="inline lg:hidden">
-                {typeof page.name === "string"
-                  ? page.name
-                  : (page.name.shortName ?? page.name.name)}
-              </span>
-            </>
-          );
+        {pages.map((page, index) => {
+          const name =
+            typeof page.name === "string" ? page.name : page.name.name;
+          const shortName =
+            typeof page.name === "string" ? undefined : page.name.shortName;
+          const content =
+            index === pages.length - 1 ? (
+              <span>{name}</span>
+            ) : (
+              <>
+                <span className="hidden sm:inline">{name}</span>
+                <span className="inline sm:hidden">{shortName ?? name}</span>
+              </>
+            );
           return (
             <li
               key={typeof page.name === "string" ? page.name : page.name.name}
@@ -105,12 +106,12 @@ export function Breadcrumbs({
                   <Link
                     href={page.href}
                     target={isExternalUrl(page.href) ? "_blank" : undefined}
-                    className="ml-1 text-sm font-medium text-gray-500 transition hover:text-gray-700 lg:ml-4"
+                    className="ml-2 text-sm font-medium text-gray-500 transition hover:text-gray-700 sm:ml-4"
                   >
                     {content}
                   </Link>
                 ) : (
-                  <span className="ml-1 text-sm font-medium text-gray-500 lg:ml-4">
+                  <span className="ml-2 text-sm font-medium text-gray-500 sm:ml-4">
                     {content}
                   </span>
                 )}
