@@ -1,8 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import type { BlogType } from "utils/ghost";
-import { getPosts } from "utils/ghost";
-import Link from "next/link";
+import { blogData, getPosts } from "utils/ghost";
 import { Breadcrumbs } from "app/_components/Blog/Breadcrumbs";
 
 interface Props {
@@ -47,7 +47,7 @@ export default async function BlogList({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  const blogTypes: BlogType[] = ["mys", "nws"];
+  const blogTypes = blogData.map((blog) => blog.slug);
   const params: { blogType: BlogType }[] = [];
   for (const blogType of blogTypes) {
     params.push({ blogType });

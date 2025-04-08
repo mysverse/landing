@@ -1,9 +1,20 @@
+"use client";
+
 import type { Tag } from "@tryghost/content-api";
 import { HomeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 import { blogData, type BlogType } from "utils/ghost";
+import { isExternalUrl } from "utils/isExternalUrl";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
+
+type Name =
+  | {
+      name: string;
+      shortName?: string;
+    }
+  | string;
 
 export function Breadcrumbs({
   blogType,
@@ -14,13 +25,7 @@ export function Breadcrumbs({
   primaryTag?: Tag;
   className?: string;
 }) {
-  type Name =
-    | {
-        name: string;
-        shortName?: string;
-      }
-    | string;
-
+  const pathname = usePathname();
   const blogInfo = blogData.find((blog) => blog.slug === blogType);
 
   if (!blogInfo) {
@@ -50,7 +55,12 @@ export function Breadcrumbs({
     });
   }
 
-  pages[pages.length - 1].current = true;
+  pages.forEach((page) => {
+    if (pathname === page.href) {
+      page.current = true;
+    }
+  });
+
   return (
     <nav aria-label="Breadcrumb" className={clsx("flex", className)}>
       <ol role="list" className="flex items-center space-x-1 lg:space-x-4">
@@ -91,9 +101,10 @@ export function Breadcrumbs({
                 >
                   <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
                 </svg>
-                {page.href ? (
+                {page.href && !page.current ? (
                   <Link
                     href={page.href}
+                    target={isExternalUrl(page.href) ? "_blank" : undefined}
                     className="ml-1 text-sm font-medium text-gray-500 transition hover:text-gray-700 lg:ml-4"
                   >
                     {content}

@@ -3,10 +3,9 @@ import Image from "next/image";
 
 import type { BlogType } from "utils/ghost";
 import { blogData, getPost, getPosts } from "utils/ghost";
-
+import { getColour } from "utils/themeColour";
 import { Breadcrumbs } from "app/_components/Blog/Breadcrumbs";
 import PostOrPage from "app/_components/ghost/PostOrPage";
-import { getColour } from "utils/themeColour";
 
 interface Props {
   params: Promise<{ blogType: BlogType; slug: string }>;
@@ -85,7 +84,7 @@ export async function generateViewport({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  const blogTypes: BlogType[] = ["mys", "nws"];
+  const blogTypes = blogData.map((blog) => blog.slug);
   const params: { blogType: BlogType; slug: string }[] = [];
   for (const blogType of blogTypes) {
     const posts = await getPosts(blogType, 20);
