@@ -2,7 +2,7 @@
 import { usePlausible } from "next-plausible";
 
 import { useState } from "react";
-import MysverseLogo from "public/img/mysverse_logo_colour.svg";
+
 import { Dialog, DialogPanel } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -13,6 +13,7 @@ import Link from "next/link";
 import Banner from "components/banner";
 import NewsModal from "./NewsModal";
 import { NewsItem } from "utils/news";
+import MysverseLogo from "./MysverseLogo";
 
 const navigation = [
   {
@@ -63,12 +64,9 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
         aria-label="Global"
       >
         <div className="flex xl:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5 transition hover:opacity-80">
             <span className="sr-only">MYSverse</span>
-            <MysverseLogo
-              alt="MYSverse logo"
-              className="mx-auto h-12 w-auto fill-black sm:h-14"
-            />
+            <MysverseLogo className="mx-auto h-12 w-auto sm:h-14" />
           </Link>
         </div>
         <div className="flex xl:hidden">
@@ -125,10 +123,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">MYSverse</span>
-              <MysverseLogo
-                alt="MYSverse logo"
-                className="mx-auto h-10 w-auto fill-white"
-              />
+              <MysverseLogo className="mx-auto h-12 w-auto fill-white" />
             </Link>
             <button
               type="button"
@@ -161,7 +156,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
                 ))}
                 {pageNavigation.map((item) => (
                   <Link
-                    key={item.href}
+                    key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-100"
                     onClick={() => setMobileMenuOpen(false)}

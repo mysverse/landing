@@ -62,7 +62,7 @@ export function Breadcrumbs({
   });
 
   return (
-    <nav aria-label="Breadcrumb" className={clsx("flex", className)}>
+    <nav aria-label="Breadcrumb" className={clsx("not-prose flex", className)}>
       <ol role="list" className="flex items-center space-x-1 lg:space-x-4">
         <li>
           <div>

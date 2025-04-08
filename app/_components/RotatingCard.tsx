@@ -1,10 +1,16 @@
 "use client";
 
-import type { PointerEvent, PropsWithChildren } from "react";
+import type { PointerEvent, ReactNode } from "react";
 import { useRef } from "react";
 import { motion, useSpring } from "motion/react";
+import clsx from "clsx";
 
-export default function RotatingCard({ children }: PropsWithChildren) {
+interface Props {
+  children: ReactNode;
+  className?: string;
+}
+
+export default function RotatingCard({ children, className }: Props) {
   const rotateX = useSpring(0);
   const rotateY = useSpring(0);
   const z = useSpring(0);
@@ -31,7 +37,7 @@ export default function RotatingCard({ children }: PropsWithChildren) {
   return (
     <motion.div
       ref={cardRef}
-      className="relative isolate flex aspect-video flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8"
+      className={clsx(className)}
       style={{
         rotateX,
         rotateY,

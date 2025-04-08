@@ -6,6 +6,8 @@ import { blogData, getPost, getPosts } from "utils/ghost";
 import { getColour } from "utils/themeColour";
 import { Breadcrumbs } from "app/_components/Blog/Breadcrumbs";
 import PostOrPage from "app/_components/ghost/PostOrPage";
+import Link from "next/link";
+import { format } from "date-fns";
 
 interface Props {
   params: Promise<{ blogType: BlogType; slug: string }>;
@@ -14,20 +16,40 @@ interface Props {
 export default async function BlogPost({ params }: Props) {
   const { blogType, slug } = await params;
   const post = await getPost(blogType, slug);
+  const primaryAuthor = post.authors?.[0];
+  const publishDate = new Date(post.published_at!);
 
   return (
     <PostOrPage post={post}>
-      <Breadcrumbs
-        blogType={blogType}
-        primaryTag={post.tags?.[0]}
-        className="not-prose"
-      />
-      <h2 className="not-prose mt-8 mb-3 text-3xl font-bold lg:text-4xl">
-        {post.title}
-      </h2>
-      <p className="not-prose mb-4 text-base text-gray-500 xl:text-lg">
-        Published on {new Date(post.published_at!).toLocaleDateString()}
-      </p>
+      <div className="not-prose">
+        <Breadcrumbs blogType={blogType} primaryTag={post.tags?.[0]} />
+        <p className="mt-6 text-base text-gray-500 xl:text-lg">
+          {format(publishDate, "MMMM dd, yyyy")}
+        </p>
+        <h2 className="mt-4 text-3xl font-bold lg:text-4xl">{post.title}</h2>
+        {primaryAuthor && (
+          <div className="relative mt-6 flex items-center gap-x-4">
+            <Image
+              alt={primaryAuthor.name ?? "Image of author"}
+              src={primaryAuthor.profile_image!}
+              width={32}
+              height={32}
+              className="size-10 rounded-full bg-gray-100"
+            />
+            <div className="text-base/6">
+              <p className="font-semibold text-gray-900">
+                <Link href={primaryAuthor.url!} target="_blank">
+                  <span className="absolute inset-0" />
+                  {primaryAuthor.name}
+                </Link>
+              </p>
+              <p className="text-xs text-gray-600 sm:text-sm">
+                {primaryAuthor.bio}
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
       {post.feature_image && (
         <Image
           width={1920}
