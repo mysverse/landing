@@ -26,7 +26,7 @@ export default async function BlogPost({ params }: Props) {
         <p className="mt-6 text-base text-gray-500 xl:text-lg">
           {format(publishDate, "MMMM dd, yyyy")}
         </p>
-        <h2 className="mt-4 text-3xl font-bold lg:text-4xl">{post.title}</h2>
+        <h2 className="mt-4 text-2xl font-bold lg:text-3xl">{post.title}</h2>
         {primaryAuthor && (
           <div className="relative mt-6 flex items-center gap-x-4">
             <Image
