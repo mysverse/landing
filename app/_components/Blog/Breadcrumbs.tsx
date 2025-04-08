@@ -3,13 +3,16 @@ import { HomeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 import type { BlogType } from "utils/ghost";
+import clsx from "clsx";
 
 export function Breadcrumbs({
   blogType,
-  primaryTag
+  primaryTag,
+  className
 }: {
   blogType: BlogType;
   primaryTag?: Tag;
+  className?: string;
 }) {
   type Name =
     | {
@@ -53,7 +56,7 @@ export function Breadcrumbs({
 
   pages[pages.length - 1].current = true;
   return (
-    <nav aria-label="Breadcrumb" className="flex">
+    <nav aria-label="Breadcrumb" className={clsx("flex", className)}>
       <ol role="list" className="flex items-center space-x-1 lg:space-x-4">
         <li>
           <div>

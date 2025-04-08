@@ -46,6 +46,16 @@ export async function getPosts(blogType: BlogType, limit = 4) {
   });
 }
 
+export async function getPages(limit = 10) {
+  return api.pages.browse({
+    limit
+  });
+}
+
+export async function getPage(slug: string) {
+  return api.pages.read({ slug });
+}
+
 export async function getPost(blogType: BlogType, slug: string) {
   const ghostApi = blogType === "mys" ? api : api_nws;
   return ghostApi.posts.read({ slug }, { include: ["tags", "authors"] });

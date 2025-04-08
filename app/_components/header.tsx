@@ -22,14 +22,14 @@ const navigation = [
   {
     name: "Sentral",
     href: "https://sentral.mysver.se"
-  },
-  {
-    name: "Brand Kit",
-    href: "https://blog.mysver.se/brand-kit/"
   }
 ];
 
 const pageNavigation = [
+  {
+    name: "Brand Kit",
+    href: "/brand-kit"
+  },
   {
     name: "Projects",
     href: "/#projects"
@@ -85,7 +85,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
         <div className="hidden xl:flex xl:gap-x-12">
           {navigation.map((item) => (
             <Link
-              key={item.name}
+              key={item.href}
               href={item.href}
               target="_blank"
               className="text-sm leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50"
@@ -102,7 +102,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
           ))}
           {pageNavigation.map((item) => (
             <Link
-              key={item.name}
+              key={item.href}
               href={item.href}
               className="text-sm leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50"
             >
@@ -144,9 +144,10 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
                   <Link
-                    key={item.name}
+                    key={item.href}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-100"
+                    target="_blank"
                     onClick={() => {
                       plausible("navClicked", {
                         props: {
@@ -160,7 +161,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
                 ))}
                 {pageNavigation.map((item) => (
                   <Link
-                    key={item.name}
+                    key={item.href}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-100"
                     onClick={() => setMobileMenuOpen(false)}

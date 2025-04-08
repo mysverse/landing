@@ -3,7 +3,6 @@ import Image from "next/image";
 import type { BlogType } from "utils/ghost";
 import { getPosts } from "utils/ghost";
 import Link from "next/link";
-import MotionArticle from "./[slug]/MotionArticle";
 import { Breadcrumbs } from "app/_components/Blog/Breadcrumbs";
 
 interface Props {
@@ -29,13 +28,13 @@ export default async function BlogList({ params }: Props) {
   pages[pages.length - 1].current = true;
 
   return (
-    <MotionArticle>
-      <Breadcrumbs blogType={blogType} />
+    <>
+      <Breadcrumbs blogType={blogType} className="not-prose" />
       {posts.map((post) => (
         <Link
           key={post.id}
           href={`/blog/${blogType}/${post.slug}`}
-          className="group block overflow-hidden rounded-lg"
+          className="group not-prose block overflow-hidden rounded-lg"
         >
           <div className="mt-8">
             <h2 className="mt-6 mb-4 text-3xl font-bold lg:text-4xl">
@@ -57,7 +56,7 @@ export default async function BlogList({ params }: Props) {
           </div>
         </Link>
       ))}
-    </MotionArticle>
+    </>
   );
 }
 
