@@ -2,7 +2,7 @@ import type { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 
 import type { BlogType } from "utils/ghost";
-import { getPost, getPosts } from "utils/ghost";
+import { blogData, getPost, getPosts } from "utils/ghost";
 
 import { Breadcrumbs } from "app/_components/Blog/Breadcrumbs";
 import PostOrPage from "app/_components/ghost/PostOrPage";
@@ -54,19 +54,23 @@ export async function generateMetadata(
   const previousImages = metadata.openGraph?.images || [];
   const primaryAuthor = post.authors?.[0].name;
 
+  const blogInfo = blogData.find((blog) => blog.slug === blogType);
+  if (!blogInfo) {
+    throw new Error("Blog not found");
+  }
+
   return {
     title: post.title ?? metadata.title,
     description: post.excerpt ?? metadata.description,
     keywords: post.tags?.map((tag) => tag.name).join(", "),
-    applicationName:
-      blogType === "mys" ? "MYSverse Blog" : "National Wire Service",
+    applicationName: blogInfo.name,
     authors: [
       {
         name: primaryAuthor
       }
     ],
     openGraph: {
-      siteName: blogType === "mys" ? "MYSverse" : "NWS",
+      siteName: blogInfo.name,
       type: "website",
       images: post.feature_image ?? previousImages
     }

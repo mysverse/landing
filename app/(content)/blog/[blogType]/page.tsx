@@ -12,20 +12,6 @@ interface Props {
 export default async function BlogList({ params }: Props) {
   const { blogType } = await params;
   const posts = await getPosts(blogType, 20);
-  const blogName =
-    blogType === "mys" ? "MYSverse Blog" : "National Wire Service";
-  const blogUrl =
-    blogType === "mys" ? "https://blog.mysver.se" : "https://nws.mys.gg";
-
-  const pages = [
-    {
-      name: blogName,
-      href: blogUrl,
-      current: false
-    }
-  ];
-
-  pages[pages.length - 1].current = true;
 
   return (
     <>

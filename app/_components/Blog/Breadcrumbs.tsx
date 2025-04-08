@@ -2,7 +2,7 @@ import type { Tag } from "@tryghost/content-api";
 import { HomeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-import type { BlogType } from "utils/ghost";
+import { blogData, type BlogType } from "utils/ghost";
 import clsx from "clsx";
 
 export function Breadcrumbs({
@@ -21,18 +21,11 @@ export function Breadcrumbs({
       }
     | string;
 
-  const blogName: Name =
-    blogType === "mys"
-      ? {
-          name: "MYSverse Blog",
-          shortName: "MYSverse"
-        }
-      : {
-          name: "National Wire Service",
-          shortName: "NWS"
-        };
+  const blogInfo = blogData.find((blog) => blog.slug === blogType);
 
-  const blogUrl = blogType === "mys" ? "/blog/mys" : "/blog/nws";
+  if (!blogInfo) {
+    throw new Error("Blog not found");
+  }
 
   const pages: {
     name: Name;
@@ -40,8 +33,11 @@ export function Breadcrumbs({
     current: boolean;
   }[] = [
     {
-      name: blogName,
-      href: blogUrl,
+      name: {
+        name: blogInfo.name,
+        shortName: blogInfo.shortName
+      },
+      href: blogInfo.url,
       current: false
     }
   ];
@@ -49,7 +45,7 @@ export function Breadcrumbs({
   if (primaryTag && primaryTag.slug && primaryTag.name) {
     pages.push({
       name: primaryTag.name,
-      // href: `${blogUrl}/tag/${primaryTag.slug}`,
+      href: `${blogInfo.externalUrl}/tag/${primaryTag.slug}`,
       current: false
     });
   }
@@ -60,7 +56,10 @@ export function Breadcrumbs({
       <ol role="list" className="flex items-center space-x-1 lg:space-x-4">
         <li>
           <div>
-            <Link href="/" className="text-gray-400 hover:text-gray-500">
+            <Link
+              href="/"
+              className="text-gray-400 transition hover:text-gray-500"
+            >
               <HomeIcon aria-hidden="true" className="size-5 shrink-0" />
               <span className="sr-only">Home</span>
             </Link>
@@ -92,10 +91,10 @@ export function Breadcrumbs({
                 >
                   <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
                 </svg>
-                {page.href && !page.current ? (
+                {page.href ? (
                   <Link
                     href={page.href}
-                    className="ml-1 text-sm font-medium text-gray-500 hover:text-gray-700 lg:ml-4"
+                    className="ml-1 text-sm font-medium text-gray-500 transition hover:text-gray-700 lg:ml-4"
                   >
                     {content}
                   </Link>
