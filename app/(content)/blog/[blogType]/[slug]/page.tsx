@@ -29,7 +29,9 @@ export default async function BlogPost({ params }: Props) {
           className="mt-8 block text-sm text-gray-500 xl:text-base"
           type="date"
         />
-        <h2 className="mt-2 text-2xl font-bold lg:text-3xl">{post.title}</h2>
+        <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
+          {post.title}
+        </h2>
         {primaryAuthor && (
           <div className="relative mt-6 flex items-center gap-x-4">
             <Image
