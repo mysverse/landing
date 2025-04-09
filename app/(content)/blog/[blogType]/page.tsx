@@ -4,9 +4,9 @@ import Link from "next/link";
 import type { BlogType } from "utils/ghost";
 import { blogData, getPosts } from "utils/ghost";
 import { Breadcrumbs } from "app/_components/Blog/Breadcrumbs";
-import { formatDistanceToNowStrict } from "date-fns";
 import { processBio } from "utils/bio";
 import RotatingCard from "app/_components/RotatingCard";
+import { LocalTime } from "app/_components/LocalTime";
 
 interface Props {
   params: Promise<{ blogType: BlogType }>;
@@ -49,15 +49,11 @@ export default async function BlogList({ params }: Props) {
 
               <div>
                 <div className="mt-8 flex items-center gap-x-4 text-sm">
-                  <time
-                    dateTime={publishDate.toISOString()}
+                  <LocalTime
+                    date={publishDate}
+                    type="distance"
                     className="text-gray-500"
-                    suppressHydrationWarning
-                  >
-                    {formatDistanceToNowStrict(publishDate, {
-                      addSuffix: true
-                    })}
-                  </time>
+                  />
                   {primaryTag && (
                     <Link
                       href={primaryTag.url!}

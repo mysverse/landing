@@ -4,7 +4,7 @@ import type { PostOrPage } from "@tryghost/content-api";
 import Image from "next/image";
 import Link from "next/link";
 import RotatingCard from "../RotatingCard";
-import { formatDistanceToNowStrict } from "date-fns/formatDistanceToNowStrict";
+import { LocalTime } from "../LocalTime";
 
 // BlogPostCard component to handle the tilt effect
 export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
@@ -25,15 +25,11 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
         <div className="relative inset-0 -z-10 rounded-2xl ring-1 ring-gray-900/10 ring-inset sm:absolute" />
 
         <div className="mt-6 flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-black/40 sm:mt-0 sm:text-white/70">
-          <time
-            dateTime={post.published_at!}
+          <LocalTime
+            date={new Date(post.published_at!)}
             className="mr-8"
-            suppressHydrationWarning
-          >
-            {formatDistanceToNowStrict(new Date(post.published_at!), {
-              addSuffix: true
-            })}
-          </time>
+            type="distance"
+          />
           <div className="-ml-4 flex items-center gap-x-4">
             <svg
               viewBox="0 0 2 2"

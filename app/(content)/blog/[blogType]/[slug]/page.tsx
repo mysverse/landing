@@ -1,14 +1,14 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 import type { BlogType } from "utils/ghost";
 import { blogData, getPost, getPosts } from "utils/ghost";
 import { getColour } from "utils/themeColour";
-import { Breadcrumbs } from "app/_components/Blog/Breadcrumbs";
-import PostOrPage from "app/_components/ghost/PostOrPage";
-import Link from "next/link";
-import { format } from "date-fns/format";
 import { processBio } from "utils/bio";
+import { Breadcrumbs } from "app/_components/Blog/Breadcrumbs";
+import { LocalTime } from "app/_components/LocalTime";
+import PostOrPage from "app/_components/ghost/PostOrPage";
 
 interface Props {
   params: Promise<{ blogType: BlogType; slug: string }>;
@@ -24,9 +24,11 @@ export default async function BlogPost({ params }: Props) {
     <PostOrPage post={post}>
       <div className="not-prose">
         <Breadcrumbs blogType={blogType} primaryTag={post.tags?.[0]} />
-        <p className="mt-6 text-sm text-gray-500 xl:text-base">
-          {format(publishDate, "MMMM dd, yyyy")}
-        </p>
+        <LocalTime
+          date={publishDate}
+          className="mt-8 block text-sm text-gray-500 xl:text-base"
+          type="date"
+        />
         <h2 className="mt-2 text-2xl font-bold lg:text-3xl">{post.title}</h2>
         {primaryAuthor && (
           <div className="relative mt-6 flex items-center gap-x-4">
