@@ -13,7 +13,6 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
       <Link
         href={post.url ?? "#"}
         className={post.url ? "" : "pointer-events-none"}
-        prefetch={false}
       >
         <Image
           alt={post.feature_image_alt ?? "Image of blog post"}
