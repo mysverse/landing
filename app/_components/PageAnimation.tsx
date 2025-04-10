@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { motion } from "motion/react";
+import * as m from "motion/react-m";
 // import { usePathname } from "next/navigation";
 export default function PageAnimation({
   children,
@@ -13,7 +13,7 @@ export default function PageAnimation({
   // const pathname = usePathname();
 
   return (
-    <motion.div
+    <m.div
       // key={pathname}
       initial={{ y: 128, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -21,6 +21,6 @@ export default function PageAnimation({
       className={className}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

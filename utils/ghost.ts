@@ -56,14 +56,25 @@ function getApi(type: BlogType) {
 export async function getPosts(blogType: BlogType, limit = 4) {
   return getApi(blogType).posts.browse({
     limit,
-    include: ["tags", "authors"],
-    filter: ["visibility:public"]
+    filter: ["visibility:public"],
+    fields: [
+      "id",
+      "title",
+      "slug",
+      "published_at",
+      "excerpt",
+      "feature_image",
+      "feature_image_alt",
+      "url"
+    ],
+    include: ["tags", "authors"]
   });
 }
 
 export async function getPages(limit = 10) {
   return getApi("mys").pages.browse({
-    limit
+    limit,
+    fields: ["id", "title", "slug", "published_at", "excerpt", "feature_image"]
   });
 }
 

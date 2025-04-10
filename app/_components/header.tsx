@@ -160,6 +160,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
                   <Link
                     key={item.name}
                     href={item.href}
+                    prefetch={false}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-100 dark:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >

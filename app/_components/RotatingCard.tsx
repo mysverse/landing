@@ -2,7 +2,10 @@
 
 import type { PointerEvent, ReactNode } from "react";
 import { useRef } from "react";
-import { motion, useSpring } from "motion/react";
+import { useSpring } from "motion/react";
+
+import * as m from "motion/react-m";
+
 import clsx from "clsx";
 
 interface Props {
@@ -35,7 +38,7 @@ export default function RotatingCard({ children, className }: Props) {
   };
 
   return (
-    <motion.div
+    <m.div
       ref={cardRef}
       className={clsx(className)}
       style={{
@@ -60,6 +63,6 @@ export default function RotatingCard({ children, className }: Props) {
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

@@ -8,7 +8,8 @@ import {
   Transition,
   TransitionChild
 } from "@headlessui/react";
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence } from "motion/react";
+import * as m from "motion/react-m";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
@@ -117,7 +118,7 @@ export default function NewsModal({
                       : { y: offsetY, scale, opacity: baseOpacity };
 
                   return (
-                    <motion.div
+                    <m.div
                       key={card.Name}
                       layout
                       initial={false}
@@ -165,7 +166,7 @@ export default function NewsModal({
                           unoptimized
                         />
                       </div>
-                    </motion.div>
+                    </m.div>
                   );
                 })}
               </AnimatePresence>
