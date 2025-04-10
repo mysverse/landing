@@ -73,7 +73,7 @@ export function Breadcrumbs({
           <div>
             <Link
               href="/"
-              className="text-gray-400 text-gray-500 transition dark:text-white hover:dark:text-white"
+              className="text-gray-500 transition dark:text-white hover:dark:text-white"
             >
               <HomeIcon aria-hidden="true" className="size-5 shrink-0" />
               <span className="sr-only">Home</span>
@@ -124,7 +124,7 @@ export function Breadcrumbs({
                   <Link
                     href={page.href}
                     target={isExternalUrl(page.href) ? "_blank" : undefined}
-                    className="ml-2 text-sm font-medium text-gray-500 text-gray-700 transition sm:ml-4 dark:text-white hover:dark:text-white"
+                    className="ml-2 text-sm font-medium text-gray-500 transition sm:ml-4 dark:text-white hover:dark:text-white"
                   >
                     {content}
                   </Link>

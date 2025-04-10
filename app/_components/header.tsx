@@ -94,9 +94,9 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
             <Link
               key={item.href}
               href={item.href}
+              className="text-sm leading-6 font-semibold opacity-100 hover:opacity-50"
               target={item.local ? undefined : "_blank"}
               prefetch={item.prefetch}
-              className="text-sm leading-6 font-semibold opacity-100 hover:opacity-50"
               onClick={
                 !item.local
                   ? () =>
@@ -147,14 +147,18 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
                     key={item.href}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-100 dark:text-white"
-                    target="_blank"
-                    onClick={() => {
-                      plausible("navClicked", {
-                        props: {
-                          name: item.name
-                        }
-                      });
-                    }}
+                    target={item.local ? undefined : "_blank"}
+                    prefetch={item.prefetch}
+                    onClick={
+                      !item.local
+                        ? () =>
+                            plausible("navClicked", {
+                              props: {
+                                name: item.name
+                              }
+                            })
+                        : undefined
+                    }
                   >
                     {item.name}
                   </Link>
