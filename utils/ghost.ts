@@ -1,4 +1,5 @@
 import type { MakeRequestOptions } from "@tryghost/content-api";
+import { cache } from "react";
 import GhostContentAPI from "@tryghost/content-api";
 
 const makeRequest = async ({
@@ -70,9 +71,12 @@ export async function getPage(slug: string) {
   return getApi("mys").pages.read({ slug });
 }
 
-export async function getPost(blogType: BlogType, slug: string) {
-  return getApi(blogType).posts.read(
-    { slug },
+export const getPost = cache(async (blogType: BlogType, slug: string) => {
+  const post = await getApi(blogType).posts.read(
+    {
+      slug
+    },
     { include: ["tags", "authors"] }
   );
-}
+  return post;
+});

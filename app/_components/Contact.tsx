@@ -16,12 +16,12 @@ export default function Contact() {
           <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
             <div>
               <h2
-                className="text-3xl font-bold tracking-tight text-black"
+                className="text-3xl font-bold tracking-tight text-black dark:text-white"
                 id="contact"
               >
                 Get in touch
               </h2>
-              <p className="mt-4 leading-7 text-gray-800">
+              <p className="mt-4 leading-7 text-gray-800 dark:text-white">
                 For legal, commercial, collaborations, and other general
                 enquiries. Our in-house development studio Hornbill Interactive
                 is also open to any other metaverse-style projects on Roblox,
@@ -29,16 +29,16 @@ export default function Contact() {
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 lg:col-span-2 lg:grid-cols-2 lg:gap-8">
-              <div className="flex flex-col place-content-center justify-center rounded-2xl bg-white p-10">
-                <h3 className="text-black-100 text-base leading-7 font-semibold">
+              <div className="flex flex-col place-content-center justify-center rounded-2xl bg-white p-10 dark:bg-slate-800">
+                <h3 className="text-black-100 text-base leading-7 font-semibold dark:text-white">
                   MYSverse Digital Ventures
                 </h3>
-                <h4 className="text-sm leading-5 font-medium text-red-600">
+                <h4 className="text-primary text-sm leading-5 font-medium">
                   <Link href="/ssm_cert.pdf" target="_blank">
                     202303234965 (AS0469188-M)
                   </Link>
                 </h4>
-                <dl className="text-black-100 mt-3 space-y-1 text-sm leading-6">
+                <dl className="text-black-100 mt-3 space-y-1 text-sm leading-6 dark:text-white">
                   {/* <div>
                     <dt className="sr-only">Registration</dt>
                     <dd>202303234965 (AS0469188-M)</dd>
@@ -64,7 +64,7 @@ export default function Contact() {
                           }
                         }}
                       >
-                        <div className="font-semibold text-red-600">
+                        <div className="text-primary font-semibold">
                           <Link
                             className="flex items-center gap-x-2"
                             href="mailto:yan@mysver.se"
@@ -85,7 +85,7 @@ export default function Contact() {
                           }
                         }}
                       >
-                        <div className="font-semibold text-red-600">
+                        <div className="text-primary font-semibold">
                           <Link
                             className="flex items-center gap-x-2"
                             href="tel:0350219170"
@@ -103,14 +103,14 @@ export default function Contact() {
                   </div> */}
                 </dl>
               </div>
-              <div className="flex flex-col place-content-center justify-center rounded-2xl bg-white p-10">
-                <h3 className="text-black-100 text-base leading-7 font-semibold">
+              <div className="flex flex-col place-content-center justify-center rounded-2xl bg-white p-10 dark:bg-slate-800">
+                <h3 className="text-black-100 text-base leading-7 font-semibold dark:text-white">
                   Shoot us a message
                 </h3>
-                <h4 className="text-black-100 text-sm leading-7 font-normal opacity-80">
+                <h4 className="text-black-100 text-sm leading-7 font-normal opacity-80 dark:text-white">
                   For businesses and organisations
                 </h4>
-                <dl className="text-black-100 mt-3 space-y-1 text-sm leading-6">
+                <dl className="text-black-100 mt-3 space-y-1 text-sm leading-6 dark:text-white">
                   <div className="flex flex-col gap-y-4">
                     <dt className="sr-only">WhatsApp</dt>
                     <dd>
@@ -129,14 +129,14 @@ export default function Contact() {
                   </div> */}
                 </dl>
               </div>
-              <div className="flex flex-col place-content-center justify-center rounded-2xl bg-white p-10">
-                <h3 className="text-black-100 text-base leading-7 font-semibold">
+              <div className="flex flex-col place-content-center justify-center rounded-2xl bg-white p-10 dark:bg-slate-800">
+                <h3 className="text-black-100 text-base leading-7 font-semibold dark:text-white">
                   Join the community
                 </h3>
-                <h4 className="text-black-100 text-sm leading-7 font-normal opacity-80">
+                <h4 className="text-black-100 text-sm leading-7 font-normal opacity-80 dark:text-white">
                   For game-related matters
                 </h4>
-                <dl className="text-black-100 mt-3 space-y-1 text-sm leading-6">
+                <dl className="text-black-100 mt-3 space-y-1 text-sm leading-6 dark:text-white">
                   <div className="flex flex-row gap-x-4">
                     <dt className="sr-only">Discord</dt>
                     <dd>

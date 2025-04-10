@@ -62,7 +62,9 @@ export default async function RootLayout({ children }: PropsWithChildren) {
           customDomain="https://plausible.yan.gg"
         />
       </head>
-      <body className={`${font.className} h-full bg-gray-100`}>
+      <body
+        className={`${font.className} h-full bg-gray-100 transition dark:bg-slate-900`}
+      >
         <Header initialNews={news.News} />
         <main>
           <div className="isolate pt-14">
@@ -71,7 +73,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
               aria-hidden="true"
             >
               <div
-                className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#6459ff69] to-[#ff0000] opacity-10 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#6459ff69] to-[#ff0000] opacity-10 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] dark:from-[#6459ff69] dark:to-[#ffffff]"
                 style={{
                   clipPath:
                     "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
@@ -96,7 +98,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
           </div>
         </main>
         <footer className="mx-4 mt-10 flex flex-col gap-10 pb-20 text-center md:mt-0">
-          <hr />
+          <hr className="dark:border-white/5 dark:bg-white/5" />
           <IntersectionTransition>
             <div className="mx-8 mt-6 flex flex-row flex-wrap justify-center gap-x-5 gap-y-4 md:gap-x-12">
               {socials.map((item) => {
@@ -115,7 +117,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
                       <Link
                         href={item.href}
                         target="_blank"
-                        className="fill-gray-500 text-2xl leading-6 font-semibold text-gray-500 opacity-100 transition hover:opacity-50 sm:text-xl"
+                        className="fill-gray-500 text-2xl leading-6 font-semibold text-gray-500 opacity-100 transition hover:opacity-50 sm:text-xl dark:fill-white dark:text-white"
                       >
                         {icon}
                         <span className="ml-2 hidden text-base xl:inline-block">
@@ -128,7 +130,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
               })}
             </div>
           </IntersectionTransition>
-          <div className="text-sm text-black opacity-50">
+          <div className="text-sm text-black opacity-50 dark:text-white">
             <Link
               href="https://github.com/mysverse/landing"
               target="_blank"

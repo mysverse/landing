@@ -77,8 +77,10 @@ export default function Stats({ initialStats }: { initialStats?: Metrics }) {
               key={stat.id}
               className="mx-auto flex max-w-xs flex-col gap-y-4"
             >
-              <dt className="text-lg leading-7 text-gray-600">{stat.name}</dt>
-              <dd className="order-first text-5xl font-semibold tracking-tight text-gray-800">
+              <dt className="text-lg leading-7 text-gray-600 dark:text-white">
+                {stat.name}
+              </dt>
+              <dd className="order-first text-5xl font-semibold tracking-tight text-gray-800 dark:text-white">
                 {stat.value}
               </dd>
             </div>

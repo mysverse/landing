@@ -11,7 +11,8 @@ const config = {
     "@svgr/webpack",
     "eslint-config-prettier",
     "eslint",
-    "eslint-config-next"
+    "eslint-config-next",
+    "eslint-plugin-react-hooks"
   ]
 } satisfies KnipConfig;
 

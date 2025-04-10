@@ -35,7 +35,7 @@ export default async function Main() {
             show
             appear
           >
-            <p className="mt-6 text-lg leading-8 text-gray-800 sm:mt-5">
+            <p className="mt-6 text-lg leading-8 text-gray-800 sm:mt-5 dark:text-white">
               Embark on an extraordinary journey with MYSverse, where <b>fun</b>
               , <b>education</b>, and Malaysian <b>culture</b> converge in our
               Roblox and beyond experiences.
@@ -64,7 +64,7 @@ export default async function Main() {
                       <Link
                         href={item.href}
                         target="_blank"
-                        className="text-black-100 fill-gray-800 text-2xl leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50"
+                        className="text-black-100 fill-gray-800 text-2xl leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50 dark:fill-white dark:text-white"
                       >
                         {icon}
                       </Link>
@@ -100,7 +100,7 @@ export default async function Main() {
                 >
                   <Link
                     href="https://www.roblox.com/games/481538620/Bandaraya"
-                    className="group bandaraya-button rounded-md px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs transition focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                    className="group bandaraya-button rounded-md px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs transition focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400 dark:text-white"
                   >
                     <PlayBandaraya className="inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#476075]" />
                   </Link>
@@ -122,7 +122,7 @@ export default async function Main() {
                 >
                   <Link
                     href="https://www.roblox.com/games/4892731894/Lebuhraya"
-                    className="group lebuhraya-button rounded-md px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                    className="group lebuhraya-button rounded-md px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400 dark:text-white"
                   >
                     <PlayLebuhraya className="inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#65ad56]" />
                   </Link>
@@ -131,7 +131,7 @@ export default async function Main() {
             </div>
             <p
               // href="#"
-              className="mt-4 text-sm leading-6 tracking-wide text-black italic opacity-80"
+              className="mt-4 text-sm leading-6 tracking-wide text-black italic opacity-80 dark:text-white"
             >
               ...and more open experiences for everyone, coming soon!
             </p>

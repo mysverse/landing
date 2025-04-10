@@ -24,10 +24,10 @@ export default function SplitText(props: SplitTextProps) {
       // Animate the words in the h1
       animate(
         words,
-        { opacity: [0, 1], y: [10, 0] },
+        { opacity: [0, 1], y: [16, 0] },
         {
           type: "spring",
-          duration: props.duration ?? 0.5,
+          duration: props.duration ?? 1,
           bounce: 0,
           delay: stagger(0.05)
         }
@@ -37,7 +37,7 @@ export default function SplitText(props: SplitTextProps) {
 
   return (
     <h1
-      className="invisible flex w-full items-center justify-center text-center text-4xl font-bold tracking-tight text-gray-800 sm:text-6xl"
+      className="invisible w-full items-center justify-center text-center text-4xl font-bold tracking-tight text-gray-800 sm:text-6xl dark:text-white"
       style={{ willChange: "transform, opacity" }}
       ref={headerRef}
     >

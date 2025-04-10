@@ -24,7 +24,7 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
         <div className="relative inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/30 sm:absolute" />
         <div className="relative inset-0 -z-10 rounded-2xl ring-1 ring-gray-900/10 ring-inset sm:absolute" />
 
-        <div className="mt-6 flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-black/40 sm:mt-0 sm:text-white/70">
+        <div className="mt-6 flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-black/40 sm:mt-0 sm:text-white/70 dark:text-white">
           <LocalTime
             date={new Date(post.published_at!)}
             className="mr-8"
@@ -42,7 +42,7 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
                 <Image
                   alt="Image of author"
                   src={post.authors[0].profile_image}
-                  className="h-6 w-6 flex-none rounded-full bg-black/10 sm:bg-white/10"
+                  className="size-6 flex-none rounded-full bg-black/10 sm:bg-white dark:bg-slate-800/10"
                   width={32}
                   height={32}
                 />
@@ -51,7 +51,7 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
             </div>
           </div>
         </div>
-        <h3 className="mt-3 text-lg leading-6 font-semibold text-black sm:text-white">
+        <h3 className="mt-3 text-lg leading-6 font-semibold text-black sm:text-white dark:text-white">
           <span className="absolute inset-0" />
           {post.title}
         </h3>

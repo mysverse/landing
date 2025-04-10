@@ -14,6 +14,7 @@ import Banner from "components/banner";
 import NewsModal from "./NewsModal";
 import { NewsItem } from "utils/news";
 import MysverseLogo from "./MysverseLogo";
+import DarkModeToggle from "./DarkModeToggle";
 
 const navigation = [
   {
@@ -46,7 +47,7 @@ function NewsButton({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) {
     <button onClick={() => setIsOpen(true)} className="mx-3 px-2 xl:mx-0">
       <NewspaperIcon
         onClick={() => setIsOpen(true)}
-        className="size-9 stroke-gray-400 transition hover:cursor-pointer hover:opacity-50 xl:stroke-black"
+        className="size-9 stroke-gray-400 transition hover:cursor-pointer hover:opacity-50 xl:stroke-black dark:xl:stroke-white"
       />
     </button>
   );
@@ -66,27 +67,27 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
         <div className="flex xl:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 transition hover:opacity-80">
             <span className="sr-only">MYSverse</span>
-            <MysverseLogo className="mx-auto h-12 w-auto sm:h-14" />
+            <MysverseLogo className="mx-auto h-12 w-auto fill-[#272727] sm:h-14 dark:fill-white" />
           </Link>
         </div>
         <div className="flex xl:hidden">
           <NewsButton setIsOpen={setNewsOpen} />
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400 dark:text-white"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <Bars3Icon className="size-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden xl:flex xl:gap-x-12">
+        <div className="hidden text-gray-800 xl:flex xl:gap-x-12 dark:text-white">
           {navigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               target="_blank"
-              className="text-sm leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50"
+              className="text-sm leading-6 font-semibold opacity-100 hover:opacity-50"
               onClick={() =>
                 plausible("navClicked", {
                   props: {
@@ -102,7 +103,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50"
+              className="text-sm leading-6 font-semibold opacity-100 hover:opacity-50"
             >
               {item.name}
             </Link>
@@ -110,6 +111,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
         </div>
         <div className="hidden xl:flex xl:flex-1 xl:justify-end">
           <NewsButton setIsOpen={setNewsOpen} />
+          <DarkModeToggle />
         </div>
       </nav>
       <Dialog
@@ -119,7 +121,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-50" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10 dark:bg-slate-800">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">MYSverse</span>
@@ -127,11 +129,11 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
             </Link>
             <button
               type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-400"
+              className="-m-2.5 rounded-md p-2.5 text-gray-400 dark:text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              <XMarkIcon className="size-6" aria-hidden="true" />
             </button>
           </div>
           <div className="mt-6 flow-root">
@@ -141,7 +143,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-100"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-100 dark:text-white"
                     target="_blank"
                     onClick={() => {
                       plausible("navClicked", {
@@ -158,12 +160,15 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-100"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-100 dark:text-white"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ))}
+                <div className="mt-6 flex flex-row items-center justify-between">
+                  <DarkModeToggle />
+                </div>
               </div>
             </div>
           </div>

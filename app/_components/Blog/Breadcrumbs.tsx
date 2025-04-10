@@ -8,6 +8,7 @@ import { blogData, type BlogType } from "utils/ghost";
 import { isExternalUrl } from "utils/isExternalUrl";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 type Name =
   | {
@@ -32,10 +33,13 @@ export function Breadcrumbs({
     throw new Error("Blog not found");
   }
 
+  const favicon = blogInfo && `${blogInfo?.externalUrl}/favicon.ico`;
+
   const pages: {
     name: Name;
     href?: string;
     current: boolean;
+    icon?: string;
   }[] = [
     {
       name: {
@@ -43,7 +47,8 @@ export function Breadcrumbs({
         shortName: blogInfo.shortName
       },
       href: blogInfo.url,
-      current: false
+      current: false,
+      icon: favicon
     }
   ];
 
@@ -68,7 +73,7 @@ export function Breadcrumbs({
           <div>
             <Link
               href="/"
-              className="text-gray-400 transition hover:text-gray-500"
+              className="text-gray-400 text-gray-500 transition dark:text-white hover:dark:text-white"
             >
               <HomeIcon aria-hidden="true" className="size-5 shrink-0" />
               <span className="sr-only">Home</span>
@@ -80,15 +85,28 @@ export function Breadcrumbs({
             typeof page.name === "string" ? page.name : page.name.name;
           const shortName =
             typeof page.name === "string" ? undefined : page.name.shortName;
-          const content =
-            index === pages.length - 1 ? (
-              <span>{name}</span>
-            ) : (
-              <>
-                <span className="hidden sm:inline">{name}</span>
-                <span className="inline sm:hidden">{shortName ?? name}</span>
-              </>
-            );
+          const content = (
+            <span className="flex flex-row items-center gap-3 sm:gap-4">
+              {page.icon && (
+                <Image
+                  src={page.icon}
+                  alt={`${name} icon`}
+                  width={20}
+                  height={20}
+                  className="inline rounded-sm"
+                />
+              )}
+              {index === pages.length - 1 ? (
+                <span>{name}</span>
+              ) : (
+                <>
+                  <span className="hidden sm:inline">{name}</span>
+                  <span className="inline sm:hidden">{shortName ?? name}</span>
+                </>
+              )}
+            </span>
+          );
+
           return (
             <li
               key={typeof page.name === "string" ? page.name : page.name.name}
@@ -98,7 +116,7 @@ export function Breadcrumbs({
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   aria-hidden="true"
-                  className="size-5 shrink-0 text-gray-300"
+                  className="size-5 shrink-0 text-gray-300 dark:text-white"
                 >
                   <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
                 </svg>
@@ -106,12 +124,12 @@ export function Breadcrumbs({
                   <Link
                     href={page.href}
                     target={isExternalUrl(page.href) ? "_blank" : undefined}
-                    className="ml-2 text-sm font-medium text-gray-500 transition hover:text-gray-700 sm:ml-4"
+                    className="ml-2 text-sm font-medium text-gray-500 text-gray-700 transition sm:ml-4 dark:text-white hover:dark:text-white"
                   >
                     {content}
                   </Link>
                 ) : (
-                  <span className="ml-2 text-sm font-medium text-gray-500 sm:ml-4">
+                  <span className="ml-2 text-sm font-medium text-gray-500 sm:ml-4 dark:text-white">
                     {content}
                   </span>
                 )}

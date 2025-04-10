@@ -128,13 +128,13 @@ export default function ProjectList() {
                 />
               ) : null}
               <div className="gap-x-4 sm:flex sm:flex-row">
-                <h3 className="text-black-100 text-xl leading-8 font-semibold tracking-tight">
+                <h3 className="text-black-100 text-xl leading-8 font-semibold tracking-tight dark:text-white">
                   {project.name}
                 </h3>
                 {project.wip ? (
-                  <span className="text-black-100 my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset">
+                  <span className="text-black-100 my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset dark:text-white">
                     <svg
-                      className="h-1.5 w-1.5 fill-red-400"
+                      className="size-1.5 fill-red-400"
                       viewBox="0 0 6 6"
                       aria-hidden="true"
                     >
@@ -143,9 +143,9 @@ export default function ProjectList() {
                     {project.launched}
                   </span>
                 ) : project.launched ? (
-                  <span className="text-black-100 my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset">
+                  <span className="text-black-100 my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset dark:text-white">
                     <svg
-                      className="h-1.5 w-1.5 fill-green-400"
+                      className="size-1.5 fill-green-400"
                       viewBox="0 0 6 6"
                       aria-hidden="true"
                     >
@@ -156,7 +156,7 @@ export default function ProjectList() {
                 ) : null}
               </div>
 
-              <p className="text-base leading-7 text-black opacity-70">
+              <p className="text-base leading-7 text-black opacity-70 dark:text-white">
                 {project.tagline}
               </p>
             </li>
@@ -165,19 +165,19 @@ export default function ProjectList() {
     );
   }
   return (
-    <div className="py-12 text-gray-800 sm:py-32" id="projects">
+    <div className="py-12 text-gray-800 sm:py-32 dark:text-white" id="projects">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <IntersectionTransition>
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-black-100 text-3xl font-bold tracking-tight sm:text-4xl">
+            <h2 className="text-black-100 text-3xl font-bold tracking-tight sm:text-4xl dark:text-white">
               Our projects
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-800">
+            <p className="mt-6 text-lg leading-8 text-gray-800 dark:text-white">
               {`MYSverse developers started off as volunteers passionate about delivering authentic roleplay experiences to the equally dedicated sets of the community. We aim to preserve that same concept moving forward, with the added focus on making those top tier efforts available to all players.`}
             </p>
           </div>
           <div className="mt-16">
-            <h3 className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl">
+            <h3 className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white">
               MYSverse
             </h3>
             <ItemList type="MYSverse" />
@@ -185,7 +185,7 @@ export default function ProjectList() {
         </IntersectionTransition>
         <IntersectionTransition>
           <div className="mt-16">
-            <h3 className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl">
+            <h3 className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white">
               <MYSverseSimLogo className="inline-block h-12 w-auto fill-black" />
               <span className="sr-only">MYSverse Sim</span>
             </h3>

@@ -3,11 +3,10 @@ import Link from "next/link";
 
 import type { BlogType } from "utils/ghost";
 import { blogData, getPosts } from "utils/ghost";
-import { Breadcrumbs } from "app/_components/Blog/Breadcrumbs";
 import { processBio } from "utils/bio";
-import RotatingCard from "app/_components/RotatingCard";
 import { LocalTime } from "app/_components/LocalTime";
-
+import BlogLayout from "app/_components/Layouts/BlogLayout";
+import RotatingCard from "app/_components/RotatingCard";
 interface Props {
   params: Promise<{ blogType: BlogType }>;
 }
@@ -17,8 +16,7 @@ export default async function BlogList({ params }: Props) {
   const posts = await getPosts(blogType, 20);
 
   return (
-    <>
-      <Breadcrumbs blogType={blogType} />
+    <BlogLayout params={params}>
       <div className="mx-auto mt-8 grid grid-cols-1 gap-x-8 gap-y-20 sm:mt-16">
         {posts.map((post) => {
           const primaryTag = post.tags?.[0];
@@ -52,26 +50,26 @@ export default async function BlogList({ params }: Props) {
                   <LocalTime
                     date={publishDate}
                     type="distance"
-                    className="text-gray-500"
+                    className="text-gray-500 dark:text-white"
                   />
                   {primaryTag && (
                     <Link
                       href={primaryTag.url!}
                       target="_blank"
-                      className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                      className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:text-white"
                     >
                       {primaryTag?.name}
                     </Link>
                   )}
                 </div>
                 <div className="group relative">
-                  <h3 className="mt-3 text-xl/6 font-semibold text-gray-900 transition group-hover:text-gray-600">
+                  <h3 className="mt-3 text-xl/6 font-semibold text-gray-600 text-gray-900 transition dark:text-white group-hover:dark:text-white">
                     <Link href={`/blog/${blogType}/${post.slug}`}>
                       <span className="absolute inset-0" />
                       {post.title}
                     </Link>
                   </h3>
-                  <p className="mt-5 line-clamp-3 text-base/6 text-gray-600">
+                  <p className="mt-5 line-clamp-3 text-base/6 text-gray-600 dark:text-white">
                     {post.excerpt}
                   </p>
                 </div>
@@ -85,13 +83,13 @@ export default async function BlogList({ params }: Props) {
                       className="size-10 rounded-full bg-gray-100"
                     />
                     <div className="text-base/6">
-                      <p className="font-semibold text-gray-900">
+                      <p className="font-semibold text-gray-900 dark:text-white">
                         <Link href={primaryAuthor.url!} target="_blank">
                           <span className="absolute inset-0" />
                           {primaryAuthor.name}
                         </Link>
                       </p>
-                      <p className="text-xs text-gray-600 sm:text-sm">
+                      <p className="text-xs text-gray-600 sm:text-sm dark:text-white">
                         {processBio(primaryAuthor.bio?.toString())}
                       </p>
                     </div>
@@ -102,7 +100,7 @@ export default async function BlogList({ params }: Props) {
           );
         })}
       </div>
-    </>
+    </BlogLayout>
   );
 }
 

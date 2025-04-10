@@ -6,9 +6,9 @@ import type { BlogType } from "utils/ghost";
 import { blogData, getPost, getPosts } from "utils/ghost";
 import { getColour } from "utils/themeColour";
 import { processBio } from "utils/bio";
-import { Breadcrumbs } from "app/_components/Blog/Breadcrumbs";
 import { LocalTime } from "app/_components/LocalTime";
 import PostOrPage from "app/_components/ghost/PostOrPage";
+import BlogLayout from "app/_components/Layouts/BlogLayout";
 
 interface Props {
   params: Promise<{ blogType: BlogType; slug: string }>;
@@ -21,49 +21,80 @@ export default async function BlogPost({ params }: Props) {
   const publishDate = new Date(post.published_at!);
 
   return (
-    <PostOrPage post={post}>
-      <div className="not-prose">
-        <Breadcrumbs blogType={blogType} primaryTag={post.tags?.[0]} />
-        <LocalTime
-          date={publishDate}
-          className="mt-8 block text-sm text-gray-500 xl:text-base"
-          type="date"
-        />
-        <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
-          {post.title}
-        </h2>
-        {primaryAuthor && (
-          <div className="relative mt-6 flex items-center gap-x-4">
-            <Image
-              alt={primaryAuthor.name ?? "Image of author"}
-              src={primaryAuthor.profile_image!}
-              width={32}
-              height={32}
-              className="size-10 rounded-full bg-gray-100"
+    <BlogLayout params={params}>
+      <PostOrPage post={post} className="mt-8">
+        <div className="not-prose">
+          <div className="flex flex-col-reverse gap-5 sm:flex-row sm:items-center">
+            <LocalTime
+              date={publishDate}
+              className="block text-sm text-gray-500 sm:text-base dark:text-white"
+              type="date"
             />
-            <Link
-              href={primaryAuthor.url!}
-              target="_blank"
-              className="text-base/6 transition hover:opacity-50"
+            <svg
+              className="hidden size-0.5 fill-gray-400 sm:block"
+              viewBox="0 0 6 6"
+              aria-hidden="true"
             >
-              <p className="font-semibold">{primaryAuthor.name}</p>
-              <p className="text-xs text-gray-500 sm:text-sm">
-                {processBio(primaryAuthor.bio?.toString())}
-              </p>
-            </Link>
+              <circle cx={3} cy={3} r={3} />
+            </svg>
+            {primaryAuthor && (
+              <div className="relative hidden items-center gap-x-4 sm:flex">
+                <Image
+                  alt={primaryAuthor.name ?? "Image of author"}
+                  src={primaryAuthor.profile_image!}
+                  width={32}
+                  height={32}
+                  className="size-10 rounded-full bg-gray-100 sm:size-7"
+                />
+                <Link
+                  href={primaryAuthor.url!}
+                  target="_blank"
+                  className="flex flex-col items-baseline text-base/6 transition hover:opacity-50 sm:flex-row sm:gap-3 sm:text-base"
+                >
+                  <p className="font-medium">{primaryAuthor.name}</p>
+                  <p className="text-xs text-gray-500 sm:hidden sm:text-sm dark:text-white">
+                    {processBio(primaryAuthor.bio?.toString())}
+                  </p>
+                </Link>
+              </div>
+            )}
           </div>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl dark:text-white">
+            {post.title}
+          </h2>
+          {primaryAuthor && (
+            <div className="relative mt-5 flex items-center gap-x-4 sm:hidden">
+              <Image
+                alt={primaryAuthor.name ?? "Image of author"}
+                src={primaryAuthor.profile_image!}
+                width={32}
+                height={32}
+                className="size-10 rounded-full bg-gray-100 sm:size-7"
+              />
+              <Link
+                href={primaryAuthor.url!}
+                target="_blank"
+                className="flex flex-col items-baseline text-base/6 transition hover:opacity-50 sm:flex-row sm:gap-3 sm:text-base"
+              >
+                <p className="font-medium">{primaryAuthor.name}</p>
+                <p className="text-xs text-gray-500 sm:hidden sm:text-sm dark:text-white">
+                  {processBio(primaryAuthor.bio?.toString())}
+                </p>
+              </Link>
+            </div>
+          )}
+        </div>
+        {post.feature_image && (
+          <Image
+            width={1920}
+            height={1080}
+            src={post.feature_image}
+            alt={post.feature_image_alt ?? post.title ?? "feature_image"}
+            className="mb-4 h-auto w-full rounded-lg"
+          />
         )}
-      </div>
-      {post.feature_image && (
-        <Image
-          width={1920}
-          height={1080}
-          src={post.feature_image}
-          alt={post.feature_image_alt ?? post.title ?? "feature_image"}
-          className="mb-4 h-auto w-full rounded-lg"
-        />
-      )}
-    </PostOrPage>
+      </PostOrPage>
+    </BlogLayout>
   );
 }
 
