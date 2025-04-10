@@ -8,6 +8,7 @@ import { useEffect, useRef } from "react";
 interface SplitTextProps {
   children: ReactNode;
   duration?: number;
+  className?: string;
 }
 
 export default function SplitText(props: SplitTextProps) {
@@ -37,7 +38,7 @@ export default function SplitText(props: SplitTextProps) {
 
   return (
     <h1
-      className="invisible w-full items-center justify-center text-center text-4xl font-bold tracking-tight text-gray-800 sm:text-6xl dark:text-white"
+      className={props.className}
       style={{ willChange: "transform, opacity" }}
       ref={headerRef}
     >

@@ -1,7 +1,5 @@
-import { Transition, TransitionChild } from "@headlessui/react";
-
 import Link from "next/link";
-
+import * as m from "motion/react-m";
 import PlayLebuhraya from "public/img/play_lebuhraya.svg";
 import PlayBandaraya from "public/img/play_bandaraya.svg";
 
@@ -12,162 +10,133 @@ import VideoPlayer from "./_components/VideoPlayer";
 
 // Content components
 import Blog from "./_components/Blog/Blog";
-import Stats from "./_components/Stats";
+import Stats from "./_components/Stats/Stats";
 import Contact from "./_components/Contact";
 import ProjectList from "./_components/Projects";
 
 // Misc
 import { socials } from "data/socials";
-import { fetchMetrics } from "utils/stats";
 import PlausibleWrapper from "./_components/PlausibleWrapper";
+import { MotionConfig } from "motion/react";
 
 export default async function Main() {
-  const initialStats = await fetchMetrics();
   return (
-    <>
+    <MotionConfig transition={{ ease: [0, 0.71, 0.2, 1.01] }}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <SplitText>Step into our faithfully Malaysian metaverse.</SplitText>
-          <Transition
-            enter="transform transition duration-500 delay-200"
-            enterFrom="opacity-0 -translate-y-36 scale-80"
-            enterTo="opacity-100 translate-y-0 scale-100"
-            show
-            appear
+          <SplitText className="invisible w-full items-center justify-center text-center text-4xl font-bold tracking-tight text-gray-800 sm:text-6xl dark:text-white">
+            Step into our faithfully Malaysian metaverse.
+          </SplitText>
+          <m.p
+            initial={{ opacity: 0, y: -24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-4 text-base leading-relaxed text-gray-800 sm:mt-6 sm:text-lg sm:leading-8 dark:text-white"
           >
-            <p className="mt-6 text-lg leading-8 text-gray-800 sm:mt-5 dark:text-white">
-              Embark on an extraordinary journey with MYSverse, where <b>fun</b>
-              , <b>education</b>, and Malaysian <b>culture</b> converge in our
-              Roblox and beyond experiences.
-            </p>
-          </Transition>
-
-          <Transition
-            enter="transform transition duration-500 delay-300"
-            enterFrom="opacity-0 -translate-y-36 scale-80"
-            enterTo="opacity-100 translate-y-0 scale-100"
-            show
-            appear
+            Embark on an extraordinary journey with MYSverse, where <b>fun</b>,{" "}
+            <b>education</b>, and Malaysian <b>culture</b> converge in our
+            virtual experiences, on Roblox and beyond.
+          </m.p>
+          <m.div
+            initial={{ opacity: 0, y: -24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="mt-6 flex flex-row flex-wrap justify-center gap-x-5 gap-y-4 sm:mt-7 sm:gap-x-6 md:gap-x-7"
           >
-            <div className="mt-6 flex flex-row flex-wrap justify-center gap-x-5 gap-y-4 sm:gap-x-6 md:gap-x-7">
-              {socials.map((item) => {
-                const icon = item.icon;
-                if (icon) {
-                  return (
-                    <PlausibleWrapper
-                      key={item.name}
-                      eventName="navClicked"
-                      eventProps={{
-                        props: { name: item.name }
-                      }}
-                    >
-                      <Link
-                        href={item.href}
-                        target="_blank"
-                        className="text-black-100 fill-gray-800 text-2xl leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50 dark:fill-white dark:text-white"
-                      >
-                        {icon}
-                      </Link>
-                    </PlausibleWrapper>
-                  );
-                }
-              })}
-            </div>
-          </Transition>
-
-          <Transition
-            as="div"
-            enter="transform transition duration-500 delay-500"
-            enterFrom="opacity-0 -translate-y-36 scale-80"
-            enterTo="opacity-100 translate-y-0 scale-100"
-            show
-            appear
-          >
-            <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
-              <TransitionChild
-                as="div"
-                enter="transform transition duration-700 delay-700"
-                enterFrom="opacity-0 -translate-x-48"
-                enterTo="opacity-100 translate-x-0"
-              >
+            {socials
+              .filter((item) => item.icon)
+              .map((item) => (
                 <PlausibleWrapper
-                  eventName="ctaClicked"
+                  key={item.name}
+                  eventName="navClicked"
                   eventProps={{
-                    props: {
-                      name: "Bandar"
-                    }
+                    props: { name: item.name }
                   }}
                 >
                   <Link
-                    href="https://www.roblox.com/games/481538620/Bandaraya"
-                    className="group bandaraya-button rounded-md px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs transition focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400 dark:text-white"
+                    href={item.href}
+                    target="_blank"
+                    className="text-black-100 fill-gray-800 text-2xl leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50 dark:fill-white dark:text-white"
                   >
-                    <PlayBandaraya className="inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#476075]" />
+                    {item.icon}
                   </Link>
                 </PlausibleWrapper>
-              </TransitionChild>
-              <TransitionChild
-                as="div"
-                enter="transform transition duration-700 delay-1000"
-                enterFrom="opacity-0 translate-x-48"
-                enterTo="opacity-100 translate-x-0"
+              ))}
+          </m.div>
+
+          <m.div
+            initial={{ opacity: 0, y: 36 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.1, delay: 1 }}
+          >
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-6">
+              <PlausibleWrapper
+                eventName="ctaClicked"
+                eventProps={{
+                  props: {
+                    name: "Bandar"
+                  }
+                }}
               >
-                <PlausibleWrapper
-                  eventName="ctaClicked"
-                  eventProps={{
-                    props: {
-                      name: "Lebuhraya"
-                    }
-                  }}
+                <m.a
+                  initial={{ opacity: 0, x: -128 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 1.1 }}
+                  href="https://www.roblox.com/games/481538620/Bandaraya"
+                  className="group bandaraya-button w-full rounded-xl px-5 py-2.5 text-sm font-semibold text-black shadow-xs transition focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400 sm:w-auto dark:text-white"
                 >
-                  <Link
-                    href="https://www.roblox.com/games/4892731894/Lebuhraya"
-                    className="group lebuhraya-button rounded-md px-3.5 py-2.5 text-sm font-semibold text-black shadow-xs focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400 dark:text-white"
-                  >
-                    <PlayLebuhraya className="inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#65ad56]" />
-                  </Link>
-                </PlausibleWrapper>
-              </TransitionChild>
+                  <PlayBandaraya className="inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#476075]" />
+                </m.a>
+              </PlausibleWrapper>
+              <PlausibleWrapper
+                eventName="ctaClicked"
+                eventProps={{
+                  props: {
+                    name: "Lebuhraya"
+                  }
+                }}
+              >
+                <m.a
+                  initial={{ opacity: 0, x: 128 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 1.3 }}
+                  href="https://www.roblox.com/games/4892731894/Lebuhraya"
+                  className="group lebuhraya-button w-full rounded-xl px-5 py-2.5 text-sm font-semibold text-black shadow-xs focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400 sm:w-auto dark:text-white"
+                >
+                  <PlayLebuhraya className="inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#65ad56]" />
+                </m.a>
+              </PlausibleWrapper>
             </div>
-            <p
-              // href="#"
-              className="mt-4 text-sm leading-6 tracking-wide text-black italic opacity-80 dark:text-white"
-            >
+            <p className="mt-4 text-sm leading-6 tracking-wide text-black italic opacity-80 dark:text-white">
               ...and more open experiences for everyone, coming soon!
             </p>
-          </Transition>
+          </m.div>
         </div>
       </div>
 
-      <Transition
-        as="div"
-        enter="transform transition duration-1000 delay-300"
-        enterFrom="opacity-0 translate-y-72 scale-80"
-        enterTo="opacity-100 translate-y-0 scale-100"
-        show
-        appear
-      >
-        <VideoPlayer
-          src={[
-            {
-              src: "https://r2.mysver.se/websiteFeature.webm",
-              type: "video/webm"
-            },
-            {
-              src: "https://r2.mysver.se/websiteFeature-vp9.webm",
-              type: "video/webm"
-            },
-            {
-              src: "https://r2.mysver.se/websiteFeature.mp4",
-              type: "video/mp4"
-            }
-          ]}
-          className="mx-auto mt-12 mb-12 w-full shadow-2xl xl:max-w-7xl xl:rounded-xl"
-        />
-      </Transition>
+      <VideoPlayer
+        videoSrc={[
+          {
+            src: "https://r2.mysver.se/websiteFeature.webm",
+            type: "video/webm"
+          },
+          {
+            src: "https://r2.mysver.se/websiteFeature-vp9.webm",
+            type: "video/webm"
+          },
+          {
+            src: "https://r2.mysver.se/websiteFeature.mp4",
+            type: "video/mp4"
+          }
+        ]}
+        initial={{ opacity: 0, y: 72 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.5 }}
+        className="mx-auto mt-12 mb-12 w-full shadow-2xl xl:max-w-7xl xl:rounded-xl"
+      />
 
       <IntersectionTransition>
-        <Stats initialStats={initialStats} />
+        <Stats />
       </IntersectionTransition>
 
       <ProjectList />
@@ -185,6 +154,6 @@ export default async function Main() {
       <IntersectionTransition>
         <Contact />
       </IntersectionTransition>
-    </>
+    </MotionConfig>
   );
 }

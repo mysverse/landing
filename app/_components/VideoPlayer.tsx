@@ -1,32 +1,35 @@
 "use client";
 
+import type { HTMLMotionProps } from "motion/react";
+import * as m from "motion/react-m";
 interface VideoSource {
   src: string;
   type: string;
 }
-type VideoPlayerProps = {
-  src: string | VideoSource[];
-  className?: string;
-};
 
-function VideoPlayer({ src, className }: VideoPlayerProps) {
+interface VideoPlayerProps
+  extends Omit<HTMLMotionProps<"video">, "dragControls"> {
+  videoSrc: string | VideoSource[];
+}
+
+function VideoPlayer({ videoSrc, ...rest }: VideoPlayerProps) {
   return (
-    <video
-      src={typeof src === "string" ? src : undefined}
+    <m.video
+      src={typeof videoSrc === "string" ? videoSrc : undefined}
       autoPlay
       loop
       muted
       playsInline
       onContextMenu={(e) => e.preventDefault()}
-      className={className}
+      {...rest}
     >
-      {typeof src === "string"
+      {typeof videoSrc === "string"
         ? null
-        : src.map((videoSrc, index) => (
-            <source key={index} src={videoSrc.src} type={videoSrc.type} />
+        : videoSrc.map((video, index) => (
+            <source key={index} src={video.src} type={video.type} />
           ))}
       Your browser does not support the video tag.
-    </video>
+    </m.video>
   );
 }
 

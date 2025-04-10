@@ -3,20 +3,27 @@ import { usePlausible } from "next-plausible";
 
 import { useState } from "react";
 
-import { Dialog, DialogPanel } from "@headlessui/react";
+import * as m from "motion/react-m";
 import {
   Bars3Icon,
   NewspaperIcon,
   XMarkIcon
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import Banner from "components/banner";
 import NewsModal from "./NewsModal";
 import { NewsItem } from "utils/news";
 import MysverseLogo from "./MysverseLogo";
 import DarkModeToggle from "./DarkModeToggle";
+import { isExternalUrl } from "utils/isExternalUrl";
 
-const navigation = [
+interface NavigationItem {
+  name: string;
+  href: string;
+  prefetch?: boolean;
+  local?: boolean;
+}
+
+const navigation: NavigationItem[] = [
   {
     name: "Blog",
     href: "https://blog.mysver.se"
@@ -24,13 +31,11 @@ const navigation = [
   {
     name: "Sentral",
     href: "https://sentral.mysver.se"
-  }
-];
-
-const pageNavigation = [
+  },
   {
     name: "Brand Kit",
-    href: "/brand-kit"
+    href: "/brand-kit",
+    prefetch: false
   },
   {
     name: "Projects",
@@ -40,7 +45,10 @@ const pageNavigation = [
     name: "Contact",
     href: "/#contact"
   }
-];
+].map((item) => ({
+  ...item,
+  local: !isExternalUrl(item.href)
+}));
 
 function NewsButton({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) {
   return (
@@ -59,7 +67,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
   const [newsOpen, setNewsOpen] = useState(false);
   return (
     <header className="absolute inset-x-0 top-0 z-50">
-      <Banner />
+      {/* <Banner /> */}
       <nav
         className="relative flex items-center justify-between p-6 xl:px-8"
         aria-label="Global"
@@ -86,25 +94,19 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
             <Link
               key={item.href}
               href={item.href}
-              target="_blank"
+              target={item.local ? undefined : "_blank"}
+              prefetch={item.prefetch}
               className="text-sm leading-6 font-semibold opacity-100 hover:opacity-50"
-              onClick={() =>
-                plausible("navClicked", {
-                  props: {
-                    name: item.name
-                  }
-                })
+              onClick={
+                !item.local
+                  ? () =>
+                      plausible("navClicked", {
+                        props: {
+                          name: item.name
+                        }
+                      })
+                  : undefined
               }
-            >
-              {item.name}
-            </Link>
-          ))}
-          {pageNavigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm leading-6 font-semibold opacity-100 hover:opacity-50"
-              prefetch={false}
             >
               {item.name}
             </Link>
@@ -115,14 +117,14 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
           <NewsButton setIsOpen={setNewsOpen} />
         </div>
       </nav>
-      <Dialog
-        as="div"
-        className="xl:hidden"
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-      >
-        <div className="fixed inset-0 z-50" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 transition sm:max-w-sm sm:ring-1 sm:ring-white/10 dark:bg-slate-800">
+      {mobileMenuOpen && (
+        <m.div
+          initial={{ opacity: 0, x: 300 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 300 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10 dark:bg-slate-800"
+        >
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">MYSverse</span>
@@ -157,25 +159,14 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
                     {item.name}
                   </Link>
                 ))}
-                {pageNavigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    prefetch={false}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-100 dark:text-white"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
                 <div className="mt-6 flex flex-row items-center justify-between">
                   <DarkModeToggle />
                 </div>
               </div>
             </div>
           </div>
-        </DialogPanel>
-      </Dialog>
+        </m.div>
+      )}
       <NewsModal
         isOpen={newsOpen}
         setIsOpen={setNewsOpen}

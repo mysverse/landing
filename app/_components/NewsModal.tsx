@@ -1,20 +1,15 @@
 "use client";
 
 import type { WheelEvent } from "react";
-import { useState, useEffect, useRef, Fragment } from "react";
-import {
-  Dialog,
-  DialogPanel,
-  Transition,
-  TransitionChild
-} from "@headlessui/react";
-import { AnimatePresence } from "motion/react";
-import * as m from "motion/react-m";
+import { useState, useEffect, useRef } from "react";
+import { Dialog, DialogPanel } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import * as m from "motion/react-m";
 
 import type { NewsItem, NewsResponse } from "utils/news";
 import { getNews } from "utils/news";
+import { AnimatePresence } from "motion/react";
 
 export default function NewsModal({
   initialNews,
@@ -64,37 +59,31 @@ export default function NewsModal({
   const OPACITY_STEP = 0.4; // opacity reduction per card after the first
 
   return (
-    <Transition show={isOpen}>
-      <Dialog
-        as="div"
-        className="relative z-10"
-        onClose={() => setIsOpen(false)}
-      >
-        {/* Overlay (semi-transparent) */}
-        <TransitionChild
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
+    <AnimatePresence>
+      {isOpen && (
+        <Dialog
+          as="div"
+          className="relative z-10"
+          open={isOpen}
+          static
+          onClose={() => setIsOpen(false)}
         >
-          <div className="fixed inset-0 backdrop-blur-lg" aria-hidden="true" />
-        </TransitionChild>
-
-        {/* Center the deck horizontally & vertically */}
-        <div className="fixed inset-0 flex items-center justify-center p-4">
-          <TransitionChild
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0 scale-95"
-            enterTo="opacity-100 scale-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100 scale-100"
-            leaveTo="opacity-0 scale-95"
-          >
+          {/* Overlay (semi-transparent) */}
+          <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ ease: "easeOut", duration: 0.3 }}
+            className="fixed inset-0 backdrop-blur-lg"
+            aria-hidden="true"
+          />
+          {/* Center the deck horizontally & vertically */}
+          <div className="fixed inset-0 flex items-center justify-center p-4">
             <DialogPanel
+              as={m.div}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
               onWheel={handleWheel}
               className="relative h-[70vh] max-h-[90vh] w-[90vw] max-w-3xl overflow-hidden"
             >
@@ -171,9 +160,9 @@ export default function NewsModal({
                 })}
               </AnimatePresence>
             </DialogPanel>
-          </TransitionChild>
-        </div>
-      </Dialog>
-    </Transition>
+          </div>
+        </Dialog>
+      )}
+    </AnimatePresence>
   );
 }
