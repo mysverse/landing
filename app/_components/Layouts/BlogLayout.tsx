@@ -18,15 +18,13 @@ export default async function BlogLayout({
     post = await getPost(blogType, slug);
   }
   return (
-    <PageAnimation>
-      {blogType && (
-        <Breadcrumbs
-          blogType={blogType}
-          primaryTag={post?.tags?.[0]}
-          className="mb-4"
-        />
-      )}
-      {children}
-    </PageAnimation>
+    <div className="mx-6 max-w-4xl lg:mx-auto">
+      <Breadcrumbs
+        blogType={blogType}
+        primaryTag={post?.tags?.[0]}
+        className="mb-4"
+      />
+      <PageAnimation>{children}</PageAnimation>
+    </div>
   );
 }
