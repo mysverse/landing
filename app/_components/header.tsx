@@ -104,6 +104,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
               key={item.href}
               href={item.href}
               className="text-sm leading-6 font-semibold opacity-100 hover:opacity-50"
+              prefetch={false}
             >
               {item.name}
             </Link>
