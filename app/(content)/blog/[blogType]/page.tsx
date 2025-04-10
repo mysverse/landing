@@ -56,14 +56,14 @@ export default async function BlogList({ params }: Props) {
                     <Link
                       href={primaryTag.url!}
                       target="_blank"
-                      className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:text-white"
+                      className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 transition hover:bg-gray-100 dark:bg-slate-800 dark:text-white hover:dark:text-gray-600"
                     >
                       {primaryTag?.name}
                     </Link>
                   )}
                 </div>
                 <div className="group relative">
-                  <h3 className="mt-3 text-xl/6 font-semibold text-gray-600 text-gray-900 transition dark:text-white group-hover:dark:text-white">
+                  <h3 className="mt-3 text-xl/6 font-semibold text-gray-900 transition dark:text-white group-hover:dark:text-white">
                     <Link href={`/blog/${blogType}/${post.slug}`}>
                       <span className="absolute inset-0" />
                       {post.title}

@@ -1,46 +1,42 @@
-import { MoonIcon, SunIcon } from "@heroicons/react/20/solid";
-import React, { useState, useEffect } from "react";
+"use client";
 
-const DarkModeToggle: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+import { MoonIcon, SunIcon } from "@heroicons/react/20/solid";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+
+export default function DarkModeToggle() {
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  // useEffect only runs on the client, so now we can safely show the UI
 
   useEffect(() => {
-    // Determine the initial theme preference.
-    // const defaultDark = !("theme" in localStorage) &&
-    // window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const prefersDark = localStorage.theme === "dark";
-
-    setIsDarkMode(prefersDark);
-    document.documentElement.classList.toggle("dark", prefersDark);
+    setMounted(true);
   }, []);
 
-  const toggleDarkMode = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    document.documentElement.classList.toggle("dark", newMode);
-
-    // Save the user's preference.
-    if (newMode) {
-      localStorage.theme = "dark";
-    } else {
-      localStorage.theme = "light";
-    }
-  };
+  if (!mounted) {
+    // return a placeholder to avoid layout shift
+    return (
+      <button className="cursor-pointer rounded p-2 transition hover:bg-black/20 focus:outline-none dark:hover:bg-white/20">
+        <SunIcon className="size-8 text-yellow-500" />
+      </button>
+    );
+  }
 
   return (
     <button
-      onClick={toggleDarkMode}
+      onClick={
+        theme === "dark" ? () => setTheme("light") : () => setTheme("dark")
+      }
       className="cursor-pointer rounded p-2 transition hover:bg-black/20 focus:outline-none dark:hover:bg-white/20"
     >
-      {isDarkMode ? (
+      {theme === "dark" ? (
         // Show sun icon when dark mode is active (click to switch to light mode)
-        <SunIcon className="size-6 text-yellow-500" />
+        <SunIcon className="size-8 text-yellow-500" />
       ) : (
         // Show moon icon when light mode is active (click to switch to dark mode)
-        <MoonIcon className="size-6 text-gray-800" />
+        <MoonIcon className="size-8 text-gray-800" />
       )}
     </button>
   );
-};
-
-export default DarkModeToggle;
+}
