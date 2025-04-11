@@ -12,8 +12,11 @@ const config = {
     "eslint-config-prettier",
     "eslint",
     "eslint-config-next",
-    "eslint-plugin-react-hooks"
-  ]
+    "eslint-plugin-react-hooks",
+    "@next/eslint-plugin-next"
+  ],
+  // ignore selected files
+  entry: ["imageLoader.ts"]
 } satisfies KnipConfig;
 
 export default config;

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function DarkModeToggle() {
   const [mounted, setMounted] = useState(false);
-  const { theme, resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   // useEffect only runs on the client, so now we can safely show the UI
 
