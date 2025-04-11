@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function DarkModeToggle() {
   const [mounted, setMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
 
   // useEffect only runs on the client, so now we can safely show the UI
 
@@ -26,9 +26,8 @@ export default function DarkModeToggle() {
   return (
     <button
       onClick={
-        resolvedTheme !== "dark"
-          ? () => setTheme("light")
-          : () => setTheme("dark")
+        // Toggle between light and dark mode
+        () => setTheme(resolvedTheme === "dark" ? "light" : "dark")
       }
       className="cursor-pointer rounded p-2 transition hover:bg-black/20 focus:outline-none dark:hover:bg-white/20"
     >
