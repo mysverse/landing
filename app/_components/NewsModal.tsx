@@ -152,7 +152,6 @@ export default function NewsModal({
                           width={1920}
                           height={1080}
                           className="rounded-xl shadow-lg"
-                          unoptimized
                         />
                       </div>
                     </m.div>

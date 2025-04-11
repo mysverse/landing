@@ -4,7 +4,22 @@ const nextConfig: NextConfig = {
   output: "export",
   reactStrictMode: true,
   images: {
-    unoptimized: true
+    loader: "custom",
+    loaderFile: "./imageLoader.ts",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "nws.mys.gg",
+        port: "",
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "blog.mysver.se",
+        port: "",
+        pathname: "/**"
+      }
+    ]
   },
   webpack(config: any) {
     // Grab the existing rule that handles SVG imports
