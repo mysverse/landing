@@ -10,6 +10,7 @@ import parse, {
 import Link from "next/link";
 import GhostProvider from "../GhostProvider";
 import clsx from "clsx";
+import Image from "next/image";
 
 interface Props {
   post: PostOrPage;
@@ -71,6 +72,22 @@ const parserOptions: HTMLReactParserOptions = {
             {domToReact(domNode.children as DOMNode[], parserOptions)}
           </Link>
         );
+      }
+
+      // Replace <img> with next/image <Image>
+      if (domNode.name === "img") {
+        const props = attributesToProps(attributes);
+        const src = props.src;
+        if (typeof src === "string") {
+          return (
+            <Image
+              className={clsx("mx-auto rounded-lg", props.className)}
+              alt={typeof props.alt === "string" ? props.alt : ""}
+              src={src}
+              {...props}
+            />
+          );
+        }
       }
     }
   }
