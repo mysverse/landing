@@ -1,9 +1,8 @@
 "use client";
 
 import type { HTMLMotionProps } from "motion/react";
+import { useRef } from "react";
 import * as m from "motion/react-m";
-import { useEffect, useRef } from "react";
-import { useInView } from "react-intersection-observer";
 export interface VideoSource {
   src: string;
   type: string;
@@ -14,41 +13,32 @@ interface VideoPlayerProps
   videoSrc: string | VideoSource[];
 }
 
-function VideoPlayer({ videoSrc, ...rest }: VideoPlayerProps) {
+function VideoPlayer({ videoSrc, autoPlay, ...props }: VideoPlayerProps) {
   const videoElement = useRef<HTMLVideoElement>(null);
-
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.1
-  });
-
-  useEffect(() => {
-    const video = videoElement.current;
-    if (video) {
-      if (inView) {
-        video.play().catch((error) => {
-          console.error("Error playing video:", error);
-        });
-      } else {
-        video.pause();
-      }
-    }
-  }, [inView, videoElement]);
-
+  if (autoPlay === undefined) {
+    autoPlay = true;
+  }
   return (
     <m.video
       src={typeof videoSrc === "string" ? videoSrc : undefined}
-      // autoPlay={inView}
       loop
-      preload={"none"}
+      preload="none"
       muted
       playsInline
       onContextMenu={(e) => e.preventDefault()}
-      ref={(el) => {
-        ref(el);
-        videoElement.current = el;
+      ref={videoElement}
+      onViewportEnter={() => {
+        if (autoPlay) {
+          videoElement.current?.play().catch((err) => {
+            if (err.name !== "AbortError") console.error(err);
+          });
+        }
       }}
-      {...rest}
+      onViewportLeave={() => {
+        videoElement.current?.pause();
+      }}
+      viewport={{ once: false }}
+      {...props}
     >
       {typeof videoSrc === "string"
         ? null
