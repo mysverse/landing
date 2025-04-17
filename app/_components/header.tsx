@@ -13,6 +13,7 @@ import Link from "next/link";
 import NewsModal from "./NewsModal";
 import { NewsItem } from "utils/news";
 import MysverseLogo from "./MysverseLogo";
+import MYSverseLogoWhite from "public/img/MYSverse_White.svg";
 import DarkModeToggle from "./DarkModeToggle";
 import { isExternalUrl } from "utils/isExternalUrl";
 
@@ -79,7 +80,8 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
         <div className="flex xl:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 transition hover:opacity-80">
             <span className="sr-only">MYSverse</span>
-            <MysverseLogo className="mx-auto h-12 w-auto fill-[#272727] sm:h-14 dark:fill-white" />
+            <MysverseLogo className="mx-auto h-12 w-auto fill-[#272727] sm:h-14 dark:hidden" />
+            <MYSverseLogoWhite className="mx-auto hidden h-11 w-auto fill-white sm:h-12 dark:inline-block" />
           </Link>
         </div>
         <div className="flex xl:hidden">
@@ -132,7 +134,8 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">MYSverse</span>
-              <MysverseLogo className="mx-auto h-12 w-auto fill-white" />
+              <MysverseLogo className="mx-auto h-11 w-auto fill-gray-800 dark:hidden" />
+              <MYSverseLogoWhite className="mx-auto hidden h-10 w-auto fill-white dark:inline-block" />
             </Link>
             <button
               type="button"

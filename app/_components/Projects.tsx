@@ -28,6 +28,7 @@ import OutreachMercy from "public/img/outreach_mercy.webp";
 import OutreachPDRM from "public/img/outreach_pdrm.webp";
 import OutreachUITM from "public/img/outreach_uitm.webp";
 import MYSverseSimLogo from "public/img/MYSverse_Sim_Colour.svg";
+import MYSverseSimLogoWhite from "public/img/MYSverse_Sim_White.svg";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 type ProjectType = "MYSverse" | "Sim" | "Outreach";
@@ -227,7 +228,7 @@ function ItemList({ type }: { type: ProjectType }) {
       initial={"hidden"} // start from hidden
       whileInView={"visible"}
       onViewportEnter={(entry) => console.log(entry?.isIntersecting)}
-      viewport={{ once: true, amount: 0.2 }} // trigger once, when 20% visible
+      viewport={{ once: true, amount: "some" }} // trigger once, when 20% visible
     >
       {projects
         .filter((item) => item.type === type)
@@ -341,7 +342,8 @@ export default function ProjectList() {
         <IntersectionTransition>
           <div className="mt-16">
             <h3 className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white">
-              <MYSverseSimLogo className="inline-block h-12 w-auto fill-black" />
+              <MYSverseSimLogo className="inline-block h-12 w-auto fill-black dark:hidden" />
+              <MYSverseSimLogoWhite className="hidden h-12 w-auto fill-white dark:inline-block" />
               <span className="sr-only">MYSverse Sim</span>
             </h3>
             <p className="mt-6 text-lg leading-8">
