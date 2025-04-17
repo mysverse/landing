@@ -2,7 +2,7 @@
 
 import type { HTMLMotionProps } from "motion/react";
 import * as m from "motion/react-m";
-interface VideoSource {
+export interface VideoSource {
   src: string;
   type: string;
 }
@@ -10,31 +10,12 @@ interface VideoSource {
 interface VideoPlayerProps
   extends Omit<HTMLMotionProps<"video">, "dragControls"> {
   videoSrc: string | VideoSource[];
-  loopStart?: number;
-  loopEnd?: number;
 }
 
-function VideoPlayer({
-  videoSrc,
-  loopStart,
-  loopEnd,
-  ...rest
-}: VideoPlayerProps) {
+function VideoPlayer({ videoSrc, ...rest }: VideoPlayerProps) {
   return (
     <m.video
-      src={
-        typeof videoSrc === "string"
-          ? `${videoSrc}${loopStart ? `#t=${loopStart},${loopEnd}` : ""}`
-          : undefined
-      }
-      onTimeUpdate={(e) => {
-        if (loopStart && loopEnd) {
-          const video = e.currentTarget;
-          if (video.currentTime >= loopEnd) {
-            video.currentTime = loopStart;
-          }
-        }
-      }}
+      src={typeof videoSrc === "string" ? videoSrc : undefined}
       autoPlay
       loop
       muted

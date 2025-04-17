@@ -1,15 +1,17 @@
 import type { JSX } from "react";
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
-import { PlayIcon } from "@heroicons/react/24/outline";
+import { LinkIcon, PlayIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import clsx from "clsx";
 import Link from "next/link";
 
+import type { VideoSource } from "./VideoPlayer";
 import DaerahFeaturePic from "public/img/daerah_feature_image.webp";
 import RumahFeaturePic from "public/img/rumah_feature_image.webp";
 import Rumah3FeaturePic from "public/img/rumah3.webp";
 import LebuhrayaFeaturePic from "public/img/lebuhraya_feature.webp";
 import BandarFeaturePic from "public/img/bandar_feature_image.webp";
+import Bandarayav4FeaturePic from "public/img/bandaraya_v4_feature.webp";
 import MafFeaturePic from "public/img/feature_mys_tentera.webp";
 import PolisFeaturePic from "public/img/feature_mys_polis.webp";
 import BombaFeaturePic from "public/img/feature_mys_bomba.webp";
@@ -35,12 +37,7 @@ export default function ProjectList() {
     launched?: string;
     type: ProjectType;
     image?: string | StaticImport;
-    videoSrc?: {
-      src: string;
-      type: string;
-      loopStart?: number;
-      loopEnd?: number;
-    }[];
+    videoSrc?: VideoSource[];
     link?: string;
   }
 
@@ -57,7 +54,8 @@ export default function ProjectList() {
         }
       ],
       tagline:
-        "Our most relaxing experience yet, Lebuhraya invites players to explore a vast, detailed highway system, drive an array of vehicles, socialise with fellow drivers, and immerse themselves in interactive police and firefighting roleplays."
+        "Our most relaxing experience yet, Lebuhraya invites players to explore a vast, detailed highway system, drive an array of vehicles, socialise with fellow drivers, and immerse themselves in interactive police and firefighting roleplays.",
+      link: "https://www.roblox.com/games/4892731894/Lebuhraya"
     },
     {
       name: "Ruumah v4",
@@ -112,7 +110,7 @@ export default function ProjectList() {
       wip: true
     },
     {
-      name: "Bandaraya",
+      name: "Bandaraya v3",
       launched: "Released Sep 2020",
       image: BandarFeaturePic,
       type: "Sim",
@@ -121,12 +119,22 @@ export default function ProjectList() {
       link: "https://www.roblox.com/games/481538620/Bandaraya"
     },
     {
+      name: "Bandaraya v4",
+      launched: "Releasing 2025",
+      wip: true,
+      image: Bandarayav4FeaturePic,
+      type: "Sim",
+      tagline:
+        "The next generation of Bandaraya expands the city towards Dataran Merdeka, featuring new landmarks, revamped vehicles, and new jobs!"
+    },
+    {
       name: "Tentera",
       launched: "Since 2016",
       tagline:
         "A cornerstone of MYSverse Sim, our military community meticulously recreates Malaysian Armed Forces assets and procedures, providing an unparalleled mil-sim experience.",
       image: MafFeaturePic,
-      type: "Sim"
+      type: "Sim",
+      link: "https://sim.mysver.se/tentera/"
     },
     {
       name: "Polis",
@@ -134,7 +142,8 @@ export default function ProjectList() {
       tagline:
         "Step into virtual law enforcement with our dedicated police roleplay community, performing realistic duties across traffic control, community policing, and high-risk crime scenarios in MYSverse Sim experiences such as Bandaraya.",
       image: PolisFeaturePic,
-      type: "Sim"
+      type: "Sim",
+      link: "https://sim.mysver.se/polis/"
     },
     {
       name: "Bomba",
@@ -142,7 +151,8 @@ export default function ProjectList() {
       tagline:
         "Join the firefighting community of MYSverse Sim, equipped with one of the platform's most detailed sets of fire-fighting equipment and vehicles, tackling fires and rescue missions with realism and precision.",
       image: BombaFeaturePic,
-      type: "Sim"
+      type: "Sim",
+      link: "https://sim.mysver.se/bomba/"
     },
     {
       name: "Kesihatan",
@@ -150,7 +160,8 @@ export default function ProjectList() {
       tagline:
         "Join our healthcare community in MYSverse Sim, where you can roleplay as a doctor, nurse, or paramedic, providing realistic medical care and emergency response.",
       image: KesihatanFeature,
-      type: "Sim"
+      type: "Sim",
+      link: "https://sim.mysver.se/kesihatan/"
     },
     {
       name: "MERCY Malaysia - IMU",
@@ -203,8 +214,8 @@ export default function ProjectList() {
                   />
                 ) : null}
               </div>
-              <div className="flex flex-row gap-x-4">
-                <h3 className="text-black-100 text-xl leading-8 font-bold tracking-tight dark:text-white">
+              <div className="mb-2 flex flex-col gap-x-4 gap-y-1 sm:flex-row">
+                <h3 className="text-black-100 text-2xl leading-8 font-bold tracking-tight dark:text-white">
                   {project.name}
                 </h3>
                 <div className="flex items-center gap-x-2">
@@ -225,20 +236,28 @@ export default function ProjectList() {
                     </svg>
                     {project.launched}
                   </span>
-                  {/* Play button if link */}
+
                   {project.link && (
                     <Link
                       href={project.link}
                       target="_blank"
                       className="text-black-100 group my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 transition ring-inset hover:bg-red-400 hover:text-white dark:text-white dark:ring-white/10"
                     >
-                      <PlayIcon className="h-4 w-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
-                      Play
+                      {project.link.includes("roblox.com") ? (
+                        <>
+                          <PlayIcon className="h-4 w-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
+                          Play on Roblox
+                        </>
+                      ) : (
+                        <>
+                          <LinkIcon className="h-4 w-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
+                          Learn more
+                        </>
+                      )}
                     </Link>
                   )}
                 </div>
               </div>
-
               <p className="text-base leading-7 text-black opacity-70 dark:text-white">
                 {project.tagline}
               </p>
