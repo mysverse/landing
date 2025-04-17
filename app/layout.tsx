@@ -73,7 +73,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
             <main>
               <div className="isolate pt-14">
                 <div
-                  className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+                  className="fixed inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
                   aria-hidden="true"
                 >
                   <div
@@ -88,7 +88,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
                   {children}
                 </div>
                 <div
-                  className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+                  className="fixed inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
                   aria-hidden="true"
                 >
                   <div
