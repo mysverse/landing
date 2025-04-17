@@ -157,7 +157,7 @@ export default function ProjectList() {
     },
     {
       name: "Kesihatan",
-      launched: "Since 2024",
+      launched: "Since 2025",
       tagline:
         "Our healthcare roleplay community gives players the chance to act as doctors, nurses, and paramedics—engaging in meaningful emergency scenarios and public healthcare outreach within the MYSverse Sim ecosystem.",
       image: KesihatanFeature,
@@ -203,7 +203,7 @@ export default function ProjectList() {
           .filter((item) => item.type === type)
           .map((project) => (
             <li key={project.name}>
-              <div className="relative mb-6 aspect-3/2 w-full overflow-hidden rounded-2xl">
+              <div className="relative mb-6 aspect-3/2 w-full overflow-hidden rounded-xl sm:rounded-2xl">
                 {project.videoSrc ? (
                   <VideoPlayer
                     videoSrc={project.videoSrc}
