@@ -30,6 +30,7 @@ import OutreachUITM from "public/img/outreach_uitm.webp";
 import MYSverseSimLogo from "public/img/MYSverse_Sim_Colour.svg";
 import MYSverseSimLogoWhite from "public/img/MYSverse_Sim_White.svg";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import RotatingCard from "./RotatingCard";
 
 type ProjectType = "MYSverse" | "Sim" | "Outreach";
 
@@ -38,7 +39,7 @@ const listVariants: Variants = {
   visible: {
     transition: {
       when: "beforeChildren",
-      staggerChildren: 0.4 // delay between each child
+      staggerChildren: 0.5 // delay between each child
     }
   }
 };
@@ -51,7 +52,7 @@ const itemVariants: Variants = {
     y: 0,
     transition: {
       ease: "easeOut",
-      duration: 0.3
+      duration: 0.5
     }
   }
 };
@@ -234,7 +235,7 @@ function ItemList({ type }: { type: ProjectType }) {
         .filter((item) => item.type === type)
         .map((project) => (
           <m.li key={project.name} variants={itemVariants}>
-            <div className="relative mb-6 aspect-3/2 w-full overflow-hidden rounded-xl sm:rounded-2xl">
+            <RotatingCard className="relative mb-6 aspect-3/2 w-full overflow-hidden rounded-xl sm:rounded-2xl">
               {project.videoSrc ? (
                 <VideoPlayer
                   videoSrc={project.videoSrc}
@@ -250,7 +251,7 @@ function ItemList({ type }: { type: ProjectType }) {
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, (max-width: 1536px) 20vw, (min-width: 1536px) 16vw"
                 />
               ) : null}
-            </div>
+            </RotatingCard>
             <div className="mx-1">
               <div className="flex flex-col justify-between gap-x-4 gap-y-1 sm:flex-row">
                 <h3 className="text-black-100 text-2xl font-bold tracking-tight dark:text-white">
