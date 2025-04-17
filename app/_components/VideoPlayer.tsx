@@ -2,6 +2,8 @@
 
 import type { HTMLMotionProps } from "motion/react";
 import * as m from "motion/react-m";
+import { useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 export interface VideoSource {
   src: string;
   type: string;
@@ -13,14 +15,39 @@ interface VideoPlayerProps
 }
 
 function VideoPlayer({ videoSrc, ...rest }: VideoPlayerProps) {
+  const videoElement = useRef<HTMLVideoElement>(null);
+
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1
+  });
+
+  useEffect(() => {
+    const video = videoElement.current;
+    if (video) {
+      if (inView) {
+        video.play().catch((error) => {
+          console.error("Error playing video:", error);
+        });
+      } else {
+        video.pause();
+      }
+    }
+  }, [inView, videoElement]);
+
   return (
     <m.video
       src={typeof videoSrc === "string" ? videoSrc : undefined}
-      autoPlay
+      // autoPlay={inView}
       loop
+      preload={"none"}
       muted
       playsInline
       onContextMenu={(e) => e.preventDefault()}
+      ref={(el) => {
+        ref(el);
+        videoElement.current = el;
+      }}
       {...rest}
     >
       {typeof videoSrc === "string"
