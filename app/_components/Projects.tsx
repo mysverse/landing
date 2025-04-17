@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
-import { LinkIcon, PlayIcon } from "@heroicons/react/20/solid";
+import { LinkIcon, PlayIcon, MapPinIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import clsx from "clsx";
 import Link from "next/link";
@@ -31,11 +31,12 @@ type ProjectType = "MYSverse" | "Sim" | "Outreach";
 
 export default function ProjectList() {
   interface Project {
+    type: ProjectType;
     name: string;
     tagline: string | JSX.Element;
+    location?: string;
     wip?: boolean;
     launched?: string;
-    type: ProjectType;
     image?: string | StaticImport;
     videoSrc?: VideoSource[];
     link?: string;
@@ -54,7 +55,7 @@ export default function ProjectList() {
         }
       ],
       tagline:
-        "Our most relaxing experience yet, Lebuhraya invites players to explore a vast, detailed highway system, drive an array of vehicles, socialise with fellow drivers, and immerse themselves in interactive police and firefighting roleplays.",
+        "Lebuhraya offers a serene driving experience along an expansive, well-crafted highway system. From vehicle cruising to interactive police and firefighter roleplay, it’s the perfect way to unwind while immersing yourself in everyday Malaysian life.",
       link: "https://www.roblox.com/games/4892731894/Lebuhraya"
     },
     {
@@ -62,9 +63,9 @@ export default function ProjectList() {
       launched: "Released April 2025",
       tagline: (
         <>
-          The fourth edition of our beloved series transports players to{" "}
-          <i>Kampung Air</i>, Sandakan&apos;s iconic Water Villages in Sabah,
-          capturing the essence of this unique locale.
+          The latest chapter in our festive Raya series brings players to{" "}
+          <i>Kampung Air</i>, the iconic water villages of Sandakan, Sabah—
+          highlighting a truly unique and picturesque Malaysian setting.
         </>
       ),
       image: Ruumahv4FeaturePic,
@@ -77,9 +78,10 @@ export default function ProjectList() {
       launched: "Released April 2024",
       tagline: (
         <>
-          Continuing our cherished tradition, join a lively Raya open house set
-          in a vibrant suburban neighbourhood filled with delicious food, rich
-          culture, and special MYSverse community references!
+          Celebrate Raya in a vibrant suburban setting, complete with local
+          delicacies, cultural landmarks, and references beloved by the MYSverse
+          community. A joyful continuation of our annual virtual open house
+          tradition.
         </>
       ),
       image: Rumah3FeaturePic,
@@ -91,10 +93,9 @@ export default function ProjectList() {
       launched: "Released 2021",
       tagline: (
         <>
-          Set in an authentic <i>kampung</i> by the seaside, this charming
-          celebration of Malaysian culture offers an immersive open-house
-          experience complete with mouthwatering food and traditional
-          festivities, uniting the MYSverse community.
+          Set in a charming coastal <i>kampung</i>, this edition brings
+          traditional festive celebrations to life with heartfelt detail,
+          delicious food, and community togetherness.
         </>
       ),
       image: RumahFeaturePic,
@@ -104,7 +105,7 @@ export default function ProjectList() {
       name: "Daerah",
       launched: "Coming 2025",
       tagline:
-        "Explore rural Sabah in our most ambitious project yet, inspired by the district of Beaufort. Daerah marks MYSverse's first major leap into open-ended gameplay, inviting everyone to experience its unique and unexplored setting.",
+        "Inspired by the rural Sabahan district of Beaufort, Daerah is our most ambitious project yet. It introduces open-ended, narrative-rich gameplay that invites all players—new and returning—to discover something entirely fresh within the MYSverse.",
       image: DaerahFeaturePic,
       type: "MYSverse",
       wip: true
@@ -115,7 +116,7 @@ export default function ProjectList() {
       image: BandarFeaturePic,
       type: "Sim",
       tagline:
-        "An authentic, expansive, and lively recreation of Kuala Lumpur—redesigned and developed as the ultimate city roleplay hub within MYSverse.",
+        "An immersive reimagining of Kuala Lumpur designed for roleplay at every level—from daily life to official duties. Serving as MYSverse’s primary city hub, it's detailed, dynamic, and constantly evolving.",
       link: "https://www.roblox.com/games/481538620/Bandaraya"
     },
     {
@@ -125,13 +126,13 @@ export default function ProjectList() {
       image: Bandarayav4FeaturePic,
       type: "Sim",
       tagline:
-        "The next generation of Bandaraya expands the city towards Dataran Merdeka, featuring new landmarks, revamped vehicles, and new jobs!"
+        "Our next major city update pushes into Dataran Merdeka, bringing with it iconic landmarks, enhanced vehicle systems, and expanded roleplay jobs—all while staying true to the city’s heart and heritage."
     },
     {
       name: "Tentera",
       launched: "Since 2016",
       tagline:
-        "A cornerstone of MYSverse Sim, our military community meticulously recreates Malaysian Armed Forces assets and procedures, providing an unparalleled mil-sim experience.",
+        "A long-standing pillar of MYSverse Sim, our military roleplay agency features carefully researched equipment, procedures, and training to deliver an authentic and respectful representation of Malaysia’s Armed Forces.",
       image: MafFeaturePic,
       type: "Sim",
       link: "https://sim.mysver.se/tentera/"
@@ -140,7 +141,7 @@ export default function ProjectList() {
       name: "Polis",
       launched: "Since 2017",
       tagline:
-        "Step into virtual law enforcement with our dedicated police roleplay community, performing realistic duties across traffic control, community policing, and high-risk crime scenarios in MYSverse Sim experiences such as Bandaraya.",
+        "From traffic management to tactical operations, our police roleplay community is built around realism, teamwork, and service. It’s a cornerstone of everyday life in MYSverse Sim environments like Bandaraya.",
       image: PolisFeaturePic,
       type: "Sim",
       link: "https://sim.mysver.se/polis/"
@@ -149,7 +150,7 @@ export default function ProjectList() {
       name: "Bomba",
       launched: "Since 2024",
       tagline:
-        "Join the firefighting community of MYSverse Sim, equipped with one of the platform's most detailed sets of fire-fighting equipment and vehicles, tackling fires and rescue missions with realism and precision.",
+        "Join the MYSverse firefighting community and respond to emergencies with one of the most advanced sets of virtual fire-rescue equipment available on Roblox.",
       image: BombaFeaturePic,
       type: "Sim",
       link: "https://sim.mysver.se/bomba/"
@@ -158,7 +159,7 @@ export default function ProjectList() {
       name: "Kesihatan",
       launched: "Since 2024",
       tagline:
-        "Join our healthcare community in MYSverse Sim, where you can roleplay as a doctor, nurse, or paramedic, providing realistic medical care and emergency response.",
+        "Our healthcare roleplay community gives players the chance to act as doctors, nurses, and paramedics—engaging in meaningful emergency scenarios and public healthcare outreach within the MYSverse Sim ecosystem.",
       image: KesihatanFeature,
       type: "Sim",
       link: "https://sim.mysver.se/kesihatan/"
@@ -166,8 +167,9 @@ export default function ProjectList() {
     {
       name: "MERCY Malaysia - IMU",
       launched: "2024",
+      location: "vOffice Mont Kiara",
       tagline:
-        "A discussion with MERCY Malaysia and IMU on how MYSverse can be used to achieve their goals of promoting health and wellness in Malaysia.",
+        "Together with MERCY Malaysia and IMU, we explored how immersive digital experiences like MYSverse can support their goals around health awareness.",
       image: OutreachMercy,
       type: "Outreach"
     },
@@ -175,15 +177,17 @@ export default function ProjectList() {
       name: "U-Digitaloka",
       launched: "2024",
       tagline:
-        "Presented by UiTM Shah Alam in collaboration with the Digital Ministry of Malaysia, we were invited to showcase MYSverse, providing an immersive experience of Malaysian culture and history.",
+        "Showcased at UiTM Shah Alam in partnership with the Ministry of Digital, this outreach highlighted how MYSverse can promote national identity through cultural and historical storytelling.",
+      location: "UiTM Shah Alam",
       image: OutreachUITM,
       type: "Outreach"
     },
     {
       name: "Polis DiRaja Malaysia",
       launched: "2024",
+      location: "Ibu Pejabat Polis Bukit Aman",
       tagline:
-        "We discussed how MYSverse can be used to educate the public about the role of the police in Malaysia, and how it can be used to promote community engagement.",
+        "Our ongoing engagement with the Royal Malaysia Police focuses on using virtual spaces to foster public awareness, safety, and better understanding of policing in Malaysia.",
       image: OutreachPDRM,
       type: "Outreach"
     }
@@ -214,11 +218,11 @@ export default function ProjectList() {
                   />
                 ) : null}
               </div>
-              <div className="mb-2 flex flex-col gap-x-4 gap-y-1 sm:flex-row">
+              <div className="mb-2 flex flex-col justify-between gap-x-4 gap-y-1 sm:flex-row">
                 <h3 className="text-black-100 text-2xl leading-8 font-bold tracking-tight dark:text-white">
                   {project.name}
                 </h3>
-                <div className="flex items-center gap-x-2">
+                <div className="flex flex-row items-center gap-x-3 sm:flex-row-reverse">
                   <span className="text-black-100 my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset dark:text-white dark:ring-white/10">
                     <svg
                       className={clsx(
@@ -236,7 +240,12 @@ export default function ProjectList() {
                     </svg>
                     {project.launched}
                   </span>
-
+                  {project.location && (
+                    <span className="text-black-100 my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset dark:text-white dark:ring-white/10">
+                      <MapPinIcon className="h-4 w-4 fill-gray-800 dark:fill-white" />
+                      {project.location}
+                    </span>
+                  )}
                   {project.link && (
                     <Link
                       href={project.link}
@@ -314,7 +323,7 @@ export default function ProjectList() {
               Outreach
             </h3>
             <p className="mt-6 text-lg leading-8">
-              {`MYSverse is more than just a game; it's a platform for outreach and education. We reach out to various organisations and institutions to explore how MYSverse can be used to achieve their goals, from education to community engagement.`}
+              {`MYSverse is more than just a game; it's a platform for outreach and education. We introduce ourselves to various organisations and institutions to explore how MYSverse can be used to achieve their goals, from education to community engagement.`}
             </p>
             <ItemList type="Outreach" />
           </div>
