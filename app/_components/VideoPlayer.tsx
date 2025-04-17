@@ -10,12 +10,31 @@ interface VideoSource {
 interface VideoPlayerProps
   extends Omit<HTMLMotionProps<"video">, "dragControls"> {
   videoSrc: string | VideoSource[];
+  loopStart?: number;
+  loopEnd?: number;
 }
 
-function VideoPlayer({ videoSrc, ...rest }: VideoPlayerProps) {
+function VideoPlayer({
+  videoSrc,
+  loopStart,
+  loopEnd,
+  ...rest
+}: VideoPlayerProps) {
   return (
     <m.video
-      src={typeof videoSrc === "string" ? videoSrc : undefined}
+      src={
+        typeof videoSrc === "string"
+          ? `${videoSrc}${loopStart ? `#t=${loopStart},${loopEnd}` : ""}`
+          : undefined
+      }
+      onTimeUpdate={(e) => {
+        if (loopStart && loopEnd) {
+          const video = e.currentTarget;
+          if (video.currentTime >= loopEnd) {
+            video.currentTime = loopStart;
+          }
+        }
+      }}
       autoPlay
       loop
       muted

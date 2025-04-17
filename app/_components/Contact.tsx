@@ -22,10 +22,9 @@ export default function Contact() {
                 Get in touch
               </h2>
               <p className="mt-4 leading-7 text-gray-800 dark:text-white">
-                For legal, commercial, collaborations, and other general
-                enquiries. Our in-house development studio Hornbill Interactive
-                is also open to any other metaverse-style projects on Roblox,
-                with battle-tested community and development skills.
+                For legal matters, commercial opportunities, collaborations, or
+                any general enquiries, feel free to reach out - we bring over 10
+                years of combined player and developer experience to the table.
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 lg:col-span-2 lg:grid-cols-2 lg:gap-8">

@@ -42,6 +42,10 @@ const navigation: NavigationItem[] = [
     href: "/#projects"
   },
   {
+    name: "Outreach",
+    href: "/#outreach"
+  },
+  {
     name: "Contact",
     href: "/#contact"
   }

@@ -31,7 +31,7 @@ export default async function Main() {
             initial={{ opacity: 0, y: -24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-4 text-base leading-relaxed text-gray-800 sm:mt-6 sm:text-lg sm:leading-8 dark:text-white"
+            className="mt-4 text-base leading-relaxed text-gray-800 sm:mt-6 sm:text-lg sm:leading-8 dark:text-white/90"
           >
             Embark on an extraordinary journey with MYSverse, where <b>fun</b>,{" "}
             <b>education</b>, and Malaysian <b>culture</b> converge in our
@@ -56,7 +56,7 @@ export default async function Main() {
                   <Link
                     href={item.href}
                     target="_blank"
-                    className="text-black-100 fill-gray-800 text-2xl leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50 dark:fill-white dark:text-white"
+                    className="text-black-100 fill-gray-800 text-2xl leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50 dark:fill-white/90 dark:text-white/90"
                   >
                     {item.icon}
                   </Link>
