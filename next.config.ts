@@ -1,11 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { NextConfig } from "next";
 
+const useVercel = process.env.VERCEL === "1";
+
 const nextConfig: NextConfig = {
-  output: "export",
+  output: useVercel ? "standalone" : "export",
   reactStrictMode: true,
   images: {
-    loader: "custom",
-    loaderFile: "./imageLoader.ts",
+    loader: !useVercel ? "custom" : undefined,
+    loaderFile: !useVercel ? "./imageLoader.ts" : undefined,
     remotePatterns: [
       {
         protocol: "https",
