@@ -3,9 +3,7 @@
 import type { PointerEvent, ReactNode } from "react";
 import { useRef } from "react";
 import { useSpring } from "motion/react";
-
 import * as m from "motion/react-m";
-
 import clsx from "clsx";
 
 interface Props {
@@ -17,25 +15,19 @@ interface Props {
 export default function RotatingCard({ children, className, skipZ }: Props) {
   const rotateX = useSpring(0);
   const rotateY = useSpring(0);
-  // z works funky on mobile
   const z = useSpring(0);
   const cardRef = useRef<HTMLDivElement>(null);
 
   const calculateTilt = (event: PointerEvent<HTMLElement>) => {
-    if (!cardRef.current) return { rotateX: 0, rotateY: 0 };
-
-    const rect = cardRef.current.getBoundingClientRect();
+    const rect = cardRef.current!.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
+    const xPct = x / rect.width;
+    const yPct = y / rect.height;
 
-    // Convert coordinates to percentages
-    const xPercent = x / rect.width;
-    const yPercent = y / rect.height;
-
-    // Max tilt of 10 degrees
     return {
-      rotateX: 10 * (0.5 - yPercent),
-      rotateY: 10 * (xPercent - 0.5)
+      rotateX: 10 * (0.5 - yPct),
+      rotateY: 10 * (xPct - 0.5)
     };
   };
 
@@ -51,17 +43,20 @@ export default function RotatingCard({ children, className, skipZ }: Props) {
       }}
       transition={{ type: "spring", stiffness: 200, damping: 20 }}
       onPointerMove={(e) => {
-        const tilt = calculateTilt(e);
-        rotateX.set(tilt.rotateX);
-        rotateY.set(tilt.rotateY);
+        if (e.pointerType !== "mouse") return; // ← skip on touch
+        const { rotateX: x, rotateY: y } = calculateTilt(e);
+        rotateX.set(x);
+        rotateY.set(y);
       }}
-      onPointerLeave={() => {
+      onPointerEnter={(e) => {
+        if (e.pointerType !== "mouse") return; // ← skip on touch
+        if (!skipZ) z.set(-10);
+      }}
+      onPointerLeave={(e) => {
+        if (e.pointerType !== "mouse") return; // ← skip on touch
         rotateX.set(0);
         rotateY.set(0);
         if (!skipZ) z.set(0);
-      }}
-      onPointerEnter={() => {
-        if (!skipZ) z.set(-10);
       }}
     >
       {children}

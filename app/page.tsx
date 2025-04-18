@@ -12,7 +12,7 @@ import MotionVideoPlayer from "./_components/MotionVideoPlayer";
 import Blog from "./_components/Blog/Blog";
 import Stats from "./_components/Stats/Stats";
 import Contact from "./_components/Contact";
-import ProjectList from "./_components/Projects";
+import ProjectList from "./_components/Projects/Projects";
 
 // Misc
 import { socials } from "data/socials";
