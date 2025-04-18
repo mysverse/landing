@@ -78,7 +78,7 @@ const parserOptions: HTMLReactParserOptions = {
       if (domNode.name === "img") {
         const props = attributesToProps(attributes);
         const src = props.src;
-        if (typeof src === "string") {
+        if (typeof src === "string" && props.width) {
           return (
             <Image
               className={clsx("mx-auto rounded-lg", props.className)}

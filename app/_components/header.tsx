@@ -81,7 +81,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
           <Link href="/" className="-m-1.5 p-1.5 transition hover:opacity-80">
             <span className="sr-only">MYSverse</span>
             <MysverseLogo className="mx-auto h-12 w-auto fill-[#272727] sm:h-14 dark:hidden" />
-            <MYSverseLogoWhite className="mx-auto hidden h-11 w-auto fill-white sm:h-12 dark:inline-block" />
+            <MYSverseLogoWhite className="mx-auto hidden h-11 w-auto fill-white px-1 py-0.5 sm:h-12.5 dark:block" />
           </Link>
         </div>
         <div className="flex xl:hidden">

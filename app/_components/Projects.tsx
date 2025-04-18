@@ -27,6 +27,7 @@ import KesihatanFeature from "public/img/kesihatan_feature.webp";
 import OutreachMercy from "public/img/outreach_mercy.webp";
 import OutreachPDRM from "public/img/outreach_pdrm.webp";
 import OutreachUITM from "public/img/outreach_uitm.webp";
+import OutreachEkelas from "public/img/outreach_ekelas.webp";
 import MYSverseSimLogo from "public/img/MYSverse_Sim_Colour.svg";
 import MYSverseSimLogoWhite from "public/img/MYSverse_Sim_White.svg";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
@@ -57,12 +58,14 @@ const itemVariants: Variants = {
   }
 };
 
+type ProjectStatus = "active" | "inactive" | "wip";
+
 interface Project {
   type: ProjectType;
   name: string;
   tagline: string | JSX.Element;
   location?: string;
-  wip?: boolean;
+  status?: ProjectStatus;
   launched?: string;
   image?: string | StaticImport;
   videoSrc?: VideoSource[];
@@ -83,7 +86,8 @@ const projects: Project[] = [
     ],
     tagline:
       "Lebuhraya offers a serene driving experience along an expansive, well-crafted highway system. From vehicle cruising to interactive police and firefighter roleplay, it’s the perfect way to unwind while immersing yourself in everyday Malaysian life.",
-    link: "https://www.roblox.com/games/4892731894/Lebuhraya"
+    link: "https://www.roblox.com/games/4892731894/Lebuhraya",
+    status: "active"
   },
   {
     name: "Ruumah v4",
@@ -97,8 +101,8 @@ const projects: Project[] = [
     ),
     image: Ruumahv4FeaturePic,
     type: "MYSverse",
-    wip: false,
-    link: "https://www.roblox.com/games/6789873305/Ruumah"
+    link: "https://www.roblox.com/games/6789873305/Ruumah",
+    status: "active"
   },
   {
     name: "Ruumah v3",
@@ -113,11 +117,17 @@ const projects: Project[] = [
     ),
     image: Rumah3FeaturePic,
     type: "MYSverse",
-    wip: false
+    status: "inactive"
   },
   {
     name: "Ruumah v2",
     launched: "Released 2021",
+    videoSrc: [
+      {
+        src: "https://r2.mysver.se/ruumah2Feature.webm",
+        type: "video/webm"
+      }
+    ],
     tagline: (
       <>
         Set in a charming coastal <i>kampung</i>, this edition brings
@@ -126,7 +136,8 @@ const projects: Project[] = [
       </>
     ),
     image: RumahFeaturePic,
-    type: "MYSverse"
+    type: "MYSverse",
+    status: "inactive"
   },
   {
     name: "Daerah",
@@ -135,65 +146,70 @@ const projects: Project[] = [
       "Inspired by the rural Sabahan district of Beaufort, Daerah is our most ambitious project yet. It introduces open-ended, narrative-rich gameplay that invites all players—new and returning—to discover something entirely fresh within the MYSverse.",
     image: DaerahFeaturePic,
     type: "MYSverse",
-    wip: true
+    status: "wip"
   },
   {
     name: "Bandaraya v3",
     launched: "Released Sep 2020",
     image: BandarFeaturePic,
     type: "Sim",
+    status: "active",
     tagline:
       "An immersive reimagining of Kuala Lumpur designed for roleplay at every level—from daily life to official duties. Serving as MYSverse’s primary city hub, it's detailed, dynamic, and constantly evolving.",
     link: "https://www.roblox.com/games/481538620/Bandaraya"
   },
   {
     name: "Bandaraya v4",
-    launched: "Releasing 2025",
-    wip: true,
+    launched: "Coming 2025",
+    status: "wip",
     image: Bandarayav4FeaturePic,
     type: "Sim",
     tagline:
       "Our next major city update pushes into Dataran Merdeka, bringing with it iconic landmarks, enhanced vehicle systems, and expanded roleplay jobs—all while staying true to the city’s heart and heritage."
   },
   {
-    name: "Tentera",
+    name: "Tentera MYSverse",
     launched: "Since 2016",
     tagline:
       "A long-standing pillar of MYSverse Sim, our military roleplay agency features carefully researched equipment, procedures, and training to deliver an authentic and respectful representation of Malaysia’s Armed Forces.",
     image: MafFeaturePic,
     type: "Sim",
-    link: "https://sim.mysver.se/tentera/"
+    link: "https://sim.mysver.se/tentera/",
+    status: "active"
   },
   {
-    name: "Polis",
+    name: "Polis MYSverse",
     launched: "Since 2017",
     tagline:
       "From traffic management to tactical operations, our police roleplay community is built around realism, teamwork, and service. It’s a cornerstone of everyday life in MYSverse Sim environments like Bandaraya.",
     image: PolisFeaturePic,
     type: "Sim",
-    link: "https://sim.mysver.se/polis/"
+    link: "https://sim.mysver.se/polis/",
+    status: "active"
   },
   {
-    name: "Bomba",
+    name: "Bomba MYSverse",
     launched: "Since 2024",
     tagline:
       "Join the MYSverse firefighting community and respond to emergencies with one of the most advanced sets of virtual fire-rescue equipment available on Roblox.",
     image: BombaFeaturePic,
     type: "Sim",
-    link: "https://sim.mysver.se/bomba/"
+    link: "https://sim.mysver.se/bomba/",
+    status: "active"
   },
   {
-    name: "Kesihatan",
+    name: "Kesihatan MYSverse",
     launched: "Since 2025",
     tagline:
       "Our healthcare roleplay community gives players the chance to act as doctors, nurses, and paramedics—engaging in meaningful emergency scenarios and public healthcare outreach within the MYSverse Sim ecosystem.",
     image: KesihatanFeature,
     type: "Sim",
-    link: "https://sim.mysver.se/kesihatan/"
+    link: "https://sim.mysver.se/kesihatan/",
+    status: "active"
   },
   {
     name: "MERCY Malaysia - IMU",
-    launched: "2024",
+    launched: "November 2024",
     location: "vOffice Mont Kiara",
     tagline:
       "Together with MERCY Malaysia and IMU, we explored how immersive digital experiences like MYSverse can support their goals around health awareness.",
@@ -202,7 +218,7 @@ const projects: Project[] = [
   },
   {
     name: "U-Digitaloka",
-    launched: "2024",
+    launched: "June 2024",
     tagline:
       "Showcased at UiTM Shah Alam in partnership with the Ministry of Digital, this outreach highlighted how MYSverse can promote national identity through cultural and historical storytelling.",
     location: "UiTM Shah Alam",
@@ -211,12 +227,21 @@ const projects: Project[] = [
   },
   {
     name: "Polis DiRaja Malaysia",
-    launched: "2024",
+    launched: "January 2024",
     location: "Ibu Pejabat Polis Bukit Aman",
     tagline:
       "Our ongoing engagement with the Royal Malaysia Police focuses on using virtual spaces to foster public awareness, safety, and better understanding of policing in Malaysia.",
     image: OutreachPDRM,
     type: "Outreach"
+  },
+  {
+    name: "Maxis eKelas Minigames",
+    launched: "Completed 2022",
+    tagline:
+      "Independently developed by core MYSverse team members for Maxis eKelas, these educational minigames part of the Kancil Award-winning Misi Jelajah Digital promote STEM learning through fun, interactive experiences.",
+    image: OutreachEkelas,
+    type: "Outreach",
+    link: "https://ekelas-minigames.yan.gg/"
   }
 ];
 
@@ -235,17 +260,21 @@ function ItemList({ type }: { type: ProjectType }) {
         .filter((item) => item.type === type)
         .map((project) => (
           <m.li key={project.name} variants={itemVariants}>
-            <RotatingCard className="relative mb-6 aspect-3/2 w-full overflow-hidden rounded-xl sm:rounded-2xl">
+            <RotatingCard
+              className="relative mb-6 aspect-3/2 w-full overflow-hidden rounded-xl sm:rounded-2xl"
+              // Skip Z transform for videos due to GPU glitchiness on mobile
+              skipZ={project.videoSrc ? true : false}
+            >
               {project.videoSrc ? (
                 <VideoPlayer
                   videoSrc={project.videoSrc}
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 size-full object-cover"
                 />
               ) : project.image ? (
                 <Image
                   fill
                   src={project.image}
-                  alt="Project image"
+                  alt={`Image of ${project.name}`}
                   className="absolute inset-0 object-cover"
                   //sizes for a 3/2 aspect ratio images, mostly that are 768x512
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, (max-width: 1536px) 20vw, (min-width: 1536px) 16vw"
@@ -262,9 +291,9 @@ function ItemList({ type }: { type: ProjectType }) {
                     <svg
                       className={clsx(
                         "size-1.5",
-                        project.wip
-                          ? "fill-red-400"
-                          : project.launched
+                        project.status === "wip"
+                          ? "fill-orange-400"
+                          : project.status === "active"
                             ? "fill-green-400"
                             : "fill-gray-400"
                       )}
@@ -359,7 +388,7 @@ export default function ProjectList() {
               className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white"
               id="outreach"
             >
-              Outreach
+              In real life
             </h3>
             <p className="mt-6 text-lg leading-8">
               {`MYSverse is more than just a game; it's a platform for outreach and education. We introduce ourselves to various organisations and institutions to explore how MYSverse can be used to achieve their goals, from education to community engagement.`}

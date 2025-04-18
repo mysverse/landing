@@ -1,15 +1,13 @@
 "use client";
 
-import type { HTMLMotionProps } from "motion/react";
-import { useRef } from "react";
-import * as m from "motion/react-m";
+import { useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 export interface VideoSource {
   src: string;
   type: string;
 }
 
-interface VideoPlayerProps
-  extends Omit<HTMLMotionProps<"video">, "dragControls"> {
+interface VideoPlayerProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
   videoSrc: string | VideoSource[];
 }
 
@@ -18,26 +16,33 @@ function VideoPlayer({ videoSrc, autoPlay, ...props }: VideoPlayerProps) {
   if (autoPlay === undefined) {
     autoPlay = true;
   }
+
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (videoElement.current) {
+      if (inView && autoPlay) {
+        videoElement.current?.play().catch((err) => {
+          if (err.name !== "AbortError") console.error(err);
+        });
+      } else {
+        videoElement.current?.pause();
+      }
+    }
+  });
+
   return (
-    <m.video
+    <video
       src={typeof videoSrc === "string" ? videoSrc : undefined}
       loop
       preload="none"
       muted
       playsInline
       onContextMenu={(e) => e.preventDefault()}
-      ref={videoElement}
-      onViewportEnter={() => {
-        if (autoPlay) {
-          videoElement.current?.play().catch((err) => {
-            if (err.name !== "AbortError") console.error(err);
-          });
-        }
+      ref={(e) => {
+        videoElement.current = e;
+        ref(e);
       }}
-      onViewportLeave={() => {
-        videoElement.current?.pause();
-      }}
-      viewport={{ once: false }}
       {...props}
     >
       {typeof videoSrc === "string"
@@ -46,7 +51,7 @@ function VideoPlayer({ videoSrc, autoPlay, ...props }: VideoPlayerProps) {
             <source key={index} src={video.src} type={video.type} />
           ))}
       Your browser does not support the video tag.
-    </m.video>
+    </video>
   );
 }
 

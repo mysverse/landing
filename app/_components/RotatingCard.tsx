@@ -11,11 +11,13 @@ import clsx from "clsx";
 interface Props {
   children: ReactNode;
   className?: string;
+  skipZ?: boolean;
 }
 
-export default function RotatingCard({ children, className }: Props) {
+export default function RotatingCard({ children, className, skipZ }: Props) {
   const rotateX = useSpring(0);
   const rotateY = useSpring(0);
+  // z works funky on mobile
   const z = useSpring(0);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -44,7 +46,7 @@ export default function RotatingCard({ children, className }: Props) {
       style={{
         rotateX,
         rotateY,
-        z,
+        z: skipZ ? 0 : z,
         transformPerspective: 1000
       }}
       transition={{ type: "spring", stiffness: 200, damping: 20 }}
@@ -56,10 +58,10 @@ export default function RotatingCard({ children, className }: Props) {
       onPointerLeave={() => {
         rotateX.set(0);
         rotateY.set(0);
-        z.set(0);
+        if (!skipZ) z.set(0);
       }}
       onPointerEnter={() => {
-        z.set(-10);
+        if (!skipZ) z.set(-10);
       }}
     >
       {children}

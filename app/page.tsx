@@ -6,7 +6,7 @@ import PlayBandaraya from "public/img/play_bandaraya.svg";
 // Reusable components
 import IntersectionTransition from "./_components/IntersectionTransition";
 import SplitText from "./_components/SplitText";
-import VideoPlayer from "./_components/VideoPlayer";
+import MotionVideoPlayer from "./_components/MotionVideoPlayer";
 
 // Content components
 import Blog from "./_components/Blog/Blog";
@@ -114,7 +114,7 @@ export default async function Main() {
         </div>
       </div>
 
-      <VideoPlayer
+      <MotionVideoPlayer
         videoSrc={[
           {
             src: "https://r2.mysver.se/websiteFeature.webm",
@@ -133,6 +133,7 @@ export default async function Main() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 1.5 }}
         className="mx-auto mt-12 mb-12 w-full shadow-2xl xl:max-w-7xl xl:rounded-xl"
+        preload="auto"
       />
 
       <IntersectionTransition>
