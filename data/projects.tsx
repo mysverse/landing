@@ -17,6 +17,7 @@ import OutreachMercy from "public/img/outreach_mercy.webp";
 import OutreachPDRM from "public/img/outreach_pdrm.webp";
 import OutreachUITM from "public/img/outreach_uitm.webp";
 import OutreachEkelas from "public/img/outreach_ekelas.webp";
+import OutreachNst from "public/img/outreach_nst.png";
 
 type ProjectType = "MYSverse" | "Sim" | "Outreach";
 
@@ -170,6 +171,15 @@ export const projects: Project[] = [
     status: "active"
   },
   {
+    name: "NST Viral Feature",
+    launched: "January 2025",
+    tagline:
+      "The New Straits Times covered MYSverse's virtual election of its 22nd Prime Minister, spotlighting our commitment to civic education and youth empowerment in a simulated Malaysian democracy.",
+    image: OutreachNst,
+    type: "Outreach",
+    link: "https://www.nst.com.my/news/nst-viral/2025/01/1158200/nstviral-popular-malaysian-video-game-simulation-mysverse-elects-22nd"
+  },
+  {
     name: "MERCY Malaysia - IMU",
     launched: "November 2024",
     location: "vOffice Mont Kiara",
@@ -204,5 +214,14 @@ export const projects: Project[] = [
     image: OutreachEkelas,
     type: "Outreach",
     link: "https://ekelas-minigames.yan.gg/"
+  },
+  {
+    name: "Donation to Gaza Relief",
+    launched: "October 2023",
+    tagline:
+      "MYSverse made a RM1,000 donation to Persatuan Cinta Gaza Malaysia, affirming our stance of compassion and awareness while maintaining a neutral platform policy on Roblox.",
+    image: "https://blog.mysver.se/content/images/2023/10/donation.png",
+    type: "Outreach",
+    link: "/blog/mys/statement-on-israel-palestine"
   }
 ];

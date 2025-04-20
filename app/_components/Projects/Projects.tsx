@@ -59,7 +59,7 @@ export default function ProjectList() {
               In real life
             </h3>
             <p className="mt-6 text-lg leading-8">
-              {`MYSverse is more than just a game; it's a platform for outreach and education. We introduce ourselves to various organisations and institutions to explore how MYSverse can be used to achieve their goals, from education to community engagement.`}
+              {`MYSverse is more than just a game; it's a platform for outreach and education. In addition to making an impact in the real world, we introduce ourselves to various organisations and institutions to explore how MYSverse can be used to achieve their goals, from education to community engagement.`}
             </p>
             <ItemList
               projects={projects.filter((item) => item.type === "Outreach")}

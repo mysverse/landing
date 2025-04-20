@@ -11,6 +11,7 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
   return (
     <RotatingCard className="relative isolate flex flex-col justify-end overflow-hidden sm:aspect-video sm:rounded-2xl sm:px-8 sm:pb-8">
       <Link
+        prefetch={false}
         href={post.url ?? "#"}
         className={post.url ? "" : "pointer-events-none"}
       >
