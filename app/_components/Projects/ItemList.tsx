@@ -1,9 +1,15 @@
 import type { Variants } from "motion/react";
 
-import { LinkIcon, PlayIcon, MapPinIcon } from "@heroicons/react/20/solid";
+import {
+  LinkIcon,
+  PlayIcon,
+  MapPinIcon,
+  UserGroupIcon
+} from "@heroicons/react/20/solid";
 import Image from "next/image";
 import clsx from "clsx";
 import Link from "next/link";
+import Markdown from "react-markdown";
 import * as m from "motion/react-m";
 
 import type { Project } from "data/projects";
@@ -92,7 +98,7 @@ export default function ItemList({ projects }: { projects: Project[] }) {
                 </span>
                 {project.location && (
                   <span className="text-black-100 my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset dark:text-white dark:ring-white/10">
-                    <MapPinIcon className="h-4 w-4 fill-gray-800 dark:fill-white" />
+                    <MapPinIcon className="size-4 fill-gray-800 dark:fill-white" />
                     {project.location}
                   </span>
                 )}
@@ -103,13 +109,26 @@ export default function ItemList({ projects }: { projects: Project[] }) {
                     className="text-black-100 group my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 transition ring-inset hover:bg-red-400 hover:text-white dark:text-white dark:ring-white/10"
                   >
                     {project.link.includes("roblox.com") ? (
-                      <>
-                        <PlayIcon className="h-4 w-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
-                        Play on Roblox
-                      </>
+                      project.link.includes("/games") ? (
+                        <>
+                          <PlayIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
+                          Play on Roblox
+                        </>
+                      ) : project.link.includes("/communities") ||
+                        project.link.includes("/groups") ? (
+                        <>
+                          <UserGroupIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
+                          Join on Roblox
+                        </>
+                      ) : (
+                        <>
+                          <LinkIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
+                          Experience on Roblox
+                        </>
+                      )
                     ) : (
                       <>
-                        <LinkIcon className="h-4 w-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
+                        <LinkIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
                         Learn more
                       </>
                     )}
@@ -117,9 +136,9 @@ export default function ItemList({ projects }: { projects: Project[] }) {
                 )}
               </div>
             </div>
-            <p className="mt-3 text-base leading-7 text-black opacity-70 dark:text-white">
-              {project.tagline}
-            </p>
+            <div className="mt-3 text-base leading-7 text-black opacity-70 dark:text-white">
+              <Markdown>{project.tagline}</Markdown>
+            </div>
           </div>
         </m.li>
       ))}

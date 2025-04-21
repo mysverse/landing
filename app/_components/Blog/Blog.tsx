@@ -19,6 +19,7 @@ export default async function Blog({ blogType }: { blogType: BlogType }) {
         </p>
         <Link
           href={`/blog/${blogType}`}
+          prefetch={false}
           className="inline-flex items-center gap-1 text-sm leading-6 font-medium text-gray-500 transition hover:opacity-50 dark:text-white"
         >
           <NewspaperIcon className="mr-1 size-5" />

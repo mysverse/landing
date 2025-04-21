@@ -52,6 +52,23 @@ export default function ProjectList() {
         </IntersectionTransition>
         <IntersectionTransition>
           <div className="mt-16">
+            <h3 className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white">
+              MYSverse Network
+            </h3>
+            <p className="mt-6 text-lg leading-8">
+              A collaborative platform that brings together Malaysian-themed
+              projects and communities on Roblox, from MYSverse and other
+              creators. By sharing resources, knowledge, and experiences, we aim
+              to create a vibrant ecosystem across multiple genres that
+              celebrates Malaysian culture and creativity.
+            </p>
+            <ItemList
+              projects={projects.filter((item) => item.type === "Network")}
+            />
+          </div>
+        </IntersectionTransition>
+        <IntersectionTransition>
+          <div className="mt-16">
             <h3
               className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white"
               id="outreach"

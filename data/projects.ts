@@ -1,7 +1,5 @@
-import type { JSX } from "react";
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 import type { VideoSource } from "app/_components/VideoPlayer";
-
 import DaerahFeaturePic from "public/img/daerah_feature_image.webp";
 import RumahFeaturePic from "public/img/rumah_feature_image.webp";
 import Rumah3FeaturePic from "public/img/rumah3.webp";
@@ -17,16 +15,16 @@ import OutreachMercy from "public/img/outreach_mercy.webp";
 import OutreachPDRM from "public/img/outreach_pdrm.webp";
 import OutreachUITM from "public/img/outreach_uitm.webp";
 import OutreachEkelas from "public/img/outreach_ekelas.webp";
-import OutreachNst from "public/img/outreach_nst.png";
+import OutreachNst from "public/img/outreach_nst.webp";
+import OutreachCgm from "public/img/outreach_cgm.webp";
 
-type ProjectType = "MYSverse" | "Sim" | "Outreach";
-
+type ProjectType = "MYSverse" | "Sim" | "Outreach" | "Network";
 type ProjectStatus = "active" | "inactive" | "wip";
 
 export interface Project {
   type: ProjectType;
   name: string;
-  tagline: string | JSX.Element;
+  tagline: string;
   location?: string;
   status?: ProjectStatus;
   launched?: string;
@@ -55,13 +53,8 @@ export const projects: Project[] = [
   {
     name: "Ruumah v4",
     launched: "Released April 2025",
-    tagline: (
-      <>
-        The latest chapter in our festive Raya series brings players to{" "}
-        <i>Kampung Air</i>, the iconic water villages of Sandakan, Sabah—
-        highlighting a truly unique and picturesque Malaysian setting.
-      </>
-    ),
+    tagline:
+      "The latest chapter in our festive Raya series brings players to *Kampung Air*, the iconic water villages of Sandakan, Sabah—highlighting a truly unique and picturesque Malaysian setting.",
     image: Ruumahv4FeaturePic,
     type: "MYSverse",
     link: "https://www.roblox.com/games/6789873305/Ruumah",
@@ -70,14 +63,10 @@ export const projects: Project[] = [
   {
     name: "Ruumah v3",
     launched: "Released April 2024",
-    tagline: (
-      <>
-        Celebrate Raya in a vibrant suburban setting, complete with local
+    tagline: `Celebrate Raya in a vibrant suburban setting, complete with local
         delicacies, cultural landmarks, and references beloved by the MYSverse
         community. A joyful continuation of our annual virtual open house
-        tradition.
-      </>
-    ),
+        tradition.`,
     image: Rumah3FeaturePic,
     type: "MYSverse",
     status: "inactive"
@@ -91,13 +80,8 @@ export const projects: Project[] = [
         type: "video/webm"
       }
     ],
-    tagline: (
-      <>
-        Set in a charming coastal <i>kampung</i>, this edition brings
-        traditional festive celebrations to life with heartfelt detail,
-        delicious food, and community togetherness.
-      </>
-    ),
+    tagline:
+      "Set in a charming coastal *kampung*, this edition brings traditional festive celebrations to life with heartfelt detail, delicious food, and community togetherness.",
     image: RumahFeaturePic,
     type: "MYSverse",
     status: "inactive"
@@ -111,6 +95,7 @@ export const projects: Project[] = [
     type: "MYSverse",
     status: "wip"
   },
+  // MYSverse Sim
   {
     name: "Bandaraya v3",
     launched: "Released Sep 2020",
@@ -170,6 +155,31 @@ export const projects: Project[] = [
     link: "https://sim.mysver.se/kesihatan/",
     status: "active"
   },
+  // MYSverse Network
+  {
+    name: "MYSair",
+    launched: "Founded 2021",
+    tagline:
+      "Formerly Malaysia Airways, this is a virtual airline where every journey goes *beyond continents*. Whether you're flying as a passenger or serving as crew, MYSair blends immersive ro-aviation with Malaysian hospitality, connecting a global audience to the heart of our culture through every takeoff and landing.",
+    videoSrc: [
+      {
+        src: "https://r2.mysver.se/mysairFeature.webm",
+        type: "video/webm"
+      }
+    ],
+    type: "Network",
+    link: "https://www.roblox.com/communities/5000479/MYSair"
+  },
+  {
+    name: "Tehlife",
+    launched: "Founded 2021",
+    tagline:
+      "Our vibrant virtual café inspired by popular Malaysian bubble tea brands — but with a twist. While *tea is life*, it serves everything from boba to kopi, blending café culture with the MYSverse community and real-life Malaysian vibes.",
+    image: "https://blog.mysver.se/content/images/2024/12/image-14.png",
+    type: "Network",
+    link: "https://www.roblox.com/communities/5000345/Tehlife"
+  },
+  // In real life
   {
     name: "NST Viral Feature",
     launched: "January 2025",
@@ -200,11 +210,20 @@ export const projects: Project[] = [
   {
     name: "Polis DiRaja Malaysia",
     launched: "January 2024",
-    location: "Ibu Pejabat Polis Bukit Aman",
+    location: "PDRM HQ Bukit Aman",
     tagline:
       "Our ongoing engagement with the Royal Malaysia Police focuses on using virtual spaces to foster public awareness, safety, and better understanding of policing in Malaysia.",
     image: OutreachPDRM,
     type: "Outreach"
+  },
+  {
+    name: "Donation to Gaza Relief",
+    launched: "October 2023",
+    tagline:
+      "MYSverse made a RM1,000 donation to Persatuan Cinta Gaza Malaysia, affirming our stance of compassion and awareness while maintaining a neutral platform policy on Roblox.",
+    image: OutreachCgm,
+    type: "Outreach",
+    link: "/blog/mys/statement-on-israel-palestine"
   },
   {
     name: "Maxis eKelas Minigames",
@@ -214,14 +233,5 @@ export const projects: Project[] = [
     image: OutreachEkelas,
     type: "Outreach",
     link: "https://ekelas-minigames.yan.gg/"
-  },
-  {
-    name: "Donation to Gaza Relief",
-    launched: "October 2023",
-    tagline:
-      "MYSverse made a RM1,000 donation to Persatuan Cinta Gaza Malaysia, affirming our stance of compassion and awareness while maintaining a neutral platform policy on Roblox.",
-    image: "https://blog.mysver.se/content/images/2023/10/donation.png",
-    type: "Outreach",
-    link: "/blog/mys/statement-on-israel-palestine"
   }
 ];
