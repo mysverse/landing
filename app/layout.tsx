@@ -149,6 +149,9 @@ export default async function RootLayout({ children }: PropsWithChildren) {
                 <span className="block">
                   All assets used are property of their respective owners.
                 </span>
+                <span>
+                  {process.env.VERCEL_PROJECT_PRODUCTION_URL}
+                </span>
               </div>
             </footer>
           </LazyMotionLayout>
