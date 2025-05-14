@@ -15,22 +15,11 @@ const APP_DESCRIPTION =
 export const metadata: Metadata = {
   metadataBase: env.CF_PAGES_URL ? new URL(env.CF_PAGES_URL) : undefined,
   applicationName: APP_NAME,
-  title: {
-    default: APP_DEFAULT_TITLE,
-    template: APP_TITLE_TEMPLATE
-  },
+  title: APP_DEFAULT_TITLE,
   description: APP_DESCRIPTION,
   openGraph: {
     type: "website",
     siteName: APP_NAME,
-    title: {
-      default: APP_DEFAULT_TITLE,
-      template: APP_TITLE_TEMPLATE
-    },
-    description: APP_DESCRIPTION
-  },
-  twitter: {
-    card: "summary_large_image",
     title: {
       default: APP_DEFAULT_TITLE,
       template: APP_TITLE_TEMPLATE

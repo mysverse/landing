@@ -23,7 +23,7 @@ export default function ReloadingScript({ src, ...attrs }: Props) {
     return () => {
       document.body.removeChild(script);
     };
-  }, [src]); // re-runs only if src changes
+  }, [src, attrs]); // re-runs only if src changes
 
   return null;
 }

@@ -131,7 +131,7 @@ export default async function PostOrPage({ post, children, className }: Props) {
     <GhostProvider>
       <div
         className={clsx(
-          "prose lg:prose-xl dark:prose-invert max-w-full",
+          "prose lg:prose-xl dark:prose-invert gh-content max-w-full",
           className
         )}
       >

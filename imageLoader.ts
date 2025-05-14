@@ -12,7 +12,7 @@ export default function cloudflareLoader({
   quality?: number;
 }) {
   if (process.env.NODE_ENV === "development") {
-    return src;
+    return `${src}?width=${width}`;
   }
   const params = [`width=${width}`];
   if (quality) {

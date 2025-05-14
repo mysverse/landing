@@ -1,53 +1,39 @@
-"use client";
+import "styles/ghost.css";
 
 import type { PropsWithChildren } from "react";
-import { useEffect } from "react";
-
-import { usePathname } from "next/navigation";
+import { blogData } from "utils/ghost";
 import ReloadingScript from "./ReloadingScript";
+import GhostProviderClient from "./GhostProviderClient";
 
-const GHOST = "https://blog.mysver.se";
+const baseUrl = blogData[0].externalUrl;
 
 function GhostIncludes() {
-  const pathname = usePathname();
   return (
     <>
       {/* Styles */}
-      {/* <link rel="stylesheet" href={`${GHOST}/assets/built/screen.css`} /> */}
-      <link rel="stylesheet" href={`${GHOST}/public/cards.min.css`} />
-      {/* Must run before hydration */}
-      <ReloadingScript src={`${GHOST}/assets/built/imagesloaded.pkgd.min.js`} />
-      <ReloadingScript src={`${GHOST}/assets/built/photoswipe.min.js`} />
-      {/* Core theme logic */}
-      <ReloadingScript src={`${GHOST}/assets/built/main.js`} />
-      <ReloadingScript src={`${GHOST}/assets/built/dropdown.js`} />
-      <ReloadingScript src={`${GHOST}/assets/built/pagination.js`} />
-      <ReloadingScript src={`${GHOST}/assets/built/lightbox.js`} />
-      <ReloadingScript src={`${GHOST}/assets/built/reframe.min.js`} />
-      {/* Optional extras; let them load whenever */}
-      <ReloadingScript
-        src={`${GHOST}/public/cards.min.js`}
-        key={pathname}
-        defer
+      <link rel="stylesheet" href={`${baseUrl}/public/cards.min.css`} />
+      {/* Scripts */}
+      {/* <ReloadingScript
+        src={`${baseUrl}/assets/built/imagesloaded.pkgd.min.js`}
       />
-      <ReloadingScript src={`${GHOST}/public/comment-counts.min.js`} />
-      <ReloadingScript src={`${GHOST}/public/member-attribution.min.js`} />
+      <ReloadingScript src={`${baseUrl}/assets/built/photoswipe.min.js`} />
+      <ReloadingScript src={`${baseUrl}/assets/built/pagination.js`} />
+      <ReloadingScript src={`${baseUrl}/assets/built/lightbox.js`} />
+      <ReloadingScript src={`${baseUrl}/assets/built/reframe.min.js`} />
+      <ReloadingScript src={`${baseUrl}/assets/built/main.js`} /> */}
+      <ReloadingScript src={`${baseUrl}/assets/built/dropdown.js`} />
+      <ReloadingScript src={`${baseUrl}/public/cards.min.js`} />
+      {/* <ReloadingScript src={`${baseUrl}/public/comment-counts.min.js`} />
+      <ReloadingScript src={`${baseUrl}/public/member-attribution.min.js`} /> */}
     </>
   );
 }
 
 export default function GhostProvider(props: PropsWithChildren) {
-  const pathname = usePathname();
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }, []);
   return (
     <>
-      <GhostIncludes key={pathname} />
-      {props.children}
+      <GhostIncludes />
+      <GhostProviderClient>{props.children}</GhostProviderClient>
     </>
   );
 }
