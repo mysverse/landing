@@ -20,7 +20,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "html-react-parser": "^5.2.5",
-    "motion": "^12.11.0",
+    "motion": "^12.11.3",
     "motion-plus": "^0.1.9",
     "next": "^15.3.2",
     "next-plausible": "^3.12.4",
