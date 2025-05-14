@@ -1,5 +1,3 @@
-import "styles/ghost.css";
-
 import type { PostOrPage } from "@tryghost/content-api";
 import type { DOMNode, HTMLReactParserOptions } from "html-react-parser";
 import parse, {
@@ -18,6 +16,23 @@ interface Props {
   className?: string;
 }
 
+const addClass = (
+  attributes: Record<string, string | undefined>,
+  classes: string[]
+) => {
+  const existingClasses = attributes.class?.split(" ");
+  if (existingClasses) {
+    for (const add of classes) {
+      if (!existingClasses.includes(add)) {
+        existingClasses.push(add);
+      }
+    }
+    attributes.class = existingClasses.join(" ");
+  } else {
+    attributes.class = classes.join(" ");
+  }
+};
+
 const parserOptions: HTMLReactParserOptions = {
   replace: (domNode) => {
     if (domNode instanceof Element) {
@@ -33,21 +48,32 @@ const parserOptions: HTMLReactParserOptions = {
           add: ["rounded-lg", "mx-auto"]
         },
         {
+          source: ["kg-embed-card"],
+          add: ["not-prose"]
+        },
+        {
+          source: ["kg-video-card"],
+          add: ["not-prose", "my-8", "sm:my-12"]
+        },
+        {
           source: ["kg-card-hascaption"],
           add: ["text-center"]
         }
       ];
 
+      if (domNode.name === "video") {
+        addClass(attributes, ["rounded-lg"]);
+      }
+
       for (const pattern of patterns) {
         const sources = pattern.source;
         if (sources.some((source) => attributes.class?.includes(source))) {
-          const classes = attributes.class.split(" ");
-          for (const add of pattern.add) {
-            if (!classes.includes(add)) {
-              classes.push(add);
-            }
+          const classes = pattern.add;
+          if (attributes.class) {
+            addClass(attributes, classes);
+          } else {
+            attributes.class = classes.join(" ");
           }
-          attributes.class = classes.join(" ");
         }
       }
 
@@ -93,7 +119,8 @@ const parserOptions: HTMLReactParserOptions = {
   }
 };
 
-export default function PostOrPage({ post, children, className }: Props) {
+export default async function PostOrPage({ post, children, className }: Props) {
+  // console.log(post.html);
   if (!post.html) {
     return <div>Post not found</div>;
   }

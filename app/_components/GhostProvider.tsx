@@ -3,41 +3,51 @@
 import type { PropsWithChildren } from "react";
 import { useEffect } from "react";
 
+import { usePathname } from "next/navigation";
+import ReloadingScript from "./ReloadingScript";
+
+const GHOST = "https://blog.mysver.se";
+
+function GhostIncludes() {
+  const pathname = usePathname();
+  return (
+    <>
+      {/* Styles */}
+      {/* <link rel="stylesheet" href={`${GHOST}/assets/built/screen.css`} /> */}
+      <link rel="stylesheet" href={`${GHOST}/public/cards.min.css`} />
+      {/* Must run before hydration */}
+      <ReloadingScript src={`${GHOST}/assets/built/imagesloaded.pkgd.min.js`} />
+      <ReloadingScript src={`${GHOST}/assets/built/photoswipe.min.js`} />
+      {/* Core theme logic */}
+      <ReloadingScript src={`${GHOST}/assets/built/main.js`} />
+      <ReloadingScript src={`${GHOST}/assets/built/dropdown.js`} />
+      <ReloadingScript src={`${GHOST}/assets/built/pagination.js`} />
+      <ReloadingScript src={`${GHOST}/assets/built/lightbox.js`} />
+      <ReloadingScript src={`${GHOST}/assets/built/reframe.min.js`} />
+      {/* Optional extras; let them load whenever */}
+      <ReloadingScript
+        src={`${GHOST}/public/cards.min.js`}
+        key={pathname}
+        defer
+      />
+      <ReloadingScript src={`${GHOST}/public/comment-counts.min.js`} />
+      <ReloadingScript src={`${GHOST}/public/member-attribution.min.js`} />
+    </>
+  );
+}
+
 export default function GhostProvider(props: PropsWithChildren) {
+  const pathname = usePathname();
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth"
     });
   }, []);
-
-  // Handle Ghost CMS toggle cards
-  useEffect(() => {
-    // Query all elements with the class "kg-toggle-card"
-    const toggleCards = document.querySelectorAll(".kg-toggle-card");
-
-    // Define the click handler
-    const handleToggle = (event: Event) => {
-      const card = event.currentTarget;
-      if (card && card instanceof HTMLElement) {
-        const currentState = card.getAttribute("data-kg-toggle-state");
-        const newState = currentState === "open" ? "close" : "open";
-        card.setAttribute("data-kg-toggle-state", newState);
-      }
-    };
-
-    // Attach the event listener to each card
-    toggleCards.forEach((card) => {
-      card.addEventListener("click", handleToggle);
-    });
-
-    // Cleanup the event listeners when the component unmounts or htmlContent changes
-    return () => {
-      toggleCards.forEach((card) => {
-        card.removeEventListener("click", handleToggle);
-      });
-    };
-  }, [props.children]); // Re-run effect if the external HTML changes
-
-  return props.children;
+  return (
+    <>
+      <GhostIncludes key={pathname} />
+      {props.children}
+    </>
+  );
 }
