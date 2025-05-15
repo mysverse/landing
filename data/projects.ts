@@ -92,7 +92,8 @@ export const projects: Project[] = [
       "Take a wonderful trip back to the early days of [MYS] Malaysia! This classic edition opens KL 2.9 for everyone to enjoy, with its original environment, updated compatibility, and teams that are free for all to join.",
     image: BandarayaKlasikFeaturePic,
     type: "MYSverse",
-    status: "wip"
+    status: "wip",
+    link: "/blog/mys/introducing-bandaraya-klasik"
   },
   {
     name: "Daerah",

@@ -4,6 +4,7 @@ import {
   faBluesky,
   faDiscord,
   faFacebook,
+  faGithub,
   faGuilded,
   faInstagram,
   faLinkedin,
@@ -63,6 +64,11 @@ export const socials = [
     name: "TikTok",
     href: "https://tiktok.com/@mysver.se",
     icon: <FontAwesomeIcon icon={faTiktok} />
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/mysverse",
+    icon: <FontAwesomeIcon icon={faGithub} />
   },
   {
     name: "LinkedIn",
