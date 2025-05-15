@@ -15,12 +15,12 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@headlessui/react": "^2.2.3",
     "@heroicons/react": "^2.2.0",
-    "@tailwindcss/postcss": "^4.1.6",
+    "@tailwindcss/postcss": "^4.1.7",
     "@tryghost/content-api": "^1.11.24",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "html-react-parser": "^5.2.5",
-    "motion": "^12.11.3",
+    "motion": "^12.11.4",
     "motion-plus": "^0.1.9",
     "next": "^15.3.2",
     "next-plausible": "^3.12.4",
@@ -31,7 +31,7 @@
     "react-intersection-observer": "^9.16.0",
     "react-markdown": "^10.1.0",
     "sass": "^1.88.0",
-    "tailwindcss": "^4.1.6"
+    "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",

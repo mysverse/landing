@@ -30,6 +30,10 @@ const navigation: NavigationItem[] = [
     href: "https://blog.mysver.se"
   },
   {
+    name: "Wiki",
+    href: "https://mys.wiki"
+  },
+  {
     name: "Sentral",
     href: "https://sentral.mysver.se"
   },
