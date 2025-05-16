@@ -9,11 +9,10 @@ import "yet-another-react-lightbox/styles.css";
 // import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 // import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 // import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-// import Zoom from "yet-another-react-lightbox/plugins/zoom";
 // import "yet-another-react-lightbox/plugins/fullscreen.css";
 // import "yet-another-react-lightbox/plugins/slideshow.css";
 // import "yet-another-react-lightbox/plugins/thumbnails.css";
-// import "yet-another-react-lightbox/plugins/zoom.css";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 // Define the props for the LightboxImage component
 // It will accept all props that next/image accepts
@@ -96,7 +95,7 @@ const LightboxImage: React.FC<LightboxImageProps> = ({
           }
         ]}
         // You can add more plugins here if needed, e.g.,
-        // plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+        plugins={[Zoom]}
         {...lightboxProps} // Spread any additional lightbox props
       />
     </>
