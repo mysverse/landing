@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --config .prettierrc \"{app,pages,components}/**/*.{ts,tsx}\" --write"
+    "format": "prettier --config .prettierrc \"{app,pages,components}/**/*.{ts,tsx}\" --write",
+    "postinstall": "tsx ./scripts/fetch-ghost-assets.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -31,7 +32,8 @@
     "react-intersection-observer": "^9.16.0",
     "react-markdown": "^10.1.0",
     "sass": "^1.88.0",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.7",
+    "yet-another-react-lightbox": "^3.23.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
@@ -50,6 +52,7 @@
     "knip": "^5.56.0",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
+    "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   }
 }

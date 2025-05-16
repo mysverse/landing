@@ -6,9 +6,10 @@ import parse, {
   Element
 } from "html-react-parser";
 import Link from "next/link";
-import GhostProvider from "../GhostProvider";
 import clsx from "clsx";
-import Image from "next/image";
+
+import GhostProvider from "../GhostProvider";
+import LightboxImage from "../LightboxImage";
 
 interface Props {
   post: PostOrPage;
@@ -106,7 +107,7 @@ const parserOptions: HTMLReactParserOptions = {
         const src = props.src;
         if (typeof src === "string" && props.width) {
           return (
-            <Image
+            <LightboxImage
               className={clsx("mx-auto rounded-lg", props.className)}
               alt={typeof props.alt === "string" ? props.alt : ""}
               src={src}
