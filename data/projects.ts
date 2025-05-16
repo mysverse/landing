@@ -184,7 +184,7 @@ export const projects: Project[] = [
     launched: "Founded 2021",
     tagline:
       "Step into our lively virtual café, inspired by beloved Malaysian bubble tea spots but with its own special flavor. *Tea is life* here, and we serve a wonderful variety of drinks, from boba to kopi. It’s where café culture, the MYSverse community, and real Malaysian vibes meet.",
-    image: "https://blog.mysver.se/content/images/2024/12/image-14.png",
+    image: "https://blog-assets.mysver.se/images/2024/12/image-14.png",
     type: "Network",
     link: "https://www.roblox.com/communities/5000345/Tehlife"
   },

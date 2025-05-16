@@ -4,7 +4,8 @@ import {
   LinkIcon,
   PlayIcon,
   MapPinIcon,
-  UserGroupIcon
+  UserGroupIcon,
+  ArrowTopRightOnSquareIcon
 } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import clsx from "clsx";
@@ -16,6 +17,7 @@ import type { Project } from "data/projects";
 
 import VideoPlayer from "../VideoPlayer";
 import RotatingCard from "../RotatingCard";
+import { isExternalUrl } from "utils/isExternalUrl";
 
 // parent controls staggering
 const listVariants: Variants = {
@@ -41,6 +43,14 @@ const itemVariants: Variants = {
 };
 
 export default function ItemList({ projects }: { projects: Project[] }) {
+  // Inject a "local" variable using the function isExternalUrl
+  // to determine if the link is external or not
+  const p = projects.map((project) => {
+    return {
+      ...project,
+      local: !isExternalUrl(project.link || "")
+    };
+  });
   return (
     <m.ul
       role="list"
@@ -50,7 +60,7 @@ export default function ItemList({ projects }: { projects: Project[] }) {
       whileInView={"visible"}
       viewport={{ once: true, amount: "some" }} // trigger once, when 20% visible
     >
-      {projects.map((project) => (
+      {p.map((project) => (
         <m.li key={project.name} variants={itemVariants}>
           <RotatingCard
             className="relative mb-6 aspect-3/2 w-full overflow-hidden rounded-xl sm:rounded-2xl"
@@ -105,7 +115,8 @@ export default function ItemList({ projects }: { projects: Project[] }) {
                 {project.link && (
                   <Link
                     href={project.link}
-                    target="_blank"
+                    target={project.local ? undefined : "_blank"}
+                    prefetch={false}
                     className="text-black-100 group my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 transition ring-inset hover:bg-red-400 hover:text-white dark:text-white dark:ring-white/10"
                   >
                     {project.link.includes("roblox.com") ? (
@@ -131,6 +142,9 @@ export default function ItemList({ projects }: { projects: Project[] }) {
                         <LinkIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
                         Learn more
                       </>
+                    )}
+                    {!project.local && (
+                      <ArrowTopRightOnSquareIcon className="inline size-4" />
                     )}
                   </Link>
                 )}
