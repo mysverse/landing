@@ -31,7 +31,7 @@
     "react-dom": "^19.1.0",
     "react-intersection-observer": "^9.16.0",
     "react-markdown": "^10.1.0",
-    "sass": "^1.88.0",
+    "sass": "^1.89.0",
     "tailwindcss": "^4.1.7",
     "yet-another-react-lightbox": "^3.23.1"
   },

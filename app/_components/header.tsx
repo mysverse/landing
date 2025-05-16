@@ -16,6 +16,7 @@ import MysverseLogo from "./MysverseLogo";
 import MYSverseLogoWhite from "public/img/MYSverse_White.svg";
 import DarkModeToggle from "./DarkModeToggle";
 import { isExternalUrl } from "utils/isExternalUrl";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
 
 interface NavigationItem {
   name: string;
@@ -104,7 +105,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm leading-6 font-semibold opacity-100 hover:opacity-50"
+              className="inline-flex items-center gap-1.5 text-sm leading-6 font-semibold opacity-100 hover:opacity-50"
               target={item.local ? undefined : "_blank"}
               prefetch={item.prefetch}
               onClick={
@@ -118,7 +119,10 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
                   : undefined
               }
             >
-              {item.name}
+              {item.name}{" "}
+              {!item.local && (
+                <ArrowTopRightOnSquareIcon className="inline size-4" />
+              )}
             </Link>
           ))}
         </div>
@@ -157,7 +161,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-100 dark:text-white"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-500 dark:text-white"
                     target={item.local ? undefined : "_blank"}
                     prefetch={item.prefetch}
                     onClick={
@@ -171,7 +175,12 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
                         : undefined
                     }
                   >
-                    {item.name}
+                    <span className="inline-flex items-center gap-1.5">
+                      {item.name}{" "}
+                      {!item.local && (
+                        <ArrowTopRightOnSquareIcon className="inline size-4" />
+                      )}
+                    </span>
                   </Link>
                 ))}
                 <div className="mt-6 flex flex-row items-center justify-between">
