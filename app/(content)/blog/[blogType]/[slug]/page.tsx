@@ -144,7 +144,7 @@ export async function generateStaticParams() {
   const blogTypes = blogData.map((blog) => blog.slug);
   const params: { blogType: BlogType; slug: string }[] = [];
   for (const blogType of blogTypes) {
-    const posts = await getPosts(blogType, 20);
+    const posts = await getPosts(blogType, 100);
     for (const post of posts) {
       params.push({ blogType, slug: post.slug });
     }
