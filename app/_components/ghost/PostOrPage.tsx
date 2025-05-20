@@ -45,6 +45,10 @@ const parserOptions: HTMLReactParserOptions = {
           add: ["not-prose"]
         },
         {
+          source: ["kg-bookmark-card"],
+          add: ["mt-6"]
+        },
+        {
           source: ["kg-image"],
           add: ["rounded-lg", "mx-auto"]
         },
@@ -55,15 +59,22 @@ const parserOptions: HTMLReactParserOptions = {
         {
           source: ["kg-video-card"],
           add: ["not-prose", "my-8", "sm:my-12"]
-        },
-        {
-          source: ["kg-card-hascaption"],
-          add: ["text-center"]
         }
       ];
 
       if (domNode.name === "video") {
         addClass(attributes, ["rounded-lg"]);
+      }
+
+      if (domNode.name === "figcaption") {
+        addClass(attributes, [
+          "text-center",
+          "not-prose",
+          "text-sm",
+          "mt-4",
+          "xl:text-lg",
+          "opacity-80"
+        ]);
       }
 
       for (const pattern of patterns) {
