@@ -134,3 +134,8 @@
 @theme mysverse {
   --color-primary: #ed5353;
 }
+
+@theme lebuhraya {
+  --color-brand-green: #00a859;
+  --color-dark-green: #007f4e;
+}

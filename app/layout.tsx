@@ -54,7 +54,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
         />
       </head>
       <body
-        className={`${font.className} h-full bg-gray-100 transition dark:bg-slate-900`}
+        className={`${font.className} h-full bg-gray-100 transition dark:bg-gray-900`}
       >
         <ThemeProvider attribute="class">
           <LazyMotionLayout>
