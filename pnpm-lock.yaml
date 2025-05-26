@@ -27,8 +27,8 @@ importers:
         specifier: ^4.1.7
         version: 4.1.7
       '@tryghost/content-api':
-        specifier: ^1.11.24
-        version: 1.11.24
+        specifier: ^1.11.25
+        version: 1.11.25
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1542,8 +1542,8 @@ packages:
   '@tanstack/virtual-core@3.13.9':
     resolution: {integrity: sha512-3jztt0jpaoJO5TARe2WIHC1UQC3VMLAFUW5mmMo0yrkwtDB2AQP0+sh10BVUpWrnvHjSLvzFizydtEGLCJKFoQ==}
 
-  '@tryghost/content-api@1.11.24':
-    resolution: {integrity: sha512-I+ABUW28qrojNInpp5IAS/iWaH+teI9Pmq65rOW1+uMmsCZNfVtc0vL+yOyxL8U6XeuhDNPhPBGfmJBEWGQUEQ==}
+  '@tryghost/content-api@1.11.25':
+    resolution: {integrity: sha512-OihtLg1jQjfbrn9Zv3htWT4PJcyfdSHYK5r8hGFZ2kaKXFbSraDOq/9BajCNfDzIw6wCEXn0Dz/PZ92J0fjGIA==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -3509,8 +3509,8 @@ packages:
     resolution: {integrity: sha512-5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==}
     engines: {node: '>=18'}
 
-  tinyglobby@0.2.13:
-    resolution: {integrity: sha512-mEwzpUgrLySlveBwEVDMKk5B57bhLPYovRfPAXD5gA/98Opn0rCDj3GtLwFvCvH5RK9uPCExUROW5NjDwvqkxw==}
+  tinyglobby@0.2.14:
+    resolution: {integrity: sha512-tX5e7OM1HnYr2+a2C/4V0htOcSQcoSTH9KgJnVvNm5zm/cyEWKJ7j7YutsH9CxMdtOkkLFy2AHrMci9IM8IPZQ==}
     engines: {node: '>=12.0.0'}
 
   to-regex-range@5.0.1:
@@ -5121,7 +5121,7 @@ snapshots:
 
   '@tanstack/virtual-core@3.13.9': {}
 
-  '@tryghost/content-api@1.11.24':
+  '@tryghost/content-api@1.11.25':
     dependencies:
       axios: 1.9.0
     transitivePeerDependencies:
@@ -5882,7 +5882,7 @@ snapshots:
       get-tsconfig: 4.10.1
       is-bun-module: 2.0.0
       stable-hash: 0.0.5
-      tinyglobby: 0.2.13
+      tinyglobby: 0.2.14
       unrs-resolver: 1.7.2
     optionalDependencies:
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.27.0(jiti@2.4.2))
@@ -7459,7 +7459,7 @@ snapshots:
       mkdirp: 3.0.1
       yallist: 5.0.0
 
-  tinyglobby@0.2.13:
+  tinyglobby@0.2.14:
     dependencies:
       fdir: 6.4.4(picomatch@4.0.2)
       picomatch: 4.0.2
