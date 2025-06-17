@@ -33,7 +33,7 @@
     "react-markdown": "^10.1.0",
     "sass": "^1.89.2",
     "tailwindcss": "^4.1.10",
-    "yet-another-react-lightbox": "^3.23.2"
+    "yet-another-react-lightbox": "^3.23.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
@@ -49,7 +49,7 @@
     "eslint-config-next": "^15.3.3",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "knip": "^5.61.0",
+    "knip": "^5.61.1",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.12",
     "tsx": "^4.20.3",
