@@ -7,6 +7,7 @@ import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/20/solid";
 
 import Link from "next/link";
 import PlausibleWrapper from "./PlausibleWrapper";
+import { socials } from "data/socials";
 
 export default function Contact() {
   return (
@@ -140,7 +141,10 @@ export default function Contact() {
                     <dt className="sr-only">Discord</dt>
                     <dd>
                       <Link
-                        href="https://discord.com/invite/uPkrYWd"
+                        href={
+                          socials.find((s) => s.name === "Discord")?.href ||
+                          "https://discord.com/invite/uPkrYWd"
+                        }
                         target="_blank"
                       >
                         <FontAwesomeIcon icon={faDiscord} size="xl" />
