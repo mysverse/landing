@@ -21,7 +21,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "html-react-parser": "^5.2.5",
-    "motion": "^12.19.1",
+    "motion": "^12.18.1",
     "motion-plus": "^1.3.2",
     "next": "^15.3.4",
     "next-plausible": "^3.12.4",
