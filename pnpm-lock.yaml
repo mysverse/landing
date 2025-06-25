@@ -27,8 +27,8 @@ importers:
         specifier: ^4.1.10
         version: 4.1.10
       '@tryghost/content-api':
-        specifier: ^1.11.26
-        version: 1.11.26
+        specifier: ^1.11.27
+        version: 1.11.27
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -121,11 +121,11 @@ importers:
         specifier: ^5.61.2
         version: 5.61.2(@types/node@22.15.32)(typescript@5.8.3)
       prettier:
-        specifier: ^3.6.0
-        version: 3.6.0
+        specifier: ^3.6.1
+        version: 3.6.1
       prettier-plugin-tailwindcss:
         specifier: ^0.6.13
-        version: 0.6.13(prettier@3.6.0)
+        version: 0.6.13(prettier@3.6.1)
       tsx:
         specifier: ^4.20.3
         version: 4.20.3
@@ -1546,8 +1546,8 @@ packages:
   '@tanstack/virtual-core@3.13.11':
     resolution: {integrity: sha512-ORL6UyuZJ0D9X33LDR4TcgcM+K2YiS2j4xbvH1vnhhObwR1Z4dKwPTL/c0kj2Yeb4Yp2lBv1wpyVaqlohk8zpg==}
 
-  '@tryghost/content-api@1.11.26':
-    resolution: {integrity: sha512-BhTLERo2onwxnSVcxsZKvbBpRjxuBA1gLge2VCoqIHBrt3HfML79+rjKt6rDoenwFh2BvDBxlY1HTVkNvpKOpQ==}
+  '@tryghost/content-api@1.11.27':
+    resolution: {integrity: sha512-TTwjk8W3+gtfYbzDJuKIP8A6NO92Vl8n9R8dIzPuoDpWBZ/dhdmZOTtXPtkNZeGwSK4d8anaa2cg9rHwcPNDXg==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -3258,8 +3258,8 @@ packages:
       prettier-plugin-svelte:
         optional: true
 
-  prettier@3.6.0:
-    resolution: {integrity: sha512-ujSB9uXHJKzM/2GBuE0hBOUgC77CN3Bnpqa+g80bkv3T3A93wL/xlzDATHhnhkzifz/UE2SNOvmbTz5hSkDlHw==}
+  prettier@3.6.1:
+    resolution: {integrity: sha512-5xGWRa90Sp2+x1dQtNpIpeOQpTDBs9cZDmA/qs2vDNN2i18PdapqY7CmBeyLlMuGqXJRIOPaCaVZTLNQRWUH/A==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -5180,7 +5180,7 @@ snapshots:
 
   '@tanstack/virtual-core@3.13.11': {}
 
-  '@tryghost/content-api@1.11.26':
+  '@tryghost/content-api@1.11.27':
     dependencies:
       axios: 1.10.0
     transitivePeerDependencies:
@@ -7167,11 +7167,11 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-tailwindcss@0.6.13(prettier@3.6.0):
+  prettier-plugin-tailwindcss@0.6.13(prettier@3.6.1):
     dependencies:
-      prettier: 3.6.0
+      prettier: 3.6.1
 
-  prettier@3.6.0: {}
+  prettier@3.6.1: {}
 
   prop-types@15.8.1:
     dependencies:
