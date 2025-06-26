@@ -3,6 +3,7 @@
 import { AnimateCountUp } from "app/_components/AnimateCountUp";
 import { ReactNode } from "react";
 import { useState } from "react";
+// import Image from "next/image";
 
 interface Stat {
   id: number;
@@ -136,11 +137,11 @@ export default function ContributePage() {
               </div>
               <div className="[container-type:inline-size] relative min-h-[30rem] w-full grow max-lg:mx-auto max-lg:max-w-sm">
                 <div className="absolute inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
-                  <img
+                  {/* <Image
                     className="size-full object-cover object-top"
                     src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-mobile-friendly.png"
                     alt=""
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
@@ -159,11 +160,11 @@ export default function ContributePage() {
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
-                <img
+                {/* <Image
                   className="w-full max-lg:max-w-xs"
                   src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png"
                   alt=""
-                />
+                /> */}
               </div>
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-t-[2rem]"></div>
@@ -181,11 +182,11 @@ export default function ContributePage() {
                 </p>
               </div>
               <div className="[container-type:inline-size] flex flex-1 items-center max-lg:py-6 lg:pb-2">
-                <img
+                {/* <Image
                   className="h-[min(152px,40cqw)] object-cover"
                   src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png"
                   alt=""
-                />
+                /> */}
               </div>
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5"></div>
