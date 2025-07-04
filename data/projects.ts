@@ -87,13 +87,13 @@ export const projects: Project[] = [
   },
   {
     name: "Bandaraya Klasik",
-    launched: "Coming June 2025",
+    launched: "Released 2025",
     tagline:
       "Take a wonderful trip back to the early days of [MYS] Malaysia! This classic edition opens KL 2.9 for everyone to enjoy, with its original environment, updated compatibility, and teams that are free for all to join.",
     image: BandarayaKlasikFeaturePic,
     type: "MYSverse",
-    status: "wip",
-    link: "/blog/mys/introducing-bandaraya-klasik"
+    status: "active",
+    link: "https://www.roblox.com/games/92076437965766/Bandaraya-Klasik"
   },
   {
     name: "Daerah",
