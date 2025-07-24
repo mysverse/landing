@@ -18,8 +18,14 @@ export default function PlausibleWrapper({
 }: PlausibleWrapperProps): ReactElement {
   const plausible = usePlausible();
 
+  // Validate that children is a valid React element
+  if (!children || typeof children !== "object" || !children.type) {
+    // console.error('PlausibleWrapper: Invalid children prop received', children);
+    return <></>;
+  }
+
   // Capture the child's original onClick handler, if any
-  const originalOnClick = children.props.onClick;
+  const originalOnClick = children?.props?.onClick;
 
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     if (originalOnClick) {
