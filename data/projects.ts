@@ -18,6 +18,8 @@ import OutreachUITM from "public/img/outreach_uitm.webp";
 import OutreachEkelas from "public/img/outreach_ekelas.webp";
 import OutreachNst from "public/img/outreach_nst.webp";
 import OutreachCgm from "public/img/outreach_cgm.webp";
+import OutreachImmerse from "public/img/outreach_immerse25.webp";
+import OutreachMindef from "public/img/outreach_mindef.webp";
 
 type ProjectType = "MYSverse" | "Sim" | "Outreach" | "Network";
 type ProjectStatus = "active" | "inactive" | "wip";
@@ -189,6 +191,24 @@ export const projects: Project[] = [
     link: "https://www.roblox.com/communities/5000345/Tehlife"
   },
   // In real life
+  {
+    name: "IMMERSE KL x CelcomDigi",
+    launched: "July 2025",
+    location: "CCEC Nexus, Kuala Lumpur",
+    tagline:
+      "We showcased MYSverse in IMMERSE KL x CelcomDigi, Malaysia's premier event for immersive technology and creative content, connecting with industry leaders and community members alike!",
+    image: OutreachImmerse,
+    type: "Outreach"
+  },
+  {
+    name: "Kementerian Pertahanan Malaysia",
+    launched: "June 2025",
+    location: "Wisma Pertahanan",
+    tagline:
+      "We had a productive meeting with the Ministry of Defence, discussing how MYSverse can support their goals in education, community engagement, and public awareness.",
+    image: OutreachMindef,
+    type: "Outreach"
+  },
   {
     name: "NST Viral Feature",
     launched: "January 2025",
