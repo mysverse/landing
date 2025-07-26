@@ -192,13 +192,14 @@ export const projects: Project[] = [
   },
   // In real life
   {
-    name: "IMMERSE KL 2025",
+    name: "IMMERSE KL 25",
     launched: "July 2025",
     location: "CCEC Nexus",
     tagline:
       "We showcased MYSverse in IMMERSE KL x CelcomDigi, Malaysia's premier event for immersive technology and creative content, connecting with industry leaders and community members alike!",
     image: OutreachImmerse,
-    type: "Outreach"
+    type: "Outreach",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7354344621331664896/"
   },
   {
     name: "Kementerian Pertahanan",
