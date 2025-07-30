@@ -21,6 +21,12 @@ const nextConfig: NextConfig = {
         hostname: "blog.mysver.se",
         port: "",
         pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "blog-assets.mysver.se",
+        port: "",
+        pathname: "/**"
       }
     ]
   },
