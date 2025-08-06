@@ -12,21 +12,16 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "nws.mys.gg",
-        port: "",
-        pathname: "/**"
+        hostname: "**.mys.gg"
       },
       {
         protocol: "https",
-        hostname: "blog.mysver.se",
-        port: "",
-        pathname: "/**"
+        hostname: "**.mysver.se"
       },
       {
         protocol: "https",
-        hostname: "blog-assets.mysver.se",
-        port: "",
-        pathname: "/**"
+        hostname: "gravatar.com",
+        pathname: "/avatar/**"
       }
     ]
   },
