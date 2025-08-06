@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "gravatar.com",
+        hostname: "**.gravatar.com",
         pathname: "/avatar/**"
       }
     ]
