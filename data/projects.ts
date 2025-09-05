@@ -197,7 +197,7 @@ export const projects: Project[] = [
     launched: "September 2025",
     location: "Persada Johor",
     tagline:
-      "We attended the ASEAN Digital Content Summit 2025, Southeast Asia's premier gaming and digital content event! With our Lebuhraya racing challenges drawing crowds, we connected with over 2,000 industry leaders while celebrating the region's $6 billion gaming market milestone.",
+      "We attended the ASEAN Digital Content Summit 2025, Southeast Asia's premier gaming and digital content event! With our Lebuhraya racing challenges drawing crowds, we connected with hundreds of attendees, while celebrating the region's $6 billion gaming market milestone.",
     image: OutreachAdcs25,
     type: "Outreach",
     link: "https://mdec.my/adcs2025"
