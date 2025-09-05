@@ -18,7 +18,8 @@ import OutreachUITM from "public/img/outreach_uitm.webp";
 import OutreachEkelas from "public/img/outreach_ekelas.webp";
 import OutreachNst from "public/img/outreach_nst.webp";
 import OutreachCgm from "public/img/outreach_cgm.webp";
-import OutreachImmerse from "public/img/outreach_immerse25.webp";
+import OutreachImmerse25 from "public/img/outreach_immerse25.webp";
+import OutreachAdcs25 from "public/img/outreach_adcs25.webp";
 import OutreachMindef from "public/img/outreach_mindef.webp";
 
 type ProjectType = "MYSverse" | "Sim" | "Outreach" | "Network";
@@ -192,12 +193,22 @@ export const projects: Project[] = [
   },
   // In real life
   {
+    name: "ADCS 2025",
+    launched: "September 2025",
+    location: "Persada Johor",
+    tagline:
+      "We attended the ASEAN Digital Content Summit 2025, Southeast Asia's premier gaming and digital content event! With our Lebuhraya racing challenges drawing crowds, we connected with over 2,000 industry leaders while celebrating the region's $6 billion gaming market milestone.",
+    image: OutreachAdcs25,
+    type: "Outreach",
+    link: "https://mdec.my/adcs2025"
+  },
+  {
     name: "IMMERSE KL 25",
     launched: "July 2025",
     location: "CCEC Nexus",
     tagline:
       "We showcased MYSverse in IMMERSE KL x CelcomDigi, Malaysia's premier event for immersive technology and creative content, connecting with industry leaders and community members alike!",
-    image: OutreachImmerse,
+    image: OutreachImmerse25,
     type: "Outreach",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7354344621331664896/"
   },
