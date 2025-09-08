@@ -22,7 +22,7 @@ export const socials = [
   },
   {
     name: "Discord",
-    href: "https://discord.gg/mysverse",
+    href: "https://discord.com/invite/uPkrYWd",
     icon: <FontAwesomeIcon icon={faDiscord} />
   },
   {
