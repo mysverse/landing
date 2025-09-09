@@ -99,10 +99,10 @@ export const projects: Project[] = [
     link: "https://www.roblox.com/games/92076437965766/Bandaraya-Klasik"
   },
   {
-    name: "Daerah",
+    name: "Sumaya",
     launched: "Coming 2025",
     tagline:
-      "Drawing inspiration from Beaufort, a rural Sabahan district, Daerah is our most ambitious project so far. It offers open-ended, story-rich gameplay that invites every player, new or returning, to find something completely fresh in the MYSverse.",
+      "Drawing inspiration from Beaufort, a rural Sabahan district, Sumaya (formerly Daerah) is our most ambitious project so far. It offers open-ended, story-rich gameplay that invites every player, new or returning, to find something completely fresh in the MYSverse.",
     image: DaerahFeaturePic,
     type: "MYSverse",
     status: "wip"
