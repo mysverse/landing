@@ -21,6 +21,7 @@ import OutreachCgm from "public/img/outreach_cgm.webp";
 import OutreachImmerse25 from "public/img/outreach_immerse25.webp";
 import OutreachAdcs25 from "public/img/outreach_adcs25.webp";
 import OutreachMindef from "public/img/outreach_mindef.webp";
+import OutreachSearcct from "public/img/outreach_searcct.webp";
 
 type ProjectType = "MYSverse" | "Sim" | "Outreach" | "Network";
 type ProjectStatus = "active" | "inactive" | "wip";
@@ -200,7 +201,16 @@ export const projects: Project[] = [
       "We attended the ASEAN Digital Content Summit 2025, Southeast Asia's premier gaming and digital content event! With our Lebuhraya racing challenges drawing crowds, we connected with hundreds of attendees, while celebrating the region's $6 billion gaming market milestone.",
     image: OutreachAdcs25,
     type: "Outreach",
-    link: "https://mdec.my/adcs2025"
+    link: "/blog/mys/adcs-2025"
+  },
+  {
+    name: "SEARCCT",
+    launched: "August 2025",
+    location: "vOffice Empire Tower",
+    tagline:
+      "Our team met up with the Southeast Asia Regional Centre for Counter-Terrorism, where we shared how MYSverse has been building a safe and secure community online for over 10 years through active moderation and other policies.",
+    image: OutreachSearcct,
+    type: "Outreach"
   },
   {
     name: "IMMERSE KL 25",
@@ -212,6 +222,7 @@ export const projects: Project[] = [
     type: "Outreach",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7354344621331664896/"
   },
+
   {
     name: "Kementerian Pertahanan",
     launched: "June 2025",
@@ -246,7 +257,8 @@ export const projects: Project[] = [
       "We showcased MYSverse at UiTM Shah Alam with the Ministry of Digital. This event demonstrated how MYSverse can foster national identity by sharing cultural and historical stories.",
     location: "UiTM Shah Alam",
     image: OutreachUITM,
-    type: "Outreach"
+    type: "Outreach",
+    link: "/blog/mys/u-digitaloka"
   },
   {
     name: "Polis DiRaja Malaysia",
