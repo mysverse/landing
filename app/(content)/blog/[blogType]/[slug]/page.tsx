@@ -39,13 +39,15 @@ export default async function BlogPost({ params }: Props) {
             </svg>
             {primaryAuthor && (
               <div className="relative hidden items-center gap-x-4 sm:flex">
-                <Image
-                  alt={primaryAuthor.name ?? "Image of author"}
-                  src={primaryAuthor.profile_image!}
-                  width={32}
-                  height={32}
-                  className="size-10 rounded-full bg-gray-100 sm:size-7"
-                />
+                {primaryAuthor.profile_image && primaryAuthor.profile_image.trim() !== '' && (
+                  <Image
+                    alt={primaryAuthor.name ?? "Image of author"}
+                    src={primaryAuthor.profile_image}
+                    width={32}
+                    height={32}
+                    className="size-10 rounded-full bg-gray-100 sm:size-7"
+                  />
+                )}
                 <Link
                   href={primaryAuthor.url!}
                   target="_blank"
@@ -64,13 +66,15 @@ export default async function BlogPost({ params }: Props) {
           </h2>
           {primaryAuthor && (
             <div className="relative mt-5 flex items-center gap-x-4 sm:hidden">
-              <Image
-                alt={primaryAuthor.name ?? "Image of author"}
-                src={primaryAuthor.profile_image!}
-                width={32}
-                height={32}
-                className="size-10 rounded-full bg-gray-100 sm:size-7"
-              />
+              {primaryAuthor.profile_image && primaryAuthor.profile_image.trim() !== '' && (
+                <Image
+                  alt={primaryAuthor.name ?? "Image of author"}
+                  src={primaryAuthor.profile_image}
+                  width={32}
+                  height={32}
+                  className="size-10 rounded-full bg-gray-100 sm:size-7"
+                />
+              )}
               <Link
                 href={primaryAuthor.url!}
                 target="_blank"

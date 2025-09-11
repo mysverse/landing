@@ -75,13 +75,15 @@ export default async function BlogList({ params }: Props) {
                 </div>
                 {primaryAuthor && (
                   <div className="relative mt-8 flex items-center gap-x-4">
-                    <Image
-                      alt={primaryAuthor.name ?? "Image of author"}
-                      src={primaryAuthor.profile_image!}
-                      width={32}
-                      height={32}
-                      className="size-10 rounded-full bg-gray-100"
-                    />
+                    {primaryAuthor.profile_image && primaryAuthor.profile_image.trim() !== '' && (
+                      <Image
+                        alt={primaryAuthor.name ?? "Image of author"}
+                        src={primaryAuthor.profile_image}
+                        width={32}
+                        height={32}
+                        className="size-10 rounded-full bg-gray-100"
+                      />
+                    )}
                     <div className="text-base/6">
                       <p className="font-semibold text-gray-900 dark:text-white">
                         <Link href={primaryAuthor.url!} target="_blank">

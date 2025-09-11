@@ -39,7 +39,7 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
               <circle r={1} cx={1} cy={1} />
             </svg>
             <div className="flex gap-x-2.5">
-              {post.authors && post.authors[0].profile_image && (
+              {post.authors && post.authors[0].profile_image && post.authors[0].profile_image.trim() !== '' && (
                 <Image
                   alt="Image of author"
                   src={post.authors[0].profile_image}
