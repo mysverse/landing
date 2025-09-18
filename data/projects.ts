@@ -222,7 +222,6 @@ export const projects: Project[] = [
     type: "Outreach",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7354344621331664896/"
   },
-
   {
     name: "Kementerian Pertahanan",
     launched: "June 2025",
