@@ -2,17 +2,11 @@
 
 import { MoonIcon, SunIcon } from "@heroicons/react/20/solid";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useHydration } from "hooks/useHydration";
 
 export default function DarkModeToggle() {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useHydration();
   const { resolvedTheme, setTheme } = useTheme();
-
-  // useEffect only runs on the client, so now we can safely show the UI
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   if (!mounted) {
     // return a placeholder to avoid layout shift
