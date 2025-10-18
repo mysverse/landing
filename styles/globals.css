@@ -18,30 +18,33 @@
   }
 }
 
+@property --bdColor1 {
+  syntax: "<color>";
+  initial-value: #476075;
+  inherits: false;
+}
+
+@property --bdColor2 {
+  syntax: "<color>";
+  initial-value: #27374d;
+  inherits: false;
+}
+
+@property --lbColor1 {
+  syntax: "<color>";
+  initial-value: #65ad56;
+  inherits: false;
+}
+
+@property --lbColor2 {
+  syntax: "<color>";
+  initial-value: #13863f;
+  inherits: false;
+}
+
 @utility bandaraya-button {
-  @property --bdColor1 {
-    syntax: "<color>";
-    initial-value: #476075;
-    inherits: false;
-  }
-
-  @property --bdColor2 {
-    syntax: "<color>";
-    initial-value: #27374d;
-    inherits: false;
-  }
-
-  @property --lbColor1 {
-    syntax: "<color>";
-    initial-value: #65ad56;
-    inherits: false;
-  }
-
-  @property --lbColor2 {
-    syntax: "<color>";
-    initial-value: #13863f;
-    inherits: false;
-  }
+  --bdColor1: #476075;
+  --bdColor2: #27374d;
   background: linear-gradient(to right, var(--bdColor1), var(--bdColor2));
   transition:
     --bdColor1 0.3s ease-out,
@@ -54,29 +57,8 @@
 }
 
 @utility lebuhraya-button {
-  @property --bdColor1 {
-    syntax: "<color>";
-    initial-value: #476075;
-    inherits: false;
-  }
-
-  @property --bdColor2 {
-    syntax: "<color>";
-    initial-value: #27374d;
-    inherits: false;
-  }
-
-  @property --lbColor1 {
-    syntax: "<color>";
-    initial-value: #65ad56;
-    inherits: false;
-  }
-
-  @property --lbColor2 {
-    syntax: "<color>";
-    initial-value: #13863f;
-    inherits: false;
-  }
+  --lbColor1: #65ad56;
+  --lbColor2: #13863f;
   background: linear-gradient(to right, var(--lbColor1), var(--lbColor2));
   transition:
     --lbColor1 0.3s ease-out,
@@ -105,31 +87,6 @@
   }
 } */
 
-@layer utilities {
-  @property --bdColor1 {
-    syntax: "<color>";
-    initial-value: #476075;
-    inherits: false;
-  }
-
-  @property --bdColor2 {
-    syntax: "<color>";
-    initial-value: #27374d;
-    inherits: false;
-  }
-
-  @property --lbColor1 {
-    syntax: "<color>";
-    initial-value: #65ad56;
-    inherits: false;
-  }
-
-  @property --lbColor2 {
-    syntax: "<color>";
-    initial-value: #13863f;
-    inherits: false;
-  }
-}
 
 @theme mysverse {
   --color-primary: #ed5353;
