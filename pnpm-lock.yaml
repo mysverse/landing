@@ -42,8 +42,8 @@ importers:
         specifier: ^12.23.24
         version: 12.23.24(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       motion-plus:
-        specifier: ^1.5.1
-        version: 1.5.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: https://api.motion.dev/registry?package=motion-plus&version=1.5.4&token=8c607e92916af0f1aacc329d400c4d881c94c75d72be9d0b91d67343977e2425
+        version: https://api.motion.dev/registry?package=motion-plus&version=1.5.4&token=8c607e92916af0f1aacc329d400c4d881c94c75d72be9d0b91d67343977e2425(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       next:
         specifier: ^15.5.6
         version: 15.5.6(@babel/core@7.28.4)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(sass@1.93.2)
@@ -3022,9 +3022,9 @@ packages:
       react-dom:
         optional: true
 
-  motion-plus@1.5.1:
-    resolution: {integrity: sha512-ws3tqoIUbXFvZRuXFX7B/7MWjJsOD3hkRm4vPgzCr2Hh2VqUk30nS4U5fI7xFF5gXKacNM3Q4GbUL1Xy/w0yBg==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+  motion-plus@https://api.motion.dev/registry?package=motion-plus&version=1.5.4&token=8c607e92916af0f1aacc329d400c4d881c94c75d72be9d0b91d67343977e2425:
+    resolution: {tarball: https://api.motion.dev/registry?package=motion-plus&version=1.5.4&token=8c607e92916af0f1aacc329d400c4d881c94c75d72be9d0b91d67343977e2425}
+    version: 1.5.4
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
@@ -6982,7 +6982,7 @@ snapshots:
     transitivePeerDependencies:
       - '@emotion/is-prop-valid'
 
-  motion-plus@1.5.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+  motion-plus@https://api.motion.dev/registry?package=motion-plus&version=1.5.4&token=8c607e92916af0f1aacc329d400c4d881c94c75d72be9d0b91d67343977e2425(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
       motion-plus-dom: 1.6.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       motion-plus-react: 1.5.4(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
