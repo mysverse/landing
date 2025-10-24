@@ -101,7 +101,7 @@ export const projects: Project[] = [
   },
   {
     name: "Sumaya",
-    launched: "Coming 2025",
+    launched: "Coming 2026",
     tagline:
       "Drawing inspiration from Beaufort, a rural Sabahan district, Sumaya (formerly Daerah) is our most ambitious project so far. It offers open-ended, story-rich gameplay that invites every player, new or returning, to find something completely fresh in the MYSverse.",
     image: DaerahFeaturePic,
