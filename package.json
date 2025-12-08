@@ -22,7 +22,7 @@
     "date-fns": "^4.1.0",
     "html-react-parser": "^5.2.10",
     "motion": "^12.23.25",
-    "motion-plus": "https://api.motion.dev/registry?package=motion-plus&version=1.5.4&token=8c607e92916af0f1aacc329d400c4d881c94c75d72be9d0b91d67343977e2425",
+    "motion-plus": "https://api.motion.dev/registry.tgz?package=motion-plus&version=2.0.2&token=65a016326afe0ae8bdb421c58d3ee596c18c692519e30c84914b81f3b136fa7a",
     "next": "^16.0.7",
     "next-plausible": "^3.12.5",
     "next-themes": "^0.4.6",
@@ -33,7 +33,7 @@
     "react-markdown": "^10.1.0",
     "sass": "^1.94.2",
     "tailwindcss": "^4.1.17",
-    "yet-another-react-lightbox": "^3.25.0"
+    "yet-another-react-lightbox": "^3.26.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
@@ -49,7 +49,7 @@
     "eslint-config-next": "^16.0.7",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "knip": "^5.71.0",
+    "knip": "^5.72.0",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tsx": "^4.21.0",
