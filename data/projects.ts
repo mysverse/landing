@@ -23,6 +23,7 @@ import OutreachAdcs25 from "public/img/outreach_adcs25.webp";
 import OutreachMindef from "public/img/outreach_mindef.webp";
 import OutreachSearcct from "public/img/outreach_searcct.webp";
 import OutreachUnicri2025 from "public/img/outreach_unicri.webp";
+import OutreachSearcctMeeting from "public/img/outreach_searcct_meeting.webp";
 
 type ProjectType = "MYSverse" | "Sim" | "Outreach" | "Network";
 type ProjectStatus = "active" | "inactive" | "wip";
@@ -203,7 +204,17 @@ export const projects: Project[] = [
       "We were invited by UNICRI and Singapore's Ministry of Home Affairs to present at a workshop on Online Radicalisation and Extremism. We shared MYSverse's community-led approach to moderation and maintaining robust community standards.",
     type: "Outreach",
     image: OutreachUnicri2025,
-    link: "https://www.linkedin.com/posts/albertdalan_this-month-the-unicri-united-nations-interregional-activity-7408033159289724928-5qBU"
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7408077530101899264"
+  },
+  {
+    name: "SEARCCT Strategic Planning Meeting",
+    launched: "September 2025",
+    location: "Hotel Parkroyal Collection, Kuala Lumpur",
+    tagline:
+      "We took part in SEARCCT's Strategic Planning Meeting under the Ministry of Foreign Affairs Malaysia. We explored how the video games community can contribute to counter harmful narratives through digital engagement, storytelling, and building positive online spaces.",
+    type: "Outreach",
+    image: OutreachSearcctMeeting,
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7379493073325707265"
   },
   {
     name: "ADCS 2025",
