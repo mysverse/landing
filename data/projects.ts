@@ -22,6 +22,7 @@ import OutreachImmerse25 from "public/img/outreach_immerse25.webp";
 import OutreachAdcs25 from "public/img/outreach_adcs25.webp";
 import OutreachMindef from "public/img/outreach_mindef.webp";
 import OutreachSearcct from "public/img/outreach_searcct.webp";
+import OutreachUnicri2025 from "public/img/outreach_unicri.webp";
 
 type ProjectType = "MYSverse" | "Sim" | "Outreach" | "Network";
 type ProjectStatus = "active" | "inactive" | "wip";
@@ -194,6 +195,26 @@ export const projects: Project[] = [
     link: "https://www.roblox.com/communities/5000345/Tehlife"
   },
   // In real life
+  {
+    name: "UNICRI Workshop",
+    launched: "December 2025",
+    location: "Singapore",
+    tagline:
+      "We were invited by UNICRI and Singapore's Ministry of Home Affairs to present at a workshop on Online Radicalisation and Extremism. We shared MYSverse's community-led approach to moderation and maintaining robust community standards.",
+    type: "Outreach",
+    image: OutreachUnicri2025,
+    link: "https://www.linkedin.com/posts/albertdalan_this-month-the-unicri-united-nations-interregional-activity-7408033159289724928-5qBU"
+  },
+  {
+    name: "ADCS 2025",
+    launched: "September 2025",
+    location: "Persada Johor",
+    tagline:
+      "We attended the ASEAN Digital Content Summit 2025, Southeast Asia's premier gaming and digital content event! With our Lebuhraya racing challenges drawing crowds, we connected with hundreds of attendees, while celebrating the region's $6 billion gaming market milestone.",
+    image: OutreachAdcs25,
+    type: "Outreach",
+    link: "/blog/mys/adcs-2025"
+  },
   {
     name: "ADCS 2025",
     launched: "September 2025",
