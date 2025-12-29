@@ -106,7 +106,8 @@ export const projects: Project[] = [
       "Drawing inspiration from Beaufort, a rural Sabahan district, Sumaya (formerly Daerah) is our most ambitious project so far. It offers open-ended, story-rich gameplay that invites every player, new or returning, to find something completely fresh in the MYSverse.",
     image: DaerahFeaturePic,
     type: "MYSverse",
-    status: "wip"
+    status: "wip",
+    link: "/blog/mys/announcing-sumaya"
   },
   // MYSverse Sim
   {
