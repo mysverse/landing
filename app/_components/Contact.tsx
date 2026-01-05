@@ -1,7 +1,7 @@
 import WhatsappButton from "public/ChatOnWhatsAppButton/WhatsAppButtonGreenMedium.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDiscord, faGuilded } from "@fortawesome/free-brands-svg-icons";
+import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 
 import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/20/solid";
 
@@ -150,12 +150,12 @@ export default function Contact() {
                         <FontAwesomeIcon icon={faDiscord} size="xl" />
                       </Link>
                     </dd>
-                    <dt className="sr-only">Guilded</dt>
+                    {/* <dt className="sr-only">Guilded</dt>
                     <dd>
                       <Link href="https://guilded.gg/mys" target="_blank">
                         <FontAwesomeIcon icon={faGuilded} size="xl" />
                       </Link>
-                    </dd>
+                    </dd> */}
                   </div>
                   {/* <div className="mt-1">
                     <dt className="sr-only">Phone number</dt>

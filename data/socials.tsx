@@ -5,7 +5,6 @@ import {
   faDiscord,
   faFacebook,
   faGithub,
-  faGuilded,
   faInstagram,
   faLinkedin,
   faTiktok,
@@ -25,11 +24,12 @@ export const socials = [
     href: "https://discord.com/invite/uPkrYWd",
     icon: <FontAwesomeIcon icon={faDiscord} />
   },
-  {
-    name: "Guilded",
-    href: "https://guilded.gg/mys",
-    icon: <FontAwesomeIcon icon={faGuilded} />
-  },
+  // Guilded shut down in December 2025
+  // {
+  //   name: "Guilded",
+  //   href: "https://guilded.gg/mys",
+  //   icon: <FontAwesomeIcon icon={faGuilded} />
+  // },
   {
     name: "Facebook",
     href: "https://facebook.com/people/MYSverse/61573938995837/",
