@@ -124,7 +124,7 @@ export const projects: Project[] = [
   },
   {
     name: "Bandaraya v4",
-    launched: "Coming 2025",
+    launched: "Coming 2026",
     status: "wip",
     image: Bandarayav4FeaturePic,
     type: "Sim",
