@@ -28,6 +28,7 @@ export const metadata: Metadata = {
   }
 };
 
+import Script from "next/script";
 import { Public_Sans } from "next/font/google";
 import { PropsWithChildren } from "react";
 import Header from "./_components/header";
@@ -38,7 +39,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { socials } from "data/socials";
 import IntersectionTransition from "./_components/IntersectionTransition";
 import PlausibleWrapper from "./_components/PlausibleWrapper";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "./_components/ThemeProvider";
 import LazyMotionLayout from "./_components/Motion/LazyMotionLayout";
 
 const font = Public_Sans({ subsets: ["latin"] });
@@ -49,14 +50,21 @@ export default async function RootLayout({ children }: PropsWithChildren) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <PlausibleProvider
-          domain="mysver.se"
-          customDomain="https://plausible.yan.gg"
+          src="https://plausible.yan.gg/js/script.js"
+          scriptProps={{ "data-domain": "mysver.se" } as Record<string, string>}
         />
       </head>
       <body
         className={`${font.className} h-full bg-gray-100 transition dark:bg-gray-900`}
       >
-        <ThemeProvider attribute="class">
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");var d=t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme:dark)").matches);document.documentElement.classList.toggle("dark",d)}catch(e){}})();`
+          }}
+        />
+        <ThemeProvider>
           <LazyMotionLayout>
             <Header initialNews={news.News} />
             <main>
