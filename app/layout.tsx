@@ -37,6 +37,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { socials } from "data/socials";
+import { legalPages } from "data/legal";
 import IntersectionTransition from "./_components/IntersectionTransition";
 import PlausibleWrapper from "./_components/PlausibleWrapper";
 import { ThemeProvider } from "./_components/ThemeProvider";
@@ -131,6 +132,17 @@ export default async function RootLayout({ children }: PropsWithChildren) {
                   })}
                 </div>
               </IntersectionTransition>
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-black/50 dark:text-white/50">
+                {legalPages.map((page) => (
+                  <Link
+                    key={page.href}
+                    href={page.href}
+                    className="transition hover:opacity-50"
+                  >
+                    {page.title}
+                  </Link>
+                ))}
+              </div>
               <div className="text-sm text-black opacity-50 dark:text-white">
                 <Link
                   href="https://github.com/mysverse/landing"
