@@ -17,9 +17,9 @@ export default function RefundPolicyPage() {
 
       <h2>1. Scope</h2>
       <p>
-        This Refund Policy applies to all payment-related activities conducted by{" "}
-        {legalEntity.name} ({legalEntity.registration}), operating as MYSverse
-        (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;).
+        This Refund Policy applies to all payment-related activities conducted
+        by {legalEntity.name} ({legalEntity.registration}), operating as
+        MYSverse (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;).
       </p>
 
       <h2>2. No Consumer Payments</h2>
@@ -32,14 +32,14 @@ export default function RefundPolicyPage() {
         Any in-game purchases made within our Roblox experiences are processed
         entirely by the Roblox platform and are subject to{" "}
         <a
-          href="https://en.help.roblox.com/hc/en-us/articles/206514399-Roblox-Refund-Policy"
+          href="https://en.help.roblox.com/hc/en-us/articles/203312650-Unauthorized-Charges-Refund-Requests"
           target="_blank"
           rel="noopener noreferrer"
         >
           Roblox&apos;s own refund policy
         </a>
-        . MYSverse has no control over and bears no responsibility for refunds of
-        Roblox transactions.
+        . MYSverse has no control over and bears no responsibility for refunds
+        of Roblox transactions.
       </p>
 
       <h2>3. Developer Payouts</h2>
@@ -70,8 +70,8 @@ export default function RefundPolicyPage() {
 
       <h3>3.2 Payout Disputes</h3>
       <p>
-        If you are a developer or collaborator and believe a payout is incorrect,
-        missing, or otherwise disputed, please contact us at{" "}
+        If you are a developer or collaborator and believe a payout is
+        incorrect, missing, or otherwise disputed, please contact us at{" "}
         <a href={`mailto:${legalEntity.email}`}>{legalEntity.email}</a> with the
         following details:
       </p>
