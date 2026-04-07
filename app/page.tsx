@@ -16,6 +16,7 @@ import ProjectList from "./_components/Projects/Projects";
 
 // Misc
 import { socials } from "data/socials";
+import { legalPages } from "data/legal";
 import PlausibleWrapper from "./_components/PlausibleWrapper";
 import { MotionConfig } from "motion/react";
 
@@ -154,6 +155,16 @@ export default async function Main() {
 
       <IntersectionTransition>
         <Contact />
+      </IntersectionTransition>
+
+      <IntersectionTransition>
+        <div className="mt-16 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-black/50 dark:text-white/50">
+          {legalPages.map((page) => (
+            <Link key={page.href} href={page.href} className="underline transition hover:opacity-50">
+              {page.title}
+            </Link>
+          ))}
+        </div>
       </IntersectionTransition>
     </MotionConfig>
   );

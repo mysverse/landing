@@ -99,7 +99,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
                 </div>
               </div>
             </main>
-            <footer className="mx-4 mt-10 flex flex-col gap-10 pb-20 text-center md:mt-0">
+            <footer className="relative z-10 mx-4 mt-10 flex flex-col gap-10 pb-20 text-center md:mt-0">
               <hr className="dark:border-white/5 dark:bg-white/5" />
               <IntersectionTransition>
                 <div className="mx-8 mt-6 flex flex-row flex-wrap justify-center gap-x-5 gap-y-4 md:gap-x-12">
