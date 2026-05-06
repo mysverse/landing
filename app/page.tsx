@@ -2,6 +2,7 @@ import Link from "next/link";
 import * as m from "motion/react-m";
 import PlayLebuhraya from "public/img/play_lebuhraya.svg";
 import PlayBandaraya from "public/img/play_bandaraya.svg";
+import PlaySumaya from "public/img/play_sumaya.svg";
 
 // Reusable components
 import IntersectionTransition from "./_components/IntersectionTransition";
@@ -70,43 +71,89 @@ export default async function Main() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.1, delay: 1 }}
           >
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-6">
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:gap-4">
               <PlausibleWrapper
                 eventName="ctaClicked"
                 eventProps={{
                   props: {
-                    name: "Bandar"
+                    name: "Sumaya"
                   }
                 }}
               >
                 <m.a
-                  initial={{ opacity: 0, x: -128 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 32, scale: 0.94 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 0.5, delay: 1.1 }}
-                  href="https://www.roblox.com/games/481538620/Bandaraya"
-                  className="group bandaraya-button w-full rounded-xl px-5 py-2.5 text-sm font-semibold text-black shadow-xs transition focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400 sm:w-auto dark:text-white"
+                  href="https://www.roblox.com/games/137577526370180"
+                  className="group sumaya-button relative w-full max-w-md rounded-2xl px-6 py-3.5 text-sm font-semibold text-black shadow-lg shadow-[#1C4F7C]/20 transition focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-[#B95300] sm:w-auto sm:min-w-96 dark:text-white"
                 >
-                  <PlayBandaraya className="inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#476075]" />
+                  <PlaySumaya className="inline-flex h-[3.2em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#1C4F7C]" />
+                  <m.span
+                    initial={{ opacity: 0, y: -8, scale: 0.92 }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                      scale: [1, 1.06, 1]
+                    }}
+                    transition={{
+                      opacity: { duration: 0.25, delay: 1.45 },
+                      y: { duration: 0.25, delay: 1.45 },
+                      scale: {
+                        duration: 1.5,
+                        repeat: Infinity,
+                        repeatDelay: 0.35,
+                        ease: "easeInOut"
+                      }
+                    }}
+                    className="absolute -top-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[0.65rem] leading-none font-bold tracking-wide text-[#1C4F7C] uppercase shadow-lg ring-1 ring-black/5"
+                  >
+                    <span className="relative flex size-2">
+                      <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#B95300] opacity-60" />
+                      <span className="relative inline-flex size-2 rounded-full bg-[#B95300]" />
+                    </span>
+                    Open beta
+                  </m.span>
                 </m.a>
               </PlausibleWrapper>
-              <PlausibleWrapper
-                eventName="ctaClicked"
-                eventProps={{
-                  props: {
-                    name: "Lebuhraya"
-                  }
-                }}
-              >
-                <m.a
-                  initial={{ opacity: 0, x: 128 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 1.3 }}
-                  href="https://www.roblox.com/games/4892731894/Lebuhraya"
-                  className="group lebuhraya-button w-full rounded-xl px-5 py-2.5 text-sm font-semibold text-black shadow-xs focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400 sm:w-auto dark:text-white"
+
+              <div className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row sm:gap-6">
+                <PlausibleWrapper
+                  eventName="ctaClicked"
+                  eventProps={{
+                    props: {
+                      name: "Bandar"
+                    }
+                  }}
                 >
-                  <PlayLebuhraya className="inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#65ad56]" />
-                </m.a>
-              </PlausibleWrapper>
+                  <m.a
+                    initial={{ opacity: 0, x: -128 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 1.25 }}
+                    href="https://www.roblox.com/games/481538620/Bandaraya"
+                    className="group bandaraya-button w-full rounded-xl px-5 py-2.5 text-sm font-semibold text-black shadow-xs transition focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400 sm:w-auto dark:text-white"
+                  >
+                    <PlayBandaraya className="inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#476075]" />
+                  </m.a>
+                </PlausibleWrapper>
+                <PlausibleWrapper
+                  eventName="ctaClicked"
+                  eventProps={{
+                    props: {
+                      name: "Lebuhraya"
+                    }
+                  }}
+                >
+                  <m.a
+                    initial={{ opacity: 0, x: 128 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 1.35 }}
+                    href="https://www.roblox.com/games/4892731894/Lebuhraya"
+                    className="group lebuhraya-button w-full rounded-xl px-5 py-2.5 text-sm font-semibold text-black shadow-xs focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400 sm:w-auto dark:text-white"
+                  >
+                    <PlayLebuhraya className="inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#65ad56]" />
+                  </m.a>
+                </PlausibleWrapper>
+              </div>
             </div>
             <p className="mt-4 text-sm leading-6 tracking-wide text-black italic opacity-80 dark:text-white">
               ...and more open experiences for everyone, coming soon!
@@ -160,7 +207,11 @@ export default async function Main() {
       <IntersectionTransition>
         <div className="mt-16 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-black/50 dark:text-white/50">
           {legalPages.map((page) => (
-            <Link key={page.href} href={page.href} className="underline transition hover:opacity-50">
+            <Link
+              key={page.href}
+              href={page.href}
+              className="underline transition hover:opacity-50"
+            >
               {page.title}
             </Link>
           ))}

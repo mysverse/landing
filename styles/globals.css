@@ -42,6 +42,18 @@
   inherits: false;
 }
 
+@property --syColor1 {
+  syntax: "<color>";
+  initial-value: #b95300;
+  inherits: false;
+}
+
+@property --syColor2 {
+  syntax: "<color>";
+  initial-value: #1c4f7c;
+  inherits: false;
+}
+
 @utility bandaraya-button {
   --bdColor1: #476075;
   --bdColor2: #27374d;
@@ -70,6 +82,20 @@
   }
 }
 
+@utility sumaya-button {
+  --syColor1: #b95300;
+  --syColor2: #1c4f7c;
+  background: linear-gradient(to bottom, var(--syColor1), var(--syColor2));
+  transition:
+    --syColor1 0.3s ease-out,
+    --syColor2 0.3s ease-out;
+
+  &:hover {
+    --syColor1: var(--color-white);
+    --syColor2: var(--color-white);
+  }
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
@@ -86,7 +112,6 @@
     }
   }
 } */
-
 
 @theme mysverse {
   --color-primary: #ed5353;
