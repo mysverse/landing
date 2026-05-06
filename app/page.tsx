@@ -116,7 +116,7 @@ export default async function Main() {
                 </m.a>
               </PlausibleWrapper>
 
-              <div className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row sm:gap-6">
+              <div className="flex w-full max-w-md flex-col items-center justify-center gap-3 sm:max-w-none sm:flex-row sm:gap-6">
                 <PlausibleWrapper
                   eventName="ctaClicked"
                   eventProps={{
