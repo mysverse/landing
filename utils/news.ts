@@ -11,7 +11,7 @@ export interface NewsResponse {
   Timestamp: string;
   LastUpdated: string;
   Notify: boolean;
-  Announcements: any[];
+  Announcements: unknown[];
   News: NewsItem[];
   Event: {
     Name: string;
