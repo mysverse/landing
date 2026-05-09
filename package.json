@@ -6,7 +6,7 @@
     "dev": "next dev -p 4200 --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "format": "prettier --config .prettierrc \"{app,pages,components}/**/*.{ts,tsx}\" --write",
     "postinstall": "tsx ./scripts/fetch-ghost-assets.ts"
   },
