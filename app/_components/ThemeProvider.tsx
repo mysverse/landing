@@ -69,10 +69,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   // Sync on mount (in case the inline head script and React state diverge)
   useEffect(() => {
     const stored = getStoredTheme();
-    setThemeState(stored);
     const resolved = stored === "system" ? getSystemTheme() : stored;
-    setResolvedTheme(resolved);
     applyTheme(resolved);
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: reconcile SSR state with client localStorage on mount
+    setThemeState(stored);
+    setResolvedTheme(resolved);
   }, []);
 
   const value = useMemo(
