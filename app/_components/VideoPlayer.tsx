@@ -11,11 +11,12 @@ interface VideoPlayerProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
   videoSrc: string | VideoSource[];
 }
 
-function VideoPlayer({ videoSrc, autoPlay, ...props }: VideoPlayerProps) {
+function VideoPlayer({
+  videoSrc,
+  autoPlay = true,
+  ...props
+}: VideoPlayerProps) {
   const videoElement = useRef<HTMLVideoElement>(null);
-  if (autoPlay === undefined) {
-    autoPlay = true;
-  }
 
   const { ref, inView } = useInView();
 

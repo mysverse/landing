@@ -10,11 +10,12 @@ interface VideoPlayerProps
   videoSrc: string | VideoSource[];
 }
 
-function MotionVideoPlayer({ videoSrc, autoPlay, ...props }: VideoPlayerProps) {
+function MotionVideoPlayer({
+  videoSrc,
+  autoPlay = true,
+  ...props
+}: VideoPlayerProps) {
   const videoElement = useRef<HTMLVideoElement>(null);
-  if (autoPlay === undefined) {
-    autoPlay = true;
-  }
   return (
     <m.video
       src={typeof videoSrc === "string" ? videoSrc : undefined}
