@@ -78,8 +78,8 @@ const LightboxImage: React.FC<LightboxImageProps> = ({
         width={width}
         height={height}
         onClick={handleClick}
-        style={{ cursor: "pointer" }} // Add pointer cursor to indicate it's clickable
         {...rest} // Spread the rest of the props
+        style={{ ...rest.style, cursor: "pointer" }} // Add pointer cursor to indicate it's clickable
       />
 
       {/* The Lightbox component */}
