@@ -4,6 +4,8 @@ import type { PropsWithChildren } from "react";
 import { useEffect } from "react";
 
 function scrollToTop() {
+  if (window.location.hash) return;
+
   window.scrollTo({
     top: 0,
     behavior: "smooth"
@@ -22,7 +24,8 @@ function handleToggle(event: Event) {
 export default function GhostProviderClient(props: PropsWithChildren) {
   useEffect(() => {
     scrollToTop();
-  });
+  }, []);
+
   // Handle Ghost CMS toggle cards
   useEffect(() => {
     // Query all elements with the class "kg-toggle-card"

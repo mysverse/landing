@@ -361,6 +361,10 @@ const parserOptions: HTMLReactParserOptions = {
       sanitizeAttributes(attributes);
       applyGhostClasses(attributes);
 
+      if (attributes.id) {
+        addClass(attributes, ["scroll-mt-24"]);
+      }
+
       if (domNode.name === "video") {
         addClass(attributes, ["rounded-lg", "shadow-sm"]);
       }
