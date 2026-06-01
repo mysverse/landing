@@ -44,6 +44,11 @@ const navigation: NavigationItem[] = [
     prefetch: false
   },
   {
+    name: "Contribute",
+    href: "/contribute",
+    prefetch: false
+  },
+  {
     name: "Projects",
     href: "/#projects"
   },
@@ -109,7 +114,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
               target={item.local ? undefined : "_blank"}
               prefetch={item.prefetch}
               onClick={
-                !item.local
+                !item.local || item.name === "Contribute"
                   ? () =>
                       plausible("navClicked", {
                         props: {

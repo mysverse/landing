@@ -14,6 +14,7 @@ import Blog from "./_components/Blog/Blog";
 import Stats from "./_components/Stats/Stats";
 import Contact from "./_components/Contact";
 import ProjectList from "./_components/Projects/Projects";
+import JoinTeam from "./_components/JoinTeam/JoinTeam";
 
 // Misc
 import { socials } from "data/socials";
@@ -23,7 +24,7 @@ import { MotionConfig } from "motion/react";
 
 export default async function Main() {
   return (
-    <MotionConfig transition={{ ease: [0, 0.71, 0.2, 1.01] }}>
+    <MotionConfig reducedMotion="user" transition={{ ease: [0, 0.71, 0.2, 1.01] }}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <SplitText className="invisible w-full items-center justify-center text-center text-4xl font-bold tracking-tight text-gray-800 sm:text-6xl dark:text-white">
@@ -186,6 +187,10 @@ export default async function Main() {
 
       <IntersectionTransition>
         <Stats />
+      </IntersectionTransition>
+
+      <IntersectionTransition>
+        <JoinTeam />
       </IntersectionTransition>
 
       <ProjectList />

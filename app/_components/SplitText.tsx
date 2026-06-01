@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { animate, stagger } from "motion";
+import { useReducedMotion } from "motion/react";
 import { splitText } from "motion-plus";
 import { useEffect, useRef, useState } from "react";
 
@@ -14,10 +15,17 @@ interface SplitTextProps {
 export default function SplitText(props: SplitTextProps) {
   const headerRef = useRef<HTMLHeadingElement>(null);
   const [isReady, setIsReady] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const initializeAnimation = () => {
       if (!headerRef.current) return;
+
+      // Respect prefers-reduced-motion: reveal the heading without animating.
+      if (shouldReduceMotion) {
+        setIsReady(true);
+        return;
+      }
 
       try {
         const { words } = splitText(headerRef.current);
@@ -45,7 +53,7 @@ export default function SplitText(props: SplitTextProps) {
 
     // Small delay to ensure DOM is ready
     setTimeout(initializeAnimation, 10);
-  }, [props.duration]);
+  }, [props.duration, shouldReduceMotion]);
 
   return (
     <h1

@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimateCountUp } from "app/_components/AnimateCountUp";
+import { useReducedMotion } from "motion/react";
 import { ReactNode } from "react";
 
 interface Stat {
@@ -9,36 +10,40 @@ interface Stat {
   value: ReactNode;
 }
 
-const stats: Stat[] = [
-  {
-    id: 1,
-    name: "Team members and counting",
-    value: (
-      <AnimateCountUp
-        end={100}
-        start={50}
-        enableScrollSpy={true}
-        scrollSpyOnce={true}
-        suffix={"+"}
-      />
-    )
-  },
-  {
-    id: 2,
-    name: "Paid out to contributors",
-    value: (
-      <AnimateCountUp
-        end={20000}
-        enableScrollSpy={true}
-        scrollSpyOnce={true}
-        prefix={"RM "}
-        suffix={"+"}
-      />
-    )
-  }
-];
-
 export default function ContributeStats() {
+  // When reduced motion is requested, show the final values instantly
+  // (AnimateCountUp renders the end value immediately with scroll spy off).
+  const animate = !useReducedMotion();
+
+  const stats: Stat[] = [
+    {
+      id: 1,
+      name: "Team members and counting",
+      value: (
+        <AnimateCountUp
+          end={100}
+          start={50}
+          enableScrollSpy={animate}
+          scrollSpyOnce={true}
+          suffix={"+"}
+        />
+      )
+    },
+    {
+      id: 2,
+      name: "Paid out to contributors",
+      value: (
+        <AnimateCountUp
+          end={20000}
+          enableScrollSpy={animate}
+          scrollSpyOnce={true}
+          prefix={"RM "}
+          suffix={"+"}
+        />
+      )
+    }
+  ];
+
   return (
     <dl className="grid grid-cols-1 gap-x-8 gap-y-8 text-center sm:grid-cols-2">
       {stats.map((stat) => (
