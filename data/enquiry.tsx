@@ -57,7 +57,7 @@ export const enquiryCategories: EnquiryCategory[] = [
     icon: <ChatBubbleLeftRightIcon className="size-5" />,
     resultHeading: "Join the community",
     resultBody:
-      "Our Discord server is the fastest way to get help — the team and fellow players hang out there every day. Prefer to just follow along? Our WhatsApp channel carries the latest announcements.",
+      "Our Discord server is the fastest way to get help, since the team and fellow players hang out there every day. If you'd rather just follow along, our WhatsApp channel has the latest announcements.",
     destinations: [
       {
         label: "Join the Discord",
@@ -104,7 +104,7 @@ export const enquiryCategories: EnquiryCategory[] = [
     icon: <NewspaperIcon className="size-5" />,
     resultHeading: "Drop us an email",
     resultBody:
-      "We're happy to help with stories about MYSverse and Malaysian game development. Email gets priority — include your publication and deadline so we can respond in time.",
+      "We're happy to help with stories about MYSverse and Malaysian game development. Include your publication and deadline in your email so we can get back to you in time.",
     destinations: [
       {
         label: "Email the team",
@@ -125,7 +125,7 @@ export const enquiryCategories: EnquiryCategory[] = [
     icon: <UserGroupIcon className="size-5" />,
     resultHeading: "We'd love your help",
     resultBody:
-      "MYSverse is built entirely by volunteers, and we're always looking for passionate people. Check out our open roles and what it's like to contribute.",
+      "MYSverse is built entirely by volunteers, and we're always looking for new contributors. Check out our open roles and what it's like to work with us.",
     destinations: [
       {
         label: "See open roles",
@@ -143,7 +143,7 @@ export const enquiryCategories: EnquiryCategory[] = [
     icon: <QuestionMarkCircleIcon className="size-5" />,
     resultHeading: "Message us on WhatsApp",
     resultBody:
-      "Not sure where your enquiry fits? Send us a WhatsApp message and we'll point you in the right direction. As a volunteer team we can take a little while to reply — email is best for anything serious.",
+      "Not sure where your enquiry fits? Send us a WhatsApp message and we'll point you in the right direction. As a volunteer team we can take a while to reply, so anything serious is still best sent by email.",
     destinations: [
       {
         label: "Chat on WhatsApp",

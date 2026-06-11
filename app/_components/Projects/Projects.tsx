@@ -16,14 +16,14 @@ export default function ProjectList() {
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-800 dark:text-white">
               Did you know that MYSverse is developed and still fully operated
-              by a passionate, volunteer-driven team? What started as a
-              dedicated group eager to bring authentic roleplay experiences to
-              life has blossomed into a thriving community.
+              by volunteers? What started as a small group making authentic
+              Malaysian roleplay experiences has grown into a community of
+              thousands.
             </p>
             <p className="mt-6 text-lg leading-8 text-gray-800 dark:text-white">
-              Today, our mission remains the same—preserving the authenticity
-              and passion that started it all, while ensuring our top-tier
-              virtual experiences are accessible and enjoyable for everyone!
+              Today, our mission remains the same: keeping the authenticity that
+              started it all, while making our experiences accessible and
+              enjoyable for everyone.
             </p>
           </div>
           <div className="mt-16">
@@ -43,7 +43,7 @@ export default function ProjectList() {
               <span className="sr-only">MYSverse Sim</span>
             </h3>
             <p className="mt-6 text-lg leading-8">
-              {`A sophisticated and realistic virtual experience, MYSverse Sim offers serious roleplay with an educational twist. Engage in disciplined activities, requiring off-platform training and certification for a deeper immersive experience.`}
+              {`MYSverse Sim offers serious, realistic roleplay with an educational twist. Activities are disciplined and structured, with off-platform training and certification for those who want to go deeper.`}
             </p>
             <ItemList
               projects={projects.filter((item) => item.type === "Sim")}
@@ -58,9 +58,9 @@ export default function ProjectList() {
             <p className="mt-6 text-lg leading-8">
               A collaborative platform that brings together Malaysian-themed
               projects and communities on Roblox, from MYSverse and other
-              creators. By sharing resources, knowledge, and experiences, we aim
-              to create a vibrant ecosystem across multiple genres that
-              celebrates Malaysian culture and creativity.
+              creators. By sharing resources, knowledge and experiences, we hope
+              to grow a network of projects across many genres that celebrates
+              Malaysian culture and creativity.
             </p>
             <ItemList
               projects={projects.filter((item) => item.type === "Network")}
@@ -76,7 +76,7 @@ export default function ProjectList() {
               In real life
             </h3>
             <p className="mt-6 text-lg leading-8">
-              {`MYSverse is more than just a game; it's a platform for outreach and education. In addition to making an impact in the real world, we introduce ourselves to various organisations and institutions to explore how MYSverse can be used to achieve their goals, from education to community engagement.`}
+              {`MYSverse also has a life outside the game. We work with organisations and institutions to explore how MYSverse can support their goals, from education to community engagement.`}
             </p>
             <ItemList
               projects={projects.filter((item) => item.type === "Outreach")}

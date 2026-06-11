@@ -14,7 +14,7 @@ export default async function Blog({ blogType }: { blogType: BlogType }) {
         </h2>
         <p className="mt-2 mb-4 text-lg leading-8 text-gray-600 dark:text-white">
           {blogType === "mys"
-            ? "Delve deeper into the world of MYSverse with our latest blog posts."
+            ? "Keep up with what the team has been working on in our latest blog posts."
             : "Explore in-universe news by our virtual media service NWS."}
         </p>
         <Link

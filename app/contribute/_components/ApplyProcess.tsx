@@ -14,7 +14,7 @@ const steps = [
   {
     title: "We review your application",
     description:
-      "Our team reviews every submission — we value clear, proactive communication."
+      "Our team reviews every submission. We value clear, proactive communication."
   },
   {
     title: "Interview or onboarding",
@@ -40,7 +40,7 @@ export default function ApplyProcess() {
   return (
     <div className="mx-auto max-w-5xl">
       <div className="text-center">
-        <p className="text-base/7 font-semibold text-primary">The process</p>
+        <p className="text-primary text-base/7 font-semibold">The process</p>
         <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
           How applying works
         </h2>
@@ -55,7 +55,7 @@ export default function ApplyProcess() {
       >
         {steps.map((step, index) => (
           <m.li key={step.title} variants={itemVariants}>
-            <div className="flex size-10 items-center justify-center rounded-full bg-primary text-base font-semibold text-white">
+            <div className="bg-primary flex size-10 items-center justify-center rounded-full text-base font-semibold text-white">
               {index + 1}
             </div>
             <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">

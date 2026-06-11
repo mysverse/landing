@@ -221,9 +221,9 @@ export default function ContactRouter({ className }: { className?: string }) {
         </AnimatePresence>
       </div>
       <p className="mt-6 border-t border-gray-100 pt-4 text-xs leading-5 text-gray-500 dark:border-white/10 dark:text-white/60">
-        MYSverse is run entirely by volunteers and we receive a high volume of
-        messages. We read everything, but serious enquiries are best sent by
-        email — replies can take a few days.
+        MYSverse is run entirely by volunteers and we get a lot of messages. We
+        read everything, but replies can take a few days, so serious enquiries
+        are best sent by email.
       </p>
     </div>
   );

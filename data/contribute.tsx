@@ -15,7 +15,7 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
 
 // ---------------------------------------------------------------------------
-// Open positions — the two live development volunteer roles. Single source of
+// Open positions - the two live development volunteer roles. Single source of
 // truth for both the /contribute page and the homepage recruitment band.
 // ---------------------------------------------------------------------------
 
@@ -39,7 +39,7 @@ export interface OpenPosition {
   formAsksFor: string; // pre-qualify microcopy
   note?: string; // Head Dev: interview-stage note
   disclaimer?: string; // Developer: volunteer-basis disclaimer
-  applyHref: string; // forms.gle URL — single source of truth
+  applyHref: string; // forms.gle URL - single source of truth
   icon: ReactNode;
 }
 
@@ -51,7 +51,7 @@ export const openPositions: OpenPosition[] = [
     levelLabel: "Leadership",
     tagline: "Lead the Dev Team across Lebuhraya, Sumaya and Bandaraya.",
     description:
-      "A volunteer-with-benefits role as Head Developer of the MYSverse Dev Team. Manage multiple MYSverse projects — Lebuhraya, Sumaya and Bandaraya — and lead the Dev Team to ensure constant upkeep alongside the generation, execution and release of new content. You'll bridge Administration and the Dev Team, making sure both sides are heard. Fully remote, with proactive communication.",
+      "A volunteer-with-benefits role as Head Developer of the MYSverse Dev Team. Manage our projects (Lebuhraya, Sumaya and Bandaraya) and lead the Dev Team in keeping them updated and shipping new content. You'll bridge Administration and the Dev Team, making sure both sides are heard. Fully remote, with proactive communication.",
     lookingFor: [
       "Communicate tasks, requests and information clearly and concisely",
       "Manage multiple team members with a variety of skillsets",
@@ -78,7 +78,7 @@ export const openPositions: OpenPosition[] = [
     levelLabel: "Multi-discipline",
     tagline: "Builders, scripters, modellers, designers and editors welcome.",
     description:
-      "A volunteer-with-benefits role as a Developer of the MYSverse Dev Team. Builders, Scripters, 3D Modellers, Graphic Designers and Video Editors are all welcome. Work on current and future MYSverse experiences using your skillset and your own ideas — create exciting new updates, or help produce entirely new titles.",
+      "A volunteer-with-benefits role as a Developer of the MYSverse Dev Team. Builders, Scripters, 3D Modellers, Graphic Designers and Video Editors are all welcome. Work on current and future MYSverse experiences using your skillset and your own ideas, from updates for existing games to entirely new titles.",
     lookingFor: [
       "Creatively minded",
       "A collaborator and team player",
@@ -94,14 +94,14 @@ export const openPositions: OpenPosition[] = [
     formAsksFor:
       "Preferred name, contact, skillset, proof of work (up to 5 files), and 3 short questions.",
     disclaimer:
-      "This is a volunteer-basis role — we do not offer full-time employment.",
+      "This is a volunteer-basis role. We do not offer full-time employment.",
     applyHref: "https://forms.gle/GipENfkPu181rnLg6",
     icon: <CodeBracketIcon className="size-8" />
   }
 ];
 
 // ---------------------------------------------------------------------------
-// Benefits at a glance — shared across both roles (Revenue Sharing is Head Dev only).
+// Benefits at a glance - shared across both roles (Revenue Sharing is Head Dev only).
 // ---------------------------------------------------------------------------
 
 export interface Benefit {
@@ -125,7 +125,8 @@ export const benefits: Benefit[] = [
   },
   {
     title: "Monthly Bonuses",
-    description: "Cash bonuses tied to the success of experiences (T&Cs apply).",
+    description:
+      "Cash bonuses tied to the success of experiences (T&Cs apply).",
     icon: <SparklesIcon className="size-6" />
   },
   {
@@ -141,7 +142,7 @@ export const benefits: Benefit[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// Other ways to contribute — secondary, no formal application (Discord-based).
+// Other ways to contribute - secondary, no formal application (Discord-based).
 // ---------------------------------------------------------------------------
 
 export interface Role {
@@ -157,7 +158,7 @@ export const roles: Role[] = [
     description:
       "Be the backbone of our community. Moderators help keep MYSverse a safe, welcoming, and enjoyable space for thousands of players across our experiences.",
     features: [
-      "Serve and protect a thriving community of players",
+      "Serve and protect a community of thousands of players",
       "Access to moderation tools and training resources",
       "Develop leadership and conflict resolution skills",
       "Be part of a close-knit moderation team",

@@ -53,7 +53,7 @@ export const projects: Project[] = [
       }
     ],
     tagline:
-      "Cruise expansive highways or jump into exciting police and firefighter roleplay. It's your perfect escape to unwind and experience everyday Malaysian life in a unique way.",
+      "Cruise long highways or jump into police and firefighter roleplay. An easy way to unwind and experience everyday Malaysian life on the road.",
     link: "https://www.roblox.com/games/4892731894/Lebuhraya",
     status: "active"
   },
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     name: "Ruumah v4",
     launched: "Released April 2025",
     tagline:
-      "Our latest Raya celebration transports you to *Kampung Air*, Sabah's stunning water villages. Discover a truly unique and picturesque piece of Malaysia.",
+      "Our latest Raya celebration is set in *Kampung Air*, Sabah's water villages and one of the most picturesque corners of Malaysia.",
     image: Ruumahv4FeaturePic,
     type: "MYSverse",
     link: "https://www.roblox.com/games/6789873305/Ruumah",
@@ -86,7 +86,7 @@ export const projects: Project[] = [
       }
     ],
     tagline:
-      "Experience traditional festive celebrations in a charming coastal *kampung*. This edition is filled with heartfelt details, delicious food, and a wonderful sense of community.",
+      "Celebrate the festive season in a charming coastal *kampung*. This edition is full of little details, good food and a strong sense of community.",
     image: RumahFeaturePic,
     type: "MYSverse",
     status: "inactive"
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     name: "Bandaraya Klasik",
     launched: "Released 2025",
     tagline:
-      "Take a wonderful trip back to the early days of [MYS] Malaysia! This classic edition opens KL 2.9 for everyone to enjoy, with its original environment, updated compatibility, and teams that are free for all to join.",
+      "Take a trip back to the early days of [MYS] Malaysia! This classic edition opens KL 2.9 for everyone to enjoy, with its original environment, updated compatibility, and teams that are free for all to join.",
     image: BandarayaKlasikFeaturePic,
     type: "MYSverse",
     status: "active",
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     name: "Sumaya",
     launched: "Open Beta 2026",
     tagline:
-      "Drawing inspiration from Beaufort, a rural Sabahan district, Sumaya (formerly Daerah) is our most ambitious project so far. It offers open-ended, story-rich gameplay that invites every player, new or returning, to find something completely fresh in the MYSverse.",
+      "Inspired by Beaufort, a rural Sabahan district, Sumaya (formerly Daerah) is our most ambitious project so far. Its open-ended, story-rich gameplay gives both new and returning players something completely fresh in the MYSverse.",
     image: DaerahFeaturePic,
     type: "MYSverse",
     status: "active",
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     type: "Sim",
     status: "active",
     tagline:
-      "Dive into a vibrant Kuala Lumpur, reimagined for rich roleplay experiences, whether you're living daily life or performing official duties. As MYSverse’s main city hub, it’s always alive with detail and new possibilities.",
+      "Explore a virtual Kuala Lumpur built for roleplay, whether you're living daily life or on official duty. As MYSverse's main city hub, there's always something happening.",
     link: "https://www.roblox.com/games/481538620/Bandaraya"
   },
   {
@@ -129,13 +129,13 @@ export const projects: Project[] = [
     image: Bandarayav4FeaturePic,
     type: "Sim",
     tagline:
-      "Our next big city update expands into Dataran Merdeka! Expect iconic landmarks, better vehicle systems, and more roleplay jobs, all while honoring the city’s heart and heritage."
+      "Our next big city update expands into Dataran Merdeka! Expect iconic landmarks, better vehicle systems and more roleplay jobs, while staying true to the city's heritage."
   },
   {
     name: "Tentera MYSverse",
     launched: "Since 2016",
     tagline:
-      "A steadfast part of MYSverse Sim, our military roleplay agency uses carefully researched equipment, procedures, and training. We aim to offer an authentic and respectful portrayal of Malaysia’s Armed Forces.",
+      "A long-standing part of MYSverse Sim, our military roleplay agency uses carefully researched equipment, procedures and training to portray Malaysia's Armed Forces authentically and respectfully.",
     image: MafFeaturePic,
     type: "Sim",
     link: "https://sim.mysver.se/tentera/",
@@ -145,7 +145,7 @@ export const projects: Project[] = [
     name: "Polis MYSverse",
     launched: "Since 2017",
     tagline:
-      "Our police roleplay community thrives on realism, teamwork, and service, covering everything from managing traffic to handling tactical situations. It's a vital part of life in MYSverse Sim places like Bandaraya.",
+      "Our police roleplay community is built on realism, teamwork and service, covering everything from managing traffic to handling tactical situations. It's a big part of life in MYSverse Sim places like Bandaraya.",
     image: PolisFeaturePic,
     type: "Sim",
     link: "https://sim.mysver.se/polis/",
@@ -165,7 +165,7 @@ export const projects: Project[] = [
     name: "Kesihatan MYSverse",
     launched: "Since 2025",
     tagline:
-      "Our healthcare roleplay community lets you step into the shoes of doctors, nurses, and paramedics. You can take part in meaningful emergency scenarios and public health activities within the MYSverse Sim world.",
+      "Our healthcare roleplay community lets you play as doctors, nurses and paramedics, taking part in emergency scenarios and public health activities across the MYSverse Sim world.",
     image: KesihatanFeature,
     type: "Sim",
     link: "https://sim.mysver.se/kesihatan/",
@@ -176,7 +176,7 @@ export const projects: Project[] = [
     name: "MYSair",
     launched: "Founded 2021",
     tagline:
-      "Once Malaysia Airways, now MYSair takes you *beyond continents*. Fly as a passenger or join the crew, enjoying immersive ro-aviation blended with warm Malaysian hospitality. We connect a global audience to our culture, one flight at a time.",
+      "Once Malaysia Airways, now MYSair takes you *beyond continents*. Fly as a passenger or join the crew for ro-aviation with warm Malaysian hospitality, sharing our culture with a global audience.",
     videoSrc: [
       {
         src: "https://r2.mysver.se/mysairFeature.webm",
@@ -190,7 +190,7 @@ export const projects: Project[] = [
     name: "Tehlife",
     launched: "Founded 2021",
     tagline:
-      "Step into our lively virtual café, inspired by beloved Malaysian bubble tea spots but with its own special flavor. *Tea is life* here, and we serve a wonderful variety of drinks, from boba to kopi. It’s where café culture, the MYSverse community, and real Malaysian vibes meet.",
+      "A lively virtual café inspired by Malaysian bubble tea spots, with a flavour of its own. *Tea is life* here, with drinks from boba to kopi. It's where café culture and the MYSverse community meet.",
     image: "https://blog-assets.mysver.se/images/2024/12/image-14.png",
     type: "Network",
     link: "https://www.roblox.com/communities/5000345/Tehlife"
@@ -201,7 +201,7 @@ export const projects: Project[] = [
     launched: "December 2025",
     location: "Singapore",
     tagline:
-      "We were invited by UNICRI and Singapore's Ministry of Home Affairs to present at a workshop on Online Radicalisation and Extremism. We shared MYSverse's community-led approach to moderation and maintaining robust community standards.",
+      "We were invited by UNICRI and Singapore's Ministry of Home Affairs to present at a workshop on Online Radicalisation and Extremism, where we shared MYSverse's community-led approach to moderation and community standards.",
     type: "Outreach",
     image: OutreachUnicri2025,
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7408077530101899264"
@@ -211,7 +211,7 @@ export const projects: Project[] = [
     launched: "September 2025",
     location: "Hotel Parkroyal Collection, Kuala Lumpur",
     tagline:
-      "We took part in SEARCCT's Strategic Planning Meeting under the Ministry of Foreign Affairs Malaysia. We explored how the video games community can contribute to counter harmful narratives through digital engagement, storytelling, and building positive online spaces.",
+      "We took part in SEARCCT's Strategic Planning Meeting under the Ministry of Foreign Affairs Malaysia, discussing how the video games community can help counter harmful narratives through digital engagement, storytelling and positive online spaces.",
     type: "Outreach",
     image: OutreachSearcctMeeting,
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7379493073325707265"
@@ -221,7 +221,7 @@ export const projects: Project[] = [
     launched: "September 2025",
     location: "Persada Johor",
     tagline:
-      "We attended the ASEAN Digital Content Summit 2025, Southeast Asia's premier gaming and digital content event! With our Lebuhraya racing challenges drawing crowds, we connected with hundreds of attendees, while celebrating the region's $6 billion gaming market milestone.",
+      "We attended the ASEAN Digital Content Summit 2025, one of Southeast Asia's biggest gaming and digital content events! Our Lebuhraya racing challenges drew crowds, and we met hundreds of attendees from across the region's gaming industry.",
     image: OutreachAdcs25,
     type: "Outreach",
     link: "/blog/mys/adcs-2025"
@@ -240,7 +240,7 @@ export const projects: Project[] = [
     launched: "July 2025",
     location: "CCEC Nexus",
     tagline:
-      "We showcased MYSverse in IMMERSE KL x CelcomDigi, Malaysia's premier event for immersive technology and creative content, connecting with industry leaders and community members alike!",
+      "We showcased MYSverse at IMMERSE KL x CelcomDigi, Malaysia's biggest event for immersive technology and creative content, and met industry leaders and community members in person!",
     image: OutreachImmerse25,
     type: "Outreach",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7354344621331664896/"
@@ -258,7 +258,7 @@ export const projects: Project[] = [
     name: "NST Viral Feature",
     launched: "January 2025",
     tagline:
-      "The New Straits Times featured MYSverse's virtual election for its 22nd Prime Minister! This highlighted our dedication to civic education and empowering youth through a simulated Malaysian democracy.",
+      "The New Straits Times featured MYSverse's virtual election for its 22nd Prime Minister! The story covered our civic education efforts and how young Malaysians take part in a simulated democracy.",
     image: OutreachNst,
     type: "Outreach",
     link: "https://www.nst.com.my/news/nst-viral/2025/01/1158200/nstviral-popular-malaysian-video-game-simulation-mysverse-elects-22nd"
@@ -276,7 +276,7 @@ export const projects: Project[] = [
     name: "U-Digitaloka",
     launched: "June 2024",
     tagline:
-      "We showcased MYSverse at UiTM Shah Alam with the Ministry of Digital. This event demonstrated how MYSverse can foster national identity by sharing cultural and historical stories.",
+      "We showcased MYSverse at UiTM Shah Alam with the Ministry of Digital, showing how the platform can share Malaysian cultural and historical stories.",
     location: "UiTM Shah Alam",
     image: OutreachUITM,
     type: "Outreach",
@@ -287,7 +287,7 @@ export const projects: Project[] = [
     launched: "January 2024",
     location: "PDRM HQ Bukit Aman",
     tagline:
-      "We're engaging in discussions with the Royal Malaysia Police. Our goal is to use virtual spaces to build public awareness, promote safety, and create a better understanding of police work in Malaysia.",
+      "We're in discussions with the Royal Malaysia Police about using virtual spaces to build public awareness, promote safety and improve understanding of police work in Malaysia.",
     image: OutreachPDRM,
     type: "Outreach"
   },
@@ -295,7 +295,7 @@ export const projects: Project[] = [
     name: "Donation to Gaza Relief",
     launched: "October 2023",
     tagline:
-      "MYSverse proudly donated RM1,000 to Persatuan Cinta Gaza Malaysia. This shows our compassion and awareness, while we continue to maintain a neutral platform policy on Roblox.",
+      "MYSverse donated RM1,000 to Persatuan Cinta Gaza Malaysia, while continuing to maintain a neutral platform policy on Roblox.",
     image: OutreachCgm,
     type: "Outreach",
     link: "/blog/mys/statement-on-israel-palestine"

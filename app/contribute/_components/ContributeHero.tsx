@@ -12,16 +12,18 @@ export default function ContributeHero() {
   return (
     <div className="mx-auto max-w-3xl text-center">
       <m.span
-        initial={shouldReduceMotion ? false : { opacity: 0, y: -8, scale: 0.92 }}
+        initial={
+          shouldReduceMotion ? false : { opacity: 0, y: -8, scale: 0.92 }
+        }
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.3, delay: 0.1 }}
-        className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide text-primary uppercase"
+        className="bg-primary/10 text-primary inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold tracking-wide uppercase"
       >
         <span className="relative flex size-2">
           {!shouldReduceMotion && (
-            <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-60" />
+            <span className="bg-primary absolute inline-flex size-full animate-ping rounded-full opacity-60" />
           )}
-          <span className="relative inline-flex size-2 rounded-full bg-primary" />
+          <span className="bg-primary relative inline-flex size-2 rounded-full" />
         </span>
         Applications open
       </m.span>
@@ -36,7 +38,7 @@ export default function ContributeHero() {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600 dark:text-white/80"
       >
-        We&apos;re hiring two volunteer development roles — with real benefits.
+        We&apos;re hiring two volunteer development roles with real benefits.
         Earn through our Pay-Per-Task system, share in revenue, and get an
         official welcome package, all while building experiences played by
         thousands.

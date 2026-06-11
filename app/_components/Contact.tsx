@@ -18,10 +18,9 @@ export default function Contact() {
                 Get in touch
               </h2>
               <p className="mt-4 leading-7 text-gray-800 dark:text-white">
-                Whether it&apos;s legal matters, commercial opportunities,
-                collaborations or game support, pick what your enquiry is about
-                and we&apos;ll point you to the right channel - we bring over 10
-                years of combined player and developer experience to the table.
+                Tell us what your enquiry is about and we&apos;ll point you to
+                the right channel. We bring over 10 years of combined player and
+                developer experience to the table.
               </p>
               <div className="mt-8 rounded-2xl bg-white p-10 dark:bg-slate-800">
                 <h3 className="text-black-100 text-base leading-7 font-semibold dark:text-white">
