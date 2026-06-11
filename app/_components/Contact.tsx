@@ -1,13 +1,8 @@
-import WhatsappButton from "public/ChatOnWhatsAppButton/WhatsAppButtonGreenMedium.svg";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDiscord } from "@fortawesome/free-brands-svg-icons";
-
 import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/20/solid";
 
 import Link from "next/link";
 import PlausibleWrapper from "./PlausibleWrapper";
-import { socials } from "data/socials";
+import ContactRouter from "./ContactRouter";
 
 export default function Contact() {
   return (
@@ -23,13 +18,12 @@ export default function Contact() {
                 Get in touch
               </h2>
               <p className="mt-4 leading-7 text-gray-800 dark:text-white">
-                For legal matters, commercial opportunities, collaborations, or
-                any general enquiries, feel free to reach out - we bring over 10
+                Whether it&apos;s legal matters, commercial opportunities,
+                collaborations or game support, pick what your enquiry is about
+                and we&apos;ll point you to the right channel - we bring over 10
                 years of combined player and developer experience to the table.
               </p>
-            </div>
-            <div className="grid grid-cols-1 gap-6 lg:col-span-2 lg:grid-cols-2 lg:gap-8">
-              <div className="flex flex-col place-content-center justify-center rounded-2xl bg-white p-10 dark:bg-slate-800">
+              <div className="mt-8 rounded-2xl bg-white p-10 dark:bg-slate-800">
                 <h3 className="text-black-100 text-base leading-7 font-semibold dark:text-white">
                   MYSverse Digital Ventures
                 </h3>
@@ -103,67 +97,8 @@ export default function Contact() {
                   </div> */}
                 </dl>
               </div>
-              <div className="flex flex-col place-content-center justify-center rounded-2xl bg-white p-10 dark:bg-slate-800">
-                <h3 className="text-black-100 text-base leading-7 font-semibold dark:text-white">
-                  Shoot us a message
-                </h3>
-                <h4 className="text-black-100 text-sm leading-7 font-normal opacity-80 dark:text-white">
-                  For businesses and organisations
-                </h4>
-                <dl className="text-black-100 mt-3 space-y-1 text-sm leading-6 dark:text-white">
-                  <div className="flex flex-col gap-y-4">
-                    <dt className="sr-only">WhatsApp</dt>
-                    <dd>
-                      <Link href="https://wa.me/601154156978" target="_blank">
-                        <WhatsappButton />
-                      </Link>
-                    </dd>
-                    <dt className="sr-only">Cal.com</dt>
-                    {/* <dd>
-                      <CalButton />
-                    </dd> */}
-                  </div>
-                  {/* <div className="mt-1">
-                    <dt className="sr-only">Phone number</dt>
-                    <dd>+1 (555) 905-2345</dd>
-                  </div> */}
-                </dl>
-              </div>
-              <div className="flex flex-col place-content-center justify-center rounded-2xl bg-white p-10 dark:bg-slate-800">
-                <h3 className="text-black-100 text-base leading-7 font-semibold dark:text-white">
-                  Join the community
-                </h3>
-                <h4 className="text-black-100 text-sm leading-7 font-normal opacity-80 dark:text-white">
-                  For game-related matters
-                </h4>
-                <dl className="text-black-100 mt-3 space-y-1 text-sm leading-6 dark:text-white">
-                  <div className="flex flex-row gap-x-4">
-                    <dt className="sr-only">Discord</dt>
-                    <dd>
-                      <Link
-                        href={
-                          socials.find((s) => s.name === "Discord")?.href ||
-                          "https://discord.com/invite/uPkrYWd"
-                        }
-                        target="_blank"
-                      >
-                        <FontAwesomeIcon icon={faDiscord} size="xl" />
-                      </Link>
-                    </dd>
-                    {/* <dt className="sr-only">Guilded</dt>
-                    <dd>
-                      <Link href="https://guilded.gg/mys" target="_blank">
-                        <FontAwesomeIcon icon={faGuilded} size="xl" />
-                      </Link>
-                    </dd> */}
-                  </div>
-                  {/* <div className="mt-1">
-                    <dt className="sr-only">Phone number</dt>
-                    <dd>+1 (555) 905-2345</dd>
-                  </div> */}
-                </dl>
-              </div>
             </div>
+            <ContactRouter className="lg:col-span-2" />
           </div>
         </div>
       </div>
