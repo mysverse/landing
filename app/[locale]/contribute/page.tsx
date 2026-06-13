@@ -9,13 +9,48 @@ import ApplyProcess from "./_components/ApplyProcess";
 import RoleCard from "./_components/RoleCard";
 import JoinCTA from "./_components/JoinCTA";
 
-export const metadata = {
-  title: "Contribute",
-  description:
-    "Join the MYSverse Dev Team. We're hiring two volunteer roles, Head Developer and Developer, with real benefits including Pay-Per-Task pay, revenue sharing, monthly bonuses and more."
-};
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export default function ContributePage() {
+interface Props {
+  params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Contribute" });
+  return {
+    title: t("title"),
+    description: t("desc")
+  };
+}
+
+export default async function ContributePage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations("Contribute");
+
+  const getRoleTitle = (title: string) => {
+    const key = title.toLowerCase().replace(/[^a-z0-9_]+/g, "_");
+    return t.has(`roles.${key}.title`) ? t(`roles.${key}.title`) : title;
+  };
+
+  const getRoleDesc = (title: string, desc: string) => {
+    const key = title.toLowerCase().replace(/[^a-z0-9_]+/g, "_");
+    return t.has(`roles.${key}.description`)
+      ? t(`roles.${key}.description`)
+      : desc;
+  };
+
+  const getRoleFeatures = (title: string, features: string[]) => {
+    const key = title.toLowerCase().replace(/[^a-z0-9_]+/g, "_");
+    return features.map((item, index) =>
+      t.has(`roles.${key}.features.${index}`)
+        ? t(`roles.${key}.features.${index}`)
+        : item
+    );
+  };
+
   return (
     <MotionConfig reducedMotion="user">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -53,16 +88,13 @@ export default function ContributePage() {
           <IntersectionTransition>
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-primary text-base/7 font-semibold">
-                Our model
+                {t("model.label")}
               </p>
               <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-                Volunteer-driven, experience-focused
+                {t("model.title")}
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-white/80">
-                MYSverse is built by volunteers from all walks of life:
-                students, professionals and hobbyists who enjoy building things
-                together. Our Pay-Per-Task bounty system means you can earn
-                while you learn, on a schedule that works for you.
+                {t("model.desc")}
               </p>
             </div>
           </IntersectionTransition>
@@ -72,15 +104,13 @@ export default function ContributePage() {
         <IntersectionTransition>
           <div className="text-center">
             <p className="text-primary text-base/7 font-semibold">
-              Not a developer?
+              {t("secondary.label")}
             </p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-              Other ways to contribute
+              {t("secondary.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600 dark:text-white/80">
-              We&apos;re always glad to welcome new faces. These roles
-              don&apos;t have a formal application yet, so just reach out on
-              Discord if you&apos;re interested.
+              {t("secondary.desc")}
             </p>
           </div>
         </IntersectionTransition>
@@ -90,9 +120,9 @@ export default function ContributePage() {
             <IntersectionTransition key={role.title}>
               <RoleCard
                 icon={role.icon}
-                title={role.title}
-                description={role.description}
-                features={role.features}
+                title={getRoleTitle(role.title)}
+                description={getRoleDesc(role.title, role.description)}
+                features={getRoleFeatures(role.title, role.features)}
               />
             </IntersectionTransition>
           ))}
@@ -103,10 +133,10 @@ export default function ContributePage() {
           <IntersectionTransition>
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-                Still have questions?
+                {t("questions.title")}
               </h2>
               <p className="mt-4 text-lg text-gray-600 dark:text-white/80">
-                Get in touch and the team will be happy to help.
+                {t("questions.desc")}
               </p>
             </div>
             <div className="mt-10">

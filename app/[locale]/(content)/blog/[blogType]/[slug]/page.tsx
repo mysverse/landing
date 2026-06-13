@@ -1,6 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "i18n/navigation";
 
 import type { BlogType } from "utils/ghost";
 import { blogData, getPost, getPosts } from "utils/ghost";
@@ -9,13 +9,17 @@ import { processBio } from "utils/bio";
 import { LocalTime } from "app/_components/LocalTime";
 import PostOrPage from "app/_components/ghost/PostOrPage";
 import BlogLayout from "app/_components/Layouts/BlogLayout";
+import { setRequestLocale } from "next-intl/server";
+import { routing } from "i18n/routing";
 
 interface Props {
-  params: Promise<{ blogType: BlogType; slug: string }>;
+  params: Promise<{ locale: string; blogType: BlogType; slug: string }>;
 }
 
 export default async function BlogPost({ params }: Props) {
-  const { blogType, slug } = await params;
+  const { locale, blogType, slug } = await params;
+  setRequestLocale(locale);
+
   const post = await getPost(blogType, slug);
   const primaryAuthor = post.authors?.[0];
   const publishDate = new Date(post.published_at!);
@@ -39,15 +43,16 @@ export default async function BlogPost({ params }: Props) {
             </svg>
             {primaryAuthor && (
               <div className="relative hidden items-center gap-x-4 sm:flex">
-                {primaryAuthor.profile_image && primaryAuthor.profile_image.trim() !== '' && (
-                  <Image
-                    alt={primaryAuthor.name ?? "Image of author"}
-                    src={primaryAuthor.profile_image}
-                    width={32}
-                    height={32}
-                    className="size-10 rounded-full bg-gray-100 sm:size-7"
-                  />
-                )}
+                {primaryAuthor.profile_image &&
+                  primaryAuthor.profile_image.trim() !== "" && (
+                    <Image
+                      alt={primaryAuthor.name ?? "Image of author"}
+                      src={primaryAuthor.profile_image}
+                      width={32}
+                      height={32}
+                      className="size-10 rounded-full bg-gray-100 sm:size-7"
+                    />
+                  )}
                 <Link
                   href={primaryAuthor.url!}
                   target="_blank"
@@ -66,15 +71,16 @@ export default async function BlogPost({ params }: Props) {
           </h2>
           {primaryAuthor && (
             <div className="relative mt-5 flex items-center gap-x-4 sm:hidden">
-              {primaryAuthor.profile_image && primaryAuthor.profile_image.trim() !== '' && (
-                <Image
-                  alt={primaryAuthor.name ?? "Image of author"}
-                  src={primaryAuthor.profile_image}
-                  width={32}
-                  height={32}
-                  className="size-10 rounded-full bg-gray-100 sm:size-7"
-                />
-              )}
+              {primaryAuthor.profile_image &&
+                primaryAuthor.profile_image.trim() !== "" && (
+                  <Image
+                    alt={primaryAuthor.name ?? "Image of author"}
+                    src={primaryAuthor.profile_image}
+                    width={32}
+                    height={32}
+                    className="size-10 rounded-full bg-gray-100 sm:size-7"
+                  />
+                )}
               <Link
                 href={primaryAuthor.url!}
                 target="_blank"
@@ -146,11 +152,15 @@ export async function generateViewport({ params }: Props) {
 
 export async function generateStaticParams() {
   const blogTypes = blogData.map((blog) => blog.slug);
-  const params: { blogType: BlogType; slug: string }[] = [];
-  for (const blogType of blogTypes) {
-    const posts = await getPosts(blogType, 100);
-    for (const post of posts) {
-      params.push({ blogType, slug: post.slug });
+  const locales = routing.locales;
+  const params: { locale: string; blogType: BlogType; slug: string }[] = [];
+
+  for (const locale of locales) {
+    for (const blogType of blogTypes) {
+      const posts = await getPosts(blogType, 100);
+      for (const post of posts) {
+        params.push({ locale, blogType, slug: post.slug });
+      }
     }
   }
   return params;

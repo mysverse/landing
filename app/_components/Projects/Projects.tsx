@@ -4,31 +4,29 @@ import IntersectionTransition from "../IntersectionTransition";
 import MYSverseSimLogo from "public/img/MYSverse_Sim_Colour.svg";
 import MYSverseSimLogoWhite from "public/img/MYSverse_Sim_White.svg";
 import ItemList from "./ItemList";
+import { useTranslations } from "next-intl";
 
 export default function ProjectList() {
+  const t = useTranslations("Projects");
+
   return (
     <div className="py-12 text-gray-800 sm:py-32 dark:text-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <IntersectionTransition>
           <div className="mx-auto max-w-5xl lg:mx-0" id="projects">
             <h2 className="text-black-100 text-3xl font-bold tracking-tight sm:text-4xl dark:text-white">
-              Our projects
+              {t("title")}
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-800 dark:text-white">
-              Did you know that MYSverse is developed and still fully operated
-              by volunteers? What started as a small group making authentic
-              Malaysian roleplay experiences has grown into a community of
-              thousands.
+              {t("desc1")}
             </p>
             <p className="mt-6 text-lg leading-8 text-gray-800 dark:text-white">
-              Today, our mission remains the same: keeping the authenticity that
-              started it all, while making our experiences accessible and
-              enjoyable for everyone.
+              {t("desc2")}
             </p>
           </div>
           <div className="mt-16">
             <h3 className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white">
-              MYSverse
+              {t("sections.mysverse")}
             </h3>
             <ItemList
               projects={projects.filter((item) => item.type === "MYSverse")}
@@ -40,11 +38,9 @@ export default function ProjectList() {
             <h3 className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white">
               <MYSverseSimLogo className="inline-block h-12 w-auto fill-black dark:hidden" />
               <MYSverseSimLogoWhite className="hidden h-12 w-auto fill-white dark:inline-block" />
-              <span className="sr-only">MYSverse Sim</span>
+              <span className="sr-only">{t("sections.sim")}</span>
             </h3>
-            <p className="mt-6 text-lg leading-8">
-              {`MYSverse Sim offers serious, realistic roleplay with an educational twist. Activities are disciplined and structured, with off-platform training and certification for those who want to go deeper.`}
-            </p>
+            <p className="mt-6 text-lg leading-8">{t("simDesc")}</p>
             <ItemList
               projects={projects.filter((item) => item.type === "Sim")}
             />
@@ -53,15 +49,9 @@ export default function ProjectList() {
         <IntersectionTransition>
           <div className="mt-16">
             <h3 className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white">
-              MYSverse Network
+              {t("sections.network")}
             </h3>
-            <p className="mt-6 text-lg leading-8">
-              A collaborative platform that brings together Malaysian-themed
-              projects and communities on Roblox, from MYSverse and other
-              creators. By sharing resources, knowledge and experiences, we hope
-              to grow a network of projects across many genres that celebrates
-              Malaysian culture and creativity.
-            </p>
+            <p className="mt-6 text-lg leading-8">{t("networkDesc")}</p>
             <ItemList
               projects={projects.filter((item) => item.type === "Network")}
             />
@@ -73,11 +63,9 @@ export default function ProjectList() {
               className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white"
               id="outreach"
             >
-              In real life
+              {t("sections.outreach")}
             </h3>
-            <p className="mt-6 text-lg leading-8">
-              {`MYSverse also has a life outside the game. We work with organisations and institutions to explore how MYSverse can support their goals, from education to community engagement.`}
-            </p>
+            <p className="mt-6 text-lg leading-8">{t("outreachDesc")}</p>
             <ItemList
               projects={projects.filter((item) => item.type === "Outreach")}
             />

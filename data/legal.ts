@@ -6,7 +6,8 @@ export const legalEntity = {
 };
 
 export const legalPages = [
-  { title: "Terms & Conditions", href: "/legal/terms" },
-  { title: "Privacy Policy", href: "/legal/privacy-policy" },
-  { title: "Refund Policy", href: "/legal/refund-policy" }
+  { key: "terms", title: "Terms & Conditions", href: "/legal/terms" },
+  { key: "privacy", title: "Privacy Policy", href: "/legal/privacy-policy" },
+  { key: "refund", title: "Refund Policy", href: "/legal/refund-policy" }
 ];
+

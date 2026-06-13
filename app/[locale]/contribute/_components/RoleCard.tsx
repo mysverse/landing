@@ -20,7 +20,7 @@ export default function RoleCard({
   return (
     <RotatingCard className="h-full rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-lg dark:border-white/10 dark:bg-gray-900">
       <div className="flex h-full flex-col">
-        <div className="mb-4 flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+        <div className="bg-primary/10 text-primary mb-4 flex size-12 items-center justify-center rounded-xl">
           {icon}
         </div>
         <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
@@ -35,7 +35,7 @@ export default function RoleCard({
               key={feature}
               className="flex items-start gap-3 text-sm text-gray-700 dark:text-white/70"
             >
-              <CheckIcon className="mt-0.5 size-4 shrink-0 text-primary" />
+              <CheckIcon className="text-primary mt-0.5 size-4 shrink-0" />
               <span>{feature}</span>
             </li>
           ))}

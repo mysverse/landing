@@ -2,13 +2,13 @@
 
 import type { Tag } from "@tryghost/content-api";
 import { HomeIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
+import { Link, usePathname } from "i18n/navigation";
 
 import { blogData, type BlogType } from "utils/ghost";
 import { isExternalUrl } from "utils/isExternalUrl";
 import clsx from "clsx";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 type Name =
   | {
@@ -26,6 +26,7 @@ export function Breadcrumbs({
   primaryTag?: Tag;
   className?: string;
 }) {
+  const t = useTranslations("Header.nav");
   const pathname = usePathname();
   const blogInfo = blogData.find((blog) => blog.slug === blogType);
 
@@ -76,7 +77,7 @@ export function Breadcrumbs({
               className="text-gray-500 transition dark:text-white hover:dark:text-white"
             >
               <HomeIcon aria-hidden="true" className="size-5 shrink-0" />
-              <span className="sr-only">Home</span>
+              <span className="sr-only">{t("Home")}</span>
             </Link>
           </div>
         </li>

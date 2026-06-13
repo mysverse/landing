@@ -4,6 +4,7 @@ import { useState, useEffect, ReactNode } from "react";
 import type { Metrics } from "utils/stats";
 import { fetchMetrics } from "utils/stats";
 import { AnimateCountUp } from "../AnimateCountUp";
+import { useTranslations } from "next-intl";
 
 interface Stat {
   id: number;
@@ -17,6 +18,7 @@ export default function StatsClient({
   initialStats?: Metrics;
 }) {
   const [metrics, setMetrics] = useState<Metrics | undefined>(initialStats);
+  const t = useTranslations("Stats");
 
   useEffect(() => {
     fetchMetrics().then((data) => {
@@ -36,7 +38,7 @@ export default function StatsClient({
   const stats: Stat[] = [
     {
       id: 1,
-      name: "times games played",
+      name: t("gamesPlayed"),
       value: (
         <AnimateCountUp
           end={totalGamePlays}
@@ -48,7 +50,7 @@ export default function StatsClient({
     },
     {
       id: 3,
-      name: "Roblox group members",
+      name: t("robloxMembers"),
       value: (
         <AnimateCountUp
           end={groupMembers}
@@ -60,7 +62,7 @@ export default function StatsClient({
     },
     {
       id: 2,
-      name: "followers across social media",
+      name: t("socialFollowers"),
       value: (
         <AnimateCountUp
           end={35000} // This remains static as it isn't fetched.

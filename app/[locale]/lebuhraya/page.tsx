@@ -8,6 +8,7 @@ import LogoBox from "app/_components/Bento/LogoBox";
 import TextOnlyBox from "app/_components/Bento/TextOnlyBox";
 import clsx from "clsx";
 import { Saira } from "next/font/google";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 const wasteDisposalImg = "/img/lebuhraya/waste.webp";
 const seasonPassImg = "/img/lebuhraya/season.webp";
@@ -17,7 +18,16 @@ const font = Saira({
   subsets: ["latin"]
 });
 
-export default function LebuhrayaPage() {
+interface Props {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function LebuhrayaPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations("Lebuhraya");
+
   return (
     <div
       className={clsx(
@@ -30,7 +40,7 @@ export default function LebuhrayaPage() {
       <div className="lg:col-span-2">
         <LogoBox
           logoUrl={lebuhrayaLogo}
-          altText="Lebuhraya Section Logo"
+          altText={t("alt.logo")}
           className="bg-brand-green h-full transition-shadow duration-300 hover:shadow-xl"
           width={200} // Adjust as needed
           height={70} // Adjust as needed
@@ -39,8 +49,8 @@ export default function LebuhrayaPage() {
 
       <div className="lg:col-span-2">
         <TextOnlyBox
-          title="GAMEPASS TEAMS"
-          text="FREE TRIAL"
+          title={t("boxes.gamepass.title")}
+          text={t("boxes.gamepass.desc")}
           className="bg-brand-green flex h-full flex-col items-center justify-center text-center text-white transition-colors duration-300 hover:bg-green-600"
           titleClassName="text-lg sm:text-xl uppercase tracking-wider"
           textClassName="text-sm sm:text-base font-semibold mt-1"
@@ -55,8 +65,8 @@ export default function LebuhrayaPage() {
 
       <div className="lg:col-span-2">
         <TextOnlyBox
-          title="»2XP"
-          text="DOUBLE EXP."
+          title={t("boxes.doubleXp.title")}
+          text={t("boxes.doubleXp.desc")}
           className="bg-brand-green flex h-full flex-col items-center justify-center text-center transition-colors duration-300 hover:bg-green-600"
           titleClassName="text-3xl sm:text-4xl font-black" // Bolder title
           textClassName="text-lg sm:text-xl font-semibold uppercase tracking-wide"
@@ -67,16 +77,16 @@ export default function LebuhrayaPage() {
       <div className="sm:col-span-2 lg:col-span-3 lg:row-span-2">
         <BackgroundImageBox
           imageUrl={wasteDisposalImg}
-          altText="Waste Disposal Career"
-          title="NEW FREE CAREER"
-          subtitle="WASTE DISPOSAL"
+          altText={t("alt.waste")}
+          title={t("boxes.career.title")}
+          subtitle={t("boxes.career.subtitle")}
           className="group flex min-h-[300px] flex-col justify-end text-white transition-shadow duration-300 hover:shadow-2xl sm:min-h-[350px] md:min-h-[420px]"
         >
           <div className="mt-auto rounded-md bg-black/60 p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <p className="text-xs font-semibold">KITAR SEMULA | RECYCLE</p>
-            <p className="text-xs">
-              Help keep the highways clean and earn rewards!
+            <p className="text-xs font-semibold">
+              {t("boxes.career.hoverTitle")}
             </p>
+            <p className="text-xs">{t("boxes.career.hoverDesc")}</p>
           </div>
         </BackgroundImageBox>
       </div>
@@ -84,16 +94,16 @@ export default function LebuhrayaPage() {
       <div className="sm:col-span-2 lg:col-span-3 lg:row-span-2">
         <BackgroundImageBox
           imageUrl={seasonPassImg}
-          altText="Season Pass"
-          title="NEW FEATURE"
-          subtitle="SEASON PASS"
+          altText={t("alt.seasonPass")}
+          title={t("boxes.season.title")}
+          subtitle={t("boxes.season.subtitle")}
           className="group flex min-h-[300px] flex-col justify-end text-white transition-shadow duration-300 hover:shadow-2xl sm:min-h-[350px] md:min-h-[420px]"
         >
           <div className="mt-auto rounded-md bg-black/60 p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <p className="text-xs font-semibold">Season Pass</p>
-            <p className="text-xs">
-              Unlock exclusive rewards and challenges every season!
+            <p className="text-xs font-semibold">
+              {t("boxes.season.subtitle")}
             </p>
+            <p className="text-xs">{t("boxes.season.hoverDesc")}</p>
           </div>
         </BackgroundImageBox>
       </div>
@@ -101,7 +111,7 @@ export default function LebuhrayaPage() {
       {/* Row 3 */}
       <div className="col-span-1 sm:col-span-2 lg:col-span-6">
         <TextOnlyBox
-          text="THE SEASON PASS UPDATE: MAY 30 - JUNE 1"
+          text={t("boxes.season.banner")}
           className="bg-dark-green py-4 text-center transition-colors duration-300 hover:bg-green-700"
           textClassName="text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider"
         />

@@ -5,9 +5,11 @@ import { useReducedMotion } from "motion/react";
 import SplitText from "app/_components/SplitText";
 import { openPositions } from "data/contribute";
 import ApplyButton from "./ApplyButton";
+import { useTranslations } from "next-intl";
 
 export default function ContributeHero() {
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations("Contribute");
 
   return (
     <div className="mx-auto max-w-3xl text-center">
@@ -25,11 +27,11 @@ export default function ContributeHero() {
           )}
           <span className="bg-primary relative inline-flex size-2 rounded-full" />
         </span>
-        Applications open
+        {t("hero.badge")}
       </m.span>
 
       <SplitText className="mt-5 w-full text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
-        Build the Malaysian metaverse with us.
+        {t("hero.title")}
       </SplitText>
 
       <m.p
@@ -38,22 +40,24 @@ export default function ContributeHero() {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600 dark:text-white/80"
       >
-        We&apos;re hiring two volunteer development roles with real benefits.
-        Earn through our Pay-Per-Task system, share in revenue, and get an
-        official welcome package, all while building experiences played by
-        thousands.
+        {t("hero.desc")}
       </m.p>
 
       <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        {openPositions.map((position) => (
-          <ApplyButton
-            key={position.id}
-            position={position}
-            placement="contribute_hero"
-            variant={position.level === "lead" ? "primary" : "secondary"}
-            label={`Apply as ${position.title}`}
-          />
-        ))}
+        {openPositions.map((position) => {
+          const title = t.has(`positions.${position.id}.title`)
+            ? t(`positions.${position.id}.title`)
+            : position.title;
+          return (
+            <ApplyButton
+              key={position.id}
+              position={position}
+              placement="contribute_hero"
+              variant={position.level === "lead" ? "primary" : "secondary"}
+              label={t("openPositions.apply", { title: title })}
+            />
+          );
+        })}
       </div>
     </div>
   );

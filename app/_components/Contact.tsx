@@ -1,10 +1,13 @@
 import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/20/solid";
 
-import Link from "next/link";
+import { Link } from "i18n/navigation";
 import PlausibleWrapper from "./PlausibleWrapper";
 import ContactRouter from "./ContactRouter";
+import { useTranslations } from "next-intl";
 
 export default function Contact() {
+  const t = useTranslations("Contact");
+
   return (
     <div className="py-12 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -15,12 +18,10 @@ export default function Contact() {
                 className="text-3xl font-bold tracking-tight text-black dark:text-white"
                 id="contact"
               >
-                Get in touch
+                {t("title")}
               </h2>
               <p className="mt-4 leading-7 text-gray-800 dark:text-white">
-                Tell us what your enquiry is about and we&apos;ll point you to
-                the right channel. We bring over 10 years of combined player and
-                developer experience to the table.
+                {t("desc")}
               </p>
               <div className="mt-8 rounded-2xl bg-white p-10 dark:bg-slate-800">
                 <h3 className="text-black-100 text-base leading-7 font-semibold dark:text-white">
@@ -32,12 +33,8 @@ export default function Contact() {
                   </Link>
                 </h4>
                 <dl className="text-black-100 mt-3 space-y-1 text-sm leading-6 dark:text-white">
-                  {/* <div>
-                    <dt className="sr-only">Registration</dt>
-                    <dd>202303234965 (AS0469188-M)</dd>
-                  </div> */}
                   <div className="flex flex-col gap-y-2">
-                    <dt className="sr-only">Address</dt>
+                    <dt className="sr-only">{t("sr.address")}</dt>
                     <dd>
                       <div className="flex items-center gap-x-2">
                         <MapIcon className="h-4 flex-none" />
@@ -47,7 +44,7 @@ export default function Contact() {
                         </span>
                       </div>
                     </dd>
-                    <dt className="sr-only">Address</dt>
+                    <dt className="sr-only">{t("sr.address")}</dt>
                     <dd>
                       <PlausibleWrapper
                         eventName="contactClicked"
@@ -68,7 +65,7 @@ export default function Contact() {
                         </div>
                       </PlausibleWrapper>
                     </dd>
-                    <dt className="sr-only">Email</dt>
+                    <dt className="sr-only">{t("sr.email")}</dt>
                     <dd>
                       <PlausibleWrapper
                         eventName="contactClicked"
@@ -90,10 +87,6 @@ export default function Contact() {
                       </PlausibleWrapper>
                     </dd>
                   </div>
-                  {/* <div className="mt-1">
-                    <dt className="sr-only">Phone number</dt>
-                    <dd>+1 (555) 905-2345</dd>
-                  </div> */}
                 </dl>
               </div>
             </div>

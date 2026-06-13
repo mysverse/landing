@@ -39,15 +39,17 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
               <circle r={1} cx={1} cy={1} />
             </svg>
             <div className="flex gap-x-2.5">
-              {post.authors && post.authors[0].profile_image && post.authors[0].profile_image.trim() !== '' && (
-                <Image
-                  alt="Image of author"
-                  src={post.authors[0].profile_image}
-                  className="size-6 flex-none rounded-full bg-black/10 sm:bg-white dark:bg-slate-800/10"
-                  width={32}
-                  height={32}
-                />
-              )}
+              {post.authors &&
+                post.authors[0].profile_image &&
+                post.authors[0].profile_image.trim() !== "" && (
+                  <Image
+                    alt="Image of author"
+                    src={post.authors[0].profile_image}
+                    className="size-6 flex-none rounded-full bg-black/10 sm:bg-white dark:bg-slate-800/10"
+                    width={32}
+                    height={32}
+                  />
+                )}
               {post.authors![0].name}
             </div>
           </div>

@@ -29,6 +29,7 @@ type ProjectType = "MYSverse" | "Sim" | "Outreach" | "Network";
 type ProjectStatus = "active" | "inactive" | "wip";
 
 export interface Project {
+  key: string;
   type: ProjectType;
   name: string;
   tagline: string;
@@ -42,6 +43,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    key: "lebuhraya",
     name: "Lebuhraya",
     launched: "Released 2020",
     image: LebuhrayaFeaturePic,
@@ -58,6 +60,7 @@ export const projects: Project[] = [
     status: "active"
   },
   {
+    key: "ruumah_v4",
     name: "Ruumah v4",
     launched: "Released April 2025",
     tagline:
@@ -68,6 +71,7 @@ export const projects: Project[] = [
     status: "active"
   },
   {
+    key: "ruumah_v3",
     name: "Ruumah v3",
     launched: "Released April 2024",
     tagline:
@@ -77,6 +81,7 @@ export const projects: Project[] = [
     status: "inactive"
   },
   {
+    key: "ruumah_v2",
     name: "Ruumah v2",
     launched: "Released 2021",
     videoSrc: [
@@ -92,6 +97,7 @@ export const projects: Project[] = [
     status: "inactive"
   },
   {
+    key: "bandaraya_klasik",
     name: "Bandaraya Klasik",
     launched: "Released 2025",
     tagline:
@@ -102,6 +108,7 @@ export const projects: Project[] = [
     link: "https://www.roblox.com/games/92076437965766/Bandaraya-Klasik"
   },
   {
+    key: "sumaya",
     name: "Sumaya",
     launched: "Open Beta 2026",
     tagline:
@@ -113,6 +120,7 @@ export const projects: Project[] = [
   },
   // MYSverse Sim
   {
+    key: "bandaraya_v3",
     name: "Bandaraya v3",
     launched: "Released Sep 2020",
     image: BandarFeaturePic,
@@ -123,6 +131,7 @@ export const projects: Project[] = [
     link: "https://www.roblox.com/games/481538620/Bandaraya"
   },
   {
+    key: "bandaraya_v4",
     name: "Bandaraya v4",
     launched: "Coming 2026",
     status: "wip",
@@ -132,6 +141,7 @@ export const projects: Project[] = [
       "Our next big city update expands into Dataran Merdeka! Expect iconic landmarks, better vehicle systems and more roleplay jobs, while staying true to the city's heritage."
   },
   {
+    key: "tentera_mysverse",
     name: "Tentera MYSverse",
     launched: "Since 2016",
     tagline:
@@ -142,6 +152,7 @@ export const projects: Project[] = [
     status: "active"
   },
   {
+    key: "polis_mysverse",
     name: "Polis MYSverse",
     launched: "Since 2017",
     tagline:
@@ -152,6 +163,7 @@ export const projects: Project[] = [
     status: "active"
   },
   {
+    key: "bomba_mysverse",
     name: "Bomba MYSverse",
     launched: "Since 2024",
     tagline:
@@ -162,6 +174,7 @@ export const projects: Project[] = [
     status: "active"
   },
   {
+    key: "kesihatan_mysverse",
     name: "Kesihatan MYSverse",
     launched: "Since 2025",
     tagline:
@@ -173,6 +186,7 @@ export const projects: Project[] = [
   },
   // MYSverse Network
   {
+    key: "mysair",
     name: "MYSair",
     launched: "Founded 2021",
     tagline:
@@ -187,6 +201,7 @@ export const projects: Project[] = [
     link: "https://www.roblox.com/communities/5000479/MYSair"
   },
   {
+    key: "tehlife",
     name: "Tehlife",
     launched: "Founded 2021",
     tagline:
@@ -197,6 +212,7 @@ export const projects: Project[] = [
   },
   // In real life
   {
+    key: "unicri_workshop",
     name: "UNICRI Workshop",
     launched: "December 2025",
     location: "Singapore",
@@ -207,6 +223,7 @@ export const projects: Project[] = [
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7408077530101899264"
   },
   {
+    key: "searcct_strategic_planning_meeting",
     name: "SEARCCT Strategic Planning Meeting",
     launched: "September 2025",
     location: "Hotel Parkroyal Collection, Kuala Lumpur",
@@ -217,6 +234,7 @@ export const projects: Project[] = [
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7379493073325707265"
   },
   {
+    key: "adcs_2025",
     name: "ADCS 2025",
     launched: "September 2025",
     location: "Persada Johor",
@@ -227,6 +245,7 @@ export const projects: Project[] = [
     link: "/blog/mys/adcs-2025"
   },
   {
+    key: "searcct",
     name: "SEARCCT",
     launched: "August 2025",
     location: "vOffice Empire Tower",
@@ -236,6 +255,7 @@ export const projects: Project[] = [
     type: "Outreach"
   },
   {
+    key: "immerse_kl_25",
     name: "IMMERSE KL 25",
     launched: "July 2025",
     location: "CCEC Nexus",
@@ -246,6 +266,7 @@ export const projects: Project[] = [
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7354344621331664896/"
   },
   {
+    key: "kementerian_pertahanan",
     name: "Kementerian Pertahanan",
     launched: "June 2025",
     location: "Wisma Pertahanan",
@@ -255,6 +276,7 @@ export const projects: Project[] = [
     type: "Outreach"
   },
   {
+    key: "nst_viral_feature",
     name: "NST Viral Feature",
     launched: "January 2025",
     tagline:
@@ -264,6 +286,7 @@ export const projects: Project[] = [
     link: "https://www.nst.com.my/news/nst-viral/2025/01/1158200/nstviral-popular-malaysian-video-game-simulation-mysverse-elects-22nd"
   },
   {
+    key: "mercy_malaysia_imu",
     name: "MERCY Malaysia - IMU",
     launched: "November 2024",
     location: "vOffice Mont Kiara",
@@ -273,6 +296,7 @@ export const projects: Project[] = [
     type: "Outreach"
   },
   {
+    key: "u_digitaloka",
     name: "U-Digitaloka",
     launched: "June 2024",
     tagline:
@@ -283,6 +307,7 @@ export const projects: Project[] = [
     link: "/blog/mys/u-digitaloka"
   },
   {
+    key: "polis_diraja_malaysia",
     name: "Polis DiRaja Malaysia",
     launched: "January 2024",
     location: "PDRM HQ Bukit Aman",
@@ -292,6 +317,7 @@ export const projects: Project[] = [
     type: "Outreach"
   },
   {
+    key: "donation_to_gaza_relief",
     name: "Donation to Gaza Relief",
     launched: "October 2023",
     tagline:
@@ -301,6 +327,7 @@ export const projects: Project[] = [
     link: "/blog/mys/statement-on-israel-palestine"
   },
   {
+    key: "maxis_ekelas_minigames",
     name: "Maxis eKelas Minigames",
     launched: "Completed 2022",
     tagline:

@@ -3,6 +3,7 @@
 import * as m from "motion/react-m";
 import type { Variants } from "motion/react";
 import { benefits } from "data/contribute";
+import { useTranslations } from "next-intl";
 
 const listVariants: Variants = {
   visible: { transition: { staggerChildren: 0.06 } }
@@ -18,14 +19,36 @@ const itemVariants: Variants = {
 };
 
 export default function BenefitsGrid() {
+  const t = useTranslations("Contribute");
+
+  const getBenefitTitle = (title: string) => {
+    const key = title
+      .toLowerCase()
+      .replace(/[^a-z0-9_]+/g, "_")
+      .replace(/^_+|_+$/g, "");
+    return t.has(`benefitsList.${key}.title`)
+      ? t(`benefitsList.${key}.title`)
+      : title;
+  };
+
+  const getBenefitDesc = (title: string, defaultDesc: string) => {
+    const key = title
+      .toLowerCase()
+      .replace(/[^a-z0-9_]+/g, "_")
+      .replace(/^_+|_+$/g, "");
+    return t.has(`benefitsList.${key}.desc`)
+      ? t(`benefitsList.${key}.desc`)
+      : defaultDesc;
+  };
+
   return (
     <div className="mx-auto max-w-5xl">
       <div className="text-center">
-        <p className="text-base/7 font-semibold text-primary">
-          Why volunteer with us
+        <p className="text-primary text-base/7 font-semibold">
+          {t("benefits.label")}
         </p>
         <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-          Real benefits, real experience
+          {t("benefits.title")}
         </h2>
       </div>
 
@@ -43,18 +66,18 @@ export default function BenefitsGrid() {
             whileHover={{ y: -4 }}
             className="flex flex-col rounded-xl border border-gray-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-gray-900"
           >
-            <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+            <div className="bg-primary/10 text-primary flex size-10 items-center justify-center rounded-lg">
               {benefit.icon}
             </div>
             <h3 className="mt-3 text-sm font-semibold text-gray-900 dark:text-white">
-              {benefit.title}
+              {getBenefitTitle(benefit.title)}
             </h3>
             <p className="mt-1 flex-1 text-xs leading-5 text-gray-600 dark:text-white/70">
-              {benefit.description}
+              {getBenefitDesc(benefit.title, benefit.description)}
             </p>
             {benefit.headDevOnly && (
-              <span className="mt-3 inline-flex w-fit rounded-full bg-primary/10 px-2 py-0.5 text-[0.625rem] font-semibold text-primary">
-                Head Developer only
+              <span className="bg-primary/10 text-primary mt-3 inline-flex w-fit rounded-full px-2 py-0.5 text-[0.625rem] font-semibold">
+                {t("benefits.badgeHeadOnly")}
               </span>
             )}
           </m.li>
@@ -62,7 +85,7 @@ export default function BenefitsGrid() {
       </m.ul>
 
       <p className="mt-6 text-center text-xs text-gray-500 dark:text-white/50">
-        Terms &amp; conditions apply.
+        {t("benefits.disclaimer")}
       </p>
     </div>
   );

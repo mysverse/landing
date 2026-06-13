@@ -18,6 +18,7 @@ import type { Project } from "data/projects";
 import VideoPlayer from "../VideoPlayer";
 import RotatingCard from "../RotatingCard";
 import { isExternalUrl } from "utils/isExternalUrl";
+import { useTranslations } from "next-intl";
 
 // parent controls staggering
 const listVariants: Variants = {
@@ -43,6 +44,8 @@ const itemVariants: Variants = {
 };
 
 export default function ItemList({ projects }: { projects: Project[] }) {
+  const t = useTranslations("Projects");
+
   // Inject a "local" variable using the function isExternalUrl
   // to determine if the link is external or not
   const p = projects.map((project) => {
@@ -60,102 +63,119 @@ export default function ItemList({ projects }: { projects: Project[] }) {
       whileInView={"visible"}
       viewport={{ once: true, amount: "some" }} // trigger once, when 20% visible
     >
-      {p.map((project) => (
-        <m.li key={project.name} variants={itemVariants}>
-          <RotatingCard
-            className="relative mb-6 aspect-3/2 w-full overflow-hidden rounded-xl sm:rounded-2xl"
-            // Skip Z transform for videos due to GPU glitchiness on mobile
-            skipZ={project.videoSrc ? true : false}
-          >
-            {project.videoSrc ? (
-              <VideoPlayer
-                videoSrc={project.videoSrc}
-                className="absolute inset-0 size-full object-cover"
-              />
-            ) : project.image ? (
-              <Image
-                fill
-                src={project.image}
-                alt={`Image of ${project.name}`}
-                className="absolute inset-0 object-cover"
-                //sizes for a 3/2 aspect ratio images, mostly that are 768x512
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, (max-width: 1536px) 20vw, (min-width: 1536px) 16vw"
-              />
-            ) : null}
-          </RotatingCard>
-          <div className="mx-1">
-            <div className="flex flex-col justify-between gap-x-4 gap-y-1 sm:flex-row">
-              <h3 className="text-black-100 text-2xl font-bold tracking-tight dark:text-white">
-                {project.name}
-              </h3>
-              <div className="mt-1 flex flex-row items-center gap-x-3 sm:mt-0 sm:flex-row-reverse">
-                <span className="text-black-100 my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset dark:text-white dark:ring-white/10">
-                  <svg
-                    className={clsx(
-                      "size-1.5",
-                      project.status === "wip"
-                        ? "fill-orange-400"
-                        : project.status === "active"
-                          ? "fill-green-400"
-                          : "fill-gray-400"
-                    )}
-                    viewBox="0 0 6 6"
-                    aria-hidden="true"
-                  >
-                    <circle cx={3} cy={3} r={3} />
-                  </svg>
-                  {project.launched}
-                </span>
-                {project.location && (
+      {p.map((project) => {
+        const name = t.has(`items.${project.key}.name`)
+          ? t(`items.${project.key}.name`)
+          : project.name;
+        const launched = t.has(`items.${project.key}.launched`)
+          ? t(`items.${project.key}.launched`)
+          : project.launched;
+        const location = project.location
+          ? t.has(`items.${project.key}.location`)
+            ? t(`items.${project.key}.location`)
+            : project.location
+          : undefined;
+        const tagline = t.has(`items.${project.key}.tagline`)
+          ? t(`items.${project.key}.tagline`)
+          : project.tagline;
+
+        return (
+          <m.li key={project.name} variants={itemVariants}>
+            <RotatingCard
+              className="relative mb-6 aspect-3/2 w-full overflow-hidden rounded-xl sm:rounded-2xl"
+              // Skip Z transform for videos due to GPU glitchiness on mobile
+              skipZ={project.videoSrc ? true : false}
+            >
+              {project.videoSrc ? (
+                <VideoPlayer
+                  videoSrc={project.videoSrc}
+                  className="absolute inset-0 size-full object-cover"
+                />
+              ) : project.image ? (
+                <Image
+                  fill
+                  src={project.image}
+                  alt={t("alt.image", { name: name })}
+                  className="absolute inset-0 object-cover"
+                  //sizes for a 3/2 aspect ratio images, mostly that are 768x512
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, (max-width: 1536px) 20vw, (min-width: 1536px) 16vw"
+                />
+              ) : null}
+            </RotatingCard>
+            <div className="mx-1">
+              <div className="flex flex-col justify-between gap-x-4 gap-y-1 sm:flex-row">
+                <h3 className="text-black-100 text-2xl font-bold tracking-tight dark:text-white">
+                  {name}
+                </h3>
+                <div className="mt-1 flex flex-row items-center gap-x-3 sm:mt-0 sm:flex-row-reverse">
                   <span className="text-black-100 my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset dark:text-white dark:ring-white/10">
-                    <MapPinIcon className="size-4 fill-gray-800 dark:fill-white" />
-                    {project.location}
+                    <svg
+                      className={clsx(
+                        "size-1.5",
+                        project.status === "wip"
+                          ? "fill-orange-400"
+                          : project.status === "active"
+                            ? "fill-green-400"
+                            : "fill-gray-400"
+                      )}
+                      viewBox="0 0 6 6"
+                      aria-hidden="true"
+                    >
+                      <circle cx={3} cy={3} r={3} />
+                    </svg>
+                    {launched}
                   </span>
-                )}
-                {project.link && (
-                  <Link
-                    href={project.link}
-                    target={project.local ? undefined : "_blank"}
-                    prefetch={false}
-                    className="text-black-100 group my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 transition ring-inset hover:bg-red-400 hover:text-white dark:text-white dark:ring-white/10"
-                  >
-                    {project.link.includes("roblox.com") ? (
-                      project.link.includes("/games") ? (
-                        <>
-                          <PlayIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
-                          Play on Roblox
-                        </>
-                      ) : project.link.includes("/communities") ||
-                        project.link.includes("/groups") ? (
-                        <>
-                          <UserGroupIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
-                          Join on Roblox
-                        </>
+                  {location && (
+                    <span className="text-black-100 my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset dark:text-white dark:ring-white/10">
+                      <MapPinIcon className="size-4 fill-gray-800 dark:fill-white" />
+                      {location}
+                    </span>
+                  )}
+                  {project.link && (
+                    <Link
+                      href={project.link}
+                      target={project.local ? undefined : "_blank"}
+                      prefetch={false}
+                      className="text-black-100 group my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 transition ring-inset hover:bg-red-400 hover:text-white dark:text-white dark:ring-white/10"
+                    >
+                      {project.link.includes("roblox.com") ? (
+                        project.link.includes("/games") ? (
+                          <>
+                            <PlayIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
+                            {t("actions.playRoblox")}
+                          </>
+                        ) : project.link.includes("/communities") ||
+                          project.link.includes("/groups") ? (
+                          <>
+                            <UserGroupIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
+                            {t("actions.joinRoblox")}
+                          </>
+                        ) : (
+                          <>
+                            <LinkIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
+                            {t("actions.expRoblox")}
+                          </>
+                        )
                       ) : (
                         <>
                           <LinkIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
-                          Experience on Roblox
+                          {t("actions.learnMore")}
                         </>
-                      )
-                    ) : (
-                      <>
-                        <LinkIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
-                        Learn more
-                      </>
-                    )}
-                    {!project.local && (
-                      <ArrowTopRightOnSquareIcon className="inline size-4" />
-                    )}
-                  </Link>
-                )}
+                      )}
+                      {!project.local && (
+                        <ArrowTopRightOnSquareIcon className="inline size-4" />
+                      )}
+                    </Link>
+                  )}
+                </div>
+              </div>
+              <div className="mt-3 text-base leading-7 text-black opacity-70 dark:text-white">
+                <Markdown>{tagline}</Markdown>
               </div>
             </div>
-            <div className="mt-3 text-base leading-7 text-black opacity-70 dark:text-white">
-              <Markdown>{project.tagline}</Markdown>
-            </div>
-          </div>
-        </m.li>
-      ))}
+          </m.li>
+        );
+      })}
     </m.ul>
   );
 }

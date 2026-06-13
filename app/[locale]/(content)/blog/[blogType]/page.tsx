@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "i18n/navigation";
 
 import type { BlogType } from "utils/ghost";
 import { blogData, getPosts } from "utils/ghost";
@@ -7,12 +7,17 @@ import { processBio } from "utils/bio";
 import { LocalTime } from "app/_components/LocalTime";
 import BlogLayout from "app/_components/Layouts/BlogLayout";
 import RotatingCard from "app/_components/RotatingCard";
+import { setRequestLocale } from "next-intl/server";
+import { routing } from "i18n/routing";
+
 interface Props {
-  params: Promise<{ blogType: BlogType }>;
+  params: Promise<{ locale: string; blogType: BlogType }>;
 }
 
 export default async function BlogList({ params }: Props) {
-  const { blogType } = await params;
+  const { locale, blogType } = await params;
+  setRequestLocale(locale);
+
   const posts = await getPosts(blogType, 20);
 
   return (
@@ -75,15 +80,16 @@ export default async function BlogList({ params }: Props) {
                 </div>
                 {primaryAuthor && (
                   <div className="relative mt-8 flex items-center gap-x-4">
-                    {primaryAuthor.profile_image && primaryAuthor.profile_image.trim() !== '' && (
-                      <Image
-                        alt={primaryAuthor.name ?? "Image of author"}
-                        src={primaryAuthor.profile_image}
-                        width={32}
-                        height={32}
-                        className="size-10 rounded-full bg-gray-100"
-                      />
-                    )}
+                    {primaryAuthor.profile_image &&
+                      primaryAuthor.profile_image.trim() !== "" && (
+                        <Image
+                          alt={primaryAuthor.name ?? "Image of author"}
+                          src={primaryAuthor.profile_image}
+                          width={32}
+                          height={32}
+                          className="size-10 rounded-full bg-gray-100"
+                        />
+                      )}
                     <div className="text-base/6">
                       <p className="font-semibold text-gray-900 dark:text-white">
                         <Link href={primaryAuthor.url!} target="_blank">
@@ -108,9 +114,12 @@ export default async function BlogList({ params }: Props) {
 
 export async function generateStaticParams() {
   const blogTypes = blogData.map((blog) => blog.slug);
-  const params: { blogType: BlogType }[] = [];
-  for (const blogType of blogTypes) {
-    params.push({ blogType });
-  }
-  return params;
+  const locales = routing.locales;
+
+  return locales.flatMap((locale) =>
+    blogTypes.map((blogType) => ({
+      locale,
+      blogType
+    }))
+  );
 }

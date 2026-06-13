@@ -3,6 +3,7 @@
 import { AnimateCountUp } from "app/_components/AnimateCountUp";
 import { useReducedMotion } from "motion/react";
 import { ReactNode } from "react";
+import { useTranslations } from "next-intl";
 
 interface Stat {
   id: number;
@@ -11,6 +12,7 @@ interface Stat {
 }
 
 export default function ContributeStats() {
+  const t = useTranslations("Contribute");
   // When reduced motion is requested, show the final values instantly
   // (AnimateCountUp renders the end value immediately with scroll spy off).
   const animate = !useReducedMotion();
@@ -18,7 +20,7 @@ export default function ContributeStats() {
   const stats: Stat[] = [
     {
       id: 1,
-      name: "Team members and counting",
+      name: t("stats.members"),
       value: (
         <AnimateCountUp
           end={100}
@@ -31,7 +33,7 @@ export default function ContributeStats() {
     },
     {
       id: 2,
-      name: "Paid out to contributors",
+      name: t("stats.paidOut"),
       value: (
         <AnimateCountUp
           end={20000}

@@ -4,24 +4,7 @@ import * as m from "motion/react-m";
 import type { Variants } from "motion/react";
 import { openPositions } from "data/contribute";
 import ApplyButton from "./ApplyButton";
-
-const steps = [
-  {
-    title: "Choose your role & apply",
-    description:
-      "Submit the application form for the role that fits you. It only takes a few minutes."
-  },
-  {
-    title: "We review your application",
-    description:
-      "Our team reviews every submission. We value clear, proactive communication."
-  },
-  {
-    title: "Interview or onboarding",
-    description:
-      "Head Developer applicants proceed to an interview; Developers are onboarded to the Dev Team."
-  }
-];
+import { useTranslations } from "next-intl";
 
 const listVariants: Variants = {
   visible: { transition: { staggerChildren: 0.12 } }
@@ -37,12 +20,31 @@ const itemVariants: Variants = {
 };
 
 export default function ApplyProcess() {
+  const t = useTranslations("Contribute");
+
+  const steps = [
+    {
+      title: t("process.step1.title"),
+      description: t("process.step1.desc")
+    },
+    {
+      title: t("process.step2.title"),
+      description: t("process.step2.desc")
+    },
+    {
+      title: t("process.step3.title"),
+      description: t("process.step3.desc")
+    }
+  ];
+
   return (
     <div className="mx-auto max-w-5xl">
       <div className="text-center">
-        <p className="text-primary text-base/7 font-semibold">The process</p>
+        <p className="text-primary text-base/7 font-semibold">
+          {t("process.label")}
+        </p>
         <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-          How applying works
+          {t("process.title")}
         </h2>
       </div>
 
@@ -69,15 +71,20 @@ export default function ApplyProcess() {
       </m.ol>
 
       <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        {openPositions.map((position) => (
-          <ApplyButton
-            key={position.id}
-            position={position}
-            placement="final_cta"
-            variant={position.level === "lead" ? "primary" : "secondary"}
-            label={`Apply as ${position.title}`}
-          />
-        ))}
+        {openPositions.map((position) => {
+          const displayTitle = t.has(`positions.${position.id}.title`)
+            ? t(`positions.${position.id}.title`)
+            : position.title;
+          return (
+            <ApplyButton
+              key={position.id}
+              position={position}
+              placement="final_cta"
+              variant={position.level === "lead" ? "primary" : "secondary"}
+              label={t("openPositions.apply", { title: displayTitle })}
+            />
+          );
+        })}
       </div>
     </div>
   );

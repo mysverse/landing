@@ -26,6 +26,7 @@ function socialHref(name: string, fallback: string) {
 }
 
 export interface EnquiryDestination {
+  key: string;
   label: string;
   href: string;
   external?: boolean;
@@ -60,6 +61,7 @@ export const enquiryCategories: EnquiryCategory[] = [
       "Our Discord server is the fastest way to get help, since the team and fellow players hang out there every day. If you'd rather just follow along, our WhatsApp channel has the latest announcements.",
     destinations: [
       {
+        key: "discord",
         label: "Join the Discord",
         href: socialHref("Discord", "https://discord.com/invite/uPkrYWd"),
         external: true,
@@ -68,6 +70,7 @@ export const enquiryCategories: EnquiryCategory[] = [
         primary: true
       },
       {
+        key: "whatsapp",
         label: "Follow on WhatsApp",
         href: socialHref(
           "WhatsApp",
@@ -89,6 +92,7 @@ export const enquiryCategories: EnquiryCategory[] = [
       "Serious enquiries sent by email get priority and reach the right person directly. Include some background and we'll get back to you as soon as we can.",
     destinations: [
       {
+        key: "email_yan",
         label: `Email ${CONTACT_EMAIL}`,
         href: buildMailto("Business / partnership enquiry - MYSverse"),
         icon: <EnvelopeIcon className="size-4" />,
@@ -107,6 +111,7 @@ export const enquiryCategories: EnquiryCategory[] = [
       "We're happy to help with stories about MYSverse and Malaysian game development. Include your publication and deadline in your email so we can get back to you in time.",
     destinations: [
       {
+        key: "email_team",
         label: "Email the team",
         href: buildMailto(
           "Press / media enquiry - MYSverse",
@@ -128,6 +133,7 @@ export const enquiryCategories: EnquiryCategory[] = [
       "MYSverse is built entirely by volunteers, and we're always looking for new contributors. Check out our open roles and what it's like to work with us.",
     destinations: [
       {
+        key: "see_roles",
         label: "See open roles",
         href: "/contribute",
         icon: <ArrowRightIcon className="size-4" />,
@@ -146,6 +152,7 @@ export const enquiryCategories: EnquiryCategory[] = [
       "Not sure where your enquiry fits? Send us a WhatsApp message and we'll point you in the right direction. As a volunteer team we can take a while to reply, so anything serious is still best sent by email.",
     destinations: [
       {
+        key: "chat_whatsapp",
         label: "Chat on WhatsApp",
         href: "https://wa.me/601154156978",
         external: true,

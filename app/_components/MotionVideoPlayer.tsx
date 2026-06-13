@@ -5,8 +5,10 @@ import { useRef } from "react";
 import * as m from "motion/react-m";
 import type { VideoSource } from "./VideoPlayer";
 
-interface VideoPlayerProps
-  extends Omit<HTMLMotionProps<"video">, "dragControls"> {
+interface VideoPlayerProps extends Omit<
+  HTMLMotionProps<"video">,
+  "dragControls"
+> {
   videoSrc: string | VideoSource[];
 }
 

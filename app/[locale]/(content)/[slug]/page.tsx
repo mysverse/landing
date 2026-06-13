@@ -5,13 +5,17 @@ import { getPage, getPages } from "utils/ghost";
 
 import PostOrPage from "app/_components/ghost/PostOrPage";
 import { getColour } from "utils/themeColour";
+import { setRequestLocale } from "next-intl/server";
+import { routing } from "i18n/routing";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export default async function BlogPost({ params }: Props) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+
   const post = await getPage(slug);
 
   return (
@@ -66,7 +70,12 @@ export async function generateMetadata(
 
 export async function generateStaticParams() {
   const pages = await getPages();
-  return pages.map((page) => ({
-    slug: page.slug
-  }));
+  const locales = routing.locales;
+
+  return locales.flatMap((locale) =>
+    pages.map((page) => ({
+      locale,
+      slug: page.slug
+    }))
+  );
 }
