@@ -1,11 +1,29 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
 
 const useVercel = process.env.VERCEL === "1";
 
+const withNextIntl = createNextIntlPlugin();
+
 const nextConfig: NextConfig = {
-  output: useVercel ? "standalone" : "export",
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: "/pdrm-collab-slides",
+        destination:
+          "https://docs.google.com/presentation/d/1uL_oWyDvnWfy1WvjCWmwFopHgSyMUmjR8BD0RvfIUmI/edit?usp=sharing",
+        permanent: false
+      },
+      {
+        source: "/pdrm-collab-doc",
+        destination:
+          "https://drive.google.com/file/d/1mWD1M851eMMiETXkrPtFKLD_tSRwRfPI/view?usp=drive_link",
+        permanent: false
+      }
+    ];
+  },
   images: {
     loader: !useVercel ? "custom" : undefined,
     loaderFile: !useVercel ? "./imageLoader.ts" : undefined,
@@ -60,4 +78,5 @@ const nextConfig: NextConfig = {
   }
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
+
