@@ -1,0 +1,448 @@
+{
+  "Home": {
+    "hero": {
+      "title": "步入我们忠实还原的马来西亚元宇宙。",
+      "tagline": "开启与 MYSverse 的非凡旅程，在我们的虚拟体验（在 Roblox 及其他平台）中，将<b>乐趣</b>、<b>教育</b>和马来西亚<b>文化</b>融为一体。",
+      "sumayaBadge": "公开测试",
+      "comingSoon": "...以及更多面向所有人的开放体验，即将推出！"
+    }
+  },
+  "Header": {
+    "nav": {
+      "Home": "首页",
+      "Blog": "博客",
+      "Wiki": "百科",
+      "Sentral": "中心",
+      "Brand Kit": "品牌包",
+      "Contribute": "加入我们",
+      "Projects": "项目",
+      "Outreach": "社会推广",
+      "Contact": "联系我们"
+    },
+    "sr": {
+      "logo": "MYSverse",
+      "openMenu": "打开主菜单",
+      "closeMenu": "关闭菜单"
+    }
+  },
+  "Footer": {
+    "sourceCode": "用心开源，并附带 <3",
+    "ownedBy": "由 MYSverse Digital Ventures (AS0469188-M) 所有并运营。",
+    "disclaimer": "所使用的所有资产均为其各自所有者的财产。"
+  },
+  "Contact": {
+    "title": "取得联系",
+    "desc": "告诉我们您的咨询内容，我们将为您指引正确的渠道。我们拥有超过10年的玩家和开发人员的丰富经验。",
+    "sr": {
+      "address": "地址",
+      "email": "电子邮件"
+    }
+  },
+  "ContactRouter": {
+    "heading": "我们能为您提供什么帮助？",
+    "subheading": "选择一个主题，我们将为您指引正确的渠道。",
+    "back": "返回",
+    "note": "MYSverse 完全由志愿者运行，我们收到大量消息。我们会阅读所有内容，但回复可能需要几天时间，因此重要咨询最好通过电子邮件发送。",
+    "categories": {
+      "community": {
+        "label": "游戏与社区",
+        "description": "游戏帮助、错误报告、反馈和聊天",
+        "resultHeading": "加入社区",
+        "resultBody": "我们的 Discord 服务器是获取帮助的最快方式，因为团队和其他玩家每天都在那里。如果您只想关注最新动态，我们的 WhatsApp 频道有最新公告。",
+        "destinations": {
+          "discord": { "label": "加入 Discord" },
+          "whatsapp": { "label": "在 WhatsApp 上关注" }
+        }
+      },
+      "business": {
+        "label": "商务、合作与法律",
+        "description": "商业、合作或法律事务",
+        "resultHeading": "电子邮件是最佳选择",
+        "resultBody": "通过电子邮件发送的正式咨询将获得优先处理，并直接到达合适的人。请包含一些背景信息，我们将尽快与您联系。",
+        "destinations": {
+          "email_yan": { "label": "发送邮件至 yan@mysver.se" }
+        }
+      },
+      "press": {
+        "label": "新闻与媒体",
+        "description": "采访、文章和媒体请求",
+        "resultHeading": "发邮件给我们",
+        "resultBody": "我们很乐意协助报道有关 MYSverse 和马来西亚游戏开发的故事。请在邮件中注明您的出版物和截止日期，以便我们及时回复。",
+        "destinations": {
+          "email_team": { "label": "发邮件给团队" }
+        }
+      },
+      "join": {
+        "label": "加入团队",
+        "description": "作为开发人员或创作者成为我们的志愿者",
+        "resultHeading": "我们非常欢迎您的帮助",
+        "resultBody": "MYSverse 完全由志愿者构建，我们一直在寻找新的贡献者。了解我们的开放职位以及与我们合作的情况。",
+        "destinations": {
+          "see_roles": { "label": "查看开放职位" }
+        }
+      },
+      "other": {
+        "label": "其他问题",
+        "description": "以上类别不涵盖的任何问题",
+        "resultHeading": "在 WhatsApp 上联系我们",
+        "resultBody": "不确定您的咨询属于哪个类别？向我们发送 WhatsApp 消息，我们会为您指引正确的方向。作为志愿者团队，我们可能需要一些时间来回复，因此任何重要事项仍建议通过电子邮件发送。",
+        "destinations": {
+          "chat_whatsapp": { "label": "在 WhatsApp 上聊天" }
+        }
+      }
+    }
+  },
+  "Stats": {
+    "gamesPlayed": "次游戏游玩",
+    "robloxMembers": "名 Roblox 小组成员",
+    "socialFollowers": "名社交媒体关注者"
+  },
+  "Blog": {
+    "mys": {
+      "title": "来自我们的真实世界博客",
+      "desc": "在我们最新的博客文章中，紧跟团队的开发工作进度。"
+    },
+    "nws": {
+      "title": "来自 MYSverse 模拟",
+      "desc": "通过我们的虚拟媒体服务 NWS 探索宇宙内的动态新闻。"
+    },
+    "viewMore": "查看更多文章 →",
+    "alt": {
+      "postImage": "博客文章图片",
+      "authorImage": "作者图片",
+      "featureImage": "feature_image"
+    },
+    "fallback": {
+      "notFound": "未找到博客",
+      "postNotFound": "未找到文章"
+    }
+  },
+  "JoinTeam": {
+    "label": "加入团队",
+    "title": "构建下一个 MYSverse 更新",
+    "desc": "我们正在招聘志愿开发人员，以帮助塑造 Sumaya、Lebuhraya、Bandaraya 等项目，并提供实际福利。",
+    "cta": "查看开放角色和完整详情"
+  },
+  "Projects": {
+    "title": "我们的项目",
+    "desc1": "您知道吗？MYSverse 完全由志愿者开发并运行。起初只是一个小群体在创造纯正的马来西亚角色扮演体验，现在已经成长为一个拥有数千人的社区。",
+    "desc2": "今天，我们的使命依然如初：在保持最初纯正性的同时，让每个人都能轻松并愉快地体验我们的世界。",
+    "sections": {
+      "mysverse": "MYSverse",
+      "sim": "MYSverse 模拟",
+      "network": "MYSverse 网络",
+      "outreach": "现实生活中"
+    },
+    "simDesc": "MYSverse 模拟提供具有教育意义的严肃、逼真的角色扮演。活动纪律严明、结构合理，并为想要深入体验的玩家提供平台外的培训和认证。",
+    "networkDesc": "一个协作平台，将 Roblox 上以马来西亚为主题的项目和社区（来自 MYSverse 和其他创作者）汇聚在一起。通过共享资源、知识和经验，我们希望在许多领域成长起一个庆祝马来西亚文化和创造力的项目网络。",
+    "outreachDesc": "MYSverse 在游戏之外也有着丰富的活动。我们与组织和机构合作，探索 MYSverse 如何支持他们的目标，从教育到社区参与。",
+    "actions": {
+      "playRoblox": "在 Roblox 上游玩",
+      "joinRoblox": "在 Roblox 上加入",
+      "expRoblox": "在 Roblox 上体验",
+      "learnMore": "了解更多"
+    },
+    "alt": {
+      "image": "{name} 的图片"
+    },
+    "items": {
+      "lebuhraya": {
+        "launched": "2020 年推出",
+        "tagline": "在长长的高速公路上巡游，或投入警察与消防员角色扮演。这是放松身心、体验马来西亚日常公路生活的轻松方式。"
+      },
+      "ruumah_v4": {
+        "launched": "2025 年 4 月推出",
+        "tagline": "我们最新的开斋节庆祝活动以*水上甘榜*为背景，那是沙巴的水上村落，也是马来西亚最风景如画的角落之一。"
+      },
+      "ruumah_v3": {
+        "launched": "2024 年 4 月推出",
+        "tagline": "快来在热闹的郊区氛围中欢庆开斋节吧！你会发现当地美食、文化景点，以及熟悉的 MYSverse 社区元素。这是我们每年虚拟门户开放传统中令人欢乐的一部分。"
+      },
+      "ruumah_v2": {
+        "launched": "2021 年推出",
+        "tagline": "在迷人的海滨*甘榜*欢庆佳节。本版本充满了细腻的细节、美味的食物和浓厚的社区氛围。"
+      },
+      "bandaraya_klasik": {
+        "launched": "2025 年推出",
+        "tagline": "回到 [MYS] 马来西亚的早期时光！这个经典版本向所有人开放 KL 2.9，保留其原始环境、更新的兼容性，以及人人皆可自由加入的队伍。"
+      },
+      "sumaya": {
+        "launched": "2026 年公开测试",
+        "tagline": "Sumaya（前称 Daerah）灵感源自沙巴乡村县城波佛（Beaufort），是我们迄今最具雄心的项目。其开放式、剧情丰富的玩法为新老玩家带来 MYSverse 中焕然一新的体验。"
+      },
+      "bandaraya_v3": {
+        "launched": "2020 年 9 月推出",
+        "tagline": "探索一个为角色扮演而打造的虚拟吉隆坡，无论你是过着日常生活还是执行公务。作为 MYSverse 的主要城市枢纽，这里总有新鲜事发生。"
+      },
+      "bandaraya_v4": {
+        "launched": "2026 年推出",
+        "tagline": "我们下一个大型城市更新将扩展至独立广场（Dataran Merdeka）！期待标志性地标、更完善的车辆系统和更多角色扮演职业，同时忠于这座城市的传统。"
+      },
+      "tentera_mysverse": {
+        "launched": "自 2016 年起",
+        "tagline": "作为 MYSverse 模拟的悠久组成部分，我们的军事角色扮演机构采用经过精心研究的装备、程序和训练，真实而恭敬地呈现马来西亚武装部队。"
+      },
+      "polis_mysverse": {
+        "launched": "自 2017 年起",
+        "tagline": "我们的警察角色扮演社区建立在真实感、团队合作和服务之上，涵盖从交通管理到战术处置的一切。它是 Bandaraya 等 MYSverse 模拟场所生活的重要部分。"
+      },
+      "bomba_mysverse": {
+        "launched": "自 2024 年起",
+        "tagline": "成为 MYSverse 消防队的一员吧！你将使用 Roblox 上最先进的虚拟消防救援装备来应对紧急情况。"
+      },
+      "kesihatan_mysverse": {
+        "launched": "自 2025 年起",
+        "tagline": "我们的医疗角色扮演社区让你扮演医生、护士和护理人员，参与 MYSverse 模拟世界中的紧急情境和公共卫生活动。"
+      },
+      "mysair": {
+        "launched": "2021 年成立",
+        "tagline": "曾经是 Malaysia Airways，如今 MYSair 带你*跨越大洲*。以热情的马来西亚式款待，作为乘客飞行或加入机组体验航空角色扮演，将我们的文化分享给全球观众。"
+      },
+      "tehlife": {
+        "launched": "2021 年成立",
+        "tagline": "一家充满活力的虚拟咖啡馆，灵感来自马来西亚的珍珠奶茶店，却别具风味。在这里*茶即生活*，从波霸到咖啡应有尽有。这里是咖啡馆文化与 MYSverse 社区相遇之地。"
+      },
+      "unicri_workshop": {
+        "launched": "2025 年 12 月",
+        "tagline": "我们受 UNICRI 和新加坡内政部邀请，在一场关于网络激进化与极端主义的研讨会上发表演讲，分享了 MYSverse 以社区为主导的内容审核与社区准则方式。"
+      },
+      "searcct_strategic_planning_meeting": {
+        "launched": "2025 年 9 月",
+        "tagline": "我们参加了马来西亚外交部辖下 SEARCCT 的战略规划会议，探讨电子游戏社区如何通过数字互动、叙事和积极的网络空间来帮助抵御有害言论。"
+      },
+      "adcs_2025": {
+        "launched": "2025 年 9 月",
+        "tagline": "我们出席了东盟数字内容峰会 2025，这是东南亚最大的游戏与数字内容盛会之一！我们的 Lebuhraya 赛车挑战吸引了人群，我们也结识了来自该地区游戏行业的数百名与会者。"
+      },
+      "searcct": {
+        "launched": "2025 年 8 月",
+        "tagline": "我们的团队与东南亚区域反恐中心会面，分享了 MYSverse 十多年来如何通过积极的内容审核及其他政策，在网络上建立一个安全可靠的社区。"
+      },
+      "immerse_kl_25": {
+        "launched": "2025 年 7 月",
+        "tagline": "我们在 IMMERSE KL x CelcomDigi 上展示了 MYSverse，这是马来西亚最大的沉浸式技术与创意内容盛会，并与行业领袖和社区成员面对面交流！"
+      },
+      "kementerian_pertahanan": {
+        "launched": "2025 年 6 月",
+        "tagline": "我们与国防部进行了一次富有成效的会面，探讨 MYSverse 如何在教育、社区参与和公众意识方面支持他们的目标。"
+      },
+      "nst_viral_feature": {
+        "launched": "2025 年 1 月",
+        "tagline": "《新海峡时报》报道了 MYSverse 第 22 任首相的虚拟选举！该报道介绍了我们的公民教育工作，以及马来西亚年轻人如何参与模拟民主。"
+      },
+      "mercy_malaysia_imu": {
+        "launched": "2024 年 11 月",
+        "tagline": "我们与 MERCY Malaysia 和 IMU 会面，探讨像 MYSverse 这样引人入胜的数字体验如何帮助他们传播健康意识。"
+      },
+      "u_digitaloka": {
+        "launched": "2024 年 6 月",
+        "tagline": "我们与数字部一同在玛拉工艺大学沙阿南分校展示了 MYSverse，展现了该平台如何分享马来西亚的文化与历史故事。"
+      },
+      "polis_diraja_malaysia": {
+        "launched": "2024 年 1 月",
+        "tagline": "我们正与马来西亚皇家警察商讨如何利用虚拟空间来建立公众意识、促进安全，并增进人们对马来西亚警务工作的了解。"
+      },
+      "donation_to_gaza_relief": {
+        "launched": "2023 年 10 月",
+        "tagline": "MYSverse 向 Persatuan Cinta Gaza Malaysia 捐赠了 RM1,000，同时在 Roblox 上继续保持中立的平台政策。"
+      },
+      "maxis_ekelas_minigames": {
+        "launched": "2022 年完成",
+        "tagline": "MYSverse 的核心团队成员独立为 Maxis eKelas 开发了这些教育小游戏。它们是荣获 Kancil 奖的 Misi Jelajah Digital 的一部分，通过有趣的互动游戏促进 STEM 学习。"
+      }
+    }
+  },
+  "Contribute": {
+    "title": "加入我们",
+    "desc": "加入 MYSverse 开发团队。我们正在招聘两个志愿角色：首席开发人员和开发人员，并提供实际福利，包括按任务付费（Pay-Per-Task）、收入分成、月度奖金等。",
+    "model": {
+      "label": "我们的模式",
+      "title": "志愿者驱动，注重经验",
+      "desc": "MYSverse 由来自各行各业的志愿者（学生、专业人士和业余爱好者）共同构建，他们喜欢聚在一起创作。我们的按任务付费（Pay-Per-Task）悬赏系统意味着您可以边学边赚，而且时间安排非常灵活。"
+    },
+    "secondary": {
+      "label": "其他贡献方式",
+      "title": "其他贡献方式",
+      "desc": "我们随时欢迎新面孔。这些角色目前还没有正式的申请流程，所以如果您感兴趣，只需在 Discord 上联系我们即可。"
+    },
+    "questions": {
+      "title": "还有其他问题吗？",
+      "desc": "与我们联系，团队将很乐意为您提供帮助。"
+    },
+    "hero": {
+      "badge": "申请开放中",
+      "title": "与我们一同构建马来西亚元宇宙。",
+      "desc": "我们正在招聘两个志愿开发角色，并提供实际福利。通过我们的按任务付费系统赚取收入，分享运营收入，并获得官方欢迎礼包，同时共同构建供数千人游玩的体验。"
+    },
+    "stats": {
+      "members": "名团队成员且在不断增加",
+      "paidOut": "已支付给贡献者"
+    },
+    "openPositions": {
+      "label": "开放职位",
+      "title": "加入开发团队的两种方式",
+      "desc": "选择适合您的角色并直接申请。两者都是提供实际福利的志愿角色。",
+      "apply": "申请成为 {title}",
+      "applyFor": "申请 {title} 职位"
+    },
+    "benefits": {
+      "label": "为什么选择成为我们的志愿者",
+      "title": "真实的福利，真实的经验",
+      "badgeHeadOnly": "仅限首席开发人员",
+      "disclaimer": "需遵守条款和条件。"
+    },
+    "benefitsList": {
+      "revenue_sharing": {
+        "title": "收入分成",
+        "desc": "分享成功体验所产生的收益。"
+      },
+      "pay_per_task": {
+        "title": "按任务付费",
+        "desc": "完成任务后立即获得报酬（适用条款与条件）。"
+      },
+      "pay_per_task_ppt": {
+        "title": "按任务付费 (PPT)"
+      },
+      "monthly_bonuses": {
+        "title": "每月奖金",
+        "desc": "与体验成功挂钩的现金奖金（适用条款与条件）。"
+      },
+      "welcome_package": {
+        "title": "欢迎礼包",
+        "desc": "MYSverse 官方周边欢迎礼包。"
+      },
+      "professional_development": {
+        "title": "职业发展",
+        "desc": "通过更广泛的 MYSverse 网络提升您的技能。"
+      }
+    },
+    "joinMethods": {
+      "discord": {
+        "label": "加入我们的 Discord",
+        "desc": "与团队联系并开始行动"
+      },
+      "email": {
+        "label": "给我们发电子邮件",
+        "desc": "直接联系团队"
+      }
+    },
+    "process": {
+      "label": "申请流程",
+      "title": "申请如何运作",
+      "step1": {
+        "title": "选择您的角色并申请",
+        "desc": "提交适合您角色的申请表。只需几分钟即可完成。"
+      },
+      "step2": {
+        "title": "我们审核您的申请",
+        "desc": "我们的团队会审核每一份提交。我们非常看重清晰、主动的沟通。"
+      },
+      "step3": {
+        "title": "面试或入职",
+        "desc": "首席开发人员申请者将进入面试阶段；开发人员将被直接引导加入开发团队。"
+      }
+    },
+    "card": {
+      "lookingFor": "我们寻找的人才",
+      "benefits": "福利待遇",
+      "headDevOnly": "仅限首席开发",
+      "formAsksFor": "申请表需要提供："
+    },
+    "positions": {
+      "head-developer": {
+        "levelLabel": "领导岗位",
+        "tagline": "领导开发团队，负责 Lebuhraya、Sumaya 和 Bandaraya。",
+        "description": "作为 MYSverse 开发团队首席开发人员的志愿者（附带福利）角色。管理我们的项目（Lebuhraya、Sumaya 和 Bandaraya），并带领开发团队持续更新内容、推出新内容。你将充当行政部门与开发团队之间的桥梁，确保双方意见都能被听见。完全远程，需主动沟通。",
+        "lookingFor": {
+          "0": "清晰简洁地传达任务、请求和信息",
+          "1": "管理具备多种技能的多位团队成员",
+          "2": "为我们的体验构思新的内容创意",
+          "3": "熟悉并精通 Roblox Studio"
+        },
+        "formAsksFor": "简历（PDF）、全名、首选联系方式，以及 3 个简短问题。",
+        "note": "获录取的申请者将进入面试阶段。"
+      },
+      "developer": {
+        "levelLabel": "多领域",
+        "tagline": "欢迎建造师、脚本师、建模师、设计师和剪辑师。",
+        "description": "作为 MYSverse 开发团队开发人员的志愿者（附带福利）角色。欢迎建造师、脚本师、3D 建模师、平面设计师和视频剪辑师。运用你的技能和创意，参与当前及未来的 MYSverse 体验，从现有游戏的更新到全新的作品。",
+        "lookingFor": {
+          "0": "富有创意",
+          "1": "善于协作、具团队精神",
+          "2": "学习能力强，能够灵活适应",
+          "3": "敬业且勤奋"
+        },
+        "formAsksFor": "首选称呼、联系方式、技能、作品证明（最多 5 个文件），以及 3 个简短问题。",
+        "disclaimer": "这是一个志愿性质的角色。我们不提供全职就业。"
+      }
+    },
+    "roles": {
+      "moderator": {
+        "title": "版主",
+        "description": "成为我们社区的中坚力量。版主帮助让 MYSverse 始终是一个安全、友善、令人愉快的空间，服务我们各项体验中的数千名玩家。",
+        "features": {
+          "0": "服务并保护数千名玩家的社区",
+          "1": "使用内容审核工具和培训资源",
+          "2": "培养领导力和冲突解决能力",
+          "3": "成为紧密团结的审核团队的一员",
+          "4": "塑造社区准则与文化"
+        }
+      },
+      "content_creator": {
+        "title": "内容创作者",
+        "description": "帮助讲述 MYSverse 的故事。从社交媒体到视频制作，内容创作者将我们的社区和体验生动地呈现给更广泛的受众。",
+        "features": {
+          "0": "在各社交媒体平台上创作内容",
+          "1": "制作视频、图像和文字内容",
+          "2": "与团队合作开展宣传活动和活动",
+          "3": "拓展你的创意作品集和受众",
+          "4": "获取独家幕后内容"
+        }
+      }
+    }
+  },
+  "Lebuhraya": {
+    "alt": {
+      "logo": "高速路区域徽标",
+      "waste": "垃圾清理职业",
+      "seasonPass": "季度通行证"
+    },
+    "boxes": {
+      "gamepass": {
+        "title": "游戏通行证队伍",
+        "desc": "免费试用"
+      },
+      "doubleXp": {
+        "title": "»2XP",
+        "desc": "双倍经验"
+      },
+      "career": {
+        "title": "全新免费职业",
+        "subtitle": "垃圾清理",
+        "hoverTitle": "资源回收 | RECYCLE",
+        "hoverDesc": "协助保持高速公路清洁并赚取奖励！"
+      },
+      "season": {
+        "title": "新功能",
+        "subtitle": "季度通行证",
+        "hoverDesc": "每个季度解锁专属奖励与挑战！",
+        "banner": "季度通行证更新：5月30日 - 6月1日"
+      }
+    }
+  },
+  "Legal": {
+    "effectiveDate": "生效日期：{date}",
+    "terms": {
+      "title": "条款与条件",
+      "desc": "规范使用 MYSverse 服务和开发人员支付平台的条款与条件。"
+    },
+    "privacy": {
+      "title": "隐私政策",
+      "desc": "MYSverse 的隐私政策，详细说明了我们如何收集、使用和保护您的个人信息。"
+    },
+    "refund": {
+      "title": "退款政策",
+      "desc": "MYSverse 的退款政策，涵盖开发人员支付和支付争议解决。"
+    }
+  }
+}

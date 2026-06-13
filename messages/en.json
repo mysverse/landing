@@ -1,0 +1,448 @@
+{
+  "Home": {
+    "hero": {
+      "title": "Step into our faithfully Malaysian metaverse.",
+      "tagline": "Embark on an extraordinary journey with MYSverse, where <b>fun</b>, <b>education</b>, and Malaysian <b>culture</b> converge in our virtual experiences, on Roblox and beyond.",
+      "sumayaBadge": "Open beta",
+      "comingSoon": "...and more open experiences for everyone, coming soon!"
+    }
+  },
+  "Header": {
+    "nav": {
+      "Home": "Home",
+      "Blog": "Blog",
+      "Wiki": "Wiki",
+      "Sentral": "Sentral",
+      "Brand Kit": "Brand Kit",
+      "Contribute": "Contribute",
+      "Projects": "Projects",
+      "Outreach": "Outreach",
+      "Contact": "Contact"
+    },
+    "sr": {
+      "logo": "MYSverse",
+      "openMenu": "Open main menu",
+      "closeMenu": "Close menu"
+    }
+  },
+  "Footer": {
+    "sourceCode": "Source code available with <3",
+    "ownedBy": "Owned and operated by MYSverse Digital Ventures (AS0469188-M).",
+    "disclaimer": "All assets used are property of their respective owners."
+  },
+  "Contact": {
+    "title": "Get in touch",
+    "desc": "Tell us what your enquiry is about and we'll point you to the right channel. We bring over 10 years of combined player and developer experience to the table.",
+    "sr": {
+      "address": "Address",
+      "email": "Email"
+    }
+  },
+  "ContactRouter": {
+    "heading": "What can we help you with?",
+    "subheading": "Pick a topic and we'll point you to the right channel.",
+    "back": "Back",
+    "note": "MYSverse is run entirely by volunteers and we get a lot of messages. We read everything, but replies can take a few days, so serious enquiries are best sent by email.",
+    "categories": {
+      "community": {
+        "label": "Games & community",
+        "description": "Game help, bug reports, feedback and chat",
+        "resultHeading": "Join the community",
+        "resultBody": "Our Discord server is the fastest way to get help, since the team and fellow players hang out there every day. If you'd rather just follow along, our WhatsApp channel has the latest announcements.",
+        "destinations": {
+          "discord": { "label": "Join the Discord" },
+          "whatsapp": { "label": "Follow on WhatsApp" }
+        }
+      },
+      "business": {
+        "label": "Business, partnerships & legal",
+        "description": "Commercial, collaboration or legal matters",
+        "resultHeading": "Email is best for this",
+        "resultBody": "Serious enquiries sent by email get priority and reach the right person directly. Include some background and we'll get back to you as soon as we can.",
+        "destinations": {
+          "email_yan": { "label": "Email yan@mysver.se" }
+        }
+      },
+      "press": {
+        "label": "Press & media",
+        "description": "Interviews, articles and media requests",
+        "resultHeading": "Drop us an email",
+        "resultBody": "We're happy to help with stories about MYSverse and Malaysian game development. Include your publication and deadline in your email so we can get back to you in time.",
+        "destinations": {
+          "email_team": { "label": "Email the team" }
+        }
+      },
+      "join": {
+        "label": "Join the team",
+        "description": "Volunteer with us as a developer or creator",
+        "resultHeading": "We'd love your help",
+        "resultBody": "MYSverse is built entirely by volunteers, and we're always looking for new contributors. Check out our open roles and what it's like to work with us.",
+        "destinations": {
+          "see_roles": { "label": "See open roles" }
+        }
+      },
+      "other": {
+        "label": "Something else",
+        "description": "Anything that doesn't fit the above",
+        "resultHeading": "Message us on WhatsApp",
+        "resultBody": "Not sure where your enquiry fits? Send us a WhatsApp message and we'll point you in the right direction. As a volunteer team we can take a while to reply, so anything serious is still best sent by email.",
+        "destinations": {
+          "chat_whatsapp": { "label": "Chat on WhatsApp" }
+        }
+      }
+    }
+  },
+  "Stats": {
+    "gamesPlayed": "times games played",
+    "robloxMembers": "Roblox group members",
+    "socialFollowers": "followers across social media"
+  },
+  "Blog": {
+    "mys": {
+      "title": "From our real-world blog",
+      "desc": "Keep up with what the team has been working on in our latest blog posts."
+    },
+    "nws": {
+      "title": "From MYSverse Sim",
+      "desc": "Explore in-universe news by our virtual media service NWS."
+    },
+    "viewMore": "View more articles →",
+    "alt": {
+      "postImage": "Image of blog post",
+      "authorImage": "Image of author",
+      "featureImage": "feature_image"
+    },
+    "fallback": {
+      "notFound": "Blog not found",
+      "postNotFound": "Post not found"
+    }
+  },
+  "JoinTeam": {
+    "label": "Join the team",
+    "title": "Build the next MYSverse update",
+    "desc": "We're hiring volunteer developers to help shape Sumaya, Lebuhraya, Bandaraya and more, with real benefits.",
+    "cta": "See open roles & full details"
+  },
+  "Projects": {
+    "title": "Our projects",
+    "desc1": "Did you know that MYSverse is developed and still fully operated by volunteers? What started as a small group making authentic Malaysian roleplay experiences has grown into a community of thousands.",
+    "desc2": "Today, our mission remains the same: keeping the authenticity that started it all, while making our experiences accessible and enjoyable for everyone.",
+    "sections": {
+      "mysverse": "MYSverse",
+      "sim": "MYSverse Sim",
+      "network": "MYSverse Network",
+      "outreach": "In real life"
+    },
+    "simDesc": "MYSverse Sim offers serious, realistic roleplay with an educational twist. Activities are disciplined and structured, with off-platform training and certification for those who want to go deeper.",
+    "networkDesc": "A collaborative platform that brings together Malaysian-themed projects and communities on Roblox, from MYSverse and other creators. By sharing resources, knowledge and experiences, we hope to grow a network of projects across many genres that celebrates Malaysian culture and creativity.",
+    "outreachDesc": "MYSverse also has a life outside the game. We work with organisations and institutions to explore how MYSverse can support their goals, from education to community engagement.",
+    "actions": {
+      "playRoblox": "Play on Roblox",
+      "joinRoblox": "Join on Roblox",
+      "expRoblox": "Experience on Roblox",
+      "learnMore": "Learn more"
+    },
+    "alt": {
+      "image": "Image of {name}"
+    },
+    "items": {
+      "lebuhraya": {
+        "launched": "Released 2020",
+        "tagline": "Cruise long highways or jump into police and firefighter roleplay. An easy way to unwind and experience everyday Malaysian life on the road."
+      },
+      "ruumah_v4": {
+        "launched": "Released April 2025",
+        "tagline": "Our latest Raya celebration is set in *Kampung Air*, Sabah's water villages and one of the most picturesque corners of Malaysia."
+      },
+      "ruumah_v3": {
+        "launched": "Released April 2024",
+        "tagline": "Come celebrate Raya in a lively suburban setting! You'll find local treats, cultural spots, and familiar MYSverse community references. It's a joyful part of our yearly virtual open house tradition."
+      },
+      "ruumah_v2": {
+        "launched": "Released 2021",
+        "tagline": "Celebrate the festive season in a charming coastal *kampung*. This edition is full of little details, good food and a strong sense of community."
+      },
+      "bandaraya_klasik": {
+        "launched": "Released 2025",
+        "tagline": "Take a trip back to the early days of [MYS] Malaysia! This classic edition opens KL 2.9 for everyone to enjoy, with its original environment, updated compatibility, and teams that are free for all to join."
+      },
+      "sumaya": {
+        "launched": "Open Beta 2026",
+        "tagline": "Inspired by Beaufort, a rural Sabahan district, Sumaya (formerly Daerah) is our most ambitious project so far. Its open-ended, story-rich gameplay gives both new and returning players something completely fresh in the MYSverse."
+      },
+      "bandaraya_v3": {
+        "launched": "Released Sep 2020",
+        "tagline": "Explore a virtual Kuala Lumpur built for roleplay, whether you're living daily life or on official duty. As MYSverse's main city hub, there's always something happening."
+      },
+      "bandaraya_v4": {
+        "launched": "Coming 2026",
+        "tagline": "Our next big city update expands into Dataran Merdeka! Expect iconic landmarks, better vehicle systems and more roleplay jobs, while staying true to the city's heritage."
+      },
+      "tentera_mysverse": {
+        "launched": "Since 2016",
+        "tagline": "A long-standing part of MYSverse Sim, our military roleplay agency uses carefully researched equipment, procedures and training to portray Malaysia's Armed Forces authentically and respectfully."
+      },
+      "polis_mysverse": {
+        "launched": "Since 2017",
+        "tagline": "Our police roleplay community is built on realism, teamwork and service, covering everything from managing traffic to handling tactical situations. It's a big part of life in MYSverse Sim places like Bandaraya."
+      },
+      "bomba_mysverse": {
+        "launched": "Since 2024",
+        "tagline": "Become a part of the MYSverse firefighting team! You'll respond to emergencies using some of the most advanced virtual fire-rescue equipment you can find on Roblox."
+      },
+      "kesihatan_mysverse": {
+        "launched": "Since 2025",
+        "tagline": "Our healthcare roleplay community lets you play as doctors, nurses and paramedics, taking part in emergency scenarios and public health activities across the MYSverse Sim world."
+      },
+      "mysair": {
+        "launched": "Founded 2021",
+        "tagline": "Once Malaysia Airways, now MYSair takes you *beyond continents*. Fly as a passenger or join the crew for ro-aviation with warm Malaysian hospitality, sharing our culture with a global audience."
+      },
+      "tehlife": {
+        "launched": "Founded 2021",
+        "tagline": "A lively virtual café inspired by Malaysian bubble tea spots, with a flavour of its own. *Tea is life* here, with drinks from boba to kopi. It's where café culture and the MYSverse community meet."
+      },
+      "unicri_workshop": {
+        "launched": "December 2025",
+        "tagline": "We were invited by UNICRI and Singapore's Ministry of Home Affairs to present at a workshop on Online Radicalisation and Extremism, where we shared MYSverse's community-led approach to moderation and community standards."
+      },
+      "searcct_strategic_planning_meeting": {
+        "launched": "September 2025",
+        "tagline": "We took part in SEARCCT's Strategic Planning Meeting under the Ministry of Foreign Affairs Malaysia, discussing how the video games community can help counter harmful narratives through digital engagement, storytelling and positive online spaces."
+      },
+      "adcs_2025": {
+        "launched": "September 2025",
+        "tagline": "We attended the ASEAN Digital Content Summit 2025, one of Southeast Asia's biggest gaming and digital content events! Our Lebuhraya racing challenges drew crowds, and we met hundreds of attendees from across the region's gaming industry."
+      },
+      "searcct": {
+        "launched": "August 2025",
+        "tagline": "Our team met up with the Southeast Asia Regional Centre for Counter-Terrorism, where we shared how MYSverse has been building a safe and secure community online for over 10 years through active moderation and other policies."
+      },
+      "immerse_kl_25": {
+        "launched": "July 2025",
+        "tagline": "We showcased MYSverse at IMMERSE KL x CelcomDigi, Malaysia's biggest event for immersive technology and creative content, and met industry leaders and community members in person!"
+      },
+      "kementerian_pertahanan": {
+        "launched": "June 2025",
+        "tagline": "We had a productive meeting with the Ministry of Defence, discussing how MYSverse can support their goals in education, community engagement, and public awareness."
+      },
+      "nst_viral_feature": {
+        "launched": "January 2025",
+        "tagline": "The New Straits Times featured MYSverse's virtual election for its 22nd Prime Minister! The story covered our civic education efforts and how young Malaysians take part in a simulated democracy."
+      },
+      "mercy_malaysia_imu": {
+        "launched": "November 2024",
+        "tagline": "We met up with MERCY Malaysia and IMU to explore how engaging digital experiences, like MYSverse, can help them spread health awareness."
+      },
+      "u_digitaloka": {
+        "launched": "June 2024",
+        "tagline": "We showcased MYSverse at UiTM Shah Alam with the Ministry of Digital, showing how the platform can share Malaysian cultural and historical stories."
+      },
+      "polis_diraja_malaysia": {
+        "launched": "January 2024",
+        "tagline": "We're in discussions with the Royal Malaysia Police about using virtual spaces to build public awareness, promote safety and improve understanding of police work in Malaysia."
+      },
+      "donation_to_gaza_relief": {
+        "launched": "October 2023",
+        "tagline": "MYSverse donated RM1,000 to Persatuan Cinta Gaza Malaysia, while continuing to maintain a neutral platform policy on Roblox."
+      },
+      "maxis_ekelas_minigames": {
+        "launched": "Completed 2022",
+        "tagline": "Core MYSverse team members independently developed these educational minigames for Maxis eKelas. They are part of the Kancil Award-winning Misi Jelajah Digital and promote STEM learning through fun, interactive play."
+      }
+    }
+  },
+  "Contribute": {
+    "title": "Contribute",
+    "desc": "Join the MYSverse Dev Team. We're hiring two volunteer roles, Head Developer and Developer, with real benefits including Pay-Per-Task pay, revenue sharing, monthly bonuses and more.",
+    "model": {
+      "label": "Our model",
+      "title": "Volunteer-driven, experience-focused",
+      "desc": "MYSverse is built by volunteers from all walks of life: students, professionals and hobbyists who enjoy building things together. Our Pay-Per-Task bounty system means you can earn while you learn, on a schedule that works for you."
+    },
+    "secondary": {
+      "label": "Not a developer?",
+      "title": "Other ways to contribute",
+      "desc": "We're always glad to welcome new faces. These roles don't have a formal application yet, so just reach out on Discord if you're interested."
+    },
+    "questions": {
+      "title": "Still have questions?",
+      "desc": "Get in touch and the team will be happy to help."
+    },
+    "hero": {
+      "badge": "Applications open",
+      "title": "Build the Malaysian metaverse with us.",
+      "desc": "We're hiring two volunteer development roles with real benefits. Earn through our Pay-Per-Task system, share in revenue, and get an official welcome package, all while building experiences played by thousands."
+    },
+    "stats": {
+      "members": "Team members and counting",
+      "paidOut": "Paid out to contributors"
+    },
+    "openPositions": {
+      "label": "Open positions",
+      "title": "Two ways to join the Dev Team",
+      "desc": "Pick the role that fits you and apply directly. Both are volunteer roles with real benefits.",
+      "apply": "Apply as {title}",
+      "applyFor": "Apply for {title}"
+    },
+    "benefits": {
+      "label": "Why volunteer with us",
+      "title": "Real benefits, real experience",
+      "badgeHeadOnly": "Head Developer only",
+      "disclaimer": "Terms & conditions apply."
+    },
+    "benefitsList": {
+      "revenue_sharing": {
+        "title": "Revenue Sharing",
+        "desc": "Share in the revenue generated by successful experiences."
+      },
+      "pay_per_task": {
+        "title": "Pay Per Task",
+        "desc": "Immediate compensation upon completing a task (T&Cs apply)."
+      },
+      "pay_per_task_ppt": {
+        "title": "Pay Per Task (PPT)"
+      },
+      "monthly_bonuses": {
+        "title": "Monthly Bonuses",
+        "desc": "Cash bonuses tied to the success of experiences (T&Cs apply)."
+      },
+      "welcome_package": {
+        "title": "Welcome Package",
+        "desc": "An official MYSverse merchandise welcome package."
+      },
+      "professional_development": {
+        "title": "Professional Development",
+        "desc": "Grow your skills with the wider MYSverse Network."
+      }
+    },
+    "joinMethods": {
+      "discord": {
+        "label": "Join our Discord",
+        "desc": "Connect with the team and get started"
+      },
+      "email": {
+        "label": "Send us an email",
+        "desc": "Reach out directly to the team"
+      }
+    },
+    "process": {
+      "label": "The process",
+      "title": "How applying works",
+      "step1": {
+        "title": "Choose your role & apply",
+        "desc": "Submit the application form for the role that fits you. It only takes a few minutes."
+      },
+      "step2": {
+        "title": "We review your application",
+        "desc": "Our team reviews every submission. We value clear, proactive communication."
+      },
+      "step3": {
+        "title": "Interview or onboarding",
+        "desc": "Head Developer applicants proceed to an interview; Developers are onboarded to the Dev Team."
+      }
+    },
+    "card": {
+      "lookingFor": "What we look for",
+      "benefits": "Benefits",
+      "headDevOnly": "Head Dev only",
+      "formAsksFor": "The form asks for:"
+    },
+    "positions": {
+      "head-developer": {
+        "levelLabel": "Leadership",
+        "tagline": "Lead the Dev Team across Lebuhraya, Sumaya and Bandaraya.",
+        "description": "A volunteer-with-benefits role as Head Developer of the MYSverse Dev Team. Manage our projects (Lebuhraya, Sumaya and Bandaraya) and lead the Dev Team in keeping them updated and shipping new content. You'll bridge Administration and the Dev Team, making sure both sides are heard. Fully remote, with proactive communication.",
+        "lookingFor": {
+          "0": "Communicate tasks, requests and information clearly and concisely",
+          "1": "Manage multiple team members with a variety of skillsets",
+          "2": "Generate new content ideas for our experiences",
+          "3": "Experienced and knowledgeable with Roblox Studio"
+        },
+        "formAsksFor": "CV/resume (PDF), full name, preferred contact, and 3 short questions.",
+        "note": "Accepted applicants proceed to an interview stage."
+      },
+      "developer": {
+        "levelLabel": "Multi-discipline",
+        "tagline": "Builders, scripters, modellers, designers and editors welcome.",
+        "description": "A volunteer-with-benefits role as a Developer of the MYSverse Dev Team. Builders, Scripters, 3D Modellers, Graphic Designers and Video Editors are all welcome. Work on current and future MYSverse experiences using your skillset and your own ideas, from updates for existing games to entirely new titles.",
+        "lookingFor": {
+          "0": "Creatively minded",
+          "1": "A collaborator and team player",
+          "2": "A quick learner, able to adapt",
+          "3": "Dedicated and hardworking"
+        },
+        "formAsksFor": "Preferred name, contact, skillset, proof of work (up to 5 files), and 3 short questions.",
+        "disclaimer": "This is a volunteer-basis role. We do not offer full-time employment."
+      }
+    },
+    "roles": {
+      "moderator": {
+        "title": "Moderator",
+        "description": "Be the backbone of our community. Moderators help keep MYSverse a safe, welcoming, and enjoyable space for thousands of players across our experiences.",
+        "features": {
+          "0": "Serve and protect a community of thousands of players",
+          "1": "Access to moderation tools and training resources",
+          "2": "Develop leadership and conflict resolution skills",
+          "3": "Be part of a close-knit moderation team",
+          "4": "Shape community guidelines and culture"
+        }
+      },
+      "content_creator": {
+        "title": "Content Creator",
+        "description": "Help tell the MYSverse story. From social media to video production, content creators bring our community and experiences to life for a wider audience.",
+        "features": {
+          "0": "Create content across social media platforms",
+          "1": "Produce videos, graphics, and written content",
+          "2": "Collaborate with the team on campaigns and events",
+          "3": "Grow your creative portfolio and audience",
+          "4": "Access to exclusive behind-the-scenes content"
+        }
+      }
+    }
+  },
+  "Lebuhraya": {
+    "alt": {
+      "logo": "Lebuhraya Section Logo",
+      "waste": "Waste Disposal Career",
+      "seasonPass": "Season Pass"
+    },
+    "boxes": {
+      "gamepass": {
+        "title": "GAMEPASS TEAMS",
+        "desc": "FREE TRIAL"
+      },
+      "doubleXp": {
+        "title": "»2XP",
+        "desc": "DOUBLE EXP."
+      },
+      "career": {
+        "title": "NEW FREE CAREER",
+        "subtitle": "WASTE DISPOSAL",
+        "hoverTitle": "KITAR SEMULA | RECYCLE",
+        "hoverDesc": "Help keep the highways clean and earn rewards!"
+      },
+      "season": {
+        "title": "NEW FEATURE",
+        "subtitle": "SEASON PASS",
+        "hoverDesc": "Unlock exclusive rewards and challenges every season!",
+        "banner": "THE SEASON PASS UPDATE: MAY 30 - JUNE 1"
+      }
+    }
+  },
+  "Legal": {
+    "effectiveDate": "Effective date: {date}",
+    "terms": {
+      "title": "Terms & Conditions",
+      "desc": "Terms and conditions governing the use of MYSverse services and developer payout platform."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "desc": "Privacy policy for MYSverse, detailing how we collect, use, and protect your personal information."
+    },
+    "refund": {
+      "title": "Refund Policy",
+      "desc": "Refund policy for MYSverse, covering developer payouts and payment dispute resolution."
+    }
+  }
+}

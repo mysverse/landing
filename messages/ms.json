@@ -1,0 +1,448 @@
+{
+  "Home": {
+    "hero": {
+      "title": "Langkah masuk ke dalam metaverse kami yang berjiwa Malaysia.",
+      "tagline": "Mulakan perjalanan luar biasa dengan MYSverse, di mana <b>keseronokan</b>, <b>pendidikan</b> dan <b>budaya</b> Malaysia bersatu dalam pengalaman maya kami, di Roblox dan seterusnya.",
+      "sumayaBadge": "Beta terbuka",
+      "comingSoon": "...dan lebih banyak pengalaman terbuka untuk semua orang, akan datang tidak lama lagi!"
+    }
+  },
+  "Header": {
+    "nav": {
+      "Home": "Utama",
+      "Blog": "Blog",
+      "Wiki": "Wiki",
+      "Sentral": "Sentral",
+      "Brand Kit": "Kit Jenama",
+      "Contribute": "Sumbang",
+      "Projects": "Projek",
+      "Outreach": "Jangkauan",
+      "Contact": "Hubungi"
+    },
+    "sr": {
+      "logo": "MYSverse",
+      "openMenu": "Buka menu utama",
+      "closeMenu": "Tutup menu"
+    }
+  },
+  "Footer": {
+    "sourceCode": "Kod sumber tersedia dengan kasih sayang <3",
+    "ownedBy": "Dimiliki dan dikendalikan oleh MYSverse Digital Ventures (AS0469188-M).",
+    "disclaimer": "Semua aset yang digunakan adalah hak milik pemilik masing-masing."
+  },
+  "Contact": {
+    "title": "Hubungi kami",
+    "desc": "Beritahu kami tentang pertanyaan anda dan kami akan menunjukkan saluran yang betul kepada anda. Kami membawa lebih daripada 10 tahun gabungan pengalaman pemain dan pembangun.",
+    "sr": {
+      "address": "Alamat",
+      "email": "E-mel"
+    }
+  },
+  "ContactRouter": {
+    "heading": "Apa yang boleh kami bantu anda?",
+    "subheading": "Pilih topik dan kami akan menunjukkan saluran yang betul kepada anda.",
+    "back": "Kembali",
+    "note": "MYSverse dikendalikan sepenuhnya oleh sukarelawan dan kami menerima banyak mesej. Kami membaca segalanya, tetapi jawapan mungkin mengambil masa beberapa hari, jadi pertanyaan penting adalah terbaik dihantar melalui e-mel.",
+    "categories": {
+      "community": {
+        "label": "Permainan & komuniti",
+        "description": "Bantuan permainan, laporan pepijat, maklum balas dan sembang",
+        "resultHeading": "Sertai komuniti",
+        "resultBody": "Pelayan Discord kami adalah cara terpantas untuk mendapatkan bantuan, kerana pasukan dan rakan pemain berkumpul di sana setiap hari. Jika anda lebih suka mengikuti sahaja, saluran WhatsApp kami mempunyai pengumuman terkini.",
+        "destinations": {
+          "discord": { "label": "Sertai Discord" },
+          "whatsapp": { "label": "Ikut di WhatsApp" }
+        }
+      },
+      "business": {
+        "label": "Perniagaan, perkongsian & perundangan",
+        "description": "Hal komersial, kerjasama atau perundangan",
+        "resultHeading": "E-mel adalah pilihan terbaik",
+        "resultBody": "Pertanyaan serius yang dihantar melalui e-mel mendapat keutamaan dan sampai kepada orang yang tepat secara langsung. Sertakan latar belakang dan kami akan menghubungi anda secepat mungkin.",
+        "destinations": {
+          "email_yan": { "label": "E-mel yan@mysver.se" }
+        }
+      },
+      "press": {
+        "label": "Akhbar & media",
+        "description": "Temu bual, artikel dan permintaan media",
+        "resultHeading": "Hantar e-mel kepada kami",
+        "resultBody": "Kami gembira membantu dengan cerita tentang MYSverse dan pembangunan permainan Malaysia. Sertakan nama penerbitan dan tarikh akhir anda dalam e-mel supaya kami boleh membalas tepat pada masanya.",
+        "destinations": {
+          "email_team": { "label": "E-mel kepada pasukan" }
+        }
+      },
+      "join": {
+        "label": "Sertai pasukan",
+        "description": "Jadi sukarelawan bersama kami sebagai pembangun atau pencipta",
+        "resultHeading": "Kami ingin bantuan anda",
+        "resultBody": "MYSverse dibina sepenuhnya oleh sukarelawan, dan kami sentiasa mencari penyumbang baharu. Semak peranan terbuka kami dan cara bekerja bersama kami.",
+        "destinations": {
+          "see_roles": { "label": "Lihat peranan terbuka" }
+        }
+      },
+      "other": {
+        "label": "Sesuatu yang lain",
+        "description": "Apa sahaja yang tidak sesuai di atas",
+        "resultHeading": "Hantar mesej kepada kami di WhatsApp",
+        "resultBody": "Tidak pasti di mana pertanyaan anda sesuai? Hantar mesej WhatsApp kepada kami dan kami akan menunjukkan arah yang betul. Sebagai pasukan sukarelawan kami mungkin mengambil masa untuk membalas, jadi apa-apa yang serius masih lebih baik dihantar melalui e-mel.",
+        "destinations": {
+          "chat_whatsapp": { "label": "Sembang di WhatsApp" }
+        }
+      }
+    }
+  },
+  "Stats": {
+    "gamesPlayed": "kali permainan dimainkan",
+    "robloxMembers": "ahli kumpulan Roblox",
+    "socialFollowers": "pengikut di media sosial"
+  },
+  "Blog": {
+    "mys": {
+      "title": "Dari blog dunia sebenar kami",
+      "desc": "Ikuti perkembangan kerja pasukan kami dalam catatan blog terbaru kami."
+    },
+    "nws": {
+      "title": "Dari Sim MYSverse",
+      "desc": "Terokai berita dalam alam semesta oleh perkhidmatan media maya kami NWS."
+    },
+    "viewMore": "Lihat lebih banyak artikel →",
+    "alt": {
+      "postImage": "Imej catatan blog",
+      "authorImage": "Imej penulis",
+      "featureImage": "imej_utama"
+    },
+    "fallback": {
+      "notFound": "Blog tidak ditemui",
+      "postNotFound": "Catatan tidak ditemui"
+    }
+  },
+  "JoinTeam": {
+    "label": "Sertai pasukan",
+    "title": "Bina kemas kini MYSverse seterusnya",
+    "desc": "Kami sedang mengambil pembangun sukarelawan untuk membantu membentuk Sumaya, Lebuhraya, Bandaraya dan banyak lagi, dengan faedah sebenar.",
+    "cta": "Lihat peranan terbuka & butiran penuh"
+  },
+  "Projects": {
+    "title": "Projek kami",
+    "desc1": "Tahukah anda bahawa MYSverse dibangunkan dan masih dikendalikan sepenuhnya oleh sukarelawan? Apa yang bermula sebagai sekumpulan kecil yang membuat pengalaman main peranan Malaysia yang tulen telah berkembang menjadi sebuah komuniti yang terdiri daripada ribuan orang.",
+    "desc2": "Hari ini, misi kami kekal sama: mengekalkan ketulenan yang memulakannya, sambil menjadikan pengalaman kami boleh diakses dan menyeronokkan untuk semua orang.",
+    "sections": {
+      "mysverse": "MYSverse",
+      "sim": "Sim MYSverse",
+      "network": "Rangkaian MYSverse",
+      "outreach": "Di dunia nyata"
+    },
+    "simDesc": "Sim MYSverse menawarkan main peranan yang serius dan realistik dengan sentuhan pendidikan. Aktiviti adalah berdisiplin dan tersusun, dengan latihan dan pensijilan di luar platform untuk mereka yang ingin pergi lebih mendalam.",
+    "networkDesc": "Platform kolaboratif yang menyatukan projek dan komuniti bertemakan Malaysia di Roblox, dari MYSverse dan pencipta lain. Dengan berkongsi sumber, pengetahuan dan pengalaman, kami berharap dapat mengembangkan rangkaian projek dalam pelbagai genre yang meraikan budaya dan kreativiti Malaysia.",
+    "outreachDesc": "MYSverse juga mempunyai kehidupan di luar permainan. Kami bekerjasama dengan organisasi dan institusi untuk meneroka bagaimana MYSverse boleh menyokong matlamat mereka, daripada pendidikan kepada penglibatan komuniti.",
+    "actions": {
+      "playRoblox": "Main di Roblox",
+      "joinRoblox": "Sertai di Roblox",
+      "expRoblox": "Alami di Roblox",
+      "learnMore": "Ketahui lebih lanjut"
+    },
+    "alt": {
+      "image": "Imej bagi {name}"
+    },
+    "items": {
+      "lebuhraya": {
+        "launched": "Dikeluarkan 2020",
+        "tagline": "Meluncur di lebuh raya yang panjang atau menyertai main peranan polis dan bomba. Cara mudah untuk bersantai dan mengalami kehidupan harian rakyat Malaysia di atas jalan raya."
+      },
+      "ruumah_v4": {
+        "launched": "Dikeluarkan April 2025",
+        "tagline": "Sambutan Raya terkini kami berlatarkan *Kampung Air*, perkampungan air Sabah dan salah satu sudut paling indah di Malaysia."
+      },
+      "ruumah_v3": {
+        "launched": "Dikeluarkan April 2024",
+        "tagline": "Marilah meraikan Raya dalam suasana pinggir bandar yang meriah! Anda akan menemui juadah tempatan, lokasi budaya, dan rujukan komuniti MYSverse yang biasa. Ia sebahagian daripada tradisi rumah terbuka maya tahunan kami yang menggembirakan."
+      },
+      "ruumah_v2": {
+        "launched": "Dikeluarkan 2021",
+        "tagline": "Raikan musim perayaan di sebuah *kampung* pesisir pantai yang mempesonakan. Edisi ini penuh dengan butiran kecil, makanan enak dan semangat kemasyarakatan yang kuat."
+      },
+      "bandaraya_klasik": {
+        "launched": "Dikeluarkan 2025",
+        "tagline": "Imbau kembali zaman awal [MYS] Malaysia! Edisi klasik ini membuka KL 2.9 untuk dinikmati semua orang, dengan persekitaran asalnya, keserasian yang dikemas kini, dan pasukan yang bebas disertai sesiapa sahaja."
+      },
+      "sumaya": {
+        "launched": "Beta Terbuka 2026",
+        "tagline": "Diilhamkan oleh Beaufort, sebuah daerah luar bandar di Sabah, Sumaya (dahulunya Daerah) ialah projek kami yang paling bercita-cita tinggi setakat ini. Permainannya yang terbuka dan kaya dengan jalan cerita memberikan pemain baharu dan lama sesuatu yang benar-benar segar dalam MYSverse."
+      },
+      "bandaraya_v3": {
+        "launched": "Dikeluarkan Sep 2020",
+        "tagline": "Terokai Kuala Lumpur maya yang dibina untuk main peranan, sama ada anda menjalani kehidupan harian atau bertugas rasmi. Sebagai hab bandar utama MYSverse, sentiasa ada sesuatu yang berlaku."
+      },
+      "bandaraya_v4": {
+        "launched": "Akan Datang 2026",
+        "tagline": "Kemas kini bandar besar kami yang seterusnya berkembang ke Dataran Merdeka! Nantikan mercu tanda ikonik, sistem kenderaan yang lebih baik dan lebih banyak pekerjaan main peranan, sambil mengekalkan warisan bandar."
+      },
+      "tentera_mysverse": {
+        "launched": "Sejak 2016",
+        "tagline": "Sebahagian lama daripada MYSverse Sim, agensi main peranan tentera kami menggunakan peralatan, prosedur dan latihan yang dikaji teliti untuk menggambarkan Angkatan Tentera Malaysia secara tulen dan penuh hormat."
+      },
+      "polis_mysverse": {
+        "launched": "Sejak 2017",
+        "tagline": "Komuniti main peranan polis kami dibina atas realisme, kerjasama dan perkhidmatan, meliputi segala-galanya daripada mengurus lalu lintas hingga mengendalikan situasi taktikal. Ia sebahagian besar daripada kehidupan di tempat MYSverse Sim seperti Bandaraya."
+      },
+      "bomba_mysverse": {
+        "launched": "Sejak 2024",
+        "tagline": "Sertailah pasukan bomba MYSverse! Anda akan bertindak balas terhadap kecemasan menggunakan antara peralatan menyelamat kebakaran maya paling canggih yang boleh ditemui di Roblox."
+      },
+      "kesihatan_mysverse": {
+        "launched": "Sejak 2025",
+        "tagline": "Komuniti main peranan penjagaan kesihatan kami membolehkan anda bermain sebagai doktor, jururawat dan paramedik, menyertai senario kecemasan dan aktiviti kesihatan awam di seluruh dunia MYSverse Sim."
+      },
+      "mysair": {
+        "launched": "Diasaskan 2021",
+        "tagline": "Dahulunya Malaysia Airways, kini MYSair membawa anda *melangkaui benua*. Terbang sebagai penumpang atau sertai krew untuk ro-penerbangan dengan layanan mesra Malaysia, berkongsi budaya kita dengan penonton global."
+      },
+      "tehlife": {
+        "launched": "Diasaskan 2021",
+        "tagline": "Sebuah kafe maya yang meriah, diilhamkan oleh kedai teh boba Malaysia, dengan citarasanya yang tersendiri. *Teh ialah kehidupan* di sini, dengan minuman daripada boba hingga kopi. Di sinilah budaya kafe dan komuniti MYSverse bertemu."
+      },
+      "unicri_workshop": {
+        "launched": "Disember 2025",
+        "tagline": "Kami dijemput oleh UNICRI dan Kementerian Hal Ehwal Dalam Negeri Singapura untuk membentangkan di bengkel mengenai Radikalisasi dan Ekstremisme Dalam Talian, di mana kami berkongsi pendekatan MYSverse yang dipacu komuniti terhadap pemoderasian dan piawaian komuniti."
+      },
+      "searcct_strategic_planning_meeting": {
+        "launched": "September 2025",
+        "tagline": "Kami menyertai Mesyuarat Perancangan Strategik SEARCCT di bawah Kementerian Luar Negeri Malaysia, membincangkan bagaimana komuniti permainan video boleh membantu menangkis naratif berbahaya melalui penglibatan digital, penceritaan dan ruang dalam talian yang positif."
+      },
+      "adcs_2025": {
+        "launched": "September 2025",
+        "tagline": "Kami menghadiri ASEAN Digital Content Summit 2025, salah satu acara permainan dan kandungan digital terbesar di Asia Tenggara! Cabaran lumba Lebuhraya kami menarik orang ramai, dan kami bertemu ratusan hadirin dari seluruh industri permainan rantau ini."
+      },
+      "searcct": {
+        "launched": "Ogos 2025",
+        "tagline": "Pasukan kami bertemu dengan Pusat Serantau Asia Tenggara bagi Mencegah Keganasan, di mana kami berkongsi bagaimana MYSverse telah membina komuniti dalam talian yang selamat dan terjamin selama lebih 10 tahun melalui pemoderasian aktif dan dasar lain."
+      },
+      "immerse_kl_25": {
+        "launched": "Julai 2025",
+        "tagline": "Kami mempamerkan MYSverse di IMMERSE KL x CelcomDigi, acara terbesar Malaysia untuk teknologi imersif dan kandungan kreatif, dan bertemu peneraju industri serta ahli komuniti secara bersemuka!"
+      },
+      "kementerian_pertahanan": {
+        "launched": "Jun 2025",
+        "tagline": "Kami mengadakan mesyuarat yang produktif dengan Kementerian Pertahanan, membincangkan bagaimana MYSverse boleh menyokong matlamat mereka dalam pendidikan, penglibatan komuniti, dan kesedaran awam."
+      },
+      "nst_viral_feature": {
+        "launched": "Januari 2025",
+        "tagline": "New Straits Times memaparkan pilihan raya maya MYSverse untuk Perdana Menteri ke-22! Kisah itu meliputi usaha pendidikan sivik kami dan bagaimana anak muda Malaysia menyertai demokrasi simulasi."
+      },
+      "mercy_malaysia_imu": {
+        "launched": "November 2024",
+        "tagline": "Kami bertemu dengan MERCY Malaysia dan IMU untuk meneroka bagaimana pengalaman digital yang menarik, seperti MYSverse, boleh membantu mereka menyebarkan kesedaran kesihatan."
+      },
+      "u_digitaloka": {
+        "launched": "Jun 2024",
+        "tagline": "Kami mempamerkan MYSverse di UiTM Shah Alam bersama Kementerian Digital, menunjukkan bagaimana platform ini boleh berkongsi kisah budaya dan sejarah Malaysia."
+      },
+      "polis_diraja_malaysia": {
+        "launched": "Januari 2024",
+        "tagline": "Kami sedang berbincang dengan Polis DiRaja Malaysia tentang penggunaan ruang maya untuk membina kesedaran awam, menggalakkan keselamatan dan meningkatkan kefahaman tentang kerja polis di Malaysia."
+      },
+      "donation_to_gaza_relief": {
+        "launched": "Oktober 2023",
+        "tagline": "MYSverse menderma RM1,000 kepada Persatuan Cinta Gaza Malaysia, sambil terus mengekalkan dasar platform yang berkecuali di Roblox."
+      },
+      "maxis_ekelas_minigames": {
+        "launched": "Siap 2022",
+        "tagline": "Ahli teras pasukan MYSverse membangunkan minigame pendidikan ini secara bebas untuk Maxis eKelas. Ia sebahagian daripada Misi Jelajah Digital yang memenangi Anugerah Kancil dan menggalakkan pembelajaran STEM melalui permainan yang menyeronokkan dan interaktif."
+      }
+    }
+  },
+  "Contribute": {
+    "title": "Sumbang",
+    "desc": "Sertai Pasukan Pembangun MYSverse. Kami sedang mengambil dua peranan sukarelawan, Ketua Pembangun dan Pembangun, dengan faedah sebenar termasuk bayaran Pay-Per-Task, perkongsian hasil, bonus bulanan dan banyak lagi.",
+    "model": {
+      "label": "Model kami",
+      "title": "Didorong oleh sukarelawan, berfokuskan pengalaman",
+      "desc": "MYSverse dibina oleh sukarelawan dari semua lapisan masyarakat: pelajar, profesional dan peminat yang gemar membina sesuatu bersama-sama. Sistem ganjaran Pay-Per-Task kami bermakna anda boleh menjana pendapatan sambil belajar, mengikut jadual yang sesuai dengan anda."
+    },
+    "secondary": {
+      "label": "Bukan pembangun?",
+      "title": "Cara lain untuk menyumbang",
+      "desc": "Kami sentiasa gembira menerima wajah baharu. Peranan ini belum mempunyai permohonan rasmi, jadi hubungi kami di Discord jika anda berminat."
+    },
+    "questions": {
+      "title": "Masih mempunyai soalan?",
+      "desc": "Hubungi kami dan pasukan akan gembira membantu."
+    },
+    "hero": {
+      "badge": "Permohonan dibuka",
+      "title": "Bina metaverse Malaysia bersama kami.",
+      "desc": "Kami sedang mengambil dua peranan pembangunan sukarelawan dengan faedah sebenar. Jana pendapatan melalui sistem Pay-Per-Task kami, berkongsi hasil, dan dapatkan pakej aluan rasmi, semuanya sambil membina pengalaman yang dimainkan oleh ribuan orang."
+    },
+    "stats": {
+      "members": "Ahli pasukan dan terus meningkat",
+      "paidOut": "Dibayar kepada penyumbang"
+    },
+    "openPositions": {
+      "label": "Peranan terbuka",
+      "title": "Dua cara untuk menyertai Pasukan Pembangun",
+      "desc": "Pilih peranan yang sesuai dengan anda dan mohon secara langsung. Kedua-duanya adalah peranan sukarelawan dengan faedah sebenar.",
+      "apply": "Mohon sebagai {title}",
+      "applyFor": "Mohon untuk {title}"
+    },
+    "benefits": {
+      "label": "Mengapa menjadi sukarelawan dengan kami",
+      "title": "Faedah sebenar, pengalaman sebenar",
+      "badgeHeadOnly": "Ketua Pembangun sahaja",
+      "disclaimer": "Tertakluk kepada terma & syarat."
+    },
+    "benefitsList": {
+      "revenue_sharing": {
+        "title": "Perkongsian Hasil",
+        "desc": "Berkongsi hasil yang dijana oleh pengalaman yang berjaya."
+      },
+      "pay_per_task": {
+        "title": "Bayaran Setiap Tugasan",
+        "desc": "Pampasan segera setelah menyelesaikan tugasan (Tertakluk T&S)."
+      },
+      "pay_per_task_ppt": {
+        "title": "Pay Per Task (PPT)"
+      },
+      "monthly_bonuses": {
+        "title": "Bonus Bulanan",
+        "desc": "Bonus tunai yang terikat dengan kejayaan pengalaman (Tertakluk T&S)."
+      },
+      "welcome_package": {
+        "title": "Pakej Aluan",
+        "desc": "Pakej aluan barangan rasmi MYSverse."
+      },
+      "professional_development": {
+        "title": "Pembangunan Profesional",
+        "desc": "Tingkatkan kemahiran anda dengan Rangkaian MYSverse yang lebih luas."
+      }
+    },
+    "joinMethods": {
+      "discord": {
+        "label": "Sertai Discord kami",
+        "desc": "Hubungi pasukan dan mulakan langkah"
+      },
+      "email": {
+        "label": "Hantar e-mel kepada kami",
+        "desc": "Hubungi pasukan secara langsung"
+      }
+    },
+    "process": {
+      "label": "Proses permohonan",
+      "title": "Bagaimana permohonan berfungsi",
+      "step1": {
+        "title": "Pilih peranan anda & mohon",
+        "desc": "Hantar borang permohonan untuk peranan yang sesuai dengan anda. Ia hanya mengambil masa beberapa minit."
+      },
+      "step2": {
+        "title": "Kami menyemak permohonan anda",
+        "desc": "Pasukan kami menyemak setiap penyerahan. Kami menghargai komunikasi yang jelas dan proaktif."
+      },
+      "step3": {
+        "title": "Temu bual atau penyesuaian",
+        "desc": "Pemohon Ketua Pembangun meneruskan ke peringkat temu bual; Pembangun disesuaikan ke dalam Pasukan Pembangun."
+      }
+    },
+    "card": {
+      "lookingFor": "Apa yang kami cari",
+      "benefits": "Faedah",
+      "headDevOnly": "Ketua Pembangun sahaja",
+      "formAsksFor": "Borang meminta:"
+    },
+    "positions": {
+      "head-developer": {
+        "levelLabel": "Kepimpinan",
+        "tagline": "Pimpin Pasukan Pembangun merentasi Lebuhraya, Sumaya dan Bandaraya.",
+        "description": "Peranan sukarelawan-dengan-faedah sebagai Ketua Pembangun Pasukan Pembangun MYSverse. Uruskan projek kami (Lebuhraya, Sumaya dan Bandaraya) dan pimpin Pasukan Pembangun untuk memastikan ia sentiasa dikemas kini dan menghasilkan kandungan baharu. Anda akan menjadi jambatan antara Pentadbiran dan Pasukan Pembangun, memastikan kedua-dua pihak didengari. Sepenuhnya jarak jauh, dengan komunikasi proaktif.",
+        "lookingFor": {
+          "0": "Menyampaikan tugasan, permintaan dan maklumat dengan jelas dan ringkas",
+          "1": "Menguruskan beberapa ahli pasukan dengan pelbagai set kemahiran",
+          "2": "Menjana idea kandungan baharu untuk pengalaman kami",
+          "3": "Berpengalaman dan berpengetahuan dengan Roblox Studio"
+        },
+        "formAsksFor": "CV/resume (PDF), nama penuh, hubungan pilihan, dan 3 soalan ringkas.",
+        "note": "Pemohon yang diterima akan meneruskan ke peringkat temu bual."
+      },
+      "developer": {
+        "levelLabel": "Pelbagai bidang",
+        "tagline": "Pembina, penskrip, pemodel, pereka dan editor dialu-alukan.",
+        "description": "Peranan sukarelawan-dengan-faedah sebagai Pembangun Pasukan Pembangun MYSverse. Pembina, Penskrip, Pemodel 3D, Pereka Grafik dan Editor Video semuanya dialu-alukan. Bekerja pada pengalaman MYSverse semasa dan akan datang menggunakan set kemahiran dan idea anda sendiri, daripada kemas kini untuk permainan sedia ada hingga tajuk yang sama sekali baharu.",
+        "lookingFor": {
+          "0": "Berfikiran kreatif",
+          "1": "Seorang yang suka bekerjasama dan ahli pasukan",
+          "2": "Cepat belajar dan mudah menyesuaikan diri",
+          "3": "Berdedikasi dan rajin"
+        },
+        "formAsksFor": "Nama pilihan, hubungan, set kemahiran, bukti kerja (sehingga 5 fail), dan 3 soalan ringkas.",
+        "disclaimer": "Ini ialah peranan secara sukarela. Kami tidak menawarkan pekerjaan sepenuh masa."
+      }
+    },
+    "roles": {
+      "moderator": {
+        "title": "Moderator",
+        "description": "Jadilah tulang belakang komuniti kami. Moderator membantu memastikan MYSverse kekal sebagai ruang yang selamat, mesra dan menyeronokkan untuk ribuan pemain merentasi pengalaman kami.",
+        "features": {
+          "0": "Berkhidmat dan melindungi komuniti ribuan pemain",
+          "1": "Akses kepada alat pemoderasian dan sumber latihan",
+          "2": "Membangunkan kemahiran kepimpinan dan penyelesaian konflik",
+          "3": "Menjadi sebahagian daripada pasukan pemoderasian yang rapat",
+          "4": "Membentuk garis panduan dan budaya komuniti"
+        }
+      },
+      "content_creator": {
+        "title": "Pencipta Kandungan",
+        "description": "Bantu sampaikan kisah MYSverse. Daripada media sosial hingga penerbitan video, pencipta kandungan menghidupkan komuniti dan pengalaman kami untuk penonton yang lebih luas.",
+        "features": {
+          "0": "Mencipta kandungan merentasi platform media sosial",
+          "1": "Menghasilkan video, grafik dan kandungan bertulis",
+          "2": "Bekerjasama dengan pasukan dalam kempen dan acara",
+          "3": "Mengembangkan portfolio kreatif dan penonton anda",
+          "4": "Akses kepada kandungan di sebalik tabir yang eksklusif"
+        }
+      }
+    }
+  },
+  "Lebuhraya": {
+    "alt": {
+      "logo": "Logo Bahagian Lebuhraya",
+      "waste": "Kerjaya Pembuangan Sisa",
+      "seasonPass": "Pas Musim"
+    },
+    "boxes": {
+      "gamepass": {
+        "title": "PAS PERMAINAN KUMPULAN",
+        "desc": "PERCUBAAN PERCUMA"
+      },
+      "doubleXp": {
+        "title": "»2XP",
+        "desc": "DOUBLE EXP."
+      },
+      "career": {
+        "title": "KERJAYA PERCUMA BARU",
+        "subtitle": "PEMBUANGAN SISA",
+        "hoverTitle": "KITAR SEMULA | RECYCLE",
+        "hoverDesc": "Bantu pastikan lebuh raya bersih dan dapatkan ganjaran!"
+      },
+      "season": {
+        "title": "CIRI BARU",
+        "subtitle": "PAS MUSIM",
+        "hoverDesc": "Buka ganjaran dan cabaran eksklusif setiap musim!",
+        "banner": "KEMAS KINI PAS MUSIM: 30 MEI - 1 JUN"
+      }
+    }
+  },
+  "Legal": {
+    "effectiveDate": "Tarikh berkuat kuasa: {date}",
+    "terms": {
+      "title": "Terma & Syarat",
+      "desc": "Terma dan syarat yang mengawal penggunaan perkhidmatan MYSverse dan platform pembayaran pembangun."
+    },
+    "privacy": {
+      "title": "Dasar Privasi",
+      "desc": "Dasar privasi untuk MYSverse, memperincikan cara kami mengumpul, menggunakan, dan melindungi maklumat peribadi anda."
+    },
+    "refund": {
+      "title": "Dasar Bayaran Balik",
+      "desc": "Dasar bayaran balik untuk MYSverse, merangkumi pembayaran pembangun dan penyelesaian pertikaian pembayaran."
+    }
+  }
+}
