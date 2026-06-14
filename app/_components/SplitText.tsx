@@ -28,7 +28,7 @@ export default function SplitText(props: SplitTextProps) {
       }
 
       try {
-        const { words } = splitText(headerRef.current);
+        const { words } = splitText(headerRef.current, { preserveHyphens: true });
 
         // Set ready state for visibility
         setIsReady(true);
