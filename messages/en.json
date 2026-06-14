@@ -406,7 +406,7 @@
     "devhub": {
         "tagline": "Introducing DevHub",
         "title": "Developer Operations & Rewards",
-        "desc": "While we are a volunteer team, we believe your time, effort, and skills are incredibly valuable. We built DevHub—our custom developer dashboard that translates your contributions into real-world rewards, professional physical gear, and career milestones.",
+        "desc": "While we are a volunteer team, we believe your time, effort, and skills are incredibly valuable. We built DevHub, a custom developer dashboard that translates your contributions into real-world rewards, professional physical gear, and career milestones.",
         "ppt": {
           "title": "Guaranteed Task Payouts (PPT)",
           "desc": "Every task you claim on our Linear workspace has an estimate in points. When you complete a task labeled PPT (Points Payout System), you are guaranteed a direct payout based on the task's estimate.",
@@ -436,7 +436,7 @@
           "desc": "Not all important work can be labeled with a simple PPT estimate. Bug fixing, refactoring, code reviews, assisting other team members, and maintaining documentation are crucial to our success.",
           "sync": "Automatic Sync: All non-PPT Linear tasks assigned to you are synced automatically as 'Bonus Candidates'.",
           "reviews": "Monthly Reviews: Admins review your contributions and approve a grouped monthly bonus payout at up to RM10.00 / 500 Robux per estimation point.",
-          "alerts": "In-App Alerts: Receive real-time push and email notifications showing your potential bonus earnings (Up to X)."
+          "alerts": "In-App Alerts: Receive real-time push and email notifications showing your potential bonus earnings."
         },
         "welcomePack": {
           "title": "The MYSverse Welcome Pack",

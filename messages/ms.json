@@ -406,7 +406,7 @@
     "devhub": {
         "tagline": "Memperkenalkan DevHub",
         "title": "Operasi & Ganjaran Pembangun",
-        "desc": "Walaupun kami adalah pasukan sukarelawan, kami amat percaya bahawa masa, usaha dan kemahiran anda sangat berharga. Kami membina DevHub—papan pemuka operasi pembangun tersuai kami yang menterjemahkan sumbangan anda kepada ganjaran dunia nyata, peralatan fizikal profesional dan pencapaian kerjaya.",
+        "desc": "Walaupun kami adalah pasukan sukarelawan, kami amat percaya bahawa masa, usaha dan kemahiran anda sangat berharga. Kami membina DevHub, papan pemuka operasi pembangun tersuai kami yang menterjemahkan sumbangan anda kepada ganjaran dunia nyata, peralatan fizikal profesional dan pencapaian kerjaya.",
         "ppt": {
           "title": "Bayaran Tugasan Dijamin (PPT)",
           "desc": "Setiap tugasan yang anda ambil di ruang kerja Linear kami mempunyai anggaran mata. Apabila anda menyelesaikan tugasan berlabel PPT (Points Payout System), anda dijamin bayaran terus berdasarkan anggaran tugasan tersebut.",
@@ -436,7 +436,7 @@
           "desc": "Bukan semua kerja penting boleh dilabel dengan anggaran PPT yang mudah. Pembetulan pepijat (bug), refactoring, ulasan kod, membantu ahli pasukan lain, dan menyelenggara dokumentasi adalah penting untuk kejayaan kami.",
           "sync": "Penyegerakan Automatik: Semua tugasan Linear bukan PPT yang diberikan kepada anda disinkronkan secara automatik sebagai 'Calon Bonus'.",
           "reviews": "Ulasan Bulanan: Pentadbir menyemak sumbangan anda dan meluluskan transaksi BONUS bulanan yang dibayar terus kepada anda berdasarkan tugasan yang diselesaikan, pada kadar sehingga RM10.00 / 500 Robux setiap mata anggaran.",
-          "alerts": "Amaran Dalam Aplikasi: Terima pemberitahuan push dan e-mel masa nyata yang menunjukkan potensi pendapatan bonus anda (Sehingga X)."
+          "alerts": "Amaran Dalam Aplikasi: Terima pemberitahuan push dan e-mel masa nyata yang menunjukkan potensi pendapatan bonus anda."
         },
         "welcomePack": {
           "title": "Pakej Aluan MYSverse",
