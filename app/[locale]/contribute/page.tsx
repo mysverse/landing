@@ -6,6 +6,7 @@ import ContributeStats from "./_components/ContributeStats";
 import OpenPositions from "./_components/OpenPositions";
 import BenefitsGrid from "./_components/BenefitsGrid";
 import DevHubSection from "./_components/DevHubSection";
+import TeamImpact from "./_components/TeamImpact";
 import ApplyProcess from "./_components/ApplyProcess";
 import RoleCard from "./_components/RoleCard";
 import JoinCTA from "./_components/JoinCTA";
@@ -86,6 +87,13 @@ export default async function ContributePage({ params }: Props) {
           </IntersectionTransition>
         </div>
 
+        {/* Real-world Impact Showcase */}
+        <div className="pb-16 sm:pb-24">
+          <IntersectionTransition>
+            <TeamImpact />
+          </IntersectionTransition>
+        </div>
+
         {/* Open Positions - the centerpiece */}
         <IntersectionTransition>
           <OpenPositions />
@@ -102,6 +110,7 @@ export default async function ContributePage({ params }: Props) {
         <IntersectionTransition>
           <DevHubSection />
         </IntersectionTransition>
+
 
         {/* How applying works */}
         <IntersectionTransition>

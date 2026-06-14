@@ -312,7 +312,7 @@
       },
       "welcome_package": {
         "title": "Welcome Package",
-        "desc": "Free embroidery polo, hoodie, lanyard, tote bag, and sticker pack shipped to you."
+        "desc": "Free development polo, hoodie, lanyard, tote bag, and sticker pack shipped to you."
       },
       "professional_development": {
         "title": "Professional Development",
@@ -463,6 +463,22 @@
           "step1": "Sign in to DevHub using your OAuth account.",
           "step2": "Complete your onboarding checklist (profile, account linking, NDA).",
           "step3": "Grab your first Linear task and start earning!"
+        }
+      },
+      "impact": {
+        "label": "Real-world impact",
+        "title": "Build for players, connect in real life",
+        "players": {
+          "title": "Games Played by Real People",
+          "desc": "Join a platform with an active player base. Your work on experiences like Sumaya, Lebuhraya, and Bandaraya will be played and enjoyed by thousands of gamers in our community."
+        },
+        "networking": {
+          "title": "IRL Industry Networking",
+          "desc": "Represent MYSverse at premier events and ministerial panels (SEARCCT, ASEAN Digital Content Summit, UiTM, CelcomDigi Immerse). Make real connections that boost your professional career."
+        },
+        "welcomePack": {
+          "title": "Physical Welcome Package",
+          "desc": "Receive exclusive, custom MYSverse development apparel and physical gear shipped straight to your door for free, including our premium polo, hoodie, lanyard, tote bag, and sticker pack."
         }
       }
   },

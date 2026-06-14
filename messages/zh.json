@@ -442,7 +442,7 @@
           "title": "MYSverse 专属迎新礼包",
           "desc": "一旦您成为团队的活跃开发者，您就有资格获得专属于您的实体迎新礼包，免费邮寄上门。",
           "items": "您的迎新礼包包含以下高端定制周边：",
-          "polo": "MYSverse 开发者刺绣 Polo 衫（尺码 XS 至 3XL）",
+          "polo": "MYSverse 开发者 Polo 衫（尺码 XS 至 3XL）",
           "hoodie": "MYSverse 开发者优质连帽衫（尺码 2XS 至 4XL）",
           "lanyard": "MYSverse 定制挂绳",
           "sticker": "高品质定制裁切贴纸包",
@@ -463,6 +463,22 @@
           "step1": "使用您的 OAuth 账户登录 DevHub。",
           "step2": "完成您的入职核对清单（个人档案设置、关联账户、签署 NDA）。",
           "step3": "认领您的第一个 Linear 任务并开始赚取报酬！"
+        }
+      },
+      "impact": {
+        "label": "真实世界的影响力",
+        "title": "为真实玩家而建，在现实世界相连",
+        "players": {
+          "title": "数万玩家真实体验的游戏",
+          "desc": "加入一个拥有活跃玩家基础的平台。您在 Sumaya、Lebuhraya 和 Bandaraya 等虚拟体验中的心血，将被我们社区成千上万的玩家体验与喜爱。"
+        },
+        "networking": {
+          "title": "现实世界行业交流与合作",
+          "desc": "代表 MYSverse 出席行业盛会和政府部门座谈（如 SEARCCT、东盟数字内容峰会、UiTM、CelcomDigi Immerse）。建立真实行业人脉，助力您的职业生涯。"
+        },
+        "welcomePack": {
+          "title": "专属实体迎新礼包",
+          "desc": "免费邮寄送达的专属定制 MYSverse 开发者服装与装备礼包，包含高品质开发者 Polo 衫、连帽衫、定制挂绳、帆布托特包及贴纸包。"
         }
       }
   },

@@ -312,7 +312,7 @@
       },
       "welcome_package": {
         "title": "Pakej Aluan",
-        "desc": "Polo sulam, hoodie fleece, lanyard, beg tote dan pek pelekat percuma dihantar ke rumah anda."
+        "desc": "Polo pembangunan, hoodie fleece, lanyard, beg tote dan pek pelekat percuma dihantar ke rumah anda."
       },
       "professional_development": {
         "title": "Pembangunan Profesional",
@@ -463,6 +463,22 @@
           "step1": "Log masuk ke DevHub menggunakan akaun OAuth anda.",
           "step2": "Lengkapkan senarai semak onboarding anda (profil, pautan akaun, NDA).",
           "step3": "Pilih tugasan Linear pertama anda dan mula menjana pendapatan!"
+        }
+      },
+      "impact": {
+        "label": "Impak dunia nyata",
+        "title": "Bina untuk pemain, berhubung di dunia nyata",
+        "players": {
+          "title": "Permainan Dimain oleh Orang Nyata",
+          "desc": "Sertai platform dengan pangkalan pemain yang aktif. Hasil kerja anda dalam pengalaman seperti Sumaya, Lebuhraya dan Bandaraya akan dimainkan serta dinikmati oleh ribuan pemain dalam komuniti kami."
+        },
+        "networking": {
+          "title": "Rangkaian Industri IRL",
+          "desc": "Wakili MYSverse di acara terkemuka dan panel kementerian (SEARCCT, ASEAN Digital Content Summit, UiTM, CelcomDigi Immerse). Bina hubungan nyata yang melonjakkan kerjaya profesional anda."
+        },
+        "welcomePack": {
+          "title": "Pakej Aluan Fizikal",
+          "desc": "Terima pakaian pembangunan dan peralatan fizikal eksklusif MYSverse tersuai yang dihantar terus ke pintu rumah anda secara percuma, termasuk polo premium, hoodie, lanyard, beg tote dan pek pelekat."
         }
       }
   },
