@@ -5,6 +5,7 @@ import ContributeHero from "./_components/ContributeHero";
 import ContributeStats from "./_components/ContributeStats";
 import OpenPositions from "./_components/OpenPositions";
 import BenefitsGrid from "./_components/BenefitsGrid";
+import DevHubSection from "./_components/DevHubSection";
 import ApplyProcess from "./_components/ApplyProcess";
 import RoleCard from "./_components/RoleCard";
 import JoinCTA from "./_components/JoinCTA";
@@ -20,7 +21,26 @@ export async function generateMetadata({ params }: Props) {
   const t = await getTranslations({ locale, namespace: "Contribute" });
   return {
     title: t("title"),
-    description: t("desc")
+    description: t("desc"),
+    openGraph: {
+      title: t("ogTitle"),
+      description: t("ogDesc"),
+      images: [
+        {
+          url: "/contribute_og.png",
+          width: 1200,
+          height: 630,
+          alt: t("ogAlt")
+        }
+      ],
+      type: "website"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("ogTitle"),
+      description: t("ogDesc"),
+      images: ["/contribute_og.png"]
+    }
   };
 }
 
@@ -77,6 +97,11 @@ export default async function ContributePage({ params }: Props) {
             <BenefitsGrid />
           </IntersectionTransition>
         </div>
+
+        {/* DevHub and incentives detailed overview */}
+        <IntersectionTransition>
+          <DevHubSection />
+        </IntersectionTransition>
 
         {/* How applying works */}
         <IntersectionTransition>

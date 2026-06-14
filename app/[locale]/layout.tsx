@@ -3,7 +3,7 @@ import "styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import PlausibleProvider from "next-plausible";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { env } from "process";
 
 const APP_NAME = "MYSverse";
@@ -13,7 +13,9 @@ const APP_DESCRIPTION =
   "The original Malaysian metaverse project and roleplay community. Your gateway into our unique brand of fun, culture and education like no other.";
 
 export const metadata: Metadata = {
-  metadataBase: env.CF_PAGES_URL ? new URL(env.CF_PAGES_URL) : undefined,
+  metadataBase: env.CF_PAGES_URL
+    ? new URL(env.CF_PAGES_URL)
+    : new URL("https://mysver.se"),
   applicationName: APP_NAME,
   title: APP_DEFAULT_TITLE,
   description: APP_DESCRIPTION,
@@ -24,8 +26,29 @@ export const metadata: Metadata = {
       default: APP_DEFAULT_TITLE,
       template: APP_TITLE_TEMPLATE
     },
-    description: APP_DESCRIPTION
+    description: APP_DESCRIPTION,
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "MYSverse"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: {
+      default: APP_DEFAULT_TITLE,
+      template: APP_TITLE_TEMPLATE
+    },
+    description: APP_DESCRIPTION,
+    images: ["/opengraph-image.png"]
   }
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ed5353"
 };
 
 import Script from "next/script";

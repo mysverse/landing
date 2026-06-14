@@ -255,6 +255,9 @@
   "Contribute": {
     "title": "Sumbang",
     "desc": "Sertai Pasukan Pembangun MYSverse. Kami sedang mengambil dua peranan sukarelawan, Ketua Pembangun dan Pembangun, dengan faedah sebenar termasuk bayaran Pay-Per-Task, perkongsian hasil, bonus bulanan dan banyak lagi.",
+    "ogTitle": "Bina Metaverse Malaysia Bersama Kami - Sertai MYSverse",
+    "ogDesc": "Sertai Pasukan Pembangun MYSverse! Mohon peranan pembangun sukarela dan bina pengalaman yang dimainkan oleh beribu pengguna. Nikmati faedah sebenar seperti ganjaran Pay-Per-Task, perkongsian hasil dan bonus bulanan.",
+    "ogAlt": "Sertai Pasukan Pembangun MYSverse - Bina Metaverse Malaysia",
     "model": {
       "label": "Model kami",
       "title": "Didorong oleh sukarelawan, berfokuskan pengalaman",
@@ -294,26 +297,26 @@
     "benefitsList": {
       "revenue_sharing": {
         "title": "Perkongsian Hasil",
-        "desc": "Berkongsi hasil yang dijana oleh pengalaman yang berjaya."
+        "desc": "Kongsi hasil yang dijana oleh permainan (eksklusif untuk peranan Ketua Pembangun)."
       },
       "pay_per_task": {
-        "title": "Bayaran Setiap Tugasan",
-        "desc": "Pampasan segera setelah menyelesaikan tugasan (Tertakluk T&S)."
+        "title": "Pay Per Task (PPT)",
+        "desc": "Dijamin RM20.00 / 1,200 Robux setiap mata anggaran melalui DevHub, dibayar mingguan."
       },
       "pay_per_task_ppt": {
         "title": "Pay Per Task (PPT)"
       },
       "monthly_bonuses": {
         "title": "Bonus Bulanan",
-        "desc": "Bonus tunai yang terikat dengan kejayaan pengalaman (Tertakluk T&S)."
+        "desc": "Sehingga RM10.00 / 500 Robux setiap mata anggaran bagi pepijat, ulasan, dan refactoring."
       },
       "welcome_package": {
         "title": "Pakej Aluan",
-        "desc": "Pakej aluan barangan rasmi MYSverse."
+        "desc": "Polo sulam, hoodie fleece, lanyard, beg tote dan pek pelekat percuma dihantar ke rumah anda."
       },
       "professional_development": {
         "title": "Pembangunan Profesional",
-        "desc": "Tingkatkan kemahiran anda dengan Rangkaian MYSverse yang lebih luas."
+        "desc": "Tingkatkan kemahiran anda dan luaskan rangkaian dengan komuniti MYSverse."
       }
     },
     "joinMethods": {
@@ -399,7 +402,69 @@
           "4": "Akses kepada kandungan di sebalik tabir yang eksklusif"
         }
       }
-    }
+    },
+    "devhub": {
+        "tagline": "Memperkenalkan DevHub",
+        "title": "Operasi & Ganjaran Pembangun",
+        "desc": "Walaupun kami adalah pasukan sukarelawan, kami amat percaya bahawa masa, usaha dan kemahiran anda sangat berharga. Kami membina DevHub—papan pemuka operasi pembangun tersuai kami yang menterjemahkan sumbangan anda kepada ganjaran dunia nyata, peralatan fizikal profesional dan pencapaian kerjaya.",
+        "ppt": {
+          "title": "Bayaran Tugasan Dijamin (PPT)",
+          "desc": "Setiap tugasan yang anda ambil di ruang kerja Linear kami mempunyai anggaran mata. Apabila anda menyelesaikan tugasan berlabel PPT (Points Payout System), anda dijamin bayaran terus berdasarkan anggaran tugasan tersebut.",
+          "currency": "Pilih Mata Wang Anda:",
+          "rates": "Kadar Yang Amat Bersaing:",
+          "myrRate": "RM20.00 setiap mata anggaran (cth. tugasan 3 mata = RM60.00)",
+          "robuxRate": "1,200 Robux setiap mata anggaran (cth. tugasan 3 mata = 3,600 Robux)",
+          "weekly": "Kelulusan mingguan diproses secara automatik melalui penyedia bersepadu (Billplz, Xendit, FinSys).",
+          "accounting": "Muat turun slip transaksi PDF terus dari papan pemuka anda untuk memudahkan simpanan rekod."
+        },
+        "incentives": {
+          "title": "Insentif Prestasi Mingguan & Sepanjang Hayat",
+          "desc": "Selain daripada pendapatan PPT standard anda, program insentif pembangun aktif kami memberi ganjaran kepada konsistensi, daya pemprosesan dan komitmen jangka panjang:",
+          "throughput": "Throughput Mingguan: Selesaikan 5 atau lebih tugasan yang layak dalam satu minggu untuk mendapatkan bonus tambahan RM30.00 / 1,800 Robux serta-merta.",
+          "kickers": "Ganjaran Hari Aktif: Dapatkan ganjaran hanya dengan hadir. Memenuhi sasaran aktiviti harian kami menambah bonus tambahan kepada bayaran mingguan anda.",
+          "streaks": "Bonus Streak: Capai sasaran throughput mingguan anda selama beberapa minggu berturut-turut untuk mengumpul ganjaran streak tambahan.",
+          "milestones": {
+            "title": "Pencapaian Sepanjang Hayat",
+            "desc": "Raikan pertumbuhan dan pencapaian anda dengan bayaran sekaligus apabila anda melepasi jumlah tugasan yang diselesaikan sepanjang hayat:",
+            "task25": "25 Tugasan Selesai: Bonus RM40.00 / 2,400 Robux",
+            "task50": "50 Tugasan Selesai: Bonus RM75.00 / 4,500 Robux",
+            "task100": "100 Tugasan Selesai: Bonus RM150.00 / 9,000 Robux"
+          }
+        },
+        "bonuses": {
+          "title": "Bonus Bulanan Budi Bicara",
+          "desc": "Bukan semua kerja penting boleh dilabel dengan anggaran PPT yang mudah. Pembetulan pepijat (bug), refactoring, ulasan kod, membantu ahli pasukan lain, dan menyelenggara dokumentasi adalah penting untuk kejayaan kami.",
+          "sync": "Penyegerakan Automatik: Semua tugasan Linear bukan PPT yang diberikan kepada anda disinkronkan secara automatik sebagai 'Calon Bonus'.",
+          "reviews": "Ulasan Bulanan: Pentadbir menyemak sumbangan anda dan meluluskan transaksi BONUS bulanan yang dibayar terus kepada anda berdasarkan tugasan yang diselesaikan, pada kadar sehingga RM10.00 / 500 Robux setiap mata anggaran.",
+          "alerts": "Amaran Dalam Aplikasi: Terima pemberitahuan push dan e-mel masa nyata yang menunjukkan potensi pendapatan bonus anda (Sehingga X)."
+        },
+        "welcomePack": {
+          "title": "Pakej Aluan MYSverse",
+          "desc": "Sebaik sahaja anda menjadi pembangun aktif dalam pasukan, anda layak menerima Pakej Aluan fizikal eksklusif kami yang dihantar terus ke pintu rumah anda, percuma sepenuhnya.",
+          "items": "Pakej aluan anda termasuk barangan tersuai premium:",
+          "polo": "Polo Pembangunan MYSverse (XS hingga 3XL)",
+          "hoodie": "Hoodie Pembangunan MYSverse (2XS hingga 4XL)",
+          "lanyard": "Lanyard Tersuai MYSverse",
+          "sticker": "Pek Pelekat Die-cut Berkualiti Tinggi",
+          "tote": "Beg Tote Canvas untuk peralatan harian anda",
+          "tracking": "Penjejakan Penghantaran: Masukkan pilihan saiz pakaian dan butiran penghantaran terus di dalam DevHub dan jejak status penghantarannya secara masa nyata."
+        },
+        "onboarding": {
+          "title": "Penyesuaian (Onboarding) Tanpa Geseran & Integrasi",
+          "desc": "Kami mahu anda meluangkan masa menulis kod, bukan bergelut dengan kebenaran akses atau kerja kertas. DevHub mengautomasikan overhed pentadbiran:",
+          "linking": "Pautan Akaun Satu Klik: Sambungkan akaun Linear, Discord, dan Roblox anda serta-merta.",
+          "sync": "Penyegerakan Akses Automatik: Enjin penyegerakan automatik kami memberikan peranan Discord dan pangkat Kumpulan Roblox yang sesuai berdasarkan tugasan projek anda.",
+          "compliance": "Kepatuhan Tanpa Kertas: Baca, semak dan tandatangan dokumen NDA serta Conflict of Interest (COI) anda secara digital terus di dalam portal.",
+          "kyc": "Pengesahan KYC Selamat: Pengesahan identiti pantas dan selamat menjamin bahawa kami boleh mengendalikan pembayaran anda secara sah, bersih dan selamat."
+        },
+        "getStarted": {
+          "title": "Bersedia untuk membina sesuatu yang hebat?",
+          "subtitle": "Kami menggabungkan yang terbaik daripada kedua-dua dunia: kebebasan dan komuniti projek sukarelawan, disokong oleh struktur profesional, barangan fizikal, dan ganjaran kewangan studio komersial.",
+          "step1": "Log masuk ke DevHub menggunakan akaun OAuth anda.",
+          "step2": "Lengkapkan senarai semak onboarding anda (profil, pautan akaun, NDA).",
+          "step3": "Pilih tugasan Linear pertama anda dan mula menjana pendapatan!"
+        }
+      }
   },
   "Lebuhraya": {
     "alt": {
