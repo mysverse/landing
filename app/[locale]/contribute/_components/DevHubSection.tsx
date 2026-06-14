@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import * as m from "motion/react-m";
 import { AnimatePresence } from "motion/react";
 import { useTranslations } from "next-intl";
@@ -383,16 +384,17 @@ export default function DevHubSection() {
                               <input
                                 type="range"
                                 min="1"
-                                max="8"
+                                max="5"
                                 value={points}
                                 onChange={(e) => setPoints(Number(e.target.value))}
                                 className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-primary"
                               />
                               <div className="flex justify-between text-[9px] text-white/40 font-mono mt-1">
                                 <span>1 Pt</span>
+                                <span>2 Pt</span>
                                 <span>3 Pt</span>
+                                <span>4 Pt</span>
                                 <span>5 Pt</span>
-                                <span>8 Pt</span>
                               </div>
                             </div>
 
@@ -597,57 +599,73 @@ export default function DevHubSection() {
                             {t("devhub.welcomePack.desc")}
                           </p>
 
-                          {/* Merch selection */}
-                          <div className="mt-4 grid grid-cols-2 gap-2">
-                            <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between">
-                              <div>
-                                <span className="text-[9px] text-white/40 uppercase block">Embroidered Polo</span>
-                                <span className="text-[11px] font-semibold text-white block mt-0.5">{t("devhub.welcomePack.polo")}</span>
+                          {/* Merch selection and image container */}
+                          <div className="mt-4 grid grid-cols-1 sm:grid-cols-12 gap-3.5 items-stretch">
+                            {/* Controls */}
+                            <div className="sm:col-span-7 flex flex-col justify-between gap-3">
+                              <div className="grid grid-cols-2 gap-2">
+                                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between">
+                                  <div>
+                                    <span className="text-[9px] text-white/40 uppercase block">MYSverse Polo</span>
+                                    <span className="text-[10px] font-semibold text-white block mt-0.5">{t("devhub.welcomePack.polo")}</span>
+                                  </div>
+                                  <div className="mt-2.5 flex items-center justify-between text-[9px]">
+                                    <span className="text-white/55">Size:</span>
+                                    <select
+                                      value={selectedPoloSize}
+                                      onChange={(e) => setSelectedPoloSize(e.target.value)}
+                                      className="bg-black/50 border border-white/10 rounded px-1.5 py-0.5 text-xs text-white focus:outline-none"
+                                    >
+                                      {["XS", "S", "M", "L", "XL", "2XL", "3XL"].map((sz) => (
+                                        <option key={sz} value={sz}>
+                                          {sz}
+                                        </option>
+                                      ))}
+                                    </select>
+                                  </div>
+                                </div>
+                                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between">
+                                  <div>
+                                    <span className="text-[9px] text-white/40 uppercase block">Premium Hoodie</span>
+                                    <span className="text-[10px] font-semibold text-white block mt-0.5">{t("devhub.welcomePack.hoodie")}</span>
+                                  </div>
+                                  <div className="mt-2.5 flex items-center justify-between text-[9px]">
+                                    <span className="text-white/55">Size:</span>
+                                    <select
+                                      value={selectedHoodieSize}
+                                      onChange={(e) => setSelectedHoodieSize(e.target.value)}
+                                      className="bg-black/50 border border-white/10 rounded px-1.5 py-0.5 text-xs text-white focus:outline-none"
+                                    >
+                                      {["2XS", "XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"].map((sz) => (
+                                        <option key={sz} value={sz}>
+                                          {sz}
+                                        </option>
+                                      ))}
+                                    </select>
+                                  </div>
+                                </div>
                               </div>
-                              <div className="mt-3 flex items-center justify-between text-[10px]">
-                                <span className="text-white/55">Size:</span>
-                                <select
-                                  value={selectedPoloSize}
-                                  onChange={(e) => setSelectedPoloSize(e.target.value)}
-                                  className="bg-black/50 border border-white/10 rounded px-1.5 py-0.5 text-xs text-white focus:outline-none"
-                                >
-                                  {["XS", "S", "M", "L", "XL", "2XL", "3XL"].map((sz) => (
-                                    <option key={sz} value={sz}>
-                                      {sz}
-                                    </option>
-                                  ))}
-                                </select>
-                              </div>
+                              <p className="text-[9.5px] text-white/60 leading-relaxed">
+                                {t("devhub.welcomePack.items")}{" "}
+                                <span className="text-white/80 font-medium">
+                                  {t("devhub.welcomePack.lanyard")}, {t("devhub.welcomePack.sticker")}, {t("devhub.welcomePack.tote")}
+                                </span>
+                              </p>
                             </div>
-                            <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between">
-                              <div>
-                                <span className="text-[9px] text-white/40 uppercase block">Premium Hoodie</span>
-                                <span className="text-[11px] font-semibold text-white block mt-0.5">{t("devhub.welcomePack.hoodie")}</span>
-                              </div>
-                              <div className="mt-3 flex items-center justify-between text-[10px]">
-                                <span className="text-white/55">Size:</span>
-                                <select
-                                  value={selectedHoodieSize}
-                                  onChange={(e) => setSelectedHoodieSize(e.target.value)}
-                                  className="bg-black/50 border border-white/10 rounded px-1.5 py-0.5 text-xs text-white focus:outline-none"
-                                >
-                                  {["2XS", "XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"].map((sz) => (
-                                    <option key={sz} value={sz}>
-                                      {sz}
-                                    </option>
-                                  ))}
-                                </select>
+
+                            {/* Welcome Pack Image */}
+                            <div className="sm:col-span-5 flex items-center justify-center">
+                              <div className="relative aspect-video sm:aspect-square w-full rounded-2xl overflow-hidden border border-white/10 bg-black/20">
+                                <Image
+                                  src="/img/contribute/welcome_pack.jpg"
+                                  alt="Actual MYSverse Welcome Pack"
+                                  fill
+                                  className="object-cover hover:scale-105 transition-transform duration-500"
+                                  sizes="(max-width: 640px) 100vw, 150px"
+                                />
                               </div>
                             </div>
                           </div>
-
-                          {/* Package items list */}
-                          <p className="mt-3 text-[10px] text-white/60 leading-relaxed">
-                            {t("devhub.welcomePack.items")}{" "}
-                            <span className="text-white/80 font-medium">
-                              {t("devhub.welcomePack.lanyard")}, {t("devhub.welcomePack.sticker")}, {t("devhub.welcomePack.tote")}
-                            </span>
-                          </p>
                         </div>
 
                         {/* Shipment Tracker Mockup */}
@@ -832,16 +850,17 @@ function StaticPPTPanel() {
             <input
               type="range"
               min="1"
-              max="8"
+              max="5"
               value={3}
               readOnly
               className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-primary"
             />
             <div className="flex justify-between text-[9px] text-white/40 font-mono mt-1">
               <span>1 Pt</span>
+              <span>2 Pt</span>
               <span>3 Pt</span>
+              <span>4 Pt</span>
               <span>5 Pt</span>
-              <span>8 Pt</span>
             </div>
           </div>
 
