@@ -26,9 +26,11 @@ export default function Contact() {
                   MYSverse Digital Ventures
                 </h3>
                 <h4 className="text-primary text-sm leading-5 font-medium">
-                  <Link href="/ssm_cert.pdf" target="_blank">
+                  {/* Static asset — must NOT be locale-prefixed by the
+                      i18n Link (that routes it into the Ghost [slug] page) */}
+                  <a href="/ssm_cert.pdf" target="_blank" rel="noopener">
                     202303234965 (AS0469188-M)
-                  </Link>
+                  </a>
                 </h4>
                 <dl className="text-strong mt-3 space-y-1 text-sm leading-6">
                   <div className="flex flex-col gap-y-2">

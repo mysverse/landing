@@ -78,6 +78,8 @@ export default async function Main({ params }: Props) {
                     className="text-strong fill-strong text-2xl leading-6 font-semibold opacity-100 transition hover:opacity-50"
                   >
                     {item.icon}
+                    {/* Icon-only link needs an accessible name. */}
+                    <span className="sr-only">{item.name}</span>
                   </Link>
                 </PlausibleWrapper>
               ))}
@@ -105,6 +107,10 @@ export default async function Main({ params }: Props) {
                   className="group sumaya-button shadow-sumaya-deep/20 focus-visible:outline-sumaya relative w-full max-w-md rounded-2xl px-6 py-3.5 text-sm font-semibold text-black shadow-lg transition focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-auto sm:min-w-96 dark:text-white"
                 >
                   <PlaySumaya className="group-hover:fill-sumaya-deep inline-flex h-[3.2em] fill-white px-1 transition duration-300 ease-out" />
+                  {/* Logo-only CTA needs an accessible name. */}
+                  <span className="sr-only">
+                    {t("hero.playGame", { game: "Sumaya" })}
+                  </span>
                   <m.span
                     initial={{ opacity: 0, y: -8, scale: 0.92 }}
                     animate={{
@@ -150,6 +156,10 @@ export default async function Main({ params }: Props) {
                     className="group bandaraya-button focus-visible:outline-bandaraya w-full rounded-xl px-5 py-2.5 text-sm font-semibold text-black shadow-xs transition focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-auto dark:text-white"
                   >
                     <PlayBandaraya className="group-hover:fill-bandaraya inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out" />
+                    {/* Logo-only CTA needs an accessible name. */}
+                    <span className="sr-only">
+                      {t("hero.playGame", { game: "Bandaraya" })}
+                    </span>
                   </m.a>
                 </PlausibleWrapper>
                 <PlausibleWrapper
@@ -168,6 +178,10 @@ export default async function Main({ params }: Props) {
                     className="group lebuhraya-button focus-visible:outline-lebuhraya w-full rounded-xl px-5 py-2.5 text-sm font-semibold text-black shadow-xs transition focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-auto dark:text-white"
                   >
                     <PlayLebuhraya className="group-hover:fill-lebuhraya inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out" />
+                    {/* Logo-only CTA needs an accessible name. */}
+                    <span className="sr-only">
+                      {t("hero.playGame", { game: "Lebuhraya" })}
+                    </span>
                   </m.a>
                 </PlausibleWrapper>
               </div>

@@ -16,7 +16,11 @@ export class GhostRequestError extends Error {
 }
 
 export function isGhostNotFound(error: unknown) {
-  return error instanceof GhostRequestError && error.status === 404;
+  // 404: no such resource. 422: slug failed validation (e.g. stray
+  // file-like paths hitting the [slug] route) — same outcome for us.
+  return (
+    error instanceof GhostRequestError && [404, 422].includes(error.status)
+  );
 }
 
 const makeRequest = async ({

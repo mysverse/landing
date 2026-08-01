@@ -35,7 +35,9 @@ export default async function Footer() {
                     className="text-muted fill-muted text-2xl leading-6 font-semibold transition hover:opacity-50 sm:text-xl"
                   >
                     {icon}
-                    <span className="ml-2 hidden text-base xl:inline-block">
+                    {/* sr-only below xl so icon-only links keep an
+                        accessible name; visible from xl up. */}
+                    <span className="sr-only text-base xl:not-sr-only xl:ml-2 xl:inline-block">
                       {item.name}
                     </span>
                   </Link>

@@ -113,6 +113,50 @@ After building, you can start the production server:
 pnpm start
 ```
 
+## Visual & accessibility testing
+
+A Playwright harness (`tests/`) verifies the production build across
+light mode, dark mode, and mobile — the axes most likely to regress
+visually. It always runs with `prefers-reduced-motion: reduce`, which
+both stabilises screenshots and exercises the site's reduced-motion
+paths.
+
+```bash
+pnpm build          # the harness serves the production build on :4300
+pnpm screenshots    # refresh baselines + write a gallery to screenshots/
+pnpm test:visual    # diff pages against tests/__screenshots__/
+pnpm test:e2e       # everything: visual + smoke + accessibility
+pnpm exec playwright show-report   # browse results, diffs and traces
+```
+
+**Eyeballing changes:** every run writes full-page PNGs to
+`screenshots/<desktop-light|desktop-dark|mobile>/`. Open that folder to
+review a change visually; `pnpm test:visual` then tells you which pages
+moved and by how much, with side-by-side diffs in the HTML report.
+
+- **`tests/visual.spec.ts`** — full-page screenshots of home, contribute,
+  lebuhraya, the blog index, a legal page and the 404, per theme/viewport.
+  Live stat counters and videos are masked so runs are deterministic.
+  Baselines live in `tests/__screenshots__/` (gitignored by default —
+  commit that directory if you want CI to diff against them).
+- **`tests/smoke.spec.ts`** — behaviour the design system depends on:
+  skip link focus order, title template, hreflang tags, localized 404,
+  dark-mode toggle persistence, system dark preference, mobile menu
+  dialog + Escape, DevHub tablist arrow keys.
+- **`tests/a11y.spec.ts`** — axe-core WCAG 2.1 A/AA scans. Structural
+  violations (missing link names, roles, labels) fail the build. Colour
+  contrast is *reported, not enforced* — see the note at the top of that
+  file: the brand red `#ed5353` on white is ~3.3:1, below the 4.5:1 AA
+  threshold, which is a brand decision rather than a code fix.
+
+Third-party calls (analytics, live metrics, news, video CDN) are blocked
+in `tests/helpers.ts` so pages render their built-in fallbacks.
+
+> **Linux/WSL note:** Chromium needs system libraries. Run
+> `pnpm exec playwright install --with-deps chromium` (needs sudo). Without
+> root, fetch them into a user directory and export `LD_LIBRARY_PATH`
+> before running the tests.
+
 ## License
 
 This project is licensed under the MIT License.
