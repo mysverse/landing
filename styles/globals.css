@@ -18,6 +18,82 @@
   }
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------ */
+/* Design tokens                                                      */
+/*                                                                    */
+/* TS-side mirrors that must stay in sync with these values:          */
+/*   - app/[locale]/layout.tsx   viewport.themeColor = --color-primary */
+/*   - app/_components/MysverseLogo.tsx   logo fills = --color-brand  */
+/*   - utils/themeColour.ts   "mys" theme colour = --color-brand      */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* MYSverse brand */
+  --color-brand: #ff2a2a; /* logo/marketing red — not for UI chrome */
+  --color-primary: #ed5353; /* interactive accent (buttons, links, focus) */
+
+  /* Game sub-brands */
+  --color-sumaya: #b95300;
+  --color-sumaya-deep: #1c4f7c;
+  --color-bandaraya: #476075;
+  --color-bandaraya-deep: #27374d;
+  --color-lebuhraya: #00a859;
+  --color-lebuhraya-deep: #007f4e;
+
+  /* Deprecated aliases for the Lebuhraya pair; remove once /lebuhraya
+     and the Bento components migrate to bg-lebuhraya(-deep). */
+  --color-brand-green: #00a859;
+  --color-dark-green: #007f4e;
+}
+
+/* Mode-flipping semantic surfaces/text. Raw values live on --ms-*
+   custom properties (prefixed to avoid Tailwind theme namespaces) so
+   the utilities exposed via @theme inline resolve per-element and
+   flip under `.dark` without per-callsite dark: variants. */
+:root {
+  --ms-surface-page: var(--color-gray-100);
+  --ms-surface-card: var(--color-white);
+  --ms-surface-raised: var(--color-gray-100);
+  --ms-text-strong: var(--color-gray-900);
+  --ms-text-body: var(--color-gray-600);
+  --ms-text-muted: var(--color-gray-500);
+  --ms-border-edge: var(--color-gray-200);
+}
+
+.dark {
+  --ms-surface-page: var(--color-gray-950);
+  --ms-surface-card: var(--color-gray-900);
+  --ms-surface-raised: var(--color-gray-800);
+  --ms-text-strong: var(--color-white);
+  --ms-text-body: rgb(255 255 255 / 0.75);
+  --ms-text-muted: rgb(255 255 255 / 0.55);
+  --ms-border-edge: rgb(255 255 255 / 0.1);
+}
+
+/* `inline` is required: these values are var() references that must
+   resolve at the element (under .dark), not be frozen at :root. */
+@theme inline {
+  --color-surface-page: var(--ms-surface-page);
+  --color-surface-card: var(--ms-surface-card);
+  --color-surface-raised: var(--ms-surface-raised);
+  --color-strong: var(--ms-text-strong);
+  --color-body: var(--ms-text-body);
+  --color-muted: var(--ms-text-muted);
+  --color-edge: var(--ms-border-edge);
+
+  /* System mono stack — no mono webfont is loaded on purpose. */
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace;
+}
+
+/* ------------------------------------------------------------------ */
+/* Game gradient CTA buttons                                          */
+/* @property initial-value must be a literal per the CSS spec (no     */
+/* var()); the real values are set from tokens in the utilities below */
+/* and these literals only cover the first paint before the utility   */
+/* applies. Keep them equal to the token values above.                */
+/* ------------------------------------------------------------------ */
 @property --bdColor1 {
   syntax: "<color>";
   initial-value: #476075;
@@ -32,13 +108,13 @@
 
 @property --lbColor1 {
   syntax: "<color>";
-  initial-value: #65ad56;
+  initial-value: #00a859;
   inherits: false;
 }
 
 @property --lbColor2 {
   syntax: "<color>";
-  initial-value: #13863f;
+  initial-value: #007f4e;
   inherits: false;
 }
 
@@ -55,8 +131,8 @@
 }
 
 @utility bandaraya-button {
-  --bdColor1: #476075;
-  --bdColor2: #27374d;
+  --bdColor1: var(--color-bandaraya);
+  --bdColor2: var(--color-bandaraya-deep);
   background: linear-gradient(to right, var(--bdColor1), var(--bdColor2));
   transition:
     --bdColor1 0.3s ease-out,
@@ -69,8 +145,8 @@
 }
 
 @utility lebuhraya-button {
-  --lbColor1: #65ad56;
-  --lbColor2: #13863f;
+  --lbColor1: var(--color-lebuhraya);
+  --lbColor2: var(--color-lebuhraya-deep);
   background: linear-gradient(to right, var(--lbColor1), var(--lbColor2));
   transition:
     --lbColor1 0.3s ease-out,
@@ -83,8 +159,8 @@
 }
 
 @utility sumaya-button {
-  --syColor1: #b95300;
-  --syColor2: #1c4f7c;
+  --syColor1: var(--color-sumaya);
+  --syColor2: var(--color-sumaya-deep);
   background: linear-gradient(to bottom, var(--syColor1), var(--syColor2));
   transition:
     --syColor1 0.3s ease-out,
@@ -96,28 +172,41 @@
   }
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
-
-/* @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
-  img {
-    image-rendering: -webkit-optimize-contrast !important;
-  }
-} */
-
-/* Unset for Safari 11+ */
-/* @media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    img {
-      image-rendering: unset !important;
-    }
-  }
-} */
-
-@theme mysverse {
-  --color-primary: #ed5353;
+/* ------------------------------------------------------------------ */
+/* Typography scale                                                   */
+/* ------------------------------------------------------------------ */
+@utility eyebrow {
+  @apply text-primary text-base/7 font-semibold;
 }
 
-@theme lebuhraya {
-  --color-brand-green: #00a859;
-  --color-dark-green: #007f4e;
+@utility heading-1 {
+  @apply text-strong text-4xl font-bold tracking-tight sm:text-6xl;
+}
+
+@utility heading-2 {
+  @apply text-strong text-3xl font-bold tracking-tight sm:text-4xl;
+}
+
+@utility heading-3 {
+  @apply text-strong text-2xl font-bold tracking-tight;
+}
+
+@utility heading-4 {
+  @apply text-strong text-lg font-semibold;
+}
+
+@utility body-lg {
+  @apply text-body text-lg/8;
+}
+
+@utility body-base {
+  @apply text-body text-base/7;
+}
+
+@utility body-sm {
+  @apply text-body text-sm/6;
+}
+
+@utility caption {
+  @apply text-muted text-xs/5;
 }
