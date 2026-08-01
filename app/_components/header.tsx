@@ -125,6 +125,7 @@ function LanguageSwitcher({ align = "right" }: { align?: "left" | "right" }) {
                   {routing.locales.map((locale) => (
                     <MenuItem key={locale}>
                       <button
+                        type="button"
                         onClick={() => handleLocaleChange(locale)}
                         className={clsx(
                           "group flex w-full items-center rounded-lg px-2.5 py-2 text-sm font-semibold transition-colors",

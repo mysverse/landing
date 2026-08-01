@@ -3,11 +3,13 @@
 import type { PostOrPage } from "@tryghost/content-api";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import RotatingCard from "../RotatingCard";
 import { LocalTime } from "../LocalTime";
 
 // BlogPostCard component to handle the tilt effect
 export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
+  const t = useTranslations("Blog");
   return (
     <RotatingCard className="group relative isolate flex flex-col justify-end overflow-hidden sm:aspect-video sm:rounded-2xl sm:px-8 sm:pb-8">
       <Link
@@ -16,11 +18,15 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
         className={post.url ? "" : "pointer-events-none"}
       >
         <Image
-          alt={post.feature_image_alt ?? "Image of blog post"}
+          alt={
+            post.feature_image_alt ??
+            t("alt.feature", { title: post.title ?? "" })
+          }
           src={post.feature_image ?? ""}
           className="relative inset-0 -z-10 aspect-video rounded-lg object-cover transition duration-300 sm:absolute sm:h-full sm:w-full sm:rounded-none sm:group-hover:scale-[1.03]"
           width={1920}
           height={1080}
+          sizes="(max-width: 1024px) 100vw, 50vw"
         />
         <div className="relative inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/30 sm:absolute" />
         <div className="relative inset-0 -z-10 rounded-2xl ring-1 ring-gray-900/10 ring-inset sm:absolute" />
@@ -43,7 +49,9 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
                 post.authors[0].profile_image &&
                 post.authors[0].profile_image.trim() !== "" && (
                   <Image
-                    alt="Image of author"
+                    alt={t("alt.author", {
+                      name: post.authors[0].name ?? ""
+                    })}
                     src={post.authors[0].profile_image}
                     className="size-6 flex-none rounded-full bg-black/10 sm:bg-white dark:bg-white/10"
                     width={32}

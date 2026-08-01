@@ -5,7 +5,7 @@ import { getPage, getPages } from "utils/ghost";
 
 import PostOrPage from "app/_components/ghost/PostOrPage";
 import { getColour } from "utils/themeColour";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "i18n/routing";
 
 interface Props {
@@ -17,16 +17,21 @@ export default async function BlogPost({ params }: Props) {
   setRequestLocale(locale);
 
   const post = await getPage(slug);
+  const t = await getTranslations("Blog");
 
   return (
     <PostOrPage post={post}>
-      <h2>{post.title}</h2>
+      <h1>{post.title}</h1>
       {post.feature_image && (
         <Image
           width={1920}
           height={1080}
           src={post.feature_image}
-          alt={post.feature_image_alt ?? post.title ?? "feature_image"}
+          alt={
+            post.feature_image_alt ??
+            t("alt.feature", { title: post.title ?? "" })
+          }
+          sizes="(max-width: 896px) 100vw, 896px"
           className="mb-4 h-auto w-full rounded-lg"
         />
       )}

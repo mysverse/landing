@@ -126,9 +126,8 @@
     },
     "viewMore": "View more articles →",
     "alt": {
-      "postImage": "Image of blog post",
-      "authorImage": "Image of author",
-      "featureImage": "feature_image"
+      "author": "Photo of {name}",
+      "feature": "Featured image for {title}"
     },
     "fallback": {
       "notFound": "Blog not found",

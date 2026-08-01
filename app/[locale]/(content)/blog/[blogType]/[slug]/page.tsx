@@ -9,7 +9,7 @@ import { processBio } from "utils/bio";
 import { LocalTime } from "app/_components/LocalTime";
 import PostOrPage from "app/_components/ghost/PostOrPage";
 import BlogLayout from "app/_components/Layouts/BlogLayout";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "i18n/routing";
 
 interface Props {
@@ -21,6 +21,7 @@ export default async function BlogPost({ params }: Props) {
   setRequestLocale(locale);
 
   const post = await getPost(blogType, slug);
+  const t = await getTranslations("Blog");
   const primaryAuthor = post.authors?.[0];
   const publishDate = new Date(post.published_at!);
 
@@ -31,7 +32,7 @@ export default async function BlogPost({ params }: Props) {
           <div className="flex flex-col-reverse gap-5 sm:flex-row sm:items-center">
             <LocalTime
               date={publishDate}
-              className="block text-sm text-gray-500 sm:text-base dark:text-white"
+              className="text-muted block text-sm sm:text-base"
               type="date"
             />
             <svg
@@ -46,7 +47,7 @@ export default async function BlogPost({ params }: Props) {
                 {primaryAuthor.profile_image &&
                   primaryAuthor.profile_image.trim() !== "" && (
                     <Image
-                      alt={primaryAuthor.name ?? "Image of author"}
+                      alt={t("alt.author", { name: primaryAuthor.name ?? "" })}
                       src={primaryAuthor.profile_image}
                       width={32}
                       height={32}
@@ -59,22 +60,20 @@ export default async function BlogPost({ params }: Props) {
                   className="flex flex-col items-baseline text-base/6 transition hover:opacity-50 sm:flex-row sm:gap-3 sm:text-base"
                 >
                   <p className="font-medium">{primaryAuthor.name}</p>
-                  <p className="text-xs text-gray-500 sm:hidden sm:text-sm dark:text-white">
+                  <p className="text-muted text-xs sm:hidden sm:text-sm">
                     {processBio(primaryAuthor.bio?.toString())}
                   </p>
                 </Link>
               </div>
             )}
           </div>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl dark:text-white">
-            {post.title}
-          </h2>
+          <h1 className="heading-2 mt-3">{post.title}</h1>
           {primaryAuthor && (
             <div className="relative mt-5 flex items-center gap-x-4 sm:hidden">
               {primaryAuthor.profile_image &&
                 primaryAuthor.profile_image.trim() !== "" && (
                   <Image
-                    alt={primaryAuthor.name ?? "Image of author"}
+                    alt={t("alt.author", { name: primaryAuthor.name ?? "" })}
                     src={primaryAuthor.profile_image}
                     width={32}
                     height={32}
@@ -99,7 +98,11 @@ export default async function BlogPost({ params }: Props) {
             width={1920}
             height={1080}
             src={post.feature_image}
-            alt={post.feature_image_alt ?? post.title ?? "feature_image"}
+            alt={
+              post.feature_image_alt ??
+              t("alt.feature", { title: post.title ?? "" })
+            }
+            sizes="(max-width: 896px) 100vw, 896px"
             className="mb-4 h-auto w-full rounded-lg"
           />
         )}

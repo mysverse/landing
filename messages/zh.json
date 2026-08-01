@@ -126,9 +126,8 @@
     },
     "viewMore": "查看更多文章 →",
     "alt": {
-      "postImage": "博客文章图片",
-      "authorImage": "作者图片",
-      "featureImage": "feature_image"
+      "author": "{name}的照片",
+      "feature": "{title}的特色图片"
     },
     "fallback": {
       "notFound": "未找到博客",

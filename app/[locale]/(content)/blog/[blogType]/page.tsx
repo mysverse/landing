@@ -7,7 +7,7 @@ import { processBio } from "utils/bio";
 import { LocalTime } from "app/_components/LocalTime";
 import BlogLayout from "app/_components/Layouts/BlogLayout";
 import RotatingCard from "app/_components/RotatingCard";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "i18n/routing";
 
 interface Props {
@@ -19,9 +19,12 @@ export default async function BlogList({ params }: Props) {
   setRequestLocale(locale);
 
   const posts = await getPosts(blogType, 20);
+  const t = await getTranslations("Blog");
+  const blogInfo = blogData.find((blog) => blog.slug === blogType);
 
   return (
     <BlogLayout params={params}>
+      {blogInfo && <h1 className="heading-2 mt-8">{blogInfo.name}</h1>}
       <div className="mx-auto mt-8 grid grid-cols-1 gap-x-8 gap-y-20 sm:mt-16">
         {posts.map((post) => {
           const primaryTag = post.tags?.[0];
@@ -39,11 +42,13 @@ export default async function BlogList({ params }: Props) {
                 >
                   <Image
                     alt={
-                      post.feature_image_alt ?? post.title ?? "feature_image"
+                      post.feature_image_alt ??
+                      t("alt.feature", { title: post.title ?? "" })
                     }
                     src={post.feature_image!}
                     width={1920}
                     height={1080}
+                    sizes="(max-width: 896px) 100vw, 896px"
                     className="w-full rounded-2xl bg-gray-100 object-cover"
                   />
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-gray-900/10 ring-inset" />
@@ -83,7 +88,9 @@ export default async function BlogList({ params }: Props) {
                     {primaryAuthor.profile_image &&
                       primaryAuthor.profile_image.trim() !== "" && (
                         <Image
-                          alt={primaryAuthor.name ?? "Image of author"}
+                          alt={t("alt.author", {
+                            name: primaryAuthor.name ?? ""
+                          })}
                           src={primaryAuthor.profile_image}
                           width={32}
                           height={32}

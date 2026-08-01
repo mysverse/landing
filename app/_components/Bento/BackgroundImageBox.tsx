@@ -8,15 +8,17 @@ interface BackgroundImageBoxProps {
   title?: string;
   subtitle?: string;
   className?: string;
+  priority?: boolean;
   children?: React.ReactNode; // To allow passing child elements
 }
 
 const BackgroundImageBox: React.FC<BackgroundImageBoxProps> = ({
   imageUrl,
-  altText = "Background",
+  altText = "",
   title,
   subtitle,
   className = "",
+  priority = false,
   children
 }) => {
   return (
@@ -26,10 +28,10 @@ const BackgroundImageBox: React.FC<BackgroundImageBoxProps> = ({
       <Image
         src={imageUrl}
         alt={altText}
-        layout="fill"
-        objectFit="cover"
-        className="absolute inset-0 z-0 opacity-80" // Adjust opacity as needed
-        priority // Good for LCP elements
+        fill
+        sizes="(max-width: 640px) 100vw, 50vw"
+        className="absolute inset-0 z-0 object-cover opacity-80" // Adjust opacity as needed
+        priority={priority}
       />
       <div className="relative z-10 flex h-full flex-col">
         {title && (

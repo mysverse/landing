@@ -126,9 +126,8 @@
     },
     "viewMore": "Lihat lebih banyak artikel →",
     "alt": {
-      "postImage": "Imej catatan blog",
-      "authorImage": "Imej penulis",
-      "featureImage": "imej_utama"
+      "author": "Foto {name}",
+      "feature": "Imej utama untuk {title}"
     },
     "fallback": {
       "notFound": "Blog tidak ditemui",

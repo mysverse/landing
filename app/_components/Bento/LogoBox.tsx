@@ -7,14 +7,16 @@ interface LogoBoxProps {
   className?: string;
   width?: number;
   height?: number;
+  priority?: boolean;
 }
 
 const LogoBox: React.FC<LogoBoxProps> = ({
   logoUrl,
-  altText = "Logo",
+  altText = "",
   className = "",
   width = 150,
-  height = 50
+  height = 50,
+  priority = false
 }) => {
   return (
     <div
@@ -25,8 +27,8 @@ const LogoBox: React.FC<LogoBoxProps> = ({
         alt={altText}
         width={width}
         height={height}
-        objectFit="contain"
-        priority
+        className="object-contain"
+        priority={priority}
       />
     </div>
   );
