@@ -84,12 +84,12 @@ export default async function BlogList({ params }: Props) {
                   )}
                 </div>
                 <div className="group relative">
-                  <h3 className="text-strong group-hover:text-primary mt-3 text-xl/6 font-semibold transition">
+                  <h2 className="text-strong group-hover:text-primary mt-3 text-xl/6 font-semibold transition">
                     <Link href={`/blog/${blogType}/${post.slug}`}>
                       <span className="absolute inset-0" />
                       {post.title}
                     </Link>
-                  </h3>
+                  </h2>
                   <p className="text-body mt-5 line-clamp-3 text-base/6">
                     {post.excerpt}
                   </p>

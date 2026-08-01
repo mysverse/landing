@@ -2,13 +2,16 @@ import type { Metadata, ResolvingMetadata, Viewport } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { getPage, getPages } from "utils/ghost";
+import { getPage, getPages, isGhostNotFound } from "utils/ghost";
 
 async function getPageOr404(slug: string) {
   try {
     return await getPage(slug);
-  } catch {
-    notFound();
+  } catch (error) {
+    // Only a Ghost 404 becomes a 404 page; infrastructure failures
+    // must propagate so the build fails instead of baking 404s.
+    if (isGhostNotFound(error)) notFound();
+    throw error;
   }
 }
 

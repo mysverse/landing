@@ -234,6 +234,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
             static
             open={mobileMenuOpen}
             onClose={() => setMobileMenuOpen(false)}
+            aria-label={t("sr.mobileNav")}
             className="relative z-50 xl:hidden"
           >
             <DialogPanel as={Fragment}>

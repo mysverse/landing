@@ -500,7 +500,8 @@
           "guaranteedPayout": "Bayaran Terjamin",
           "rateMyr": "@ RM 20.00 / mata",
           "rateRobux": "@ 1,200 Robux / mata",
-          "pdfSlip": "Slip PDF"
+          "pdfSlip": "Slip PDF",
+          "pointsTick": "{count} Mata"
         },
         "incentives": {
           "throughputTitle": "Daya Pemprosesan Mingguan",

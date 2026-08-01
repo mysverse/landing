@@ -104,11 +104,9 @@ export function PPTPanel({
               className="accent-primary focus-visible:outline-primary h-1 w-full cursor-pointer appearance-none rounded-lg bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4"
             />
             <div className="mt-1 flex justify-between font-mono text-[10px] text-white/40">
-              <span>1 Pt</span>
-              <span>2 Pt</span>
-              <span>3 Pt</span>
-              <span>4 Pt</span>
-              <span>5 Pt</span>
+              {[1, 2, 3, 4, 5].map((n) => (
+                <span key={n}>{tm("pointsTick", { count: n })}</span>
+              ))}
             </div>
           </div>
 
@@ -277,9 +275,7 @@ export function BonusesPanel() {
           <div className="mt-2.5 space-y-2 text-[10px]">
             {mockTasks.map((task) => (
               <div key={task} className="flex items-center justify-between">
-                <span className="max-w-[200px] truncate text-white/80">
-                  {task}
-                </span>
+                <span className="max-w-50 truncate text-white/80">{task}</span>
                 <span className="rounded bg-yellow-400/10 px-1.5 py-0.5 font-mono text-[10px] text-yellow-400">
                   {tm("candidate")}
                 </span>

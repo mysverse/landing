@@ -4,13 +4,16 @@ import { notFound } from "next/navigation";
 import { Link } from "i18n/navigation";
 
 import type { BlogType } from "utils/ghost";
-import { blogData, getPost, getPosts } from "utils/ghost";
+import { blogData, getPost, getPosts, isGhostNotFound } from "utils/ghost";
 
 async function getPostOr404(blogType: BlogType, slug: string) {
   try {
     return await getPost(blogType, slug);
-  } catch {
-    notFound();
+  } catch (error) {
+    // Only a Ghost 404 becomes a 404 page; infrastructure failures
+    // must propagate so the build fails instead of baking 404s.
+    if (isGhostNotFound(error)) notFound();
+    throw error;
   }
 }
 import { getColour } from "utils/themeColour";

@@ -1,6 +1,7 @@
 import "styles/globals.css";
 
 import Link from "next/link";
+import { THEME_INIT_SCRIPT } from "utils/themeInit";
 
 /**
  * Root 404 for paths outside the locale tree. The locale layout (fonts,
@@ -11,6 +12,10 @@ export default function RootNotFound() {
   return (
     <html lang="en">
       <body className="bg-surface-page flex h-dvh items-center justify-center font-sans">
+        <script
+          id="theme-init"
+          dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
+        />
         <div className="px-6 text-center">
           <p className="eyebrow">404</p>
           <h1 className="heading-2 mt-2">Page not found</h1>

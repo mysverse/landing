@@ -500,7 +500,8 @@
           "guaranteedPayout": "Guaranteed Payout",
           "rateMyr": "@ RM 20.00 / point",
           "rateRobux": "@ 1,200 Robux / point",
-          "pdfSlip": "PDF Slip"
+          "pdfSlip": "PDF Slip",
+          "pointsTick": "{count} Pt"
         },
         "incentives": {
           "throughputTitle": "Weekly Throughput",

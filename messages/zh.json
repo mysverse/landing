@@ -500,7 +500,8 @@
           "guaranteedPayout": "保证报酬",
           "rateMyr": "@ 每点 RM 20.00",
           "rateRobux": "@ 每点 1,200 Robux",
-          "pdfSlip": "PDF 单据"
+          "pdfSlip": "PDF 单据",
+          "pointsTick": "{count} 点"
         },
         "incentives": {
           "throughputTitle": "每周产出",

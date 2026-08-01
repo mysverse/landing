@@ -496,11 +496,12 @@
         },
         "ppt": {
           "estimationPoints": "Linear மதிப்பீட்டுப் புள்ளிகள்",
-          "points": "{count, plural, other {# புள்ளிகள்}}",
+          "points": "{count, plural, one {# புள்ளி} other {# புள்ளிகள்}}",
           "guaranteedPayout": "உறுதியான கட்டணம்",
           "rateMyr": "@ ஒரு புள்ளிக்கு RM 20.00",
           "rateRobux": "@ ஒரு புள்ளிக்கு 1,200 Robux",
-          "pdfSlip": "PDF சீட்டு"
+          "pdfSlip": "PDF சீட்டு",
+          "pointsTick": "{count} புள்ளி"
         },
         "incentives": {
           "throughputTitle": "வாராந்திர செயல்திறன்",

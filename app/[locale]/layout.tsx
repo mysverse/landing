@@ -63,7 +63,6 @@ export const viewport: Viewport = {
   themeColor: BRAND_COLOR
 };
 
-import Script from "next/script";
 import { Public_Sans } from "next/font/google";
 import { ReactNode } from "react";
 import Header from "app/_components/header";
@@ -71,6 +70,7 @@ import Footer from "app/_components/Footer";
 import { getNews } from "utils/news";
 import { ThemeProvider } from "app/_components/ThemeProvider";
 import LazyMotionLayout from "app/_components/Motion/LazyMotionLayout";
+import { THEME_INIT_SCRIPT } from "utils/themeInit";
 
 import { NextIntlClientProvider } from "next-intl";
 import {
@@ -108,12 +108,9 @@ export default async function RootLayout({ children, params }: Props) {
         />
       </head>
       <body className={`${font.className} bg-surface-page h-full transition`}>
-        <Script
+        <script
           id="theme-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(){document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");var d=t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme:dark)").matches);document.documentElement.classList.toggle("dark",d)}catch(e){}})();`
-          }}
+          dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
         />
         <a
           href="#main-content"

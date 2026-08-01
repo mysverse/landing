@@ -29,7 +29,9 @@ function MotionVideoPlayer({
     <m.video
       src={typeof videoSrc === "string" ? videoSrc : undefined}
       loop
-      preload="none"
+      // Reduced-motion users get no autoplay, so fetch a first frame to
+      // paint instead of leaving an empty box.
+      preload={shouldReduceMotion ? "metadata" : "none"}
       muted
       playsInline
       onContextMenu={(e) => e.preventDefault()}

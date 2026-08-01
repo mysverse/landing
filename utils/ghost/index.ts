@@ -2,6 +2,23 @@ import type { MakeRequestOptions } from "@tryghost/content-api";
 import { cache } from "react";
 import GhostContentAPI from "@tryghost/content-api";
 
+/** Thrown for non-2xx Ghost responses so callers can tell a missing
+ * post (404 -> notFound()) from an infrastructure failure, which must
+ * propagate and fail the build loudly instead of baking 404 pages. */
+export class GhostRequestError extends Error {
+  constructor(
+    public status: number,
+    url: string
+  ) {
+    super(`Ghost request failed with ${status}: ${url}`);
+    this.name = "GhostRequestError";
+  }
+}
+
+export function isGhostNotFound(error: unknown) {
+  return error instanceof GhostRequestError && error.status === 404;
+}
+
 const makeRequest = async ({
   url,
   method,
@@ -12,13 +29,12 @@ const makeRequest = async ({
 
   Object.keys(params).map((key) => apiUrl.searchParams.set(key, params[key]));
 
-  try {
-    const response = await fetch(apiUrl.toString(), { method, headers });
-    const data = await response.json();
-    return { data };
-  } catch (error) {
-    console.error(error);
+  const response = await fetch(apiUrl.toString(), { method, headers });
+  if (!response.ok) {
+    throw new GhostRequestError(response.status, url);
   }
+  const data = await response.json();
+  return { data };
 };
 
 export const blogData = [
@@ -78,9 +94,9 @@ export async function getPages(limit = 10) {
   });
 }
 
-export async function getPage(slug: string) {
+export const getPage = cache(async (slug: string) => {
   return getApi("mys").pages.read({ slug });
-}
+});
 
 export const getPost = cache(async (blogType: BlogType, slug: string) => {
   const post = await getApi(blogType).posts.read(
