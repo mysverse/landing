@@ -32,7 +32,7 @@ export default async function TermsPage({ params }: Props) {
   let content = "";
   try {
     content = fs.readFileSync(filePath, "utf-8");
-  } catch (err) {
+  } catch {
     // fallback to English if the translation file is missing
     const fallbackPath = path.join(
       process.cwd(),
