@@ -4,5 +4,5 @@ type Messages = typeof en;
 
 declare global {
   // Use type safe message keys
-  interface IntlMessages extends Messages {}
+  type IntlMessages = Messages;
 }
