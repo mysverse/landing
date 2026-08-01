@@ -4,6 +4,7 @@ import * as m from "motion/react-m";
 import type { Variants } from "motion/react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { springSoft } from "app/_components/Motion/transitions";
 
 const listVariants: Variants = {
   visible: { transition: { staggerChildren: 0.12 } }
@@ -14,7 +15,7 @@ const cardVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 100, damping: 15 }
+    transition: springSoft
   }
 };
 

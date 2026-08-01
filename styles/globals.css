@@ -20,6 +20,11 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Applies only when JS has run (the theme-init script adds .js to <html>).
+   Gate animation "hidden" states behind this so content stays visible
+   without JavaScript. */
+@custom-variant js (&:where(.js, .js *));
+
 /* ------------------------------------------------------------------ */
 /* Design tokens                                                      */
 /*                                                                    */

@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { useSpring } from "motion/react";
 import * as m from "motion/react-m";
 import clsx from "clsx";
+import { springSoft } from "app/_components/Motion/transitions";
 
 interface Props {
   children: ReactNode;
@@ -13,9 +14,9 @@ interface Props {
 }
 
 export default function RotatingCard({ children, className, skipZ }: Props) {
-  const rotateX = useSpring(0);
-  const rotateY = useSpring(0);
-  const z = useSpring(0);
+  const rotateX = useSpring(0, springSoft);
+  const rotateY = useSpring(0, springSoft);
+  const z = useSpring(0, springSoft);
   const cardRef = useRef<HTMLDivElement>(null);
 
   const calculateTilt = (event: PointerEvent<HTMLElement>) => {
@@ -41,7 +42,6 @@ export default function RotatingCard({ children, className, skipZ }: Props) {
         z: skipZ ? 0 : z,
         transformPerspective: 1000
       }}
-      transition={{ type: "spring", stiffness: 200, damping: 20 }}
       onPointerMove={(e) => {
         if (e.pointerType !== "mouse") return; // ← skip on touch
         const { rotateX: x, rotateY: y } = calculateTilt(e);

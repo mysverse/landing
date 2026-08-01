@@ -7,6 +7,7 @@ import { AnimatePresence, type Variants } from "motion/react";
 import { usePlausible } from "next-plausible";
 import { ArrowLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import Button from "app/_components/ui/Button";
+import { springSnappy } from "app/_components/Motion/transitions";
 import {
   enquiryCategories,
   type EnquiryCategory,
@@ -15,7 +16,7 @@ import {
 import { useTranslations } from "next-intl";
 
 const stepTransition = {
-  x: { type: "spring", stiffness: 300, damping: 30 },
+  x: springSnappy,
   opacity: { duration: 0.2, ease: "easeOut" }
 } as const;
 

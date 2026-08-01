@@ -1,6 +1,6 @@
 "use client";
 
-import { LazyMotion } from "motion/react";
+import { LazyMotion, MotionConfig } from "motion/react";
 
 const loadFeatures = () => import("./features").then((res) => res.default);
 
@@ -11,7 +11,7 @@ export default function LazyMotionLayout({
 }) {
   return (
     <LazyMotion features={loadFeatures} strict>
-      {children}
+      <MotionConfig reducedMotion="user">{children}</MotionConfig>
     </LazyMotion>
   );
 }

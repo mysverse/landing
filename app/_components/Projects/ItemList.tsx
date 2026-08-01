@@ -15,7 +15,7 @@ import * as m from "motion/react-m";
 
 import type { Project } from "data/projects";
 
-import VideoPlayer from "../VideoPlayer";
+import MotionVideoPlayer from "../MotionVideoPlayer";
 import RotatingCard from "../RotatingCard";
 import { isExternalUrl } from "utils/isExternalUrl";
 import { useTranslations } from "next-intl";
@@ -25,7 +25,7 @@ const listVariants: Variants = {
   visible: {
     transition: {
       when: "beforeChildren",
-      staggerChildren: 0.5 // delay between each child
+      staggerChildren: 0.12 // delay between each child
     }
   }
 };
@@ -87,7 +87,7 @@ export default function ItemList({ projects }: { projects: Project[] }) {
               skipZ={project.videoSrc ? true : false}
             >
               {project.videoSrc ? (
-                <VideoPlayer
+                <MotionVideoPlayer
                   videoSrc={project.videoSrc}
                   className="absolute inset-0 size-full object-cover"
                 />

@@ -20,6 +20,7 @@ import JoinTeam from "app/_components/JoinTeam/JoinTeam";
 import { socials } from "data/socials";
 import PlausibleWrapper from "app/_components/PlausibleWrapper";
 import { MotionConfig } from "motion/react";
+import { EASE_OUT } from "app/_components/Motion/transitions";
 
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -34,13 +35,10 @@ export default async function Main({ params }: Props) {
   const t = await getTranslations("Home");
 
   return (
-    <MotionConfig
-      reducedMotion="user"
-      transition={{ ease: [0, 0.71, 0.2, 1.01] }}
-    >
+    <MotionConfig transition={{ ease: EASE_OUT }}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <SplitText className="heading-1 invisible w-full items-center justify-center text-center">
+          <SplitText className="heading-1 w-full items-center justify-center text-center">
             {t("hero.title")}
           </SplitText>
           <m.p

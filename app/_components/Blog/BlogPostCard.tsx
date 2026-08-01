@@ -9,7 +9,7 @@ import { LocalTime } from "../LocalTime";
 // BlogPostCard component to handle the tilt effect
 export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
   return (
-    <RotatingCard className="relative isolate flex flex-col justify-end overflow-hidden sm:aspect-video sm:rounded-2xl sm:px-8 sm:pb-8">
+    <RotatingCard className="group relative isolate flex flex-col justify-end overflow-hidden sm:aspect-video sm:rounded-2xl sm:px-8 sm:pb-8">
       <Link
         prefetch={false}
         href={post.url ?? "#"}
@@ -18,7 +18,7 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
         <Image
           alt={post.feature_image_alt ?? "Image of blog post"}
           src={post.feature_image ?? ""}
-          className="relative inset-0 -z-10 aspect-video rounded-lg object-cover sm:absolute sm:h-full sm:w-full sm:rounded-none"
+          className="relative inset-0 -z-10 aspect-video rounded-lg object-cover transition duration-300 sm:absolute sm:h-full sm:w-full sm:rounded-none sm:group-hover:scale-[1.03]"
           width={1920}
           height={1080}
         />
@@ -54,7 +54,7 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
             </div>
           </div>
         </div>
-        <h3 className="mt-3 text-lg leading-6 font-semibold text-black sm:text-white dark:text-white">
+        <h3 className="mt-3 text-lg leading-6 font-semibold text-black underline-offset-4 group-hover:underline sm:text-white dark:text-white">
           <span className="absolute inset-0" />
           {post.title}
         </h3>

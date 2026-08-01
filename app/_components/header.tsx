@@ -26,6 +26,7 @@ import {
 import clsx from "clsx";
 
 import NewsModal from "./NewsModal";
+import { springSnappy } from "app/_components/Motion/transitions";
 import { NewsItem } from "utils/news";
 import MysverseLogo from "./MysverseLogo";
 import MYSverseLogoWhite from "public/img/MYSverse_White.svg";
@@ -113,7 +114,7 @@ function LanguageSwitcher({ align = "right" }: { align?: "left" | "right" }) {
                   initial={{ opacity: 0, scale: 0.95, y: -4 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95, y: -4 }}
-                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                  transition={springSnappy}
                   className={clsx(
                     "bg-surface-card absolute z-50 mt-2 w-44 rounded-xl p-1 shadow-lg ring-1 ring-black/5 dark:ring-white/5",
                     align === "right"

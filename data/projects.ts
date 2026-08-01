@@ -1,5 +1,5 @@
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
-import type { VideoSource } from "app/_components/VideoPlayer";
+import type { VideoSource } from "app/_components/MotionVideoPlayer";
 import DaerahFeaturePic from "public/img/daerah_feature_image.webp";
 import RumahFeaturePic from "public/img/rumah_feature_image.webp";
 import Rumah3FeaturePic from "public/img/rumah3.webp";

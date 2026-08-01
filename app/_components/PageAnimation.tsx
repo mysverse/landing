@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, type ReactNode } from "react";
 import * as m from "motion/react-m";
+import { EASE_OUT } from "./Motion/transitions";
 
 const getHashTarget = () => {
   const hash = window.location.hash.slice(1);
@@ -51,9 +52,9 @@ export default function PageAnimation({
 
   return (
     <m.div
-      initial={{ y: 128, opacity: 0 }}
+      initial={{ y: 24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }}
+      transition={{ duration: 0.5, ease: EASE_OUT }}
       onAnimationComplete={() => scrollToHash()}
       className={className}
     >

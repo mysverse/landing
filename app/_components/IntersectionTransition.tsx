@@ -17,8 +17,10 @@ export default function IntersectionTransition(props: Props) {
     <div
       ref={ref}
       className={clsx(
-        "transition delay-150 duration-500 ease-out",
-        inView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+        "transition delay-150 duration-500 ease-out motion-reduce:transition-none",
+        inView
+          ? "translate-y-0 opacity-100"
+          : "js:motion-safe:translate-y-8 js:motion-safe:opacity-0"
       )}
     >
       {props.children}

@@ -5,6 +5,7 @@ import { animate, stagger } from "motion";
 import { useReducedMotion } from "motion/react";
 import { splitText } from "motion-plus";
 import { useEffect, useRef, useState } from "react";
+import clsx from "clsx";
 
 interface SplitTextProps {
   children: ReactNode;
@@ -28,7 +29,9 @@ export default function SplitText(props: SplitTextProps) {
       }
 
       try {
-        const { words } = splitText(headerRef.current, { preserveHyphens: true });
+        const { words } = splitText(headerRef.current, {
+          preserveHyphens: true
+        });
 
         // Set ready state for visibility
         setIsReady(true);
@@ -56,13 +59,11 @@ export default function SplitText(props: SplitTextProps) {
   }, [props.duration, shouldReduceMotion]);
 
   return (
+    // Hidden state is gated behind the js: variant so the headline still
+    // renders when JavaScript is unavailable or motion is reduced.
     <h1
-      className={props.className}
-      style={{
-        willChange: "transform, opacity",
-        visibility: isReady ? "visible" : "hidden",
-        opacity: isReady ? 1 : 0
-      }}
+      className={clsx(props.className, !isReady && "js:motion-safe:invisible")}
+      style={{ willChange: "transform, opacity" }}
       ref={headerRef}
     >
       {props.children}

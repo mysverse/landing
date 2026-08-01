@@ -1,4 +1,3 @@
-import { MotionConfig } from "motion/react";
 import IntersectionTransition from "app/_components/IntersectionTransition";
 import Container from "app/_components/ui/Container";
 import { roles } from "data/contribute";
@@ -74,99 +73,97 @@ export default async function ContributePage({ params }: Props) {
   };
 
   return (
-    <MotionConfig reducedMotion="user">
-      <Container>
-        {/* Hero */}
+    <Container>
+      {/* Hero */}
+      <IntersectionTransition>
+        <ContributeHero />
+      </IntersectionTransition>
+
+      {/* Stats */}
+      <div className="py-12 sm:py-24">
         <IntersectionTransition>
-          <ContributeHero />
+          <ContributeStats />
         </IntersectionTransition>
+      </div>
 
-        {/* Stats */}
-        <div className="py-12 sm:py-24">
-          <IntersectionTransition>
-            <ContributeStats />
-          </IntersectionTransition>
-        </div>
-
-        {/* Real-world Impact Showcase */}
-        <div className="pb-12 sm:pb-24">
-          <IntersectionTransition>
-            <TeamImpact />
-          </IntersectionTransition>
-        </div>
-
-        {/* Open Positions - the centerpiece */}
+      {/* Real-world Impact Showcase */}
+      <div className="pb-12 sm:pb-24">
         <IntersectionTransition>
-          <OpenPositions />
+          <TeamImpact />
         </IntersectionTransition>
+      </div>
 
-        {/* Benefits at a glance */}
-        <div className="py-12 sm:py-24">
-          <IntersectionTransition>
-            <BenefitsGrid />
-          </IntersectionTransition>
-        </div>
+      {/* Open Positions - the centerpiece */}
+      <IntersectionTransition>
+        <OpenPositions />
+      </IntersectionTransition>
 
-        {/* DevHub and incentives detailed overview */}
+      {/* Benefits at a glance */}
+      <div className="py-12 sm:py-24">
         <IntersectionTransition>
-          <DevHubSection />
+          <BenefitsGrid />
         </IntersectionTransition>
+      </div>
 
-        {/* How applying works */}
-        <div className="pt-12 sm:pt-24">
-          <IntersectionTransition>
-            <ApplyProcess />
-          </IntersectionTransition>
-        </div>
+      {/* DevHub and incentives detailed overview */}
+      <IntersectionTransition>
+        <DevHubSection />
+      </IntersectionTransition>
 
-        {/* Volunteer model narrative (trimmed) */}
-        <div className="py-12 sm:py-24">
-          <IntersectionTransition>
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="eyebrow">{t("model.label")}</p>
-              <h2 className="heading-2 mt-2">{t("model.title")}</h2>
-              <p className="body-lg mt-6">{t("model.desc")}</p>
-            </div>
-          </IntersectionTransition>
-        </div>
-
-        {/* Other ways to contribute (demoted) */}
+      {/* How applying works */}
+      <div className="pt-12 sm:pt-24">
         <IntersectionTransition>
-          <div className="text-center">
-            <p className="eyebrow">{t("secondary.label")}</p>
-            <h2 className="heading-2 mt-2">{t("secondary.title")}</h2>
-            <p className="body-lg mx-auto mt-4 max-w-2xl">
-              {t("secondary.desc")}
-            </p>
+          <ApplyProcess />
+        </IntersectionTransition>
+      </div>
+
+      {/* Volunteer model narrative (trimmed) */}
+      <div className="py-12 sm:py-24">
+        <IntersectionTransition>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow">{t("model.label")}</p>
+            <h2 className="heading-2 mt-2">{t("model.title")}</h2>
+            <p className="body-lg mt-6">{t("model.desc")}</p>
           </div>
         </IntersectionTransition>
+      </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {roles.map((role) => (
-            <IntersectionTransition key={role.title}>
-              <RoleCard
-                icon={role.icon}
-                title={getRoleTitle(role.title)}
-                description={getRoleDesc(role.title, role.description)}
-                features={getRoleFeatures(role.title, role.features)}
-              />
-            </IntersectionTransition>
-          ))}
+      {/* Other ways to contribute (demoted) */}
+      <IntersectionTransition>
+        <div className="text-center">
+          <p className="eyebrow">{t("secondary.label")}</p>
+          <h2 className="heading-2 mt-2">{t("secondary.title")}</h2>
+          <p className="body-lg mx-auto mt-4 max-w-2xl">
+            {t("secondary.desc")}
+          </p>
         </div>
+      </IntersectionTransition>
 
-        {/* Still have questions? */}
-        <div className="py-12 sm:py-24">
-          <IntersectionTransition>
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="heading-2">{t("questions.title")}</h2>
-              <p className="body-lg mt-4">{t("questions.desc")}</p>
-            </div>
-            <div className="mt-10">
-              <JoinCTA />
-            </div>
+      <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {roles.map((role) => (
+          <IntersectionTransition key={role.title}>
+            <RoleCard
+              icon={role.icon}
+              title={getRoleTitle(role.title)}
+              description={getRoleDesc(role.title, role.description)}
+              features={getRoleFeatures(role.title, role.features)}
+            />
           </IntersectionTransition>
-        </div>
-      </Container>
-    </MotionConfig>
+        ))}
+      </div>
+
+      {/* Still have questions? */}
+      <div className="py-12 sm:py-24">
+        <IntersectionTransition>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="heading-2">{t("questions.title")}</h2>
+            <p className="body-lg mt-4">{t("questions.desc")}</p>
+          </div>
+          <div className="mt-10">
+            <JoinCTA />
+          </div>
+        </IntersectionTransition>
+      </div>
+    </Container>
   );
 }

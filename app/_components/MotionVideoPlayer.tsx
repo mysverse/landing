@@ -2,8 +2,13 @@
 
 import type { HTMLMotionProps } from "motion/react";
 import { useRef } from "react";
+import { useReducedMotion } from "motion/react";
 import * as m from "motion/react-m";
-import type { VideoSource } from "./VideoPlayer";
+
+export interface VideoSource {
+  src: string;
+  type: string;
+}
 
 interface VideoPlayerProps extends Omit<
   HTMLMotionProps<"video">,
@@ -18,6 +23,8 @@ function MotionVideoPlayer({
   ...props
 }: VideoPlayerProps) {
   const videoElement = useRef<HTMLVideoElement>(null);
+  // Don't autoplay for users who prefer reduced motion.
+  const shouldReduceMotion = useReducedMotion();
   return (
     <m.video
       src={typeof videoSrc === "string" ? videoSrc : undefined}
@@ -28,7 +35,7 @@ function MotionVideoPlayer({
       onContextMenu={(e) => e.preventDefault()}
       ref={videoElement}
       onViewportEnter={() => {
-        if (autoPlay) {
+        if (autoPlay && !shouldReduceMotion) {
           videoElement.current?.play().catch((err) => {
             if (err.name !== "AbortError") console.error(err);
           });
