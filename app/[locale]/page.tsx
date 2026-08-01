@@ -101,9 +101,9 @@ export default async function Main({ params }: Props) {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 0.5, delay: 1.1 }}
                   href="https://www.roblox.com/games/137577526370180"
-                  className="group sumaya-button relative w-full max-w-md rounded-2xl px-6 py-3.5 text-sm font-semibold text-black shadow-lg shadow-[#1C4F7C]/20 transition focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-[#B95300] sm:w-auto sm:min-w-96 dark:text-white"
+                  className="group sumaya-button shadow-sumaya-deep/20 focus-visible:outline-sumaya relative w-full max-w-md rounded-2xl px-6 py-3.5 text-sm font-semibold text-black shadow-lg transition focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-auto sm:min-w-96 dark:text-white"
                 >
-                  <PlaySumaya className="inline-flex h-[3.2em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#1C4F7C]" />
+                  <PlaySumaya className="group-hover:fill-sumaya-deep inline-flex h-[3.2em] fill-white px-1 transition duration-300 ease-out" />
                   <m.span
                     initial={{ opacity: 0, y: -8, scale: 0.92 }}
                     animate={{
@@ -121,11 +121,11 @@ export default async function Main({ params }: Props) {
                         ease: "easeInOut"
                       }
                     }}
-                    className="absolute -top-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[0.65rem] leading-none font-bold tracking-wide text-[#1C4F7C] uppercase shadow-lg ring-1 ring-black/5"
+                    className="text-sumaya-deep absolute -top-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[0.65rem] leading-none font-bold tracking-wide uppercase shadow-lg ring-1 ring-black/5"
                   >
                     <span className="relative flex size-2">
-                      <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#B95300] opacity-60" />
-                      <span className="relative inline-flex size-2 rounded-full bg-[#B95300]" />
+                      <span className="absolute inline-flex size-full animate-ping rounded-full bg-sumaya opacity-60" />
+                      <span className="relative inline-flex size-2 rounded-full bg-sumaya" />
                     </span>
                     {t("hero.sumayaBadge")}
                   </m.span>
@@ -146,9 +146,9 @@ export default async function Main({ params }: Props) {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 1.25 }}
                     href="https://www.roblox.com/games/481538620/Bandaraya"
-                    className="group bandaraya-button w-full rounded-xl px-5 py-2.5 text-sm font-semibold text-black shadow-xs transition focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400 sm:w-auto dark:text-white"
+                    className="group bandaraya-button focus-visible:outline-bandaraya w-full rounded-xl px-5 py-2.5 text-sm font-semibold text-black shadow-xs transition focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-auto dark:text-white"
                   >
-                    <PlayBandaraya className="inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#476075]" />
+                    <PlayBandaraya className="group-hover:fill-bandaraya inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out" />
                   </m.a>
                 </PlausibleWrapper>
                 <PlausibleWrapper
@@ -164,9 +164,9 @@ export default async function Main({ params }: Props) {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 1.35 }}
                     href="https://www.roblox.com/games/4892731894/Lebuhraya"
-                    className="group lebuhraya-button w-full rounded-xl px-5 py-2.5 text-sm font-semibold text-black shadow-xs focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400 sm:w-auto dark:text-white"
+                    className="group lebuhraya-button focus-visible:outline-lebuhraya w-full rounded-xl px-5 py-2.5 text-sm font-semibold text-black shadow-xs transition focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-auto dark:text-white"
                   >
-                    <PlayLebuhraya className="inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out group-hover:fill-[#65ad56]" />
+                    <PlayLebuhraya className="group-hover:fill-lebuhraya inline-flex h-[3em] fill-white px-1 transition duration-300 ease-out" />
                   </m.a>
                 </PlausibleWrapper>
               </div>
