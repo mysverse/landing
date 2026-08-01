@@ -1,9 +1,8 @@
 "use client";
 
-import * as m from "motion/react-m";
-import clsx from "clsx";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
 import PlausibleWrapper from "app/_components/PlausibleWrapper";
+import Button from "app/_components/ui/Button";
 import type { OpenPosition } from "data/contribute";
 import { useTranslations } from "next-intl";
 
@@ -47,24 +46,16 @@ export default function ApplyButton({
         }
       }}
     >
-      <m.a
+      <Button
         href={position.applyHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        whileHover={{ y: -2, scale: 1.02 }}
-        whileTap={{ scale: 0.97 }}
-        className={clsx(
-          "group focus-visible:outline-primary inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
-          fullWidth && "w-full",
-          variant === "primary"
-            ? "bg-primary text-white shadow-lg hover:brightness-110"
-            : "hover:border-primary border-edge bg-surface-card text-strong border shadow-sm",
-          className
-        )}
+        external
+        variant={variant}
+        fullWidth={fullWidth}
+        className={className}
       >
         {label ?? defaultLabel}
         <ArrowTopRightOnSquareIcon className="size-4 transition-transform group-hover:translate-x-0.5" />
-      </m.a>
+      </Button>
     </PlausibleWrapper>
   );
 }

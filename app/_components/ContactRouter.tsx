@@ -1,20 +1,18 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
-import { Link } from "i18n/navigation";
 import clsx from "clsx";
 import * as m from "motion/react-m";
 import { AnimatePresence, type Variants } from "motion/react";
 import { usePlausible } from "next-plausible";
 import { ArrowLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
+import Button from "app/_components/ui/Button";
 import {
   enquiryCategories,
   type EnquiryCategory,
   type EnquiryDestination
 } from "data/enquiry";
 import { useTranslations } from "next-intl";
-
-const MotionLink = m.create(Link);
 
 const stepTransition = {
   x: { type: "spring", stiffness: 300, damping: 30 },
@@ -50,39 +48,16 @@ function DestinationCta({
     ? t(`categories.${categoryId}.destinations.${destination.key}.label`)
     : destination.label;
 
-  const sharedProps = {
-    onClick: () => onNavigate(destination),
-    whileHover: { y: -2, scale: 1.02 },
-    whileTap: { scale: 0.97 },
-    className: clsx(
-      "inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
-      destination.primary
-        ? "bg-primary text-white shadow-lg hover:brightness-110"
-        : "border-edge bg-surface-card text-strong hover:border-primary border shadow-sm"
-    )
-  };
-
-  if (destination.href.startsWith("/")) {
-    return (
-      <MotionLink href={destination.href} {...sharedProps}>
-        {label}
-        {destination.icon}
-      </MotionLink>
-    );
-  }
-
   return (
-    <m.a
+    <Button
       href={destination.href}
-      {...(destination.external && {
-        target: "_blank",
-        rel: "noopener noreferrer"
-      })}
-      {...sharedProps}
+      external={destination.external}
+      variant={destination.primary ? "primary" : "secondary"}
+      onClick={() => onNavigate(destination)}
     >
-      {destination.icon}
       {label}
-    </m.a>
+      {destination.icon}
+    </Button>
   );
 }
 

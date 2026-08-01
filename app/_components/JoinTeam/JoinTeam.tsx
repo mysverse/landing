@@ -1,7 +1,7 @@
-import { Link } from "i18n/navigation";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { openPositions, benefits } from "data/contribute";
 import PlausibleWrapper from "app/_components/PlausibleWrapper";
+import Button from "app/_components/ui/Button";
 import PositionCard from "app/[locale]/contribute/_components/PositionCard";
 import { useTranslations } from "next-intl";
 
@@ -59,13 +59,10 @@ export default function JoinTeam() {
           eventName="contributeCtaClicked"
           eventProps={{ props: { location: "homepage" } }}
         >
-          <Link
-            href="/contribute"
-            className="text-primary inline-flex items-center gap-1.5 text-sm font-semibold transition hover:opacity-70"
-          >
+          <Button href="/contribute" variant="ghost">
             {t("cta")}
             <ArrowRightIcon className="size-4" />
-          </Link>
+          </Button>
         </PlausibleWrapper>
       </div>
     </div>
