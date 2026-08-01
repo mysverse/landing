@@ -10,4 +10,3 @@ export const legalPages = [
   { key: "privacy", title: "Privacy Policy", href: "/legal/privacy-policy" },
   { key: "refund", title: "Refund Policy", href: "/legal/refund-policy" }
 ];
-

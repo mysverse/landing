@@ -32,11 +32,7 @@ export interface EnquiryDestination {
   external?: boolean;
   icon: ReactNode;
   plausibleType:
-    | "discord"
-    | "email"
-    | "whatsapp"
-    | "whatsapp_channel"
-    | "contribute";
+    "discord" | "email" | "whatsapp" | "whatsapp_channel" | "contribute";
   primary?: boolean;
 }
 

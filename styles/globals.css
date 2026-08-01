@@ -83,8 +83,8 @@
   --color-edge: var(--ms-border-edge);
 
   /* System mono stack — no mono webfont is loaded on purpose. */
-  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono",
-    monospace;
+  --font-mono:
+    ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 }
 
 /* ------------------------------------------------------------------ */

@@ -7,6 +7,7 @@ import { AnimatePresence, type Variants } from "motion/react";
 import { usePlausible } from "next-plausible";
 import { ArrowLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import Button from "app/_components/ui/Button";
+import { cardSurface } from "app/_components/ui/Card";
 import { springSnappy } from "app/_components/Motion/transitions";
 import {
   enquiryCategories,
@@ -120,12 +121,7 @@ export default function ContactRouter({ className }: { className?: string }) {
   }
 
   return (
-    <div
-      className={clsx(
-        "border-edge bg-surface-card flex h-full flex-col rounded-2xl border p-10 shadow-sm",
-        className
-      )}
-    >
+    <div className={clsx(cardSurface, "flex h-full flex-col p-10", className)}>
       <div aria-live="polite" className="relative grow">
         {/* Always mounted so it defines the card height on both steps */}
         <m.div
@@ -170,7 +166,7 @@ export default function ContactRouter({ className }: { className?: string }) {
                   onClick={() => selectCategory(category)}
                   whileHover={{ x: 4 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group hover:border-primary focus-visible:outline-primary border-edge bg-surface-raised flex h-full w-full items-center gap-x-3 rounded-xl border p-3 text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                  className="group hover:border-primary focus-visible:outline-primary border-edge bg-surface-raised flex h-full w-full items-center gap-x-3 rounded-xl border p-3 text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
                 >
                   <span className="bg-primary/10 text-primary flex size-9 flex-none items-center justify-center rounded-lg">
                     {category.icon}
@@ -179,11 +175,11 @@ export default function ContactRouter({ className }: { className?: string }) {
                     <span className="text-strong block text-sm font-semibold">
                       {getCategoryLabel(category)}
                     </span>
-                    <span className="block text-xs leading-5 text-gray-600 dark:text-white/60">
+                    <span className="text-body block text-xs leading-5">
                       {getCategoryDesc(category)}
                     </span>
                   </span>
-                  <ChevronRightIcon className="size-5 flex-none text-gray-400 transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none dark:text-white/40" />
+                  <ChevronRightIcon className="text-muted size-5 flex-none transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none" />
                 </m.button>
               </m.li>
             ))}
@@ -207,7 +203,7 @@ export default function ContactRouter({ className }: { className?: string }) {
               <button
                 type="button"
                 onClick={goBack}
-                className="hover:text-primary focus-visible:outline-primary inline-flex items-center gap-x-1.5 text-sm font-medium text-gray-500 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 dark:text-white/60 dark:hover:text-white"
+                className="hover:text-primary focus-visible:outline-primary text-muted inline-flex items-center gap-x-1.5 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
               >
                 <ArrowLeftIcon className="size-4" />
                 {t("back")}
@@ -215,9 +211,7 @@ export default function ContactRouter({ className }: { className?: string }) {
               <h3 className="text-strong mt-4 text-base leading-7 font-semibold">
                 {getResultHeading(selected)}
               </h3>
-              <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-white/70">
-                {getResultBody(selected)}
-              </p>
+              <p className="body-sm mt-2">{getResultBody(selected)}</p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 {selected.destinations.map((destination) => (
                   <DestinationCta
@@ -232,9 +226,7 @@ export default function ContactRouter({ className }: { className?: string }) {
           )}
         </AnimatePresence>
       </div>
-      <p className="mt-6 border-t border-gray-100 pt-4 text-xs leading-5 text-gray-500 dark:border-white/10 dark:text-white/60">
-        {t("note")}
-      </p>
+      <p className="border-edge caption mt-6 border-t pt-4">{t("note")}</p>
     </div>
   );
 }

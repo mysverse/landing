@@ -7,10 +7,7 @@ import type { OpenPosition } from "data/contribute";
 import { useTranslations } from "next-intl";
 
 export type ApplyPlacement =
-  | "home"
-  | "contribute_hero"
-  | "role_card"
-  | "final_cta";
+  "home" | "contribute_hero" | "role_card" | "final_cta";
 
 interface ApplyButtonProps {
   position: OpenPosition;

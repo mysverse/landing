@@ -51,14 +51,12 @@ export default function TeamImpact() {
             />
             <div className="absolute inset-0 bg-linear-to-t from-gray-950/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </div>
-          <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+          <div className="flex flex-1 flex-col justify-between p-6 sm:p-8">
             <div>
               <h3 className="heading-4 group-hover:text-primary transition-colors">
                 {t("impact.players.title")}
               </h3>
-              <p className="body-sm mt-3">
-                {t("impact.players.desc")}
-              </p>
+              <p className="body-sm mt-3">{t("impact.players.desc")}</p>
             </div>
           </div>
         </m.div>
@@ -78,14 +76,12 @@ export default function TeamImpact() {
             />
             <div className="absolute inset-0 bg-linear-to-t from-gray-950/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </div>
-          <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+          <div className="flex flex-1 flex-col justify-between p-6 sm:p-8">
             <div>
               <h3 className="heading-4 group-hover:text-primary transition-colors">
                 {t("impact.networking.title")}
               </h3>
-              <p className="body-sm mt-3">
-                {t("impact.networking.desc")}
-              </p>
+              <p className="body-sm mt-3">{t("impact.networking.desc")}</p>
             </div>
           </div>
         </m.div>
@@ -105,14 +101,12 @@ export default function TeamImpact() {
             />
             <div className="absolute inset-0 bg-linear-to-t from-gray-950/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </div>
-          <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+          <div className="flex flex-1 flex-col justify-between p-6 sm:p-8">
             <div>
               <h3 className="heading-4 group-hover:text-primary transition-colors">
                 {t("impact.welcomePack.title")}
               </h3>
-              <p className="body-sm mt-3">
-                {t("impact.welcomePack.desc")}
-              </p>
+              <p className="body-sm mt-3">{t("impact.welcomePack.desc")}</p>
             </div>
           </div>
         </m.div>

@@ -1,9 +1,11 @@
 import { EnvelopeIcon, MapIcon, PhoneIcon } from "@heroicons/react/20/solid";
+import clsx from "clsx";
 
 import { Link } from "i18n/navigation";
 import PlausibleWrapper from "./PlausibleWrapper";
 import ContactRouter from "./ContactRouter";
 import Container from "app/_components/ui/Container";
+import { cardSurface } from "app/_components/ui/Card";
 import { useTranslations } from "next-intl";
 
 export default function Contact() {
@@ -19,7 +21,7 @@ export default function Contact() {
                 {t("title")}
               </h2>
               <p className="body-base mt-4">{t("desc")}</p>
-              <div className="border-edge bg-surface-card mt-8 rounded-2xl border p-10 shadow-sm">
+              <div className={clsx(cardSurface, "mt-8 p-10")}>
                 <h3 className="text-strong text-base leading-7 font-semibold">
                   MYSverse Digital Ventures
                 </h3>

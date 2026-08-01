@@ -108,7 +108,7 @@ export default function ItemList({ projects }: { projects: Project[] }) {
                   {name}
                 </h3>
                 <div className="mt-1 flex flex-row items-center gap-x-3 sm:mt-0 sm:flex-row-reverse">
-                  <span className="text-strong my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-edge ring-1 ring-inset">
+                  <span className="text-strong ring-edge my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-inset">
                     <svg
                       className={clsx(
                         "size-1.5",
@@ -126,7 +126,7 @@ export default function ItemList({ projects }: { projects: Project[] }) {
                     {launched}
                   </span>
                   {location && (
-                    <span className="text-strong my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-edge ring-1 ring-inset">
+                    <span className="text-strong ring-edge my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-inset">
                       <MapPinIcon className="fill-strong size-4" />
                       {location}
                     </span>
@@ -136,7 +136,7 @@ export default function ItemList({ projects }: { projects: Project[] }) {
                       href={project.link}
                       target={project.local ? undefined : "_blank"}
                       prefetch={false}
-                      className="text-strong group my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-edge ring-1 transition ring-inset hover:bg-primary hover:text-white"
+                      className="text-strong group ring-edge hover:bg-primary my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 transition ring-inset hover:text-white"
                     >
                       {project.link.includes("roblox.com") ? (
                         project.link.includes("/games") ? (

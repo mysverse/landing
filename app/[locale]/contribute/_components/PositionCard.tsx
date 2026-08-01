@@ -68,9 +68,7 @@ export default function PositionCard({
       <RotatingCard
         className={clsx(
           "bg-surface-card flex h-full flex-col rounded-2xl border p-6 shadow-sm",
-          isLead
-            ? "border-primary/30 ring-primary/20 ring-1"
-            : "border-edge"
+          isLead ? "border-primary/30 ring-primary/20 ring-1" : "border-edge"
         )}
       >
         <div className="flex items-center gap-3">
@@ -99,9 +97,7 @@ export default function PositionCard({
     <RotatingCard
       className={clsx(
         "bg-surface-card h-full rounded-2xl border p-8 shadow-sm transition-shadow hover:shadow-lg",
-        isLead
-          ? "border-primary/30 ring-primary/30 ring-1"
-          : "border-edge"
+        isLead ? "border-primary/30 ring-primary/30 ring-1" : "border-edge"
       )}
     >
       <div className="flex h-full flex-col">
