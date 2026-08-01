@@ -18,7 +18,7 @@ export default function RoleCard({
   features
 }: RoleCardProps) {
   return (
-    <RotatingCard className="h-full rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-lg dark:border-white/10 dark:bg-gray-900">
+    <RotatingCard className="border-edge bg-surface-card h-full rounded-2xl border p-8 shadow-sm transition-shadow hover:shadow-lg">
       <div className="flex h-full flex-col">
         <div className="bg-primary/10 text-primary mb-4 flex size-12 items-center justify-center rounded-xl">
           {icon}

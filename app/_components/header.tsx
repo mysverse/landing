@@ -112,7 +112,7 @@ function LanguageSwitcher({
                   exit={{ opacity: 0, scale: 0.95, y: -4 }}
                   transition={{ type: "spring", stiffness: 350, damping: 25 }}
                   className={clsx(
-                    "absolute z-50 mt-2 w-44 rounded-xl bg-white p-1 shadow-lg ring-1 ring-black/5 dark:bg-slate-800 dark:ring-white/5",
+                    "bg-surface-card absolute z-50 mt-2 w-44 rounded-xl p-1 shadow-lg ring-1 ring-black/5 dark:ring-white/5",
                     align === "right"
                       ? "right-0 origin-top-right"
                       : "left-0 origin-top-left"
@@ -125,8 +125,8 @@ function LanguageSwitcher({
                         className={clsx(
                           "group flex w-full items-center rounded-lg px-2.5 py-2 text-sm font-semibold transition-colors",
                           locale === currentLocale
-                            ? "bg-gray-100 text-gray-900 dark:bg-slate-700 dark:text-white"
-                            : "text-gray-700 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-slate-700/50 dark:hover:text-white"
+                            ? "bg-surface-raised text-strong"
+                            : "text-body hover:bg-surface-raised hover:text-strong"
                         )}
                       >
                         {localeNames[locale as keyof typeof localeNames]}
@@ -223,7 +223,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 300 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10 dark:bg-slate-800"
+          className="bg-surface-card fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10"
         >
           <div className="flex items-center justify-between">
             <Link

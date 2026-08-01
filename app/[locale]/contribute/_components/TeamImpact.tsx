@@ -42,7 +42,7 @@ export default function TeamImpact() {
         {/* Card 1: Players */}
         <m.div
           variants={cardVariants}
-          className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-md transition-all duration-300 hover:shadow-xl dark:border-white/10 dark:bg-gray-900 flex flex-col"
+          className="group border-edge bg-surface-card relative flex flex-col overflow-hidden rounded-3xl border shadow-md transition-all duration-300 hover:shadow-xl"
         >
           <div className="relative aspect-video w-full overflow-hidden bg-gray-100 dark:bg-gray-950">
             <Image
@@ -69,7 +69,7 @@ export default function TeamImpact() {
         {/* Card 2: Networking */}
         <m.div
           variants={cardVariants}
-          className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-md transition-all duration-300 hover:shadow-xl dark:border-white/10 dark:bg-gray-900 flex flex-col"
+          className="group border-edge bg-surface-card relative flex flex-col overflow-hidden rounded-3xl border shadow-md transition-all duration-300 hover:shadow-xl"
         >
           <div className="relative aspect-video w-full overflow-hidden bg-gray-100 dark:bg-gray-950">
             <Image
@@ -96,7 +96,7 @@ export default function TeamImpact() {
         {/* Card 3: Welcome Pack */}
         <m.div
           variants={cardVariants}
-          className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-md transition-all duration-300 hover:shadow-xl dark:border-white/10 dark:bg-gray-900 flex flex-col"
+          className="group border-edge bg-surface-card relative flex flex-col overflow-hidden rounded-3xl border shadow-md transition-all duration-300 hover:shadow-xl"
         >
           <div className="relative aspect-video w-full overflow-hidden bg-gray-100 dark:bg-gray-950">
             <Image

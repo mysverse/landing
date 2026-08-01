@@ -61,7 +61,7 @@ export default async function BlogList({ params }: Props) {
                     <Link
                       href={primaryTag.url!}
                       target="_blank"
-                      className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 transition hover:bg-gray-100 dark:bg-slate-800 dark:text-white hover:dark:text-gray-600"
+                      className="bg-surface-raised text-body hover:bg-primary/10 hover:text-primary relative z-10 rounded-full px-3 py-1.5 font-medium transition"
                     >
                       {primaryTag?.name}
                     </Link>

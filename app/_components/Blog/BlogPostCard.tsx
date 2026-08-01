@@ -45,7 +45,7 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
                   <Image
                     alt="Image of author"
                     src={post.authors[0].profile_image}
-                    className="size-6 flex-none rounded-full bg-black/10 sm:bg-white dark:bg-slate-800/10"
+                    className="size-6 flex-none rounded-full bg-black/10 sm:bg-white dark:bg-white/10"
                     width={32}
                     height={32}
                   />

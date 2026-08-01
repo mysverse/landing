@@ -101,7 +101,7 @@ export default function DevHubSection() {
 
             {/* Right Side: Static DevHub Dashboard Mockup */}
             <div className="lg:col-span-7 flex flex-col justify-center">
-              <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-white/10 bg-gray-900 shadow-2xl p-1 flex flex-col h-[480px]">
+              <div className="relative overflow-hidden rounded-3xl border border-edge bg-gray-900 shadow-2xl p-1 flex flex-col h-[480px]">
                 {/* Dashboard Browser/App Header Chrome */}
                 <div className="flex items-center justify-between px-4 py-3 border-b border-white/5 bg-gray-950 text-white/50 text-[10px] tracking-wider uppercase font-semibold">
                   <div className="flex items-center gap-2">
@@ -153,7 +153,7 @@ export default function DevHubSection() {
           </div>
 
           {/* Let's Get Started / Checklist block */}
-          <div className="mt-16 sm:mt-24 p-8 sm:p-12 rounded-3xl border border-gray-200 bg-white shadow-sm dark:border-white/10 dark:bg-gray-900 overflow-hidden relative">
+          <div className="mt-16 sm:mt-24 p-8 sm:p-12 rounded-3xl border border-edge bg-surface-card shadow-sm overflow-hidden relative">
             <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10 translate-x-20 -translate-y-20 pointer-events-none" />
 
             <div className="max-w-3xl mx-auto text-center">
@@ -279,7 +279,7 @@ export default function DevHubSection() {
 
           {/* Right Side: Interactive DevHub Dashboard Mockup */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-white/10 bg-gray-900 shadow-2xl p-1 flex flex-col h-[480px]">
+            <div className="relative overflow-hidden rounded-3xl border border-edge bg-gray-900 shadow-2xl p-1 flex flex-col h-[480px]">
               {/* Dashboard Browser/App Header Chrome */}
               <div className="flex items-center justify-between px-4 py-3 border-b border-white/5 bg-gray-950 text-white/50 text-[10px] tracking-wider uppercase font-semibold">
                 <div className="flex items-center gap-2">
@@ -763,7 +763,7 @@ export default function DevHubSection() {
         </div>
 
         {/* Let's Get Started / Checklist block */}
-        <div className="mt-16 sm:mt-24 p-8 sm:p-12 rounded-3xl border border-gray-200 bg-white shadow-sm dark:border-white/10 dark:bg-gray-900 overflow-hidden relative">
+        <div className="mt-16 sm:mt-24 p-8 sm:p-12 rounded-3xl border border-edge bg-surface-card shadow-sm overflow-hidden relative">
           {/* Background decoration */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10 translate-x-20 -translate-y-20 pointer-events-none" />
 

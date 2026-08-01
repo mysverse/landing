@@ -64,7 +64,7 @@ export default function BenefitsGrid() {
             key={benefit.title}
             variants={itemVariants}
             whileHover={{ y: -4 }}
-            className="flex flex-col rounded-xl border border-gray-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-gray-900"
+            className="border-edge bg-surface-card flex flex-col rounded-xl border p-5 shadow-sm"
           >
             <div className="bg-primary/10 text-primary flex size-10 items-center justify-center rounded-lg">
               {benefit.icon}

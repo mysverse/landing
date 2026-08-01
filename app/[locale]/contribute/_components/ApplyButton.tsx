@@ -58,7 +58,7 @@ export default function ApplyButton({
           fullWidth && "w-full",
           variant === "primary"
             ? "bg-primary text-white shadow-lg hover:brightness-110"
-            : "hover:border-primary dark:hover:border-primary border border-gray-200 bg-white text-gray-900 shadow-sm dark:border-white/10 dark:bg-gray-900 dark:text-white",
+            : "hover:border-primary border-edge bg-surface-card text-strong border shadow-sm",
           className
         )}
       >

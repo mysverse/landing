@@ -23,7 +23,7 @@ export default function Contact() {
               <p className="mt-4 leading-7 text-gray-800 dark:text-white">
                 {t("desc")}
               </p>
-              <div className="mt-8 rounded-2xl bg-white p-10 dark:bg-slate-800">
+              <div className="bg-surface-card mt-8 rounded-2xl p-10">
                 <h3 className="text-strong text-base leading-7 font-semibold">
                   MYSverse Digital Ventures
                 </h3>

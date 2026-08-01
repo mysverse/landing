@@ -34,7 +34,7 @@ export default function JoinCTA() {
                 "group flex min-w-60 items-center gap-4 rounded-xl px-6 py-4 transition-all",
                 method.primary
                   ? "bg-primary text-white shadow-lg hover:shadow-xl hover:brightness-110"
-                  : "hover:border-primary dark:hover:border-primary border border-gray-200 bg-white text-gray-900 shadow-sm hover:shadow-md dark:border-white/10 dark:bg-gray-900 dark:text-white"
+                  : "hover:border-primary border-edge bg-surface-card text-strong border shadow-sm hover:shadow-md"
               )}
             >
               <div

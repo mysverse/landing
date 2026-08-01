@@ -58,7 +58,7 @@ function DestinationCta({
       "inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
       destination.primary
         ? "bg-primary text-white shadow-lg hover:brightness-110"
-        : "border border-gray-200 bg-white text-gray-900 shadow-sm hover:border-primary dark:border-white/10 dark:bg-gray-900 dark:text-white dark:hover:border-primary"
+        : "border-edge bg-surface-card text-strong hover:border-primary border shadow-sm"
     )
   };
 
@@ -146,7 +146,7 @@ export default function ContactRouter({ className }: { className?: string }) {
   return (
     <div
       className={clsx(
-        "flex h-full flex-col rounded-2xl bg-white p-10 dark:bg-slate-800",
+        "bg-surface-card flex h-full flex-col rounded-2xl p-10",
         className
       )}
     >
@@ -194,7 +194,7 @@ export default function ContactRouter({ className }: { className?: string }) {
                   onClick={() => selectCategory(category)}
                   whileHover={{ x: 4 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group hover:border-primary focus-visible:outline-primary dark:hover:border-primary flex h-full w-full items-center gap-x-3 rounded-xl border border-gray-100 bg-gray-50 p-3 text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 dark:border-white/10 dark:bg-white/5"
+                  className="group hover:border-primary focus-visible:outline-primary border-edge bg-surface-raised flex h-full w-full items-center gap-x-3 rounded-xl border p-3 text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                 >
                   <span className="bg-primary/10 text-primary flex size-9 flex-none items-center justify-center rounded-lg">
                     {category.icon}
