@@ -24,12 +24,8 @@ export default function TeamImpact() {
   return (
     <div className="mx-auto max-w-5xl">
       <div className="text-center">
-        <p className="text-primary text-base font-semibold">
-          {t("impact.label")}
-        </p>
-        <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-          {t("impact.title")}
-        </h2>
+        <p className="eyebrow">{t("impact.label")}</p>
+        <h2 className="heading-2 mt-2">{t("impact.title")}</h2>
       </div>
 
       <m.div
@@ -52,14 +48,14 @@ export default function TeamImpact() {
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-linear-to-t from-gray-950/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </div>
           <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
             <div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+              <h3 className="heading-4 group-hover:text-primary transition-colors">
                 {t("impact.players.title")}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-white/70">
+              <p className="body-sm mt-3">
                 {t("impact.players.desc")}
               </p>
             </div>
@@ -79,14 +75,14 @@ export default function TeamImpact() {
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-linear-to-t from-gray-950/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </div>
           <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
             <div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+              <h3 className="heading-4 group-hover:text-primary transition-colors">
                 {t("impact.networking.title")}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-white/70">
+              <p className="body-sm mt-3">
                 {t("impact.networking.desc")}
               </p>
             </div>
@@ -106,14 +102,14 @@ export default function TeamImpact() {
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-linear-to-t from-gray-950/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </div>
           <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
             <div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+              <h3 className="heading-4 group-hover:text-primary transition-colors">
                 {t("impact.welcomePack.title")}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-white/70">
+              <p className="body-sm mt-3">
                 {t("impact.welcomePack.desc")}
               </p>
             </div>

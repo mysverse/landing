@@ -23,17 +23,13 @@ export default function RoleCard({
         <div className="bg-primary/10 text-primary mb-4 flex size-12 items-center justify-center rounded-xl">
           {icon}
         </div>
-        <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
-          {title}
-        </h3>
-        <p className="mb-6 leading-7 text-gray-600 dark:text-white/80">
-          {description}
-        </p>
+        <h3 className="heading-3 mb-2">{title}</h3>
+        <p className="body-base mb-6">{description}</p>
         <ul className="mt-auto space-y-3">
           {features.map((feature) => (
             <li
               key={feature}
-              className="flex items-start gap-3 text-sm text-gray-700 dark:text-white/70"
+              className="text-body flex items-start gap-3 text-sm"
             >
               <CheckIcon className="text-primary mt-0.5 size-4 shrink-0" />
               <span>{feature}</span>

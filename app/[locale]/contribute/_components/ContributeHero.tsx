@@ -30,15 +30,13 @@ export default function ContributeHero() {
         {t("hero.badge")}
       </m.span>
 
-      <SplitText className="mt-5 w-full text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
-        {t("hero.title")}
-      </SplitText>
+      <SplitText className="heading-1 mt-5 w-full">{t("hero.title")}</SplitText>
 
       <m.p
         initial={shouldReduceMotion ? false : { opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600 dark:text-white/80"
+        className="body-lg mx-auto mt-6 max-w-2xl"
       >
         {t("hero.desc")}
       </m.p>

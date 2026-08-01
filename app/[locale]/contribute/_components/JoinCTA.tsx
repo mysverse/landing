@@ -53,9 +53,7 @@ export default function JoinCTA() {
                 <div
                   className={clsx(
                     "text-sm",
-                    method.primary
-                      ? "text-white/80"
-                      : "text-gray-500 dark:text-white/60"
+                    method.primary ? "text-white/80" : "text-muted"
                   )}
                 >
                   {description}

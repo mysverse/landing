@@ -7,18 +7,21 @@ const variants = {
 } as const;
 
 interface BadgeProps {
+  /** Element to render — li for badge lists, span otherwise. */
+  as?: "span" | "li";
   variant?: keyof typeof variants;
   className?: string;
   children: ReactNode;
 }
 
 export default function Badge({
+  as: Tag = "span",
   variant = "neutral",
   className,
   children
 }: BadgeProps) {
   return (
-    <span
+    <Tag
       className={clsx(
         "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium",
         variants[variant],
@@ -26,6 +29,6 @@ export default function Badge({
       )}
     >
       {children}
-    </span>
+    </Tag>
   );
 }

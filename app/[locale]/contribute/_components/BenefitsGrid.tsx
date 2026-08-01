@@ -44,12 +44,8 @@ export default function BenefitsGrid() {
   return (
     <div className="mx-auto max-w-5xl">
       <div className="text-center">
-        <p className="text-primary text-base/7 font-semibold">
-          {t("benefits.label")}
-        </p>
-        <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-          {t("benefits.title")}
-        </h2>
+        <p className="eyebrow">{t("benefits.label")}</p>
+        <h2 className="heading-2 mt-2">{t("benefits.title")}</h2>
       </div>
 
       <m.ul
@@ -69,10 +65,10 @@ export default function BenefitsGrid() {
             <div className="bg-primary/10 text-primary flex size-10 items-center justify-center rounded-lg">
               {benefit.icon}
             </div>
-            <h3 className="mt-3 text-sm font-semibold text-gray-900 dark:text-white">
+            <h3 className="text-strong mt-3 text-sm font-semibold">
               {getBenefitTitle(benefit.title)}
             </h3>
-            <p className="mt-1 flex-1 text-xs leading-5 text-gray-600 dark:text-white/70">
+            <p className="text-body mt-1 flex-1 text-xs leading-5">
               {getBenefitDesc(benefit.title, benefit.description)}
             </p>
             {benefit.headDevOnly && (
@@ -84,9 +80,7 @@ export default function BenefitsGrid() {
         ))}
       </m.ul>
 
-      <p className="mt-6 text-center text-xs text-gray-500 dark:text-white/50">
-        {t("benefits.disclaimer")}
-      </p>
+      <p className="caption mt-6 text-center">{t("benefits.disclaimer")}</p>
     </div>
   );
 }

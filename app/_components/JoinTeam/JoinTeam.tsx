@@ -1,7 +1,9 @@
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { openPositions, benefits } from "data/contribute";
 import PlausibleWrapper from "app/_components/PlausibleWrapper";
+import Badge from "app/_components/ui/Badge";
 import Button from "app/_components/ui/Button";
+import Container from "app/_components/ui/Container";
 import PositionCard from "app/[locale]/contribute/_components/PositionCard";
 import { useTranslations } from "next-intl";
 
@@ -20,51 +22,46 @@ export default function JoinTeam() {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-6 py-12 sm:py-20 lg:px-8">
-      <div className="mx-auto max-w-2xl text-center">
-        <p className="text-primary text-base/7 font-semibold">{t("label")}</p>
-        <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-          {t("title")}
-        </h2>
-        <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-gray-600 dark:text-white/80">
-          {t("desc")}
-        </p>
-        <ul className="mt-6 flex flex-wrap justify-center gap-2">
-          {benefits
-            .filter((benefit) => !benefit.headDevOnly)
-            .map((benefit) => (
-              <li
-                key={benefit.title}
-                className="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs font-medium"
-              >
-                {getBenefitLabel(benefit.title)}
-              </li>
-            ))}
-        </ul>
-      </div>
+    <section className="py-12 sm:py-24">
+      <Container>
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="eyebrow">{t("label")}</p>
+          <h2 className="heading-2 mt-2">{t("title")}</h2>
+          <p className="body-lg mx-auto mt-4 max-w-xl">{t("desc")}</p>
+          <ul className="mt-6 flex flex-wrap justify-center gap-2">
+            {benefits
+              .filter((benefit) => !benefit.headDevOnly)
+              .map((benefit) => (
+                <Badge as="li" key={benefit.title} variant="accent">
+                  {getBenefitLabel(benefit.title)}
+                </Badge>
+              ))}
+          </ul>
+        </div>
 
-      <div className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
-        {openPositions.map((position) => (
-          <PositionCard
-            key={position.id}
-            position={position}
-            placement="home"
-            compact
-          />
-        ))}
-      </div>
+        <div className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
+          {openPositions.map((position) => (
+            <PositionCard
+              key={position.id}
+              position={position}
+              placement="home"
+              compact
+            />
+          ))}
+        </div>
 
-      <div className="mt-8 text-center">
-        <PlausibleWrapper
-          eventName="contributeCtaClicked"
-          eventProps={{ props: { location: "homepage" } }}
-        >
-          <Button href="/contribute" variant="ghost">
-            {t("cta")}
-            <ArrowRightIcon className="size-4" />
-          </Button>
-        </PlausibleWrapper>
-      </div>
-    </div>
+        <div className="mt-8 text-center">
+          <PlausibleWrapper
+            eventName="contributeCtaClicked"
+            eventProps={{ props: { location: "homepage" } }}
+          >
+            <Button href="/contribute" variant="ghost">
+              {t("cta")}
+              <ArrowRightIcon className="size-4" />
+            </Button>
+          </PlausibleWrapper>
+        </div>
+      </Container>
+    </section>
   );
 }

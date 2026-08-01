@@ -1,5 +1,6 @@
 import { MotionConfig } from "motion/react";
 import IntersectionTransition from "app/_components/IntersectionTransition";
+import Container from "app/_components/ui/Container";
 import { roles } from "data/contribute";
 import ContributeHero from "./_components/ContributeHero";
 import ContributeStats from "./_components/ContributeStats";
@@ -74,21 +75,21 @@ export default async function ContributePage({ params }: Props) {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <Container>
         {/* Hero */}
         <IntersectionTransition>
           <ContributeHero />
         </IntersectionTransition>
 
         {/* Stats */}
-        <div className="py-16 sm:py-24">
+        <div className="py-12 sm:py-24">
           <IntersectionTransition>
             <ContributeStats />
           </IntersectionTransition>
         </div>
 
         {/* Real-world Impact Showcase */}
-        <div className="pb-16 sm:pb-24">
+        <div className="pb-12 sm:pb-24">
           <IntersectionTransition>
             <TeamImpact />
           </IntersectionTransition>
@@ -100,7 +101,7 @@ export default async function ContributePage({ params }: Props) {
         </IntersectionTransition>
 
         {/* Benefits at a glance */}
-        <div className="py-16 sm:py-24">
+        <div className="py-12 sm:py-24">
           <IntersectionTransition>
             <BenefitsGrid />
           </IntersectionTransition>
@@ -111,25 +112,20 @@ export default async function ContributePage({ params }: Props) {
           <DevHubSection />
         </IntersectionTransition>
 
-
         {/* How applying works */}
-        <IntersectionTransition>
-          <ApplyProcess />
-        </IntersectionTransition>
+        <div className="pt-12 sm:pt-24">
+          <IntersectionTransition>
+            <ApplyProcess />
+          </IntersectionTransition>
+        </div>
 
         {/* Volunteer model narrative (trimmed) */}
-        <div className="py-16 sm:py-24">
+        <div className="py-12 sm:py-24">
           <IntersectionTransition>
             <div className="mx-auto max-w-3xl text-center">
-              <p className="text-primary text-base/7 font-semibold">
-                {t("model.label")}
-              </p>
-              <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-                {t("model.title")}
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-white/80">
-                {t("model.desc")}
-              </p>
+              <p className="eyebrow">{t("model.label")}</p>
+              <h2 className="heading-2 mt-2">{t("model.title")}</h2>
+              <p className="body-lg mt-6">{t("model.desc")}</p>
             </div>
           </IntersectionTransition>
         </div>
@@ -137,13 +133,9 @@ export default async function ContributePage({ params }: Props) {
         {/* Other ways to contribute (demoted) */}
         <IntersectionTransition>
           <div className="text-center">
-            <p className="text-primary text-base/7 font-semibold">
-              {t("secondary.label")}
-            </p>
-            <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-              {t("secondary.title")}
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600 dark:text-white/80">
+            <p className="eyebrow">{t("secondary.label")}</p>
+            <h2 className="heading-2 mt-2">{t("secondary.title")}</h2>
+            <p className="body-lg mx-auto mt-4 max-w-2xl">
               {t("secondary.desc")}
             </p>
           </div>
@@ -163,22 +155,18 @@ export default async function ContributePage({ params }: Props) {
         </div>
 
         {/* Still have questions? */}
-        <div className="py-16 sm:py-24">
+        <div className="py-12 sm:py-24">
           <IntersectionTransition>
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-                {t("questions.title")}
-              </h2>
-              <p className="mt-4 text-lg text-gray-600 dark:text-white/80">
-                {t("questions.desc")}
-              </p>
+              <h2 className="heading-2">{t("questions.title")}</h2>
+              <p className="body-lg mt-4">{t("questions.desc")}</p>
             </div>
             <div className="mt-10">
               <JoinCTA />
             </div>
           </IntersectionTransition>
         </div>
-      </div>
+      </Container>
     </MotionConfig>
   );
 }

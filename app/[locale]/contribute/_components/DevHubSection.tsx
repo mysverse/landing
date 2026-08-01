@@ -40,19 +40,17 @@ export default function DevHubSection() {
   // to prevent React 19 state-update-before-mount console warnings.
   if (!hydrated) {
     return (
-      <section className="py-16 sm:py-24">
+      <section className="py-12 sm:py-24">
         <div className="mx-auto max-w-5xl">
           {/* Section Header */}
           <div className="mx-auto max-w-3xl text-center mb-12">
             <span className="bg-primary/10 text-primary inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide">
               {t("devhub.tagline")}
             </span>
-            <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+            <h2 className="heading-2 mt-2">
               {t("devhub.title")}
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-gray-600 dark:text-white/80">
-              {t("devhub.desc")}
-            </p>
+            <p className="body-base mt-4 sm:text-lg">{t("devhub.desc")}</p>
           </div>
 
           {/* Layout Grid */}
@@ -157,10 +155,10 @@ export default function DevHubSection() {
             <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10 translate-x-20 -translate-y-20 pointer-events-none" />
 
             <div className="max-w-3xl mx-auto text-center">
-              <h3 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl dark:text-white">
+              <h3 className="heading-3 sm:text-3xl">
                 {t("devhub.getStarted.title")}
               </h3>
-              <p className="mt-4 text-sm sm:text-base leading-relaxed text-gray-600 dark:text-white/80">
+              <p className="body-sm mt-4 sm:text-base">
                 {t("devhub.getStarted.subtitle")}
               </p>
             </div>
@@ -201,19 +199,17 @@ export default function DevHubSection() {
 
   // Interactive client-side version (fully animated)
   return (
-    <section className="py-16 sm:py-24">
+    <section className="py-12 sm:py-24">
       <div className="mx-auto max-w-5xl">
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center mb-12">
           <span className="bg-primary/10 text-primary inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide">
             {t("devhub.tagline")}
           </span>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+          <h2 className="heading-2 mt-2">
             {t("devhub.title")}
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-gray-600 dark:text-white/80">
-            {t("devhub.desc")}
-          </p>
+          <p className="body-base mt-4 sm:text-lg">{t("devhub.desc")}</p>
         </div>
 
         {/* Layout Grid */}
@@ -768,10 +764,10 @@ export default function DevHubSection() {
           <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10 translate-x-20 -translate-y-20 pointer-events-none" />
 
           <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl dark:text-white">
+            <h3 className="heading-3 sm:text-3xl">
               {t("devhub.getStarted.title")}
             </h3>
-            <p className="mt-4 text-sm sm:text-base leading-relaxed text-gray-600 dark:text-white/80">
+            <p className="body-sm mt-4 sm:text-base">
               {t("devhub.getStarted.subtitle")}
             </p>
           </div>

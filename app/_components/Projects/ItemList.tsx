@@ -108,7 +108,7 @@ export default function ItemList({ projects }: { projects: Project[] }) {
                   {name}
                 </h3>
                 <div className="mt-1 flex flex-row items-center gap-x-3 sm:mt-0 sm:flex-row-reverse">
-                  <span className="text-strong my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset dark:ring-white/10">
+                  <span className="text-strong my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-edge ring-1 ring-inset">
                     <svg
                       className={clsx(
                         "size-1.5",
@@ -126,8 +126,8 @@ export default function ItemList({ projects }: { projects: Project[] }) {
                     {launched}
                   </span>
                   {location && (
-                    <span className="text-strong my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset dark:ring-white/10">
-                      <MapPinIcon className="size-4 fill-gray-800 dark:fill-white" />
+                    <span className="text-strong my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-edge ring-1 ring-inset">
+                      <MapPinIcon className="fill-strong size-4" />
                       {location}
                     </span>
                   )}
@@ -136,29 +136,29 @@ export default function ItemList({ projects }: { projects: Project[] }) {
                       href={project.link}
                       target={project.local ? undefined : "_blank"}
                       prefetch={false}
-                      className="text-strong group my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 transition ring-inset hover:bg-primary hover:text-white dark:ring-white/10"
+                      className="text-strong group my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-edge ring-1 transition ring-inset hover:bg-primary hover:text-white"
                     >
                       {project.link.includes("roblox.com") ? (
                         project.link.includes("/games") ? (
                           <>
-                            <PlayIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
+                            <PlayIcon className="fill-strong size-4 group-hover:fill-white" />
                             {t("actions.playRoblox")}
                           </>
                         ) : project.link.includes("/communities") ||
                           project.link.includes("/groups") ? (
                           <>
-                            <UserGroupIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
+                            <UserGroupIcon className="fill-strong size-4 group-hover:fill-white" />
                             {t("actions.joinRoblox")}
                           </>
                         ) : (
                           <>
-                            <LinkIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
+                            <LinkIcon className="fill-strong size-4 group-hover:fill-white" />
                             {t("actions.expRoblox")}
                           </>
                         )
                       ) : (
                         <>
-                          <LinkIcon className="size-4 fill-gray-800 group-hover:fill-white dark:fill-white" />
+                          <LinkIcon className="fill-strong size-4 group-hover:fill-white" />
                           {t("actions.learnMore")}
                         </>
                       )}
@@ -169,7 +169,7 @@ export default function ItemList({ projects }: { projects: Project[] }) {
                   )}
                 </div>
               </div>
-              <div className="mt-3 text-base leading-7 text-black opacity-70 dark:text-white">
+              <div className="body-base mt-3">
                 <Markdown>{tagline}</Markdown>
               </div>
             </div>

@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import RotatingCard from "app/_components/RotatingCard";
+import Badge from "app/_components/ui/Badge";
 import type { OpenPosition } from "data/contribute";
 import ApplyButton, { type ApplyPlacement } from "./ApplyButton";
 import { useTranslations } from "next-intl";
@@ -77,17 +78,13 @@ export default function PositionCard({
             {position.icon}
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              {title}
-            </h3>
+            <h3 className="heading-4">{title}</h3>
             <span className="text-primary text-xs font-medium">
               {levelLabel}
             </span>
           </div>
         </div>
-        <p className="mt-3 flex-1 text-sm leading-6 text-gray-600 dark:text-white/70">
-          {tagline}
-        </p>
+        <p className="body-sm mt-3 flex-1">{tagline}</p>
         <ApplyButton
           position={position}
           placement={placement}
@@ -112,53 +109,39 @@ export default function PositionCard({
           <div className="bg-primary/10 text-primary flex size-12 items-center justify-center rounded-xl">
             {position.icon}
           </div>
-          <span
-            className={clsx(
-              "rounded-full px-3 py-1 text-xs font-semibold",
-              isLead
-                ? "bg-primary/10 text-primary"
-                : "bg-gray-100 text-gray-600 dark:bg-white/10 dark:text-white/70"
-            )}
+          <Badge
+            variant={isLead ? "accent" : "neutral"}
+            className="font-semibold"
           >
             {levelLabel}
-          </span>
+          </Badge>
         </div>
 
-        <h3 className="mt-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {title}
-        </h3>
-        <p className="mt-3 leading-7 text-gray-600 dark:text-white/80">
-          {description}
-        </p>
+        <h3 className="heading-3 mt-4">{title}</h3>
+        <p className="body-base mt-3">{description}</p>
 
-        <p className="mt-6 text-sm font-semibold text-gray-900 dark:text-white">
+        <p className="text-strong mt-6 text-sm font-semibold">
           {t("card.lookingFor")}
         </p>
         <ul className="mt-3 space-y-2">
           {lookingFor.map((item) => (
-            <li
-              key={item}
-              className="flex items-start gap-3 text-sm text-gray-700 dark:text-white/70"
-            >
+            <li key={item} className="text-body flex items-start gap-3 text-sm">
               <CheckIcon className="text-primary mt-0.5 size-4 shrink-0" />
               <span>{item}</span>
             </li>
           ))}
         </ul>
 
-        <p className="mt-6 text-sm font-semibold text-gray-900 dark:text-white">
+        <p className="text-strong mt-6 text-sm font-semibold">
           {t("card.benefits")}
         </p>
         <ul className="mt-3 flex flex-wrap gap-2">
           {position.benefits.map((benefit) => (
-            <li
+            <Badge
+              as="li"
               key={benefit.label}
-              className={clsx(
-                "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium",
-                benefit.emphasis
-                  ? "bg-primary/10 text-primary ring-primary/20 ring-1"
-                  : "bg-gray-100 text-gray-700 dark:bg-white/10 dark:text-white/70"
-              )}
+              variant={benefit.emphasis ? "accent" : "neutral"}
+              className={clsx(benefit.emphasis && "ring-primary/20 ring-1")}
             >
               {getBenefitLabel(benefit.label)}
               {benefit.headDevOnly && (
@@ -166,22 +149,18 @@ export default function PositionCard({
                   {t("card.headDevOnly")}
                 </span>
               )}
-            </li>
+            </Badge>
           ))}
         </ul>
 
-        <p className="mt-5 text-xs leading-5 text-gray-500 dark:text-white/50">
+        <p className="caption mt-5">
           <span className="font-medium">{t("card.formAsksFor")}</span>{" "}
           {formAsksFor}
         </p>
         {note && (
           <p className="text-primary mt-2 text-xs font-medium">{note}</p>
         )}
-        {disclaimer && (
-          <p className="mt-2 text-xs text-gray-500 italic dark:text-white/50">
-            {disclaimer}
-          </p>
-        )}
+        {disclaimer && <p className="caption mt-2 italic">{disclaimer}</p>}
 
         <div className="mt-auto pt-6">
           <ApplyButton position={position} placement={placement} fullWidth />

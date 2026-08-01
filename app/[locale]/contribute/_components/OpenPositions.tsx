@@ -30,13 +30,9 @@ export default function OpenPositions() {
   return (
     <section id="open-positions" className="scroll-mt-24">
       <div className="text-center">
-        <p className="text-primary text-base/7 font-semibold">
-          {t("openPositions.label")}
-        </p>
-        <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-          {t("openPositions.title")}
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600 dark:text-white/80">
+        <p className="eyebrow">{t("openPositions.label")}</p>
+        <h2 className="heading-2 mt-2">{t("openPositions.title")}</h2>
+        <p className="body-lg mx-auto mt-4 max-w-2xl">
           {t("openPositions.desc")}
         </p>
       </div>

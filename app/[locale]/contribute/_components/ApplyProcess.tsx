@@ -40,12 +40,8 @@ export default function ApplyProcess() {
   return (
     <div className="mx-auto max-w-5xl">
       <div className="text-center">
-        <p className="text-primary text-base/7 font-semibold">
-          {t("process.label")}
-        </p>
-        <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-          {t("process.title")}
-        </h2>
+        <p className="eyebrow">{t("process.label")}</p>
+        <h2 className="heading-2 mt-2">{t("process.title")}</h2>
       </div>
 
       <m.ol
@@ -60,12 +56,8 @@ export default function ApplyProcess() {
             <div className="bg-primary flex size-10 items-center justify-center rounded-full text-base font-semibold text-white">
               {index + 1}
             </div>
-            <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">
-              {step.title}
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-white/70">
-              {step.description}
-            </p>
+            <h3 className="heading-4 mt-4">{step.title}</h3>
+            <p className="body-sm mt-2">{step.description}</p>
           </m.li>
         ))}
       </m.ol>

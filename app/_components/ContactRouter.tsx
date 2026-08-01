@@ -121,7 +121,7 @@ export default function ContactRouter({ className }: { className?: string }) {
   return (
     <div
       className={clsx(
-        "bg-surface-card flex h-full flex-col rounded-2xl p-10",
+        "border-edge bg-surface-card flex h-full flex-col rounded-2xl border p-10 shadow-sm",
         className
       )}
     >

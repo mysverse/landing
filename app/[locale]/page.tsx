@@ -42,14 +42,14 @@ export default async function Main({ params }: Props) {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <SplitText className="invisible w-full items-center justify-center text-center text-4xl font-bold tracking-tight text-gray-800 sm:text-6xl dark:text-white">
+          <SplitText className="heading-1 invisible w-full items-center justify-center text-center">
             {t("hero.title")}
           </SplitText>
           <m.p
             initial={{ opacity: 0, y: -24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-4 text-base leading-relaxed text-gray-800 sm:mt-6 sm:text-lg sm:leading-8 dark:text-white/90"
+            className="body-base mt-4 sm:mt-6 sm:text-lg sm:leading-8"
           >
             {t.rich("hero.tagline", {
               b: (chunks) => <b>{chunks}</b>
@@ -214,11 +214,9 @@ export default async function Main({ params }: Props) {
         <Blog blogType="mys" />
       </IntersectionTransition>
 
-      <div className="mt-16">
-        <IntersectionTransition>
-          <Blog blogType="nws" />
-        </IntersectionTransition>
-      </div>
+      <IntersectionTransition>
+        <Blog blogType="nws" />
+      </IntersectionTransition>
 
       <IntersectionTransition>
         <Contact />

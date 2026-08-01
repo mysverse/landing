@@ -55,7 +55,7 @@ export default async function BlogList({ params }: Props) {
                   <LocalTime
                     date={publishDate}
                     type="distance"
-                    className="text-gray-500 dark:text-white"
+                    className="text-muted"
                   />
                   {primaryTag && (
                     <Link
@@ -68,13 +68,13 @@ export default async function BlogList({ params }: Props) {
                   )}
                 </div>
                 <div className="group relative">
-                  <h3 className="mt-3 text-xl/6 font-semibold text-gray-900 transition dark:text-white group-hover:dark:text-white">
+                  <h3 className="text-strong group-hover:text-primary mt-3 text-xl/6 font-semibold transition">
                     <Link href={`/blog/${blogType}/${post.slug}`}>
                       <span className="absolute inset-0" />
                       {post.title}
                     </Link>
                   </h3>
-                  <p className="mt-5 line-clamp-3 text-base/6 text-gray-600 dark:text-white">
+                  <p className="text-body mt-5 line-clamp-3 text-base/6">
                     {post.excerpt}
                   </p>
                 </div>
@@ -91,13 +91,13 @@ export default async function BlogList({ params }: Props) {
                         />
                       )}
                     <div className="text-base/6">
-                      <p className="font-semibold text-gray-900 dark:text-white">
+                      <p className="text-strong font-semibold">
                         <Link href={primaryAuthor.url!} target="_blank">
                           <span className="absolute inset-0" />
                           {primaryAuthor.name}
                         </Link>
                       </p>
-                      <p className="text-xs text-gray-600 sm:text-sm dark:text-white">
+                      <p className="text-body text-xs sm:text-sm">
                         {processBio(primaryAuthor.bio?.toString())}
                       </p>
                     </div>
