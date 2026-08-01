@@ -484,6 +484,68 @@
         "step1": "使用您的 OAuth 账户登录 DevHub。",
         "step2": "完成您的入职核对清单（个人档案设置、关联账户、签署 NDA）。",
         "step3": "认领您的第一个 Linear 任务并开始赚取报酬！"
+      },
+      "mock": {
+        "sidebar": {
+          "overview": "概览",
+          "linearSync": "Linear 同步",
+          "payouts": "报酬 (PPT)",
+          "welcomePack": "欢迎礼包",
+          "ndaCoi": "NDA 与 COI",
+          "verified": "已验证"
+        },
+        "ppt": {
+          "estimationPoints": "Linear 估算点数",
+          "points": "{count, plural, other {# 点}}",
+          "guaranteedPayout": "保证报酬",
+          "rateMyr": "@ 每点 RM 20.00",
+          "rateRobux": "@ 每点 1,200 Robux",
+          "pdfSlip": "PDF 单据"
+        },
+        "incentives": {
+          "throughputTitle": "每周产出",
+          "tasksDone": "5 / 5 个任务",
+          "streakBonus": "连续奖励",
+          "streakValue": "连续 3 周",
+          "streakNote": "奖励叠加",
+          "dailyTarget": "每日目标",
+          "dailyValue": "活跃日",
+          "dailyNote": "额外报酬奖励",
+          "paid": "已支付"
+        },
+        "bonuses": {
+          "syncedTitle": "Linear 非 PPT 任务（已同步）",
+          "synced": "已同步",
+          "task1": "[Bugfix] Lebuhraya 车辆碰撞",
+          "task2": "[Refactor] Roblox 角色生成",
+          "task3": "[Docs] API 入门指南",
+          "candidate": "奖金候选",
+          "potentialTitle": "潜在每月奖金",
+          "upTo": "最高 RM60.00",
+          "robuxEquiv": "相当于 3,000 Robux"
+        },
+        "welcomePackMock": {
+          "poloLabel": "MYSverse Polo 衫",
+          "hoodieLabel": "高级连帽衫",
+          "size": "尺码：",
+          "packAlt": "MYSverse 欢迎礼包实物",
+          "inTransit": "运送中",
+          "eta": "预计 2-3 天"
+        },
+        "onboarding": {
+          "linearLinked": "Linear 工作区账户已关联",
+          "linearMethod": "Linear OAuth",
+          "discordSynced": "Discord 开发者身份组已同步",
+          "discordRole": "开发者身份组",
+          "robloxSynced": "Roblox 群组权限与职级已同步",
+          "robloxRank": "开发者职级",
+          "ndaSigned": "NDA 与利益冲突 (COI) 已签署",
+          "ndaMethod": "无纸化电子签署",
+          "kyc": "KYC 身份验证",
+          "kycStatus": "已完成",
+          "complete": "入职 100% 完成",
+          "statusActive": "状态：活跃开发者"
+        }
       }
     },
     "impact": {

@@ -484,6 +484,68 @@
         "step1": "Log masuk ke DevHub menggunakan akaun OAuth anda.",
         "step2": "Lengkapkan senarai semak onboarding anda (profil, pautan akaun, NDA).",
         "step3": "Pilih tugasan Linear pertama anda dan mula menjana pendapatan!"
+      },
+      "mock": {
+        "sidebar": {
+          "overview": "Gambaran",
+          "linearSync": "Segerak Linear",
+          "payouts": "Bayaran (PPT)",
+          "welcomePack": "Pek Alu-aluan",
+          "ndaCoi": "NDA & COI",
+          "verified": "Disahkan"
+        },
+        "ppt": {
+          "estimationPoints": "Mata Anggaran Linear",
+          "points": "{count, plural, other {# Mata}}",
+          "guaranteedPayout": "Bayaran Terjamin",
+          "rateMyr": "@ RM 20.00 / mata",
+          "rateRobux": "@ 1,200 Robux / mata",
+          "pdfSlip": "Slip PDF"
+        },
+        "incentives": {
+          "throughputTitle": "Daya Pemprosesan Mingguan",
+          "tasksDone": "5 / 5 Tugasan",
+          "streakBonus": "Bonus Berturutan",
+          "streakValue": "3 Minggu Berturut",
+          "streakNote": "Kicker Terkumpul",
+          "dailyTarget": "Sasaran Harian",
+          "dailyValue": "Hari Aktif",
+          "dailyNote": "Kicker bayaran tambahan",
+          "paid": "Dibayar"
+        },
+        "bonuses": {
+          "syncedTitle": "Tugasan Bukan PPT Linear (Disegerak)",
+          "synced": "Disegerak",
+          "task1": "[Bugfix] Perlanggaran Kenderaan Lebuhraya",
+          "task2": "[Refactor] Kemunculan Watak Roblox",
+          "task3": "[Docs] Panduan Onboarding API",
+          "candidate": "Calon Bonus",
+          "potentialTitle": "Potensi Bonus Bulanan",
+          "upTo": "Sehingga RM60.00",
+          "robuxEquiv": "Bersamaan 3,000 Robux"
+        },
+        "welcomePackMock": {
+          "poloLabel": "Polo MYSverse",
+          "hoodieLabel": "Hoodie Premium",
+          "size": "Saiz:",
+          "packAlt": "Pek Alu-aluan MYSverse sebenar",
+          "inTransit": "Dalam Penghantaran",
+          "eta": "Anggaran: 2-3 Hari"
+        },
+        "onboarding": {
+          "linearLinked": "Akaun Ruang Kerja Linear Dipautkan",
+          "linearMethod": "OAuth Linear",
+          "discordSynced": "Peranan Pembangun Discord Disegerak",
+          "discordRole": "Peranan Pembangun",
+          "robloxSynced": "Akses Kumpulan & Pangkat Roblox Disegerak",
+          "robloxRank": "Pangkat Dev",
+          "ndaSigned": "NDA & Konflik Kepentingan (COI) Ditandatangani",
+          "ndaMethod": "eSign Tanpa Kertas",
+          "kyc": "Pengesahan Identiti KYC",
+          "kycStatus": "Selesai",
+          "complete": "Onboarding 100% Selesai",
+          "statusActive": "Status: Pembangun Aktif"
+        }
       }
     },
     "impact": {

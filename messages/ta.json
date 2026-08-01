@@ -484,6 +484,68 @@
         "step1": "உங்கள் OAuth கணக்கைப் பயன்படுத்தி DevHub-இல் உள்நுழையவும்.",
         "step2": "உங்கள் சேர்க்கை சரிபார்ப்புப் பட்டியலை முடிக்கவும் (சுயவிவரம், கணக்கு இணைப்பு, NDA).",
         "step3": "உங்கள் முதல் Linear பணியைப் பெற்று சம்பாதிக்கத் தொடங்குங்கள்!"
+      },
+      "mock": {
+        "sidebar": {
+          "overview": "மேலோட்டம்",
+          "linearSync": "Linear ஒத்திசைவு",
+          "payouts": "கட்டணங்கள் (PPT)",
+          "welcomePack": "வரவேற்புத் தொகுப்பு",
+          "ndaCoi": "NDA & COI",
+          "verified": "சரிபார்க்கப்பட்டது"
+        },
+        "ppt": {
+          "estimationPoints": "Linear மதிப்பீட்டுப் புள்ளிகள்",
+          "points": "{count, plural, other {# புள்ளிகள்}}",
+          "guaranteedPayout": "உறுதியான கட்டணம்",
+          "rateMyr": "@ ஒரு புள்ளிக்கு RM 20.00",
+          "rateRobux": "@ ஒரு புள்ளிக்கு 1,200 Robux",
+          "pdfSlip": "PDF சீட்டு"
+        },
+        "incentives": {
+          "throughputTitle": "வாராந்திர செயல்திறன்",
+          "tasksDone": "5 / 5 பணிகள்",
+          "streakBonus": "தொடர் போனஸ்",
+          "streakValue": "தொடர்ந்து 3 வாரங்கள்",
+          "streakNote": "கிக்கர்கள் சேர்க்கப்பட்டன",
+          "dailyTarget": "தினசரி இலக்கு",
+          "dailyValue": "செயலில் உள்ள நாள்",
+          "dailyNote": "கூடுதல் கட்டண கிக்கர்",
+          "paid": "செலுத்தப்பட்டது"
+        },
+        "bonuses": {
+          "syncedTitle": "Linear PPT அல்லாத பணிகள் (ஒத்திசைக்கப்பட்டது)",
+          "synced": "ஒத்திசைக்கப்பட்டது",
+          "task1": "[Bugfix] Lebuhraya வாகன மோதல்",
+          "task2": "[Refactor] Roblox கதாபாத்திர உருவாக்கம்",
+          "task3": "[Docs] API அறிமுக வழிகாட்டி",
+          "candidate": "போனஸ் வேட்பாளர்",
+          "potentialTitle": "சாத்தியமான மாதாந்திர போனஸ்",
+          "upTo": "RM60.00 வரை",
+          "robuxEquiv": "3,000 Robux க்கு சமம்"
+        },
+        "welcomePackMock": {
+          "poloLabel": "MYSverse போலோ",
+          "hoodieLabel": "பிரீமியம் ஹூடி",
+          "size": "அளவு:",
+          "packAlt": "உண்மையான MYSverse வரவேற்புத் தொகுப்பு",
+          "inTransit": "அனுப்பப்படுகிறது",
+          "eta": "மதிப்பீடு: 2-3 நாட்கள்"
+        },
+        "onboarding": {
+          "linearLinked": "Linear பணியிட கணக்கு இணைக்கப்பட்டது",
+          "linearMethod": "Linear OAuth",
+          "discordSynced": "Discord டெவலப்பர் பங்கு ஒத்திசைக்கப்பட்டது",
+          "discordRole": "டெவலப்பர் பங்கு",
+          "robloxSynced": "Roblox குழு அணுகல் & தரம் ஒத்திசைக்கப்பட்டது",
+          "robloxRank": "டெவ் தரம்",
+          "ndaSigned": "NDA & வட்டி முரண்பாடு (COI) கையொப்பமிடப்பட்டது",
+          "ndaMethod": "காகிதமற்ற மின்-கையொப்பம்",
+          "kyc": "KYC அடையாளச் சரிபார்ப்பு",
+          "kycStatus": "முடிந்தது",
+          "complete": "சேர்க்கை 100% முடிந்தது",
+          "statusActive": "நிலை: செயலில் உள்ள டெவலப்பர்"
+        }
       }
     },
     "impact": {

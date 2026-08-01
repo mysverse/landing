@@ -484,6 +484,68 @@
         "step1": "Sign in to DevHub using your OAuth account.",
         "step2": "Complete your onboarding checklist (profile, account linking, NDA).",
         "step3": "Grab your first Linear task and start earning!"
+      },
+      "mock": {
+        "sidebar": {
+          "overview": "Overview",
+          "linearSync": "Linear Sync",
+          "payouts": "Payouts (PPT)",
+          "welcomePack": "Welcome Pack",
+          "ndaCoi": "NDA & COI",
+          "verified": "Verified"
+        },
+        "ppt": {
+          "estimationPoints": "Linear Estimation Points",
+          "points": "{count, plural, one {# Point} other {# Points}}",
+          "guaranteedPayout": "Guaranteed Payout",
+          "rateMyr": "@ RM 20.00 / point",
+          "rateRobux": "@ 1,200 Robux / point",
+          "pdfSlip": "PDF Slip"
+        },
+        "incentives": {
+          "throughputTitle": "Weekly Throughput",
+          "tasksDone": "5 / 5 Tasks",
+          "streakBonus": "Streak Bonus",
+          "streakValue": "3 Weeks Row",
+          "streakNote": "Kickers Stacked",
+          "dailyTarget": "Daily Target",
+          "dailyValue": "Active-Day",
+          "dailyNote": "Extra payout kicker",
+          "paid": "Paid"
+        },
+        "bonuses": {
+          "syncedTitle": "Linear Non-PPT Tasks (Synced)",
+          "synced": "Synced",
+          "task1": "[Bugfix] Lebuhraya Vehicle Collision",
+          "task2": "[Refactor] Roblox Character Spawning",
+          "task3": "[Docs] API Onboarding Guide",
+          "candidate": "Bonus Candidate",
+          "potentialTitle": "Potential Monthly Bonus",
+          "upTo": "Up to RM60.00",
+          "robuxEquiv": "3,000 Robux equivalent"
+        },
+        "welcomePackMock": {
+          "poloLabel": "MYSverse Polo",
+          "hoodieLabel": "Premium Hoodie",
+          "size": "Size:",
+          "packAlt": "Actual MYSverse Welcome Pack",
+          "inTransit": "In Transit",
+          "eta": "Est: 2-3 Days"
+        },
+        "onboarding": {
+          "linearLinked": "Linear Workspace Account Linked",
+          "linearMethod": "Linear OAuth",
+          "discordSynced": "Discord Developer Role Synced",
+          "discordRole": "Developer Role",
+          "robloxSynced": "Roblox Group Access & Rank Synced",
+          "robloxRank": "Dev Rank",
+          "ndaSigned": "NDA & Conflict of Interest (COI) Signed",
+          "ndaMethod": "Paperless eSign",
+          "kyc": "KYC Identity Verification",
+          "kycStatus": "Complete",
+          "complete": "Onboarding 100% Complete",
+          "statusActive": "Status: Active Developer"
+        }
       }
     },
     "impact": {
