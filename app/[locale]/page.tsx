@@ -74,7 +74,7 @@ export default async function Main({ params }: Props) {
                   <Link
                     href={item.href}
                     target="_blank"
-                    className="text-black-100 fill-gray-800 text-2xl leading-6 font-semibold text-gray-800 opacity-100 hover:opacity-50 dark:fill-white/90 dark:text-white/90"
+                    className="text-strong fill-strong text-2xl leading-6 font-semibold opacity-100 transition hover:opacity-50"
                   >
                     {item.icon}
                   </Link>

@@ -104,11 +104,11 @@ export default function ItemList({ projects }: { projects: Project[] }) {
             </RotatingCard>
             <div className="mx-1">
               <div className="flex flex-col justify-between gap-x-4 gap-y-1 sm:flex-row">
-                <h3 className="text-black-100 text-2xl font-bold tracking-tight dark:text-white">
+                <h3 className="text-strong text-2xl font-bold tracking-tight">
                   {name}
                 </h3>
                 <div className="mt-1 flex flex-row items-center gap-x-3 sm:mt-0 sm:flex-row-reverse">
-                  <span className="text-black-100 my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset dark:text-white dark:ring-white/10">
+                  <span className="text-strong my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset dark:ring-white/10">
                     <svg
                       className={clsx(
                         "size-1.5",
@@ -126,7 +126,7 @@ export default function ItemList({ projects }: { projects: Project[] }) {
                     {launched}
                   </span>
                   {location && (
-                    <span className="text-black-100 my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset dark:text-white dark:ring-white/10">
+                    <span className="text-strong my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 ring-inset dark:ring-white/10">
                       <MapPinIcon className="size-4 fill-gray-800 dark:fill-white" />
                       {location}
                     </span>
@@ -136,7 +136,7 @@ export default function ItemList({ projects }: { projects: Project[] }) {
                       href={project.link}
                       target={project.local ? undefined : "_blank"}
                       prefetch={false}
-                      className="text-black-100 group my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 transition ring-inset hover:bg-red-400 hover:text-white dark:text-white dark:ring-white/10"
+                      className="text-strong group my-0.5 inline-flex items-center gap-x-1.5 rounded-md px-2 py-2 text-xs font-medium ring-1 ring-gray-300 transition ring-inset hover:bg-primary hover:text-white dark:ring-white/10"
                     >
                       {project.link.includes("roblox.com") ? (
                         project.link.includes("/games") ? (

@@ -14,7 +14,7 @@ export default function ProjectList() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <IntersectionTransition>
           <div className="mx-auto max-w-5xl lg:mx-0" id="projects">
-            <h2 className="text-black-100 text-3xl font-bold tracking-tight sm:text-4xl dark:text-white">
+            <h2 className="text-strong text-3xl font-bold tracking-tight sm:text-4xl">
               {t("title")}
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-800 dark:text-white">
@@ -25,7 +25,7 @@ export default function ProjectList() {
             </p>
           </div>
           <div className="mt-16">
-            <h3 className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white">
+            <h3 className="text-strong text-2xl font-bold tracking-tight sm:text-3xl">
               {t("sections.mysverse")}
             </h3>
             <ItemList
@@ -35,7 +35,7 @@ export default function ProjectList() {
         </IntersectionTransition>
         <IntersectionTransition>
           <div className="mt-16">
-            <h3 className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white">
+            <h3 className="text-strong text-2xl font-bold tracking-tight sm:text-3xl">
               <MYSverseSimLogo className="inline-block h-12 w-auto fill-black dark:hidden" />
               <MYSverseSimLogoWhite className="hidden h-12 w-auto fill-white dark:inline-block" />
               <span className="sr-only">{t("sections.sim")}</span>
@@ -48,7 +48,7 @@ export default function ProjectList() {
         </IntersectionTransition>
         <IntersectionTransition>
           <div className="mt-16">
-            <h3 className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white">
+            <h3 className="text-strong text-2xl font-bold tracking-tight sm:text-3xl">
               {t("sections.network")}
             </h3>
             <p className="mt-6 text-lg leading-8">{t("networkDesc")}</p>
@@ -60,7 +60,7 @@ export default function ProjectList() {
         <IntersectionTransition>
           <div className="mt-16">
             <h3
-              className="text-black-100 text-2xl font-bold tracking-tight sm:text-3xl dark:text-white"
+              className="text-strong text-2xl font-bold tracking-tight sm:text-3xl"
               id="outreach"
             >
               {t("sections.outreach")}

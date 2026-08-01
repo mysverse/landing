@@ -245,7 +245,7 @@ export default function DevHubSection() {
                     className={`flex size-10 shrink-0 items-center justify-center rounded-xl transition-colors ${
                       isActive
                         ? "bg-primary/10 text-primary"
-                        : "bg-gray-100 text-gray-600 dark:bg-white/10 dark:text-white/60 group-hover:text-gray-955 dark:group-hover:text-white"
+                        : "bg-gray-100 text-gray-600 dark:bg-white/10 dark:text-white/60 group-hover:text-gray-950 dark:group-hover:text-white"
                     }`}
                   >
                     {tab.icon}
@@ -281,7 +281,7 @@ export default function DevHubSection() {
           <div className="lg:col-span-7 flex flex-col justify-center">
             <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-white/10 bg-gray-900 shadow-2xl p-1 flex flex-col h-[480px]">
               {/* Dashboard Browser/App Header Chrome */}
-              <div className="flex items-center justify-between px-4 py-3 border-b border-white/5 bg-gray-955 text-white/50 text-[10px] tracking-wider uppercase font-semibold">
+              <div className="flex items-center justify-between px-4 py-3 border-b border-white/5 bg-gray-950 text-white/50 text-[10px] tracking-wider uppercase font-semibold">
                 <div className="flex items-center gap-2">
                   <span className="size-2 rounded-full bg-red-500/80" />
                   <span className="size-2 rounded-full bg-yellow-500/80" />

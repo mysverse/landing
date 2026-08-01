@@ -24,7 +24,7 @@ export default function Contact() {
                 {t("desc")}
               </p>
               <div className="mt-8 rounded-2xl bg-white p-10 dark:bg-slate-800">
-                <h3 className="text-black-100 text-base leading-7 font-semibold dark:text-white">
+                <h3 className="text-strong text-base leading-7 font-semibold">
                   MYSverse Digital Ventures
                 </h3>
                 <h4 className="text-primary text-sm leading-5 font-medium">
@@ -32,7 +32,7 @@ export default function Contact() {
                     202303234965 (AS0469188-M)
                   </Link>
                 </h4>
-                <dl className="text-black-100 mt-3 space-y-1 text-sm leading-6 dark:text-white">
+                <dl className="text-strong mt-3 space-y-1 text-sm leading-6">
                   <div className="flex flex-col gap-y-2">
                     <dt className="sr-only">{t("sr.address")}</dt>
                     <dd>

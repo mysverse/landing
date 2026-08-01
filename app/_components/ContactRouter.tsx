@@ -166,11 +166,11 @@ export default function ContactRouter({ className }: { className?: string }) {
         >
           <h3
             id={headingId}
-            className="text-black-100 text-base leading-7 font-semibold dark:text-white"
+            className="text-strong text-base leading-7 font-semibold"
           >
             {t("heading")}
           </h3>
-          <h4 className="text-black-100 text-sm leading-7 font-normal opacity-80 dark:text-white">
+          <h4 className="text-strong text-sm leading-7 font-normal opacity-80">
             {t("subheading")}
           </h4>
           <m.ul
@@ -200,7 +200,7 @@ export default function ContactRouter({ className }: { className?: string }) {
                     {category.icon}
                   </span>
                   <span className="flex-auto">
-                    <span className="text-black-100 block text-sm font-semibold dark:text-white">
+                    <span className="text-strong block text-sm font-semibold">
                       {getCategoryLabel(category)}
                     </span>
                     <span className="block text-xs leading-5 text-gray-600 dark:text-white/60">
@@ -236,7 +236,7 @@ export default function ContactRouter({ className }: { className?: string }) {
                 <ArrowLeftIcon className="size-4" />
                 {t("back")}
               </button>
-              <h3 className="text-black-100 mt-4 text-base leading-7 font-semibold dark:text-white">
+              <h3 className="text-strong mt-4 text-base leading-7 font-semibold">
                 {getResultHeading(selected)}
               </h3>
               <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-white/70">
