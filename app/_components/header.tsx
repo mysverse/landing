@@ -11,7 +11,14 @@ import {
 import { Link, usePathname, useRouter } from "i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { routing } from "i18n/routing";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import {
+  Dialog,
+  DialogPanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems
+} from "@headlessui/react";
 import {
   GlobeAltIcon,
   ArrowTopRightOnSquareIcon
@@ -79,11 +86,7 @@ const localeNames = {
   ta: "தமிழ்"
 };
 
-function LanguageSwitcher({
-  align = "right"
-}: {
-  align?: "left" | "right";
-}) {
+function LanguageSwitcher({ align = "right" }: { align?: "left" | "right" }) {
   const currentLocale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -96,7 +99,7 @@ function LanguageSwitcher({
     <Menu as="div" className="relative inline-block text-left">
       {({ open }) => (
         <>
-          <MenuButton className="inline-flex cursor-pointer items-center gap-x-1.5 rounded p-2 text-gray-800 transition hover:bg-black/20 focus:outline-none dark:text-white dark:hover:bg-white/20">
+          <MenuButton className="text-strong focus-visible:outline-primary inline-flex cursor-pointer items-center gap-x-1.5 rounded-lg p-2 transition hover:bg-black/20 focus-visible:outline-2 dark:hover:bg-white/20">
             <GlobeAltIcon className="size-6" aria-hidden="true" />
             <span className="text-xs font-semibold tracking-wide uppercase">
               {currentLocale}
@@ -144,10 +147,16 @@ function LanguageSwitcher({
 }
 
 function NewsButton({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) {
+  const t = useTranslations("Header");
   return (
-    <button onClick={() => setIsOpen(true)} className="mx-3 px-2 xl:mx-0">
+    <button
+      type="button"
+      onClick={() => setIsOpen(true)}
+      aria-label={t("sr.news")}
+      className="focus-visible:outline-primary mx-3 rounded-lg px-2 focus-visible:outline-2"
+    >
       <NewspaperIcon
-        onClick={() => setIsOpen(true)}
+        aria-hidden="true"
         className="size-9 stroke-gray-400 transition hover:cursor-pointer hover:opacity-50 xl:stroke-black dark:xl:stroke-white"
       />
     </button>
@@ -165,7 +174,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
       {/* <Banner /> */}
       <nav
         className="relative flex items-center justify-between p-6 xl:px-8"
-        aria-label={t("nav.Contact")}
+        aria-label={t("sr.primaryNav")}
       >
         <div className="flex xl:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 transition hover:opacity-80">
@@ -190,7 +199,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
             <Link
               key={item.href}
               href={item.href}
-              className="inline-flex items-center gap-1.5 text-sm leading-6 font-semibold opacity-100 hover:opacity-50"
+              className="focus-visible:outline-primary inline-flex items-center gap-1.5 rounded-sm text-sm leading-6 font-semibold transition hover:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-4"
               target={item.local ? undefined : "_blank"}
               prefetch={item.prefetch}
               onClick={
@@ -217,71 +226,85 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
           <NewsButton setIsOpen={setNewsOpen} />
         </div>
       </nav>
-      {mobileMenuOpen && (
-        <m.div
-          initial={{ opacity: 0, x: 300 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: 300 }}
-          transition={{ duration: 0.3 }}
-          className="bg-surface-card fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10"
-        >
-          <div className="flex items-center justify-between">
-            <Link
-              href="/"
-              className="-m-1.5 p-1.5"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">{t("sr.logo")}</span>
-              <MysverseLogo className="mx-auto h-11 w-auto fill-gray-800 dark:hidden" />
-              <MYSverseLogoWhite className="mx-auto hidden h-10 w-auto fill-white dark:inline-block" />
-            </Link>
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-400 dark:text-white"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">{t("sr.closeMenu")}</span>
-              <XMarkIcon className="size-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/25">
-              <div className="space-y-2 py-6">
-                {navigation.map((item) => (
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <Dialog
+            static
+            open={mobileMenuOpen}
+            onClose={() => setMobileMenuOpen(false)}
+            className="relative z-50 xl:hidden"
+          >
+            <DialogPanel as={Fragment}>
+              <m.div
+                initial={{ opacity: 0, x: 300 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 300 }}
+                transition={{ duration: 0.3 }}
+                className="bg-surface-card fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10"
+              >
+                <div className="flex items-center justify-between">
                   <Link
-                    key={item.href}
-                    href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold text-gray-800 hover:bg-gray-500 dark:text-white"
-                    target={item.local ? undefined : "_blank"}
-                    prefetch={item.prefetch}
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      if (!item.local) {
-                        plausible("navClicked", {
-                          props: {
-                            name: item.name
-                          }
-                        });
-                      }
-                    }}
+                    href="/"
+                    className="-m-1.5 p-1.5"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
-                    <span className="inline-flex items-center gap-1.5">
-                      {t(`nav.${item.name}`)}{" "}
-                      {!item.local && (
-                        <ArrowTopRightOnSquareIcon className="inline size-4" />
-                      )}
-                    </span>
+                    <span className="sr-only">{t("sr.logo")}</span>
+                    <MysverseLogo className="mx-auto h-11 w-auto fill-gray-800 dark:hidden" />
+                    <MYSverseLogoWhite className="mx-auto hidden h-10 w-auto fill-white dark:inline-block" />
                   </Link>
-                ))}
-                <div className="mt-6 flex flex-row items-center justify-between gap-4">
-                  <LanguageSwitcher align="left" />
-                  <DarkModeToggle />
+                  <button
+                    type="button"
+                    className="-m-2.5 rounded-md p-2.5 text-gray-400 dark:text-white"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span className="sr-only">{t("sr.closeMenu")}</span>
+                    <XMarkIcon className="size-6" aria-hidden="true" />
+                  </button>
                 </div>
-              </div>
-            </div>
-          </div>
-        </m.div>
-      )}
+                <div className="mt-6 flow-root">
+                  <div className="-my-6 divide-y divide-gray-500/25">
+                    <nav
+                      className="space-y-2 py-6"
+                      aria-label={t("sr.mobileNav")}
+                    >
+                      {navigation.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="text-strong hover:bg-surface-raised -mx-3 block rounded-lg px-3 py-2 text-base leading-7 font-semibold"
+                          target={item.local ? undefined : "_blank"}
+                          prefetch={item.prefetch}
+                          onClick={() => {
+                            setMobileMenuOpen(false);
+                            if (!item.local) {
+                              plausible("navClicked", {
+                                props: {
+                                  name: item.name
+                                }
+                              });
+                            }
+                          }}
+                        >
+                          <span className="inline-flex items-center gap-1.5">
+                            {t(`nav.${item.name}`)}{" "}
+                            {!item.local && (
+                              <ArrowTopRightOnSquareIcon className="inline size-4" />
+                            )}
+                          </span>
+                        </Link>
+                      ))}
+                      <div className="mt-6 flex flex-row items-center justify-between gap-4">
+                        <LanguageSwitcher align="left" />
+                        <DarkModeToggle />
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </m.div>
+            </DialogPanel>
+          </Dialog>
+        )}
+      </AnimatePresence>
       <NewsModal
         isOpen={newsOpen}
         setIsOpen={setNewsOpen}

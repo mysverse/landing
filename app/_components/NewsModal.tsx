@@ -10,6 +10,7 @@ import * as m from "motion/react-m";
 import type { NewsItem, NewsResponse } from "utils/news";
 import { getNews } from "utils/news";
 import { AnimatePresence } from "motion/react";
+import { useTranslations } from "next-intl";
 
 export default function NewsModal({
   initialNews,
@@ -20,6 +21,7 @@ export default function NewsModal({
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }) {
+  const t = useTranslations("Header");
   const [deck, setDeck] = useState<NewsItem[]>(initialNews ?? []);
   const [animating, setAnimating] = useState(false);
 
@@ -88,11 +90,12 @@ export default function NewsModal({
               className="relative h-[70vh] max-h-[90vh] w-[90vw] max-w-3xl overflow-hidden"
             >
               <button
+                type="button"
                 onClick={() => setIsOpen(false)}
-                className="absolute bottom-4 left-1/2 z-50 -translate-x-1/2 transform rounded-full bg-black/20 p-2 backdrop-blur-sm transition-colors hover:cursor-pointer hover:bg-black/40"
-                aria-label="Close"
+                className="focus-visible:outline-primary absolute bottom-4 left-1/2 z-50 -translate-x-1/2 transform rounded-full bg-black/20 p-2 backdrop-blur-sm transition-colors hover:cursor-pointer hover:bg-black/40 focus-visible:outline-2"
+                aria-label={t("sr.close")}
               >
-                <XMarkIcon className="size-8 text-white" />
+                <XMarkIcon className="size-8 text-white" aria-hidden="true" />
               </button>
 
               <AnimatePresence initial={false}>

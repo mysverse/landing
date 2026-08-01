@@ -18,7 +18,6 @@ import JoinTeam from "app/_components/JoinTeam/JoinTeam";
 
 // Misc
 import { socials } from "data/socials";
-import { legalPages } from "data/legal";
 import PlausibleWrapper from "app/_components/PlausibleWrapper";
 import { MotionConfig } from "motion/react";
 
@@ -33,7 +32,6 @@ export default async function Main({ params }: Props) {
   setRequestLocale(locale);
 
   const t = await getTranslations("Home");
-  const tLegal = await getTranslations("Legal");
 
   return (
     <MotionConfig
@@ -124,8 +122,8 @@ export default async function Main({ params }: Props) {
                     className="text-sumaya-deep absolute -top-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[0.65rem] leading-none font-bold tracking-wide uppercase shadow-lg ring-1 ring-black/5"
                   >
                     <span className="relative flex size-2">
-                      <span className="absolute inline-flex size-full animate-ping rounded-full bg-sumaya opacity-60" />
-                      <span className="relative inline-flex size-2 rounded-full bg-sumaya" />
+                      <span className="bg-sumaya absolute inline-flex size-full animate-ping rounded-full opacity-60" />
+                      <span className="bg-sumaya relative inline-flex size-2 rounded-full" />
                     </span>
                     {t("hero.sumayaBadge")}
                   </m.span>
@@ -220,20 +218,6 @@ export default async function Main({ params }: Props) {
 
       <IntersectionTransition>
         <Contact />
-      </IntersectionTransition>
-
-      <IntersectionTransition>
-        <div className="mt-16 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-black/50 dark:text-white/50">
-          {legalPages.map((page) => (
-            <Link
-              key={page.href}
-              href={page.href}
-              className="underline transition hover:opacity-50"
-            >
-              {tLegal(`${page.key}.title`)}
-            </Link>
-          ))}
-        </div>
       </IntersectionTransition>
     </MotionConfig>
   );

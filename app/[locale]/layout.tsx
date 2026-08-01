@@ -55,14 +55,8 @@ import Script from "next/script";
 import { Public_Sans } from "next/font/google";
 import { ReactNode } from "react";
 import Header from "app/_components/header";
+import Footer from "app/_components/Footer";
 import { getNews } from "utils/news";
-import { Link } from "i18n/navigation";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { socials } from "data/socials";
-import { legalPages } from "data/legal";
-import IntersectionTransition from "app/_components/IntersectionTransition";
-import PlausibleWrapper from "app/_components/PlausibleWrapper";
 import { ThemeProvider } from "app/_components/ThemeProvider";
 import LazyMotionLayout from "app/_components/Motion/LazyMotionLayout";
 
@@ -91,8 +85,7 @@ export default async function RootLayout({ children, params }: Props) {
 
   const news = await getNews();
   const messages = await getMessages();
-  const tFooter = await getTranslations("Footer");
-  const tLegal = await getTranslations("Legal");
+  const tHeader = await getTranslations("Header");
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -102,9 +95,7 @@ export default async function RootLayout({ children, params }: Props) {
           scriptProps={{ "data-domain": "mysver.se" } as Record<string, string>}
         />
       </head>
-      <body
-        className={`${font.className} bg-surface-page h-full transition`}
-      >
+      <body className={`${font.className} bg-surface-page h-full transition`}>
         <Script
           id="theme-init"
           strategy="beforeInteractive"
@@ -112,11 +103,17 @@ export default async function RootLayout({ children, params }: Props) {
             __html: `(function(){try{var t=localStorage.getItem("theme");var d=t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme:dark)").matches);document.documentElement.classList.toggle("dark",d)}catch(e){}})();`
           }}
         />
+        <a
+          href="#main-content"
+          className="focus:bg-primary sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:rounded-xl focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"
+        >
+          {tHeader("sr.skipToContent")}
+        </a>
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
             <LazyMotionLayout>
               <Header initialNews={news.News} />
-              <main>
+              <main id="main-content">
                 <div className="isolate pt-14">
                   <div
                     className="fixed inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -147,63 +144,7 @@ export default async function RootLayout({ children, params }: Props) {
                   </div>
                 </div>
               </main>
-              <footer className="relative z-10 mx-4 mt-10 flex flex-col gap-10 pb-20 text-center md:mt-0">
-                <hr className="dark:border-white/5 dark:bg-white/5" />
-                <IntersectionTransition>
-                  <div className="mx-8 mt-6 flex flex-row flex-wrap justify-center gap-x-5 gap-y-4 md:gap-x-12">
-                    {socials.map((item) => {
-                      const icon = item.icon;
-                      if (icon) {
-                        return (
-                          <PlausibleWrapper
-                            key={item.name}
-                            eventName="navClicked"
-                            eventProps={{
-                              props: {
-                                name: item.name
-                              }
-                            }}
-                          >
-                            <Link
-                              href={item.href}
-                              target="_blank"
-                              className="fill-gray-500 text-2xl leading-6 font-semibold text-gray-500 opacity-100 transition hover:opacity-50 sm:text-xl dark:fill-white dark:text-white"
-                            >
-                              {icon}
-                              <span className="ml-2 hidden text-base xl:inline-block">
-                                {item.name}
-                              </span>
-                            </Link>
-                          </PlausibleWrapper>
-                        );
-                      }
-                    })}
-                  </div>
-                </IntersectionTransition>
-                <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-black/50 dark:text-white/50">
-                  {legalPages.map((page) => (
-                    <Link
-                      key={page.href}
-                      href={page.href}
-                      className="transition hover:opacity-50"
-                    >
-                      {tLegal(`${page.key}.title`)}
-                    </Link>
-                  ))}
-                </div>
-                <div className="text-sm text-black opacity-50 dark:text-white">
-                  <Link
-                    href="https://github.com/mysverse/landing"
-                    target="_blank"
-                    className="mb-4 block text-sm transition hover:opacity-50 md:text-base"
-                  >
-                    <FontAwesomeIcon icon={faGithub} className="mr-1 text-lg" />{" "}
-                    {tFooter("sourceCode")}
-                  </Link>
-                  <span className="mb-1 block">{tFooter("ownedBy")}</span>
-                  <span className="block">{tFooter("disclaimer")}</span>
-                </div>
-              </footer>
+              <Footer />
             </LazyMotionLayout>
           </NextIntlClientProvider>
         </ThemeProvider>

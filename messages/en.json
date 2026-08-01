@@ -22,7 +22,13 @@
     "sr": {
       "logo": "MYSverse",
       "openMenu": "Open main menu",
-      "closeMenu": "Close menu"
+      "closeMenu": "Close menu",
+      "skipToContent": "Skip to main content",
+      "primaryNav": "Main navigation",
+      "mobileNav": "Mobile navigation",
+      "news": "Open news",
+      "toggleTheme": "Toggle dark mode",
+      "close": "Close"
     }
   },
   "Footer": {
@@ -50,8 +56,12 @@
         "resultHeading": "Join the community",
         "resultBody": "Our Discord server is the fastest way to get help, since the team and fellow players hang out there every day. If you'd rather just follow along, our WhatsApp channel has the latest announcements.",
         "destinations": {
-          "discord": { "label": "Join the Discord" },
-          "whatsapp": { "label": "Follow on WhatsApp" }
+          "discord": {
+            "label": "Join the Discord"
+          },
+          "whatsapp": {
+            "label": "Follow on WhatsApp"
+          }
         }
       },
       "business": {
@@ -60,7 +70,9 @@
         "resultHeading": "Email is best for this",
         "resultBody": "Serious enquiries sent by email get priority and reach the right person directly. Include some background and we'll get back to you as soon as we can.",
         "destinations": {
-          "email_yan": { "label": "Email yan@mysver.se" }
+          "email_yan": {
+            "label": "Email yan@mysver.se"
+          }
         }
       },
       "press": {
@@ -69,7 +81,9 @@
         "resultHeading": "Drop us an email",
         "resultBody": "We're happy to help with stories about MYSverse and Malaysian game development. Include your publication and deadline in your email so we can get back to you in time.",
         "destinations": {
-          "email_team": { "label": "Email the team" }
+          "email_team": {
+            "label": "Email the team"
+          }
         }
       },
       "join": {
@@ -78,7 +92,9 @@
         "resultHeading": "We'd love your help",
         "resultBody": "MYSverse is built entirely by volunteers, and we're always looking for new contributors. Check out our open roles and what it's like to work with us.",
         "destinations": {
-          "see_roles": { "label": "See open roles" }
+          "see_roles": {
+            "label": "See open roles"
+          }
         }
       },
       "other": {
@@ -87,7 +103,9 @@
         "resultHeading": "Message us on WhatsApp",
         "resultBody": "Not sure where your enquiry fits? Send us a WhatsApp message and we'll point you in the right direction. As a volunteer team we can take a while to reply, so anything serious is still best sent by email.",
         "destinations": {
-          "chat_whatsapp": { "label": "Chat on WhatsApp" }
+          "chat_whatsapp": {
+            "label": "Chat on WhatsApp"
+          }
         }
       }
     }
@@ -404,83 +422,83 @@
       }
     },
     "devhub": {
-        "tagline": "Introducing DevHub",
-        "title": "Developer Operations & Rewards",
-        "desc": "While we are a volunteer team, we believe your time, effort, and skills are incredibly valuable. We built DevHub, a custom developer dashboard that translates your contributions into real-world rewards, professional physical gear, and career milestones.",
-        "ppt": {
-          "title": "Guaranteed Task Payouts (PPT)",
-          "desc": "Every task you claim on our Linear workspace has an estimate in points. When you complete a task labeled PPT (Points Payout System), you are guaranteed a direct payout based on the task's estimate.",
-          "currency": "Choose Your Currency:",
-          "rates": "Highly Competitive Rates:",
-          "myrRate": "RM20.00 per estimation point (e.g., 3-point task = RM60.00)",
-          "robuxRate": "1,200 Robux per estimation point (e.g., 3-point task = 3,600 Robux)",
-          "weekly": "Weekly approvals processed automatically (Billplz, Xendit, FinSys).",
-          "accounting": "Download PDF transaction slips directly from your dashboard."
-        },
-        "incentives": {
-          "title": "Weekly & Lifetime Incentives",
-          "desc": "On top of your standard PPT earnings, our active developer incentive program rewards consistency, throughput, and long-term commitment:",
-          "throughput": "Weekly Throughput: Complete 5+ qualifying tasks in a single week to instantly secure an extra RM30.00 / 1,800 Robux bonus.",
-          "kickers": "Active-Day Kickers: Get rewarded just for showing up. Meeting our daily activity targets adds an extra kicker to your weekly payout.",
-          "streaks": "Streak Bonuses: Hit your weekly throughput targets consecutive weeks in a row to stack up additional rewards.",
-          "milestones": {
-            "title": "Lifetime Milestones",
-            "desc": "Celebrate your growth and achievements with lump-sum payouts as you complete tasks:",
-            "task25": "25 Tasks: RM40.00 / 2,400 Robux bonus",
-            "task50": "50 Tasks: RM75.00 / 4,500 Robux bonus",
-            "task100": "100 Tasks: RM150.00 / 9,000 Robux bonus"
-          }
-        },
-        "bonuses": {
-          "title": "Discretionary Monthly Bonuses",
-          "desc": "Not all important work can be labeled with a simple PPT estimate. Bug fixing, refactoring, code reviews, assisting other team members, and maintaining documentation are crucial to our success.",
-          "sync": "Automatic Sync: All non-PPT Linear tasks assigned to you are synced automatically as 'Bonus Candidates'.",
-          "reviews": "Monthly Reviews: Admins review your contributions and approve a grouped monthly bonus payout at up to RM10.00 / 500 Robux per estimation point.",
-          "alerts": "In-App Alerts: Receive real-time push and email notifications showing your potential bonus earnings."
-        },
-        "welcomePack": {
-          "title": "The MYSverse Welcome Pack",
-          "desc": "Become an active developer on the team to receive our exclusive, physical Welcome Pack shipped straight to your door, completely free of charge.",
-          "items": "Includes premium custom merchandise:",
-          "polo": "MYSverse Development Polo (XS to 3XL)",
-          "hoodie": "MYSverse Development Hoodie (2XS to 4XL)",
-          "lanyard": "MYSverse Custom Lanyard",
-          "sticker": "High-quality Die-cut Sticker Pack",
-          "tote": "Canvas Tote Bag for your daily gear",
-          "tracking": "Fulfillment Tracking: Select apparel sizes and track shipping status in real time inside DevHub."
-        },
-        "onboarding": {
-          "title": "Frictionless Onboarding & Integrations",
-          "desc": "We want you to spend your time writing code, not wrestling with access permissions or paperwork. DevHub automates the administrative overhead:",
-          "linking": "One-Click Linking: Instantly connect your Linear, Discord, and Roblox accounts.",
-          "sync": "Access Sync: Grants appropriate Discord roles and Roblox Group ranks based on project assignments.",
-          "compliance": "Paperless Compliance: Review and digitally sign your NDA and Conflict of Interest (COI) documents directly inside the portal.",
-          "kyc": "KYC Verification: Fast-tracked, secure identity verification guarantees safe and legal payouts."
-        },
-        "getStarted": {
-          "title": "Ready to build something great?",
-          "subtitle": "We combine the best of both worlds: the freedom and community of a volunteer project, backed by the professional structure, swag, and financial rewards of a commercial studio.",
-          "step1": "Sign in to DevHub using your OAuth account.",
-          "step2": "Complete your onboarding checklist (profile, account linking, NDA).",
-          "step3": "Grab your first Linear task and start earning!"
+      "tagline": "Introducing DevHub",
+      "title": "Developer Operations & Rewards",
+      "desc": "While we are a volunteer team, we believe your time, effort, and skills are incredibly valuable. We built DevHub, a custom developer dashboard that translates your contributions into real-world rewards, professional physical gear, and career milestones.",
+      "ppt": {
+        "title": "Guaranteed Task Payouts (PPT)",
+        "desc": "Every task you claim on our Linear workspace has an estimate in points. When you complete a task labeled PPT (Points Payout System), you are guaranteed a direct payout based on the task's estimate.",
+        "currency": "Choose Your Currency:",
+        "rates": "Highly Competitive Rates:",
+        "myrRate": "RM20.00 per estimation point (e.g., 3-point task = RM60.00)",
+        "robuxRate": "1,200 Robux per estimation point (e.g., 3-point task = 3,600 Robux)",
+        "weekly": "Weekly approvals processed automatically (Billplz, Xendit, FinSys).",
+        "accounting": "Download PDF transaction slips directly from your dashboard."
+      },
+      "incentives": {
+        "title": "Weekly & Lifetime Incentives",
+        "desc": "On top of your standard PPT earnings, our active developer incentive program rewards consistency, throughput, and long-term commitment:",
+        "throughput": "Weekly Throughput: Complete 5+ qualifying tasks in a single week to instantly secure an extra RM30.00 / 1,800 Robux bonus.",
+        "kickers": "Active-Day Kickers: Get rewarded just for showing up. Meeting our daily activity targets adds an extra kicker to your weekly payout.",
+        "streaks": "Streak Bonuses: Hit your weekly throughput targets consecutive weeks in a row to stack up additional rewards.",
+        "milestones": {
+          "title": "Lifetime Milestones",
+          "desc": "Celebrate your growth and achievements with lump-sum payouts as you complete tasks:",
+          "task25": "25 Tasks: RM40.00 / 2,400 Robux bonus",
+          "task50": "50 Tasks: RM75.00 / 4,500 Robux bonus",
+          "task100": "100 Tasks: RM150.00 / 9,000 Robux bonus"
         }
       },
-      "impact": {
-        "label": "Real-world impact",
-        "title": "Build for players, connect in real life",
-        "players": {
-          "title": "Games Played by Real People",
-          "desc": "Join a platform with an active player base. Your work on experiences like Sumaya, Lebuhraya, and Bandaraya will be played and enjoyed by thousands of gamers in our community."
-        },
-        "networking": {
-          "title": "IRL Industry Networking",
-          "desc": "Represent MYSverse at premier events and ministerial panels (SEARCCT, ASEAN Digital Content Summit, UiTM, CelcomDigi Immerse). Make real connections that boost your professional career."
-        },
-        "welcomePack": {
-          "title": "Physical Welcome Package",
-          "desc": "Receive exclusive, custom MYSverse development apparel and physical gear shipped straight to your door for free, including our premium polo, hoodie, lanyard, tote bag, and sticker pack."
-        }
+      "bonuses": {
+        "title": "Discretionary Monthly Bonuses",
+        "desc": "Not all important work can be labeled with a simple PPT estimate. Bug fixing, refactoring, code reviews, assisting other team members, and maintaining documentation are crucial to our success.",
+        "sync": "Automatic Sync: All non-PPT Linear tasks assigned to you are synced automatically as 'Bonus Candidates'.",
+        "reviews": "Monthly Reviews: Admins review your contributions and approve a grouped monthly bonus payout at up to RM10.00 / 500 Robux per estimation point.",
+        "alerts": "In-App Alerts: Receive real-time push and email notifications showing your potential bonus earnings."
+      },
+      "welcomePack": {
+        "title": "The MYSverse Welcome Pack",
+        "desc": "Become an active developer on the team to receive our exclusive, physical Welcome Pack shipped straight to your door, completely free of charge.",
+        "items": "Includes premium custom merchandise:",
+        "polo": "MYSverse Development Polo (XS to 3XL)",
+        "hoodie": "MYSverse Development Hoodie (2XS to 4XL)",
+        "lanyard": "MYSverse Custom Lanyard",
+        "sticker": "High-quality Die-cut Sticker Pack",
+        "tote": "Canvas Tote Bag for your daily gear",
+        "tracking": "Fulfillment Tracking: Select apparel sizes and track shipping status in real time inside DevHub."
+      },
+      "onboarding": {
+        "title": "Frictionless Onboarding & Integrations",
+        "desc": "We want you to spend your time writing code, not wrestling with access permissions or paperwork. DevHub automates the administrative overhead:",
+        "linking": "One-Click Linking: Instantly connect your Linear, Discord, and Roblox accounts.",
+        "sync": "Access Sync: Grants appropriate Discord roles and Roblox Group ranks based on project assignments.",
+        "compliance": "Paperless Compliance: Review and digitally sign your NDA and Conflict of Interest (COI) documents directly inside the portal.",
+        "kyc": "KYC Verification: Fast-tracked, secure identity verification guarantees safe and legal payouts."
+      },
+      "getStarted": {
+        "title": "Ready to build something great?",
+        "subtitle": "We combine the best of both worlds: the freedom and community of a volunteer project, backed by the professional structure, swag, and financial rewards of a commercial studio.",
+        "step1": "Sign in to DevHub using your OAuth account.",
+        "step2": "Complete your onboarding checklist (profile, account linking, NDA).",
+        "step3": "Grab your first Linear task and start earning!"
       }
+    },
+    "impact": {
+      "label": "Real-world impact",
+      "title": "Build for players, connect in real life",
+      "players": {
+        "title": "Games Played by Real People",
+        "desc": "Join a platform with an active player base. Your work on experiences like Sumaya, Lebuhraya, and Bandaraya will be played and enjoyed by thousands of gamers in our community."
+      },
+      "networking": {
+        "title": "IRL Industry Networking",
+        "desc": "Represent MYSverse at premier events and ministerial panels (SEARCCT, ASEAN Digital Content Summit, UiTM, CelcomDigi Immerse). Make real connections that boost your professional career."
+      },
+      "welcomePack": {
+        "title": "Physical Welcome Package",
+        "desc": "Receive exclusive, custom MYSverse development apparel and physical gear shipped straight to your door for free, including our premium polo, hoodie, lanyard, tote bag, and sticker pack."
+      }
+    }
   },
   "Lebuhraya": {
     "alt": {
