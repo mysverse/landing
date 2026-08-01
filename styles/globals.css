@@ -45,11 +45,6 @@
   --color-bandaraya-deep: #27374d;
   --color-lebuhraya: #00a859;
   --color-lebuhraya-deep: #007f4e;
-
-  /* Deprecated aliases for the Lebuhraya pair; remove once /lebuhraya
-     and the Bento components migrate to bg-lebuhraya(-deep). */
-  --color-brand-green: #00a859;
-  --color-dark-green: #007f4e;
 }
 
 /* Mode-flipping semantic surfaces/text. Raw values live on --ms-*

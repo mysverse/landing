@@ -20,7 +20,7 @@ const LogoBox: React.FC<LogoBoxProps> = ({
 }) => {
   return (
     <div
-      className={`bg-dark-green flex items-center justify-center rounded-xl p-4 shadow-lg ${className}`}
+      className={`bg-lebuhraya-deep flex items-center justify-center rounded-2xl p-4 shadow-lg ${className}`}
     >
       <Image
         src={logoUrl}

@@ -23,7 +23,7 @@ const BackgroundImageBox: React.FC<BackgroundImageBoxProps> = ({
 }) => {
   return (
     <div
-      className={`relative overflow-hidden rounded-xl p-6 shadow-lg ${className}`}
+      className={`relative overflow-hidden rounded-2xl p-6 shadow-lg ${className}`}
     >
       <Image
         src={imageUrl}

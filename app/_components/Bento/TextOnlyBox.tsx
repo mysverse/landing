@@ -18,7 +18,7 @@ const TextOnlyBox: React.FC<TextOnlyBoxProps> = ({
   children
 }) => {
   return (
-    <div className={`bg-brand-green rounded-xl p-6 shadow-lg ${className}`}>
+    <div className={`bg-lebuhraya rounded-2xl p-6 shadow-lg ${className}`}>
       {title && (
         <h3 className={`mb-2 text-xl font-bold ${titleClassName}`}>{title}</h3>
       )}
