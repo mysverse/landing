@@ -23,9 +23,14 @@ import { MotionConfig } from "motion/react";
 import { EASE_OUT } from "app/_components/Motion/transitions";
 
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { languageAlternates } from "utils/alternates";
 
 interface Props {
   params: Promise<{ locale: string }>;
+}
+
+export function generateMetadata() {
+  return { alternates: languageAlternates("") };
 }
 
 export default async function Main({ params }: Props) {

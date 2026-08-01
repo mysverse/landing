@@ -5,6 +5,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import PlausibleProvider from "next-plausible";
 import { Metadata, Viewport } from "next";
 import { env } from "process";
+import { BRAND_COLOR } from "data/brand";
 
 const APP_NAME = "MYSverse";
 const APP_DEFAULT_TITLE = "MYSverse";
@@ -17,8 +18,19 @@ export const metadata: Metadata = {
     ? new URL(env.CF_PAGES_URL)
     : new URL("https://mysver.se"),
   applicationName: APP_NAME,
-  title: APP_DEFAULT_TITLE,
+  title: {
+    default: APP_DEFAULT_TITLE,
+    template: APP_TITLE_TEMPLATE
+  },
   description: APP_DESCRIPTION,
+  icons: {
+    icon: [
+      { url: "/img/favicons/favicon-32x32.png", sizes: "32x32" },
+      { url: "/img/favicons/favicon-16x16.png", sizes: "16x16" },
+      { url: "/img/favicons/favicon-192x192.png", sizes: "192x192" }
+    ],
+    apple: [{ url: "/img/favicons/favicon-180x180.png", sizes: "180x180" }]
+  },
   openGraph: {
     type: "website",
     siteName: APP_NAME,
@@ -48,7 +60,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ed5353"
+  themeColor: BRAND_COLOR
 };
 
 import Script from "next/script";

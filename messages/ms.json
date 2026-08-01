@@ -132,6 +132,10 @@
     "fallback": {
       "notFound": "Blog tidak ditemui",
       "postNotFound": "Catatan tidak ditemui"
+    },
+    "empty": {
+      "title": "Tiada kiriman buat masa ini",
+      "desc": "Kami tidak dapat memuatkan kiriman buat masa ini. Sila kembali kemudian."
     }
   },
   "JoinTeam": {
@@ -526,6 +530,10 @@
         "hoverDesc": "Buka ganjaran dan cabaran eksklusif setiap musim!",
         "banner": "KEMAS KINI PAS MUSIM: 30 MEI - 1 JUN"
       }
+    },
+    "meta": {
+      "title": "Lebuhraya",
+      "desc": "Meluncur di Lebuhraya, pengalaman pemanduan Malaysia MYSverse di Roblox — memandu, bekerja dan bermain bersama komuniti."
     }
   },
   "Legal": {
@@ -542,5 +550,15 @@
       "title": "Dasar Bayaran Balik",
       "desc": "Dasar bayaran balik untuk MYSverse, merangkumi pembayaran pembangun dan penyelesaian pertikaian pembayaran."
     }
+  },
+  "NotFound": {
+    "title": "Halaman tidak dijumpai",
+    "description": "Maaf, kami tidak menemui halaman yang anda cari.",
+    "backHome": "Kembali ke laman utama"
+  },
+  "Error": {
+    "title": "Sesuatu telah berlaku",
+    "description": "Ralat tidak dijangka telah berlaku. Sila cuba lagi.",
+    "retry": "Cuba lagi"
   }
 }

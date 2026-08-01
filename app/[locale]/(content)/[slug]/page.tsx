@@ -1,7 +1,16 @@
 import type { Metadata, ResolvingMetadata, Viewport } from "next";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 import { getPage, getPages } from "utils/ghost";
+
+async function getPageOr404(slug: string) {
+  try {
+    return await getPage(slug);
+  } catch {
+    notFound();
+  }
+}
 
 import PostOrPage from "app/_components/ghost/PostOrPage";
 import { getColour } from "utils/themeColour";
@@ -16,7 +25,7 @@ export default async function BlogPost({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  const post = await getPage(slug);
+  const post = await getPageOr404(slug);
   const t = await getTranslations("Blog");
 
   return (
@@ -49,7 +58,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   // read route params
   const { slug } = await params;
-  const post = await getPage(slug);
+  const post = await getPageOr404(slug);
   // optionally access and extend (rather than replace) parent metadata
   const metadata = await parent;
   const previousImages = metadata.openGraph?.images || [];

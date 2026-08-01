@@ -132,6 +132,10 @@
     "fallback": {
       "notFound": "Blog not found",
       "postNotFound": "Post not found"
+    },
+    "empty": {
+      "title": "No posts right now",
+      "desc": "We couldn't load posts at the moment. Please check back later."
     }
   },
   "JoinTeam": {
@@ -526,6 +530,10 @@
         "hoverDesc": "Unlock exclusive rewards and challenges every season!",
         "banner": "THE SEASON PASS UPDATE: MAY 30 - JUNE 1"
       }
+    },
+    "meta": {
+      "title": "Lebuhraya",
+      "desc": "Hit the highway in Lebuhraya, MYSverse's Malaysian driving experience on Roblox — cruise, work and play with the community."
     }
   },
   "Legal": {
@@ -542,5 +550,15 @@
       "title": "Refund Policy",
       "desc": "Refund policy for MYSverse, covering developer payouts and payment dispute resolution."
     }
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "Sorry, we couldn't find the page you're looking for.",
+    "backHome": "Back to home"
+  },
+  "Error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "retry": "Try again"
   }
 }

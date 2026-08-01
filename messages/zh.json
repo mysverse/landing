@@ -132,6 +132,10 @@
     "fallback": {
       "notFound": "未找到博客",
       "postNotFound": "未找到文章"
+    },
+    "empty": {
+      "title": "暂时没有文章",
+      "desc": "目前无法加载文章，请稍后再来。"
     }
   },
   "JoinTeam": {
@@ -526,6 +530,10 @@
         "hoverDesc": "每个季度解锁专属奖励与挑战！",
         "banner": "季度通行证更新：5月30日 - 6月1日"
       }
+    },
+    "meta": {
+      "title": "Lebuhraya",
+      "desc": "驶上 Lebuhraya —— MYSverse 在 Roblox 上的马来西亚高速公路驾驶体验，与社区一起驾驶、工作和游玩。"
     }
   },
   "Legal": {
@@ -542,5 +550,15 @@
       "title": "退款政策",
       "desc": "MYSverse 的退款政策，涵盖开发人员支付和支付争议解决。"
     }
+  },
+  "NotFound": {
+    "title": "找不到页面",
+    "description": "抱歉，我们找不到您要查找的页面。",
+    "backHome": "返回首页"
+  },
+  "Error": {
+    "title": "出了点问题",
+    "description": "发生了意外错误，请重试。",
+    "retry": "重试"
   }
 }

@@ -12,6 +12,7 @@ import RoleCard from "./_components/RoleCard";
 import JoinCTA from "./_components/JoinCTA";
 
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { languageAlternates } from "utils/alternates";
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: t("title"),
     description: t("desc"),
+    alternates: languageAlternates("/contribute"),
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDesc"),

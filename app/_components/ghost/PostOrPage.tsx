@@ -6,6 +6,7 @@ import type {
 } from "html-react-parser";
 import parse, { attributesToProps, domToReact } from "html-react-parser";
 import { createElement, type AnchorHTMLAttributes } from "react";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import clsx from "clsx";
 
@@ -409,7 +410,7 @@ const parserOptions: HTMLReactParserOptions = {
 export default async function PostOrPage({ post, children, className }: Props) {
   // console.log(post.html);
   if (!post.html) {
-    return <div>Post not found</div>;
+    notFound();
   }
 
   const html = parse(post.html, parserOptions);

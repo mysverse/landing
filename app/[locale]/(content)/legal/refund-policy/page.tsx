@@ -4,6 +4,7 @@ import fs from "fs";
 import path from "path";
 import ReactMarkdown from "react-markdown";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { languageAlternates } from "utils/alternates";
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -14,7 +15,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "Legal" });
   return {
     title: t("refund.title"),
-    description: t("refund.desc")
+    description: t("refund.desc"),
+    alternates: languageAlternates("/legal/refund-policy")
   };
 }
 

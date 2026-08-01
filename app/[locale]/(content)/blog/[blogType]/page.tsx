@@ -9,9 +9,20 @@ import BlogLayout from "app/_components/Layouts/BlogLayout";
 import RotatingCard from "app/_components/RotatingCard";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "i18n/routing";
+import { languageAlternates } from "utils/alternates";
 
 interface Props {
   params: Promise<{ locale: string; blogType: BlogType }>;
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { locale, blogType } = await params;
+  const t = await getTranslations({ locale, namespace: "Blog" });
+  return {
+    title: t(`${blogType}.title`),
+    description: t(`${blogType}.desc`),
+    alternates: languageAlternates(`/blog/${blogType}`)
+  };
 }
 
 export default async function BlogList({ params }: Props) {

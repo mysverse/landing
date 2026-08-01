@@ -31,7 +31,7 @@ export function Breadcrumbs({
   const blogInfo = blogData.find((blog) => blog.slug === blogType);
 
   if (!blogInfo) {
-    throw new Error("Blog not found");
+    return null;
   }
 
   const favicon = blogInfo && `${blogInfo?.externalUrl}/favicon.ico`;

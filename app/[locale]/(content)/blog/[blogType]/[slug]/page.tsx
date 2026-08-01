@@ -1,9 +1,18 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import { Link } from "i18n/navigation";
 
 import type { BlogType } from "utils/ghost";
 import { blogData, getPost, getPosts } from "utils/ghost";
+
+async function getPostOr404(blogType: BlogType, slug: string) {
+  try {
+    return await getPost(blogType, slug);
+  } catch {
+    notFound();
+  }
+}
 import { getColour } from "utils/themeColour";
 import { processBio } from "utils/bio";
 import { LocalTime } from "app/_components/LocalTime";
@@ -20,7 +29,7 @@ export default async function BlogPost({ params }: Props) {
   const { locale, blogType, slug } = await params;
   setRequestLocale(locale);
 
-  const post = await getPost(blogType, slug);
+  const post = await getPostOr404(blogType, slug);
   const t = await getTranslations("Blog");
   const primaryAuthor = post.authors?.[0];
   const publishDate = new Date(post.published_at!);
@@ -117,7 +126,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   // read route params
   const { blogType, slug } = await params;
-  const post = await getPost(blogType, slug);
+  const post = await getPostOr404(blogType, slug);
   // optionally access and extend (rather than replace) parent metadata
   const metadata = await parent;
   const previousImages = metadata.openGraph?.images || [];

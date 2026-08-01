@@ -9,6 +9,8 @@ import TextOnlyBox from "app/_components/Bento/TextOnlyBox";
 import clsx from "clsx";
 import { Saira } from "next/font/google";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { languageAlternates } from "utils/alternates";
+import { LEBUHRAYA_COLOR } from "data/brand";
 
 const wasteDisposalImg = "/img/lebuhraya/waste.webp";
 const seasonPassImg = "/img/lebuhraya/season.webp";
@@ -21,6 +23,20 @@ const font = Saira({
 interface Props {
   params: Promise<{ locale: string }>;
 }
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Lebuhraya" });
+  return {
+    title: t("meta.title"),
+    description: t("meta.desc"),
+    alternates: languageAlternates("/lebuhraya")
+  };
+}
+
+export const viewport = {
+  themeColor: LEBUHRAYA_COLOR
+};
 
 export default async function LebuhrayaPage({ params }: Props) {
   const { locale } = await params;
