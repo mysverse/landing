@@ -50,6 +50,8 @@ export async function generateMetadata(
   const previousImages = metadata.openGraph?.images || [];
   const primaryAuthor = post.authors?.[0].name;
 
+  const images = post.feature_image ?? previousImages;
+
   return {
     title: post.title ?? metadata.title,
     description: post.excerpt ?? metadata.description,
@@ -63,7 +65,13 @@ export async function generateMetadata(
     openGraph: {
       siteName: "MYSverse",
       type: "website",
-      images: post.feature_image ?? previousImages
+      images
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title ? { absolute: post.title } : undefined,
+      description: post.excerpt ?? undefined,
+      images
     }
   };
 }
