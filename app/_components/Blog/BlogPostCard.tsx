@@ -2,7 +2,7 @@
 
 import type { PostOrPage } from "@tryghost/content-api";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "app/_components/ui/TransitionLink";
 import { useTranslations } from "next-intl";
 import RotatingCard from "../RotatingCard";
 import { LocalTime } from "../LocalTime";
@@ -10,11 +10,15 @@ import { LocalTime } from "../LocalTime";
 // BlogPostCard component to handle the tilt effect
 export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
   const t = useTranslations("Blog");
+  // Shared with the post's hero image, so the card's feature image morphs into
+  // it across the navigation. Home cards link straight to the detail page, so
+  // this key has to match the one on the blog index too.
+  const sharedKey = `blog-image-${post.slug}`;
   return (
     <RotatingCard className="group relative isolate flex flex-col justify-end overflow-hidden sm:aspect-video sm:rounded-2xl sm:px-8 sm:pb-8">
       <Link
-        prefetch={false}
         href={post.url ?? "#"}
+        sharedElement={{ key: sharedKey, crop: true }}
         className={post.url ? "" : "pointer-events-none"}
       >
         <Image
@@ -23,6 +27,7 @@ export const BlogPostCard = ({ post }: { post: PostOrPage }) => {
             t("alt.feature", { title: post.title ?? "" })
           }
           src={post.feature_image ?? ""}
+          data-vt={sharedKey}
           className="relative inset-0 -z-10 aspect-video rounded-lg object-cover transition duration-300 sm:absolute sm:h-full sm:w-full sm:rounded-none sm:group-hover:scale-[1.03]"
           width={1920}
           height={1080}

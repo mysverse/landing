@@ -110,6 +110,7 @@ export default async function BlogPost({ params }: Props) {
             width={1920}
             height={1080}
             src={post.feature_image}
+            data-vt={`blog-image-${post.slug}`}
             alt={
               post.feature_image_alt ??
               t("alt.feature", { title: post.title ?? "" })

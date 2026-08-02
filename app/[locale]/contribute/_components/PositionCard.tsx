@@ -66,6 +66,7 @@ export default function PositionCard({
   if (compact) {
     return (
       <RotatingCard
+        data-vt={`position-${position.id}`}
         className={clsx(
           "bg-surface-card flex h-full flex-col rounded-2xl border p-6 shadow-sm",
           isLead ? "border-primary/30 ring-primary/20 ring-1" : "border-edge"
@@ -95,6 +96,7 @@ export default function PositionCard({
 
   return (
     <RotatingCard
+      data-vt={`position-${position.id}`}
       className={clsx(
         "bg-surface-card h-full rounded-2xl border p-8 shadow-sm transition-shadow hover:shadow-lg",
         isLead ? "border-primary/30 ring-primary/30 ring-1" : "border-edge"

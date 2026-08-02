@@ -55,7 +55,15 @@ export default function JoinTeam() {
             eventName="contributeCtaClicked"
             eventProps={{ props: { location: "homepage" } }}
           >
-            <Button href="/contribute" variant="ghost">
+            <Button
+              href="/contribute"
+              variant="ghost"
+              // The same cards render full-size on /contribute, so they morph
+              // into place rather than crossfading with the rest of the page.
+              sharedElement={openPositions.map((position) => ({
+                key: `position-${position.id}`
+              }))}
+            >
               {t("cta")}
               <ArrowRightIcon className="size-4" />
             </Button>

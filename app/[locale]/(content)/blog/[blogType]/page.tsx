@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Link } from "i18n/navigation";
+import Link from "app/_components/ui/TransitionLink";
 
 import type { BlogType } from "utils/ghost";
 import { blogData, getPosts } from "utils/ghost";
@@ -49,6 +49,10 @@ export default async function BlogList({ params }: Props) {
               <RotatingCard>
                 <Link
                   href={`/blog/${blogType}/${post.slug}`}
+                  sharedElement={{
+                    key: `blog-image-${post.slug}`,
+                    crop: true
+                  }}
                   className="relative w-full"
                 >
                   <Image
@@ -57,6 +61,7 @@ export default async function BlogList({ params }: Props) {
                       t("alt.feature", { title: post.title ?? "" })
                     }
                     src={post.feature_image!}
+                    data-vt={`blog-image-${post.slug}`}
                     width={1920}
                     height={1080}
                     sizes="(max-width: 896px) 100vw, 896px"
@@ -85,7 +90,13 @@ export default async function BlogList({ params }: Props) {
                 </div>
                 <div className="group relative">
                   <h2 className="text-strong group-hover:text-primary mt-3 text-xl/6 font-semibold transition">
-                    <Link href={`/blog/${blogType}/${post.slug}`}>
+                    <Link
+                      href={`/blog/${blogType}/${post.slug}`}
+                      sharedElement={{
+                        key: `blog-image-${post.slug}`,
+                        crop: true
+                      }}
+                    >
                       <span className="absolute inset-0" />
                       {post.title}
                     </Link>

@@ -11,9 +11,16 @@ interface Props {
   children: ReactNode;
   className?: string;
   skipZ?: boolean;
+  /** Marks this card as a shared element — see ui/TransitionLink. */
+  "data-vt"?: string;
 }
 
-export default function RotatingCard({ children, className, skipZ }: Props) {
+export default function RotatingCard({
+  children,
+  className,
+  skipZ,
+  "data-vt": dataVt
+}: Props) {
   const rotateX = useSpring(0, springSoft);
   const rotateY = useSpring(0, springSoft);
   const z = useSpring(0, springSoft);
@@ -35,6 +42,7 @@ export default function RotatingCard({ children, className, skipZ }: Props) {
   return (
     <m.div
       ref={cardRef}
+      data-vt={dataVt}
       className={clsx(className)}
       style={{
         rotateX,
@@ -47,6 +55,14 @@ export default function RotatingCard({ children, className, skipZ }: Props) {
         const { rotateX: x, rotateY: y } = calculateTilt(e);
         rotateX.set(x);
         rotateY.set(y);
+      }}
+      onPointerDown={() => {
+        // Snap flat before a click can start a view transition — a tilted card
+        // gets captured skewed in the outgoing snapshot. jump() rather than
+        // set() because a spring wouldn't settle before the click lands.
+        rotateX.jump(0);
+        rotateY.jump(0);
+        z.jump(0);
       }}
       onPointerEnter={(e) => {
         if (e.pointerType !== "mouse") return; // ← skip on touch
