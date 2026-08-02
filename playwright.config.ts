@@ -1,5 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
+import { NEWS_FIXTURE_URL } from "./tests/fixtures/newsFixture";
+
 /**
  * Visual verification + smoke/a11y harness. Serves the production build
  * (`next build` first, then these tests run `next start` on :4300).
@@ -10,6 +12,7 @@ import { defineConfig, devices } from "@playwright/test";
  */
 const PORT = 4300;
 const BASE_URL = `http://localhost:${PORT}`;
+
 
 export default defineConfig({
   testDir: "tests",
@@ -73,10 +76,22 @@ export default defineConfig({
       }
     }
   ],
-  webServer: {
-    command: `npm run start -- -p ${PORT}`,
-    url: BASE_URL,
-    reuseExistingServer: !process.env.CI,
-    timeout: 120_000
-  }
+  // The news fixture has to come up first: the locale layout fetches news
+  // server-side, where Playwright's route interception can't reach it, so
+  // NEWS_ENDPOINT is the only way to make the header and modal deterministic.
+  webServer: [
+    {
+      command: "pnpm exec tsx tests/fixtures/newsServer.ts",
+      url: NEWS_FIXTURE_URL,
+      reuseExistingServer: !process.env.CI,
+      timeout: 30_000
+    },
+    {
+      command: `npm run start -- -p ${PORT}`,
+      url: BASE_URL,
+      reuseExistingServer: !process.env.CI,
+      timeout: 120_000,
+      env: { NEWS_ENDPOINT: NEWS_FIXTURE_URL }
+    }
+  ]
 });

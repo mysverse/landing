@@ -122,12 +122,19 @@ both stabilises screenshots and exercises the site's reduced-motion
 paths.
 
 ```bash
-pnpm build          # the harness serves the production build on :4300
+pnpm build:test     # the harness serves this production build on :4300
 pnpm screenshots    # refresh baselines + write a gallery to screenshots/
 pnpm test:visual    # diff pages against tests/__screenshots__/
 pnpm test:e2e       # everything: visual + smoke + accessibility
 pnpm exec playwright show-report   # browse results, diffs and traces
 ```
+
+> Use `pnpm build:test`, not `pnpm build`. The locale layout fetches the news
+> feed server-side and is statically generated, so the payload is baked into the
+> prerendered HTML at *build* time — `build:test` pins it to
+> `tests/fixtures/newsFixture.ts`. Building without it leaves the live feed in
+> the pages, so the header's unread badge and the news deck's item count drift
+> with whatever the worker is serving that day.
 
 **Eyeballing changes:** every run writes full-page PNGs to
 `screenshots/<desktop-light|desktop-dark|mobile>/`. Open that folder to
@@ -142,20 +149,25 @@ moved and by how much, with side-by-side diffs in the HTML report.
 - **`tests/smoke.spec.ts`** — behaviour the design system depends on:
   skip link focus order, title template, hreflang tags, localized 404,
   dark-mode toggle persistence, system dark preference, mobile menu
-  dialog + Escape, DevHub tablist arrow keys.
+  dialog + Escape, DevHub tablist arrow keys, and the news deck
+  (bidirectional arrow keys, wrap-around, dots, Escape, unread badge).
 - **`tests/a11y.spec.ts`** — axe-core WCAG 2.1 A/AA scans. Structural
   violations (missing link names, roles, labels) fail the build. Colour
   contrast is *reported, not enforced* — see the note at the top of that
   file: the brand red `#ed5353` on white is ~3.3:1, below the 4.5:1 AA
   threshold, which is a brand decision rather than a code fix.
 
-Third-party calls (analytics, live metrics, news, video CDN) are blocked
-in `tests/helpers.ts` so pages render their built-in fallbacks.
+Third-party calls (analytics, live metrics, video CDN) are blocked in
+`tests/helpers.ts` so pages render their built-in fallbacks, and news
+artwork is fulfilled there with a placeholder pixel. The news feed itself
+is pinned at build time by `build:test` (see above) — it's fetched inside
+the Next process, where route interception can't reach it.
 
 > **Linux/WSL note:** Chromium needs system libraries. Run
 > `pnpm exec playwright install --with-deps chromium` (needs sudo). Without
 > root, fetch them into a user directory and export `LD_LIBRARY_PATH`
 > before running the tests.
+
 
 ## License
 

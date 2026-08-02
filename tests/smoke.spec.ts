@@ -1,3 +1,4 @@
+import type { Page } from "@playwright/test";
 import { test, expect } from "@playwright/test";
 import {
   stubNetwork,
@@ -102,6 +103,131 @@ test.describe("smoke", () => {
     await expect(menuNav).toBeVisible();
     await page.keyboard.press("Escape");
     await expect(dialog).toHaveCount(0);
+  });
+
+  // The deck is driven by NEWS_FIXTURE (4 items) via NEWS_ENDPOINT; see
+  // playwright.config.ts. Assertions target the counter and caption, never the
+  // card itself — the exit animation still cross-fades under reduced motion, so
+  // two cards briefly coexist.
+  test.describe("news deck", () => {
+    const openNews = async (page: Page) => {
+      await page.goto("/en");
+      await page.getByRole("button", { name: /Open news/ }).click();
+      return page.getByRole("dialog");
+    };
+
+    test("moves in both directions and wraps", async ({ page }) => {
+      const dialog = await openNews(page);
+      await expect(dialog).toBeAttached();
+
+      const counter = dialog.getByText(/^\d+ \/ \d+$/);
+      await expect(counter).toHaveText("1 / 4");
+
+      await page.keyboard.press("ArrowRight");
+      await expect(counter).toHaveText("2 / 4");
+      await expect(
+        dialog.getByText("A second fixture item that carries body copy.")
+      ).toBeVisible();
+
+      await page.keyboard.press("ArrowLeft");
+      await expect(counter).toHaveText("1 / 4");
+
+      // Backwards off the start wraps to the end.
+      await page.keyboard.press("ArrowLeft");
+      await expect(counter).toHaveText("4 / 4");
+
+      // Forwards off the end wraps back to the start.
+      await page.getByRole("button", { name: "Next item" }).click();
+      await expect(counter).toHaveText("1 / 4");
+
+      await page.getByRole("button", { name: "Previous item" }).click();
+      await expect(counter).toHaveText("4 / 4");
+    });
+
+    // The original deck ignored the sign of deltaY, so scrolling up advanced
+    // forward just like scrolling down. This is that regression's guard.
+    test("the wheel scrolls the deck both ways", async ({
+      page
+    }, testInfo) => {
+      test.skip(
+        testInfo.project.name === "mobile",
+        "wheel isn't the input path on touch"
+      );
+      const dialog = await openNews(page);
+      const counter = dialog.getByText(/^\d+ \/ \d+$/);
+      await dialog.getByRole("heading").first().hover();
+
+      await page.mouse.wheel(0, 120);
+      await expect(counter).toHaveText("2 / 4");
+
+      await page.mouse.wheel(0, -120);
+      await expect(counter).toHaveText("1 / 4");
+    });
+
+    // Same handler the touch swipe runs through — the original deck used
+    // √(x²+y²), so dragging any direction advanced forward.
+    test("dragging the card moves the deck both ways", async ({
+      page
+    }, testInfo) => {
+      test.skip(
+        testInfo.project.name !== "desktop-light",
+        "one project is enough for a pointer-drag interaction"
+      );
+      const dialog = await openNews(page);
+      const counter = dialog.getByText(/^\d+ \/ \d+$/);
+
+      const drag = async (distance: number) => {
+        const card = dialog.getByRole("img").first();
+        const box = (await card.boundingBox())!;
+        const x = box.x + box.width / 2;
+        const y = box.y + box.height / 2;
+        await page.mouse.move(x, y);
+        await page.mouse.down();
+        // Several steps so Motion registers a drag and builds up velocity.
+        for (let step = 1; step <= 6; step++) {
+          await page.mouse.move(x, y + (distance / 6) * step);
+        }
+        await page.mouse.up();
+      };
+
+      await drag(-150); // up → next
+      await expect(counter).toHaveText("2 / 4");
+
+      await drag(150); // down → previous
+      await expect(counter).toHaveText("1 / 4");
+    });
+
+    test("dots jump straight to an item", async ({ page }) => {
+      const dialog = await openNews(page);
+      await page.getByRole("button", { name: "Go to item 3" }).click();
+      await expect(dialog.getByText(/^\d+ \/ \d+$/)).toHaveText("3 / 4");
+      await expect(
+        dialog.getByRole("heading", { name: "Fixture Three Square" })
+      ).toBeVisible();
+    });
+
+    test("closes on Escape", async ({ page }) => {
+      const dialog = await openNews(page);
+      await expect(dialog).toBeAttached();
+      await page.keyboard.press("Escape");
+      await expect(dialog).toHaveCount(0);
+    });
+
+    test("unread badge clears once the news has been opened", async ({
+      page
+    }) => {
+      await page.goto("/en");
+      const button = page.getByRole("button", { name: /Open news/ });
+      await expect(button).toHaveAccessibleName("Open news, 3 new");
+
+      await button.click();
+      await page.keyboard.press("Escape");
+      await page.reload();
+
+      await expect(
+        page.getByRole("button", { name: /Open news/ })
+      ).toHaveAccessibleName("Open news");
+    });
   });
 
   test("DevHub tabs support arrow-key navigation", async ({

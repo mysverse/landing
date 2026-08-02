@@ -1,12 +1,22 @@
 import type { BrowserContext, Page } from "@playwright/test";
 
 /** Third-party endpoints that make pages nondeterministic. Blocking them
- * lets the built-in fallbacks render (static stat values, empty news). */
+ * lets the built-in fallbacks render (static stat values, empty news).
+ *
+ * Note the news feed itself is pinned server-side via NEWS_ENDPOINT (see
+ * playwright.config.ts) — the layout fetches it inside the Next process, out of
+ * reach of route interception. */
 const BLOCKED_HOSTS = [
   "plausible.yan.gg", // analytics
   "workers.dev", // live metrics + news feeds
-  "r2.mysver.se" // hero/feature videos
+  "r2.mysver.se" // hero/feature videos + news images
 ];
+
+/** 1×1 transparent PNG, stands in for the blocked news artwork. */
+const PIXEL_PNG = Buffer.from(
+  "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+  "base64"
+);
 
 /**
  * Route interception for deterministic pages. Also proxies the production
@@ -38,6 +48,12 @@ export async function stubNetwork(context: BrowserContext, baseURL: string) {
       return route.abort();
     }
   });
+
+  // Registered last so it wins over the blanket abort above: news artwork lives
+  // on r2, and an aborted <Image> would leave the deck empty.
+  await context.route("**/fixture-*.png*", (route) =>
+    route.fulfill({ contentType: "image/png", body: PIXEL_PNG })
+  );
 }
 
 /**

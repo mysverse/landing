@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev -p 4200 --turbo",
     "build": "next build",
+    "build:test": "tsx tests/fixtures/buildWithFixture.ts",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",

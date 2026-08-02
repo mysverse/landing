@@ -32,7 +32,8 @@ export interface NewsFeed {
   notify: boolean;
 }
 
-const NEWS_ENDPOINT = "https://mysverse-news.yan3321.workers.dev/";
+const NEWS_ENDPOINT =
+  process.env.NEWS_ENDPOINT ?? "https://mysverse-news.yan3321.workers.dev/";
 
 export async function getNews(): Promise<NewsResponse | null> {
   try {

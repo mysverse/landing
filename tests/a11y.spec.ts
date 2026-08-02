@@ -68,4 +68,28 @@ test.describe("a11y", () => {
       );
     });
   }
+
+  // The news deck only exists once opened, so the page scans above never see
+  // it. This is what catches a missing dialog name or duplicate alt text on the
+  // decorative cards behind the top one.
+  test("structure: news deck", async ({ page }) => {
+    await page.goto("/en");
+    await page.getByRole("button", { name: /Open news/ }).click();
+    await expect(page.getByRole("dialog")).toBeAttached();
+
+    const results = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+      .analyze();
+
+    const blocking = results.violations
+      .filter((v) => ["serious", "critical"].includes(v.impact ?? ""))
+      .filter((v) => v.id !== KNOWN_CONTRAST_DEBT);
+    expect(
+      blocking.map((v) => ({
+        id: v.id,
+        impact: v.impact,
+        nodes: v.nodes.map((n) => n.target.join(" "))
+      }))
+    ).toEqual([]);
+  });
 });
