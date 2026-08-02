@@ -68,7 +68,7 @@ import { Public_Sans } from "next/font/google";
 import { ReactNode } from "react";
 import Header from "app/_components/header";
 import Footer from "app/_components/Footer";
-import { getNews } from "utils/news";
+import { getNews, toNewsFeed } from "utils/news";
 import { ThemeProvider } from "app/_components/ThemeProvider";
 import LazyMotionLayout from "app/_components/Motion/LazyMotionLayout";
 import { THEME_INIT_SCRIPT } from "utils/themeInit";
@@ -96,7 +96,7 @@ export default async function RootLayout({ children, params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const news = await getNews();
+  const news = toNewsFeed(await getNews());
   const messages = await getMessages();
   const tHeader = await getTranslations("Header");
 
@@ -122,7 +122,7 @@ export default async function RootLayout({ children, params }: Props) {
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
             <LazyMotionLayout>
-              <Header initialNews={news?.News} />
+              <Header news={news} />
               <main id="main-content">
                 <div className="isolate pt-14">
                   <div

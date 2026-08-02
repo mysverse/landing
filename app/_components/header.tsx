@@ -28,7 +28,7 @@ import clsx from "clsx";
 
 import NewsModal from "./NewsModal";
 import { springSnappy } from "app/_components/Motion/transitions";
-import { NewsItem } from "utils/news";
+import { NewsFeed } from "utils/news";
 import MysverseLogo from "./MysverseLogo";
 import MYSverseLogoWhite from "public/img/MYSverse_White.svg";
 import DarkModeToggle from "./DarkModeToggle";
@@ -166,11 +166,13 @@ function NewsButton({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) {
   );
 }
 
-export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
+export default function Header({ news }: { news: NewsFeed }) {
   const plausible = usePlausible();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [newsOpen, setNewsOpen] = useState(false);
   const t = useTranslations("Header");
+
+  const hasNews = news.items.length > 0;
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
@@ -187,7 +189,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
           </Link>
         </div>
         <div className="flex xl:hidden">
-          <NewsButton setIsOpen={setNewsOpen} />
+          {hasNews && <NewsButton setIsOpen={setNewsOpen} />}
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400 dark:text-white"
@@ -226,7 +228,7 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
         <div className="hidden gap-3 xl:flex xl:flex-1 xl:justify-end">
           <LanguageSwitcher />
           <DarkModeToggle />
-          <NewsButton setIsOpen={setNewsOpen} />
+          {hasNews && <NewsButton setIsOpen={setNewsOpen} />}
         </div>
       </nav>
       <AnimatePresence>
@@ -312,7 +314,8 @@ export default function Header({ initialNews }: { initialNews?: NewsItem[] }) {
       <NewsModal
         isOpen={newsOpen}
         setIsOpen={setNewsOpen}
-        initialNews={initialNews}
+        items={news.items}
+        updatedAt={news.updatedAt}
       />
     </header>
   );
