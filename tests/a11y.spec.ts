@@ -38,23 +38,12 @@ test.describe("a11y", () => {
     );
   };
 
+  // One scan per page covers both concerns. Splitting them into two tests meant
+  // navigating and running revealAndSettle twice for the same result.
   for (const path of PAGES) {
     test(`structure: ${path}`, async ({ page }) => {
       const results = await scan(page, path);
-      const blocking = results.violations
-        .filter((v) => ["serious", "critical"].includes(v.impact ?? ""))
-        .filter((v) => v.id !== KNOWN_CONTRAST_DEBT);
-      expect(
-        blocking.map((v) => ({
-          id: v.id,
-          impact: v.impact,
-          nodes: v.nodes.map((n) => n.target.join(" "))
-        }))
-      ).toEqual([]);
-    });
 
-    test(`contrast debt: ${path}`, async ({ page }) => {
-      const results = await scan(page, path);
       const contrast = results.violations.find(
         (v) => v.id === KNOWN_CONTRAST_DEBT
       );
@@ -66,6 +55,17 @@ test.describe("a11y", () => {
       console.log(
         `[contrast] ${path}: ${contrast?.nodes.length ?? 0} nodes below AA`
       );
+
+      const blocking = results.violations
+        .filter((v) => ["serious", "critical"].includes(v.impact ?? ""))
+        .filter((v) => v.id !== KNOWN_CONTRAST_DEBT);
+      expect(
+        blocking.map((v) => ({
+          id: v.id,
+          impact: v.impact,
+          nodes: v.nodes.map((n) => n.target.join(" "))
+        }))
+      ).toEqual([]);
     });
   }
 
