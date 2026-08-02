@@ -1,6 +1,7 @@
 "use client";
 
 import { LazyMotion, MotionConfig } from "motion/react";
+import ViewTransitionProvider from "./ViewTransitionProvider";
 
 const loadFeatures = () => import("./features").then((res) => res.default);
 
@@ -11,7 +12,9 @@ export default function LazyMotionLayout({
 }) {
   return (
     <LazyMotion features={loadFeatures} strict>
-      <MotionConfig reducedMotion="user">{children}</MotionConfig>
+      <MotionConfig reducedMotion="user">
+        <ViewTransitionProvider>{children}</ViewTransitionProvider>
+      </MotionConfig>
     </LazyMotion>
   );
 }

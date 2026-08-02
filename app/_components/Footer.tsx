@@ -1,4 +1,4 @@
-import { Link } from "i18n/navigation";
+import Link from "app/_components/ui/TransitionLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { getTranslations } from "next-intl/server";

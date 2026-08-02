@@ -2,7 +2,8 @@
 
 import type { Tag } from "@tryghost/content-api";
 import { HomeIcon } from "@heroicons/react/24/outline";
-import { Link, usePathname } from "i18n/navigation";
+import { usePathname } from "i18n/navigation";
+import Link from "app/_components/ui/TransitionLink";
 
 import { blogData, type BlogType } from "utils/ghost";
 import { isExternalUrl } from "utils/isExternalUrl";

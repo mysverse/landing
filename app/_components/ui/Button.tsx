@@ -3,9 +3,9 @@
 import * as m from "motion/react-m";
 import clsx from "clsx";
 import type { ReactNode } from "react";
-import { Link } from "i18n/navigation";
+import TransitionLink, { type SharedElement } from "./TransitionLink";
 
-const MotionLink = m.create(Link);
+const MotionLink = m.create(TransitionLink);
 
 const variants = {
   primary: "bg-primary text-white shadow-lg hover:brightness-110",
@@ -28,6 +28,8 @@ const ghostSizes = {
 interface ButtonProps {
   /** Renders a locale-aware Link for internal paths, an <a> otherwise. */
   href?: string;
+  /** Internal links only — elements to morph across the view transition. */
+  sharedElement?: SharedElement | SharedElement[];
   /** Adds target="_blank" rel="noopener noreferrer". */
   external?: boolean;
   variant?: keyof typeof variants;
@@ -42,6 +44,7 @@ interface ButtonProps {
 
 export default function Button({
   href,
+  sharedElement,
   external,
   variant = "primary",
   size = "md",
@@ -68,6 +71,7 @@ export default function Button({
     return (
       <MotionLink
         href={href}
+        sharedElement={sharedElement}
         onClick={onClick}
         aria-label={ariaLabel}
         className={classes}

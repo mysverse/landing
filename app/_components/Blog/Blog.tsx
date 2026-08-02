@@ -1,7 +1,7 @@
 import type { BlogType } from "utils/ghost";
 import { getPosts } from "utils/ghost";
 import BlogClient from "./BlogClient";
-import { Link } from "i18n/navigation";
+import Link from "app/_components/ui/TransitionLink";
 import { NewspaperIcon } from "@heroicons/react/20/solid";
 import Section from "app/_components/ui/Section";
 import { getTranslations } from "next-intl/server";
@@ -18,7 +18,6 @@ export default async function Blog({ blogType }: { blogType: BlogType }) {
       <div className="mt-4 text-center">
         <Link
           href={`/blog/${blogType}`}
-          prefetch={false}
           className="text-muted hover:text-primary inline-flex items-center gap-1 text-sm leading-6 font-medium transition"
         >
           <NewspaperIcon className="mr-1 size-5" />

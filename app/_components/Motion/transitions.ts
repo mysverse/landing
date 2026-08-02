@@ -19,3 +19,21 @@ export const springSoft = {
   stiffness: 150,
   damping: 20
 } as const;
+
+/**
+ * View transitions. Durations/easing are mirrored as CSS custom properties in
+ * styles/view-transitions.css — keep the two in sync.
+ */
+
+/** Root crossfade on route change. */
+export const VIEW_ROOT = {
+  duration: 0.35,
+  ease: EASE_OUT
+} as const;
+
+/**
+ * How long a navigation may stay frozen mid-transition before we give up and
+ * let it land un-animated. Guards against a slow RSC fetch holding the old
+ * page's snapshot on screen.
+ */
+export const VIEW_NAV_TIMEOUT_MS = 600;

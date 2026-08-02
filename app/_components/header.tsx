@@ -8,7 +8,8 @@ import {
   NewspaperIcon,
   XMarkIcon
 } from "@heroicons/react/24/outline";
-import { Link, usePathname, useRouter } from "i18n/navigation";
+import { usePathname, useRouter } from "i18n/navigation";
+import Link from "app/_components/ui/TransitionLink";
 import { useTranslations, useLocale } from "next-intl";
 import { routing } from "i18n/routing";
 import {
@@ -53,15 +54,15 @@ const navigation: NavigationItem[] = [
     name: "Sentral",
     href: "https://sentral.mysver.se"
   },
+  // Both are prerendered, and the payload needs to be warm or the view
+  // transition holds a frozen snapshot while it fetches.
   {
     name: "Brand Kit",
-    href: "/brand-kit",
-    prefetch: false
+    href: "/brand-kit"
   },
   {
     name: "Contribute",
-    href: "/contribute",
-    prefetch: false
+    href: "/contribute"
   },
   {
     name: "Projects",
