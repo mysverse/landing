@@ -29,6 +29,7 @@ import clsx from "clsx";
 import NewsModal from "./NewsModal";
 import { springSnappy } from "app/_components/Motion/transitions";
 import { NewsFeed } from "utils/news";
+import { useNewsSeen } from "hooks/useNewsSeen";
 import MysverseLogo from "./MysverseLogo";
 import MYSverseLogoWhite from "public/img/MYSverse_White.svg";
 import DarkModeToggle from "./DarkModeToggle";
@@ -149,19 +150,37 @@ function LanguageSwitcher({ align = "right" }: { align?: "left" | "right" }) {
   );
 }
 
-function NewsButton({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) {
+function NewsButton({
+  onOpen,
+  unreadCount
+}: {
+  onOpen: () => void;
+  unreadCount: number;
+}) {
   const t = useTranslations("Header");
   return (
     <button
       type="button"
-      onClick={() => setIsOpen(true)}
-      aria-label={t("sr.news")}
-      className="focus-visible:outline-primary mx-3 rounded-lg px-2 focus-visible:outline-2"
+      onClick={onOpen}
+      aria-label={
+        unreadCount > 0
+          ? t("news.buttonWithCount", { count: unreadCount })
+          : t("sr.news")
+      }
+      className="focus-visible:outline-primary relative mx-3 rounded-lg px-2 focus-visible:outline-2"
     >
       <NewspaperIcon
         aria-hidden="true"
         className="size-9 stroke-gray-400 transition hover:cursor-pointer hover:opacity-50 xl:stroke-black dark:xl:stroke-white"
       />
+      {unreadCount > 0 && (
+        <span
+          aria-hidden="true"
+          className="bg-primary absolute top-0 right-0 min-w-5 rounded-full px-1.5 text-[10px]/5 font-semibold text-white"
+        >
+          {unreadCount > 9 ? "9+" : unreadCount}
+        </span>
+      )}
     </button>
   );
 }
@@ -171,8 +190,14 @@ export default function Header({ news }: { news: NewsFeed }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [newsOpen, setNewsOpen] = useState(false);
   const t = useTranslations("Header");
+  const { unread, markSeen } = useNewsSeen(news.updatedAt, news.notify);
 
   const hasNews = news.items.length > 0;
+  const unreadCount = unread ? news.notifyCount : 0;
+  const openNews = () => {
+    markSeen();
+    setNewsOpen(true);
+  };
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
@@ -189,7 +214,9 @@ export default function Header({ news }: { news: NewsFeed }) {
           </Link>
         </div>
         <div className="flex xl:hidden">
-          {hasNews && <NewsButton setIsOpen={setNewsOpen} />}
+          {hasNews && (
+            <NewsButton onOpen={openNews} unreadCount={unreadCount} />
+          )}
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400 dark:text-white"
@@ -228,7 +255,9 @@ export default function Header({ news }: { news: NewsFeed }) {
         <div className="hidden gap-3 xl:flex xl:flex-1 xl:justify-end">
           <LanguageSwitcher />
           <DarkModeToggle />
-          {hasNews && <NewsButton setIsOpen={setNewsOpen} />}
+          {hasNews && (
+            <NewsButton onOpen={openNews} unreadCount={unreadCount} />
+          )}
         </div>
       </nav>
       <AnimatePresence>
