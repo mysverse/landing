@@ -1,0 +1,70 @@
+/*
+  View transition chrome.
+
+  Kept out of globals.css so the design-token file stays a design-token file.
+  `::view-transition-*` pseudo-elements live in the top layer but still inherit
+  custom properties from the document element, which is how the theme reveal
+  reads its origin below.
+
+  Durations and easing mirror app/_components/Motion/viewTransition.ts's
+  callers in app/_components/Motion/transitions.ts — keep the two in sync.
+
+  Route transitions are driven from JS by Motion (`.layout(VIEW_ROOT)`), so
+  only the theme reveal needs rules here. Everything is scoped by
+  `[data-vt-mode]`, which viewTransition.ts stamps on <html> before each
+  transition starts.
+*/
+
+:root {
+  --ms-vt-theme-duration: 500ms;
+  --ms-vt-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Overwritten per click by DarkModeToggle; these are the safe fallbacks for
+     a toggle fired without pointer coordinates (keyboard activation). */
+  --ms-vt-x: 50%;
+  --ms-vt-y: 0%;
+  --ms-vt-r: 150vmax;
+}
+
+/*
+  The incoming theme wipes in over the outgoing one as an expanding circle
+  centred on the toggle. The old view holds still underneath rather than
+  cross-fading, and `mix-blend-mode: normal` overrides the default
+  `plus-lighter` blend, which would wash out the overlap while both layers are
+  fully opaque.
+*/
+html[data-vt-mode="theme"]::view-transition-old(root),
+html[data-vt-mode="theme"]::view-transition-new(root) {
+  mix-blend-mode: normal;
+}
+
+html[data-vt-mode="theme"]::view-transition-old(root) {
+  animation: none;
+  z-index: 0;
+}
+
+html[data-vt-mode="theme"]::view-transition-new(root) {
+  z-index: 1;
+  animation: ms-theme-reveal var(--ms-vt-theme-duration) var(--ms-vt-ease);
+}
+
+@keyframes ms-theme-reveal {
+  from {
+    clip-path: circle(0 at var(--ms-vt-x) var(--ms-vt-y));
+  }
+  to {
+    clip-path: circle(var(--ms-vt-r) at var(--ms-vt-x) var(--ms-vt-y));
+  }
+}
+
+/*
+  canViewTransition() already refuses to start a transition under reduced
+  motion; this covers the case where the preference flips mid-flight.
+*/
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
