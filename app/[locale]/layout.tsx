@@ -122,7 +122,7 @@ export default async function RootLayout({ children, params }: Props) {
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
             <LazyMotionLayout>
-              <Header initialNews={news.News} />
+              <Header initialNews={news?.News} />
               <main id="main-content">
                 <div className="isolate pt-14">
                   <div

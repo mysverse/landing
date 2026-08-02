@@ -31,8 +31,8 @@ export default function NewsModal({
 
   useEffect(() => {
     getNews()
-      .then((data: NewsResponse) => {
-        setDeck(data.News);
+      .then((data: NewsResponse | null) => {
+        if (data) setDeck(data.News);
         // setIsOpen(true); // Automatically open modal after fetching
       })
       .catch((err) => console.error("Error fetching news:", err));
