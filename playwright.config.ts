@@ -36,6 +36,7 @@ export default defineConfig({
   projects: [
     {
       name: "desktop-light",
+      testIgnore: /motion\.spec\.ts/,
       use: {
         ...devices["Desktop Chrome"],
         viewport: { width: 1440, height: 900 },
@@ -46,6 +47,7 @@ export default defineConfig({
       // colorScheme: "dark" drives the theme-init matchMedia check, so the
       // .dark class lands before first paint exactly like a real visitor.
       name: "desktop-dark",
+      testIgnore: /motion\.spec\.ts/,
       use: {
         ...devices["Desktop Chrome"],
         viewport: { width: 1440, height: 900 },
@@ -54,7 +56,21 @@ export default defineConfig({
     },
     {
       name: "mobile",
+      testIgnore: /motion\.spec\.ts/,
       use: { ...devices["Pixel 7"], colorScheme: "light" }
+    },
+    {
+      // The only project that lets motion run. Project-level contextOptions
+      // replace the top-level object rather than merging, so this is what
+      // opts out of the suite-wide reducedMotion: "reduce".
+      name: "motion",
+      testMatch: /motion\.spec\.ts/,
+      use: {
+        ...devices["Desktop Chrome"],
+        viewport: { width: 1440, height: 900 },
+        colorScheme: "light",
+        contextOptions: { reducedMotion: "no-preference" }
+      }
     }
   ],
   webServer: {

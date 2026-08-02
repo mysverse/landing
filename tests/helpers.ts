@@ -41,6 +41,61 @@ export async function stubNetwork(context: BrowserContext, baseURL: string) {
 }
 
 /**
+ * Counts calls to document.startViewTransition, which every transition on the
+ * site funnels through — Motion's animateView calls straight into it. Must be
+ * installed before the first navigation.
+ */
+export async function trackViewTransitions(page: Page) {
+  await page.addInitScript(() => {
+    const store = window as unknown as { __vtCount: number };
+    store.__vtCount = 0;
+    const original = document.startViewTransition?.bind(document);
+    if (!original) return;
+    document.startViewTransition = ((...args: Parameters<typeof original>) => {
+      store.__vtCount += 1;
+      return original(...args);
+    }) as typeof document.startViewTransition;
+  });
+}
+
+/** How many view transitions have started since the page loaded. */
+export function viewTransitionCount(page: Page) {
+  return page.evaluate(
+    () => (window as unknown as { __vtCount?: number }).__vtCount ?? 0
+  );
+}
+
+/**
+ * Records whether the last click was preventDefault-ed. This is how we tell
+ * "TransitionLink took over the navigation" apart from "it stood aside",
+ * without depending on headless popup behaviour.
+ *
+ * The flag is read one tick after dispatch, not inside the listener: Next
+ * hydrates into `document`, so React's delegated listener sits on the same
+ * node as ours and — being registered later — runs after it. Reading the
+ * event object once dispatch has finished sees React's preventDefault.
+ */
+export async function trackClickPrevention(page: Page) {
+  await page.addInitScript(() => {
+    const store = window as unknown as { __clickPrevented: boolean | null };
+    store.__clickPrevented = null;
+    document.addEventListener("click", (event) => {
+      setTimeout(() => {
+        store.__clickPrevented = event.defaultPrevented;
+      }, 0);
+    });
+  });
+}
+
+export function lastClickPrevented(page: Page) {
+  return page.evaluate(
+    () =>
+      (window as unknown as { __clickPrevented?: boolean | null })
+        .__clickPrevented ?? null
+  );
+}
+
+/**
  * Scroll through the whole page so whileInView / IntersectionObserver
  * reveals fire, then return to the top and let animations settle before
  * a screenshot.

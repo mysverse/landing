@@ -1,5 +1,9 @@
 import { test, expect } from "@playwright/test";
-import { stubNetwork } from "./helpers";
+import {
+  stubNetwork,
+  trackViewTransitions,
+  viewTransitionCount
+} from "./helpers";
 
 /** Functional checks for behaviour the redesign introduced. */
 test.describe("smoke", () => {
@@ -58,6 +62,30 @@ test.describe("smoke", () => {
     test.skip(testInfo.project.name !== "desktop-dark", "dark project only");
     await page.goto("/en");
     await expect(page.locator("html")).toHaveClass(/dark/);
+  });
+
+  // The whole suite (bar the "motion" project) runs with reduced motion, so
+  // this is the regression test for the gate in Motion/viewTransition.ts.
+  test("reduced motion skips view transitions entirely", async ({
+    page
+  }, testInfo) => {
+    test.skip(
+      testInfo.project.name !== "desktop-light",
+      "desktop light baseline only"
+    );
+    await trackViewTransitions(page);
+    await page.goto("/en");
+
+    await page.getByRole("button", { name: "Toggle dark mode" }).click();
+    await expect(page.locator("html")).toHaveClass(/dark/);
+
+    await page
+      .getByRole("navigation", { name: "Main navigation" })
+      .getByRole("link", { name: "Contribute" })
+      .click();
+    await expect(page).toHaveURL(/\/en\/contribute$/);
+
+    expect(await viewTransitionCount(page)).toBe(0);
   });
 
   test("mobile menu is a dialog that closes on Escape", async ({

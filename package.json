@@ -7,10 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
     "format": "prettier --config .prettierrc \"{app,pages,components}/**/*.{ts,tsx}\" --write",
     "postinstall": "tsx ./scripts/fetch-ghost-assets.ts",
     "test:e2e": "playwright test",
     "test:visual": "playwright test visual",
+    "test:motion": "playwright test --project=motion",
     "screenshots": "playwright test visual --update-snapshots"
   },
   "dependencies": {
