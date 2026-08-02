@@ -1,6 +1,9 @@
 import { defineConfig, devices } from "@playwright/test";
 
-import { NEWS_FIXTURE_URL } from "./tests/fixtures/newsFixture";
+import {
+  NEWS_FIXTURE_PORT,
+  NEWS_FIXTURE_URL
+} from "./tests/fixtures/newsFixture";
 
 /**
  * Visual verification + smoke/a11y harness. Serves the production build
@@ -13,6 +16,17 @@ import { NEWS_FIXTURE_URL } from "./tests/fixtures/newsFixture";
 const PORT = 4300;
 const BASE_URL = `http://localhost:${PORT}`;
 
+/**
+ * Playwright probes `webServer.url` before starting anything, and that probe is
+ * unconditional — `reuseExistingServer` only decides what happens once a server
+ * is found. On hosts where a closed IPv4 loopback port drops SYNs instead of
+ * refusing them (WSL2 does), that probe blocks for the full TCP timeout —
+ * ~135s per webServer, on every run, however few tests you asked for.
+ *
+ * IPv6 loopback refuses immediately, so both servers bind `::` (dual-stack, so
+ * `localhost` still works from the browser) and are probed over `[::1]`.
+ */
+const probeUrl = (port: number) => `http://[::1]:${port}/`;
 
 export default defineConfig({
   testDir: "tests",
@@ -82,13 +96,13 @@ export default defineConfig({
   webServer: [
     {
       command: "pnpm exec tsx tests/fixtures/newsServer.ts",
-      url: NEWS_FIXTURE_URL,
+      url: probeUrl(NEWS_FIXTURE_PORT),
       reuseExistingServer: !process.env.CI,
       timeout: 30_000
     },
     {
-      command: `npm run start -- -p ${PORT}`,
-      url: BASE_URL,
+      command: `npm run start -- -H :: -p ${PORT}`,
+      url: probeUrl(PORT),
       reuseExistingServer: !process.env.CI,
       timeout: 120_000,
       env: { NEWS_ENDPOINT: NEWS_FIXTURE_URL }

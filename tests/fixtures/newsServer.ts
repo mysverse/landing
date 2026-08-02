@@ -16,4 +16,6 @@ createServer((_request, response) => {
     "cache-control": "no-store"
   });
   response.end(JSON.stringify(NEWS_FIXTURE));
-}).listen(NEWS_FIXTURE_PORT);
+  // Dual-stack: Playwright probes this over [::1] because a closed IPv4
+  // loopback port can hang instead of refusing. See playwright.config.ts.
+}).listen(NEWS_FIXTURE_PORT, "::");

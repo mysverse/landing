@@ -167,7 +167,12 @@ the Next process, where route interception can't reach it.
 > `pnpm exec playwright install --with-deps chromium` (needs sudo). Without
 > root, fetch them into a user directory and export `LD_LIBRARY_PATH`
 > before running the tests.
-
+>
+> Both dev servers bind `::` and are probed over `[::1]`. On WSL2 a connect to
+> a *closed* IPv4 loopback port is dropped rather than refused, and Playwright
+> always probes `webServer.url` before starting anything — over IPv4 that
+> probe blocked for the full TCP timeout, ~135s per server on every run.
+> Over IPv6 it's refused in about a millisecond.
 
 ## License
 
