@@ -30,6 +30,17 @@
       "news": "Open news",
       "toggleTheme": "Toggle dark mode",
       "close": "Close"
+    },
+    "news": {
+      "title": "News",
+      "updated": "Updated",
+      "empty": "No news right now.",
+      "position": "Item {current} of {total}",
+      "prev": "Previous item",
+      "next": "Next item",
+      "pick": "Choose a news item",
+      "goTo": "Go to item {index}",
+      "buttonWithCount": "Open news, {count} new"
     }
   },
   "Footer": {

@@ -30,6 +30,17 @@
       "news": "Buka berita",
       "toggleTheme": "Tukar mod gelap",
       "close": "Tutup"
+    },
+    "news": {
+      "title": "Berita",
+      "updated": "Dikemas kini",
+      "empty": "Tiada berita buat masa ini.",
+      "position": "Item {current} daripada {total}",
+      "prev": "Item sebelumnya",
+      "next": "Item seterusnya",
+      "pick": "Pilih item berita",
+      "goTo": "Pergi ke item {index}",
+      "buttonWithCount": "Buka berita, {count} baharu"
     }
   },
   "Footer": {

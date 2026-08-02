@@ -30,6 +30,17 @@
       "news": "打开新闻",
       "toggleTheme": "切换深色模式",
       "close": "关闭"
+    },
+    "news": {
+      "title": "新闻",
+      "updated": "更新于",
+      "empty": "暂无新闻。",
+      "position": "第 {current} 条，共 {total} 条",
+      "prev": "上一条",
+      "next": "下一条",
+      "pick": "选择新闻",
+      "goTo": "前往第 {index} 条",
+      "buttonWithCount": "打开新闻，{count} 条新消息"
     }
   },
   "Footer": {
