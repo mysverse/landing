@@ -23,7 +23,11 @@ const server = createServer((_request, response) => {
 server.listen(NEWS_FIXTURE_PORT, () => {
   const build = spawn("next", ["build"], {
     stdio: "inherit",
-    env: { ...process.env, NEWS_ENDPOINT: NEWS_FIXTURE_URL }
+    env: {
+      ...process.env,
+      NEWS_ENDPOINT: NEWS_FIXTURE_URL,
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY: "1x00000000000000000000AA"
+    }
   });
 
   build.on("exit", (code) => {
