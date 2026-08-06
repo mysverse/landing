@@ -8,6 +8,10 @@ The **MYSverse Landing Page** is a **Next.js-based** web application that serves
 
 ## Features
 
+### Ask MYSverse
+
+The multilingual Ask MYSverse assistant is hosted by this app as a full page and a shared iframe widget for the landing site and MYSverse Wiki. It uses server-side OpenAI Responses, File Search, moderation, Turnstile, and expiring Upstash quotas. See [the assistant runbook](./docs/assistant-runbook.md) for configuration, knowledge sync, privacy, rollout, and recovery.
+
 ### Dynamic Blog System
 
 - Displays blog posts from the real-world MYSverse blog and the in-universe National Wire Service (NWS).

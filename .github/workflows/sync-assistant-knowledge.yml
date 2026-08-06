@@ -1,0 +1,47 @@
+name: Sync assistant knowledge
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "messages/**"
+      - "data/projects.ts"
+      - "scripts/assistant-vector-sync.mjs"
+      - "scripts/sync-assistant-knowledge.mjs"
+      - ".github/workflows/sync-assistant-knowledge.yml"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Preview changes without writing to OpenAI
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: assistant-knowledge-landing
+  cancel-in-progress: false
+
+jobs:
+  verify-and-sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENAI_INGEST_API_KEY: ${{ secrets.OPENAI_INGEST_API_KEY }}
+      OPENAI_VECTOR_STORE_ID: ${{ secrets.OPENAI_VECTOR_STORE_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.34.5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm build
+      - name: Reconcile landing knowledge
+        run: node scripts/sync-assistant-knowledge.mjs ${{ inputs.dry_run && '--dry-run' || '' }}
