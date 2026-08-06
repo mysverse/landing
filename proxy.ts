@@ -10,6 +10,6 @@ export const config = {
   // Non-localized paths like /contribute are caught here and redirected to the
   // default locale (e.g. /en/contribute).
   matcher: [
-    "/((?!_next|_vercel|pdrm-collab-slides|pdrm-collab-doc|.*\\..*).*)"
+    "/((?!api|assistant/embed|_next|_vercel|pdrm-collab-slides|pdrm-collab-doc|.*\\..*).*)"
   ]
 };
