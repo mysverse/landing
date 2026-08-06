@@ -8,6 +8,29 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  async headers() {
+    return [
+      {
+        source: "/assistant/embed/:path*",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value:
+              "frame-ancestors 'self' https://mysver.se https://www.mysver.se https://mys.wiki https://www.mys.wiki"
+          },
+          { key: "Cross-Origin-Resource-Policy", value: "cross-origin" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" }
+        ]
+      },
+      {
+        source: "/api/assistant/:path*",
+        headers: [
+          { key: "Cache-Control", value: "no-store, max-age=0" },
+          { key: "X-Content-Type-Options", value: "nosniff" }
+        ]
+      }
+    ];
+  },
   async redirects() {
     return [
       {
@@ -79,4 +102,3 @@ const nextConfig: NextConfig = {
 };
 
 export default withNextIntl(nextConfig);
-

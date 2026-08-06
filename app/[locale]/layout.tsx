@@ -72,6 +72,8 @@ import { getNews, toNewsFeed } from "utils/news";
 import { ThemeProvider } from "app/_components/ThemeProvider";
 import LazyMotionLayout from "app/_components/Motion/LazyMotionLayout";
 import { THEME_INIT_SCRIPT } from "utils/themeInit";
+import AssistantHost from "app/_components/assistant/AssistantHost";
+import { isAssistantLocale } from "lib/assistant/types";
 
 import { NextIntlClientProvider } from "next-intl";
 import {
@@ -155,6 +157,7 @@ export default async function RootLayout({ children, params }: Props) {
                 </div>
               </main>
               <Footer />
+              {isAssistantLocale(locale) && <AssistantHost locale={locale} />}
             </LazyMotionLayout>
           </NextIntlClientProvider>
         </ThemeProvider>

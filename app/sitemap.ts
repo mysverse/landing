@@ -8,6 +8,7 @@ const BASE_URL = "https://mysver.se";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPaths = [
     "",
+    "/assistant",
     "/contribute",
     "/lebuhraya",
     ...legalPages.map((page) => page.href),
