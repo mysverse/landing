@@ -49,28 +49,36 @@ You agree not to:
 - Attempt to gain unauthorised access to our systems or the systems of our payment processors
 - Interfere with or disrupt the operation of our services
 
-## 7. Limitation of Liability
+## 7. Ask MYSverse AI Assistant
+
+Ask MYSverse is an optional AI information tool for users aged 13 or older. If you are under 18, you must have permission from a parent or guardian. You must not submit personal information in chat.
+
+Chat text is sent to OpenAI for generation and safety moderation, and Cloudflare Turnstile protects session creation. MYSverse does not persist transcripts; conversation history, the anonymous session, and the age acknowledgement remain in browser session storage. Responses are requested with `store: false`, although OpenAI may retain API abuse-monitoring logs for up to 30 days under its default controls. Processing may occur outside Malaysia.
+
+AI-generated answers may be incomplete or inaccurate. Check cited pages before relying on an answer. Ask MYSverse is not staff, cannot make moderation decisions or handle appeals, and does not provide legal or medical advice. Your use of the assistant must comply with these Terms and applicable law.
+
+## 8. Limitation of Liability
 
 To the fullest extent permitted by law, {{name}} shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from or related to your use of our services, including but not limited to delays or failures in payout processing caused by third-party payment processors.
 
 Our total liability for any claim arising from these Terms or your use of our services shall not exceed the total amount of payouts disbursed to you in the twelve (12) months preceding the claim.
 
-## 8. Indemnification
+## 9. Indemnification
 
 You agree to indemnify and hold harmless {{name}}, its officers, directors, and agents from any claims, damages, losses, or expenses (including reasonable legal fees) arising from your breach of these Terms or your use of our services.
 
-## 9. Termination
+## 10. Termination
 
 We may suspend or terminate your access to our services or participation in the developer payout programme at any time, with or without cause, upon reasonable notice. Upon termination, any outstanding payouts that have been earned and approved will be processed in accordance with the applicable payout schedule, unless termination is due to a breach of these Terms.
 
-## 10. Governing Law
+## 11. Governing Law
 
 These Terms shall be governed by and construed in accordance with the laws of Malaysia. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts of Malaysia.
 
-## 11. Modifications
+## 12. Modifications
 
 We reserve the right to update or modify these Terms at any time. Changes will be posted on this page with an updated effective date. Your continued use of our services after any modifications constitutes acceptance of the revised Terms. For material changes affecting developer payouts, we will make reasonable efforts to notify affected developers directly.
 
-## 12. Contact Us
+## 13. Contact Us
 
 If you have any questions about these Terms, please contact us at [{{email}}](mailto:{{email}}).

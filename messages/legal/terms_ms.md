@@ -49,28 +49,36 @@ Anda bersetuju untuk tidak:
 - Cuba mendapatkan akses tanpa kebenaran ke sistem kami atau sistem pemproses pembayaran kami
 - Mengganggu atau mengacau operasi perkhidmatan kami
 
-## 7. Had Liabiliti
+## 7. Pembantu AI Tanya MYSverse
+
+Tanya MYSverse ialah alat maklumat AI pilihan untuk pengguna berumur 13 tahun atau lebih. Jika anda berumur di bawah 18 tahun, anda mesti mendapat kebenaran ibu bapa atau penjaga. Anda tidak boleh menyerahkan maklumat peribadi dalam sembang.
+
+Teks sembang dihantar kepada OpenAI untuk penjanaan dan moderasi keselamatan, manakala Cloudflare Turnstile melindungi penciptaan sesi. MYSverse tidak menyimpan transkrip; sejarah perbualan, sesi tanpa nama dan pengakuan umur kekal dalam storan sesi pelayar. Respons diminta dengan `store: false`, walaupun OpenAI boleh menyimpan log pemantauan penyalahgunaan API sehingga 30 hari di bawah kawalan lalainya. Pemprosesan mungkin berlaku di luar Malaysia.
+
+Jawapan yang dijana oleh AI mungkin tidak lengkap atau tidak tepat. Semak halaman yang dipetik sebelum bergantung pada jawapan. Tanya MYSverse bukan kakitangan, tidak boleh membuat keputusan moderasi atau mengendalikan rayuan, dan tidak memberikan nasihat undang-undang atau perubatan. Penggunaan pembantu ini mesti mematuhi Terma ini dan undang-undang yang berkenaan.
+
+## 8. Had Liabiliti
 
 Setakat yang dibenarkan oleh undang-undang, {{name}} tidak akan bertanggungjawab ke atas sebarang kerosakan tidak langsung, sampingan, khas, berbangkit atau punitif yang timbul daripada atau berkaitan dengan penggunaan perkhidmatan kami oleh anda, termasuk tetapi tidak terhad kepada kelewatan atau kegagalan dalam pemprosesan pembayaran yang disebabkan oleh pemproses pembayaran pihak ketiga.
 
 Jumlah liabiliti kami untuk sebarang tuntutan yang timbul daripada Terma ini atau penggunaan perkhidmatan kami oleh anda tidak akan melebihi jumlah keseluruhan pembayaran yang diagihkan kepada anda dalam tempoh dua belas (12) bulan sebelum tuntutan tersebut.
 
-## 8. Penanggungan Ganti Rugi
+## 9. Penanggungan Ganti Rugi
 
 Anda bersetuju untuk menanggung ganti rugi dan memastikan {{name}}, pegawai, pengarah dan ejennya tidak membahayakan daripada sebarang tuntutan, kerosakan, kerugian atau perbelanjaan (termasuk yuran guaman yang munasabah) yang timbul daripada pelanggaran Terma ini oleh anda atau penggunaan perkhidmatan kami oleh anda.
 
-## 9. Penamatan
+## 10. Penamatan
 
 Kami boleh menggantung atau menamatkan akses anda kepada perkhidmatan kami atau penyertaan dalam program pembayaran pembangun pada bila-bila masa, dengan atau tanpa sebab, dengan notis yang munasabah. Selepas penamatan, sebarang pembayaran tertunggak yang telah diperoleh dan diluluskan akan diproses mengikut jadual pembayaran yang terpakai, melainkan penamatan adalah disebabkan oleh pelanggaran Terma ini.
 
-## 10. Undang-undang Mengawal
+## 11. Undang-undang Mengawal
 
 Terma ini hendaklah ditafsirkan dan dikawal mengikut undang-undang Malaysia. Sebarang pertikaian yang timbul daripada Terma ini hendaklah tertakluk kepada bidang kuasa eksklusif mahkamah Malaysia.
 
-## 11. Pengubahsuaian
+## 12. Pengubahsuaian
 
 Kami berhak untuk mengemas kini atau mengubah suai Terma ini pada bila-bila masa. Perubahan akan dipaparkan di halaman ini dengan tarikh berkuat kuasa yang dikemas kini. Penggunaan berterusan perkhidmatan kami oleh anda selepas sebarang pengubahsuaian constitutes penerimaan Terma yang disemak semula. Untuk perubahan material yang menjejaskan pembayaran pembangun, kami akan berusaha secara munasabah untuk memberitahu pembangun yang terjejas secara langsung.
 
-## 12. Hubungi Kami
+## 13. Hubungi Kami
 
 Jika anda mempunyai sebarang soalan tentang Terma ini, sila hubungi kami di [{{email}}](mailto:{{email}}).

@@ -2,7 +2,7 @@ export const legalEntity = {
   name: "MYSverse Digital Ventures",
   registration: "AS0469188-M",
   email: "legal@mysver.se",
-  effectiveDate: "6 April 2026"
+  effectiveDate: "7 August 2026"
 };
 
 export const legalPages = [

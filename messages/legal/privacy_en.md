@@ -84,11 +84,26 @@ Our developer payout programme is not intended for individuals under the age of 
 
 Your information may be transferred to and processed in countries other than your own, including Malaysia where {{name}} is registered. We ensure that appropriate safeguards are in place to protect your information in accordance with this policy.
 
-## 11. Changes to This Policy
+## 11. Ask MYSverse AI Assistant
+
+Ask MYSverse is available only to people aged 13 or older. A user under 18 must have permission from a parent or guardian. We do not ask for a date of birth. Users must not submit names, contact details, account credentials, health information, payment information, or other personal information in chat.
+
+When you use Ask MYSverse:
+
+- Your chat text, selected language, and the public page you are viewing are sent to OpenAI to generate and moderate an answer. AI-generated answers may be inaccurate and should be checked against the cited MYSverse pages.
+- Cloudflare Turnstile processes technical and device information to protect session creation from automated abuse.
+- MYSverse does not persist chat transcripts or attach them to an account. The current conversation, anonymous session token, and age acknowledgement are held in your browser's session storage and normally clear when the browser session ends.
+- Responses are sent to OpenAI with `store: false`. Under OpenAI's default API data controls, OpenAI may still retain prompts and responses in abuse-monitoring logs for up to 30 days. OpenAI does not use API data to train its models unless an account owner explicitly opts in.
+- A one-way, privacy-preserving identifier and expiring, hashed rate-limit counters are used for safety and abuse prevention. They do not contain the chat text.
+- Processing by OpenAI, Cloudflare, and our infrastructure providers may occur outside Malaysia, subject to their safeguards and applicable law.
+
+Ask MYSverse is an information tool, not a member of staff, and cannot decide moderation cases, handle appeals, access accounts, or provide legal or medical advice. For an official or account-specific matter, use the contact channel shown on our website.
+
+## 12. Changes to This Policy
 
 We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date. For material changes affecting how we handle developer payment information, we will make reasonable efforts to notify affected individuals directly.
 
-## 12. Contact Us
+## 13. Contact Us
 
 If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at [{{email}}](mailto:{{email}}).
 

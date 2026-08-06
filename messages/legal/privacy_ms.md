@@ -84,11 +84,26 @@ Program pembayaran pembangun kami tidak ditujukan kepada individu di bawah umur 
 
 Maklumat anda mungkin dipindahkan ke dan diproses di negara selain negara anda sendiri, termasuk Malaysia di mana {{name}} berdaftar. Kami memastikan bahawa perlindungan yang sewajarnya disediakan untuk melindungi maklumat anda selaras dengan dasar ini.
 
-## 11. Perubahan kepada Dasar Ini
+## 11. Pembantu AI Tanya MYSverse
+
+Tanya MYSverse hanya tersedia kepada individu yang berumur 13 tahun atau lebih. Pengguna di bawah umur 18 tahun mesti mendapat kebenaran ibu bapa atau penjaga. Kami tidak meminta tarikh lahir. Pengguna tidak boleh menyerahkan nama, butiran hubungan, bukti kelayakan akaun, maklumat kesihatan, maklumat pembayaran atau maklumat peribadi lain dalam sembang.
+
+Apabila anda menggunakan Tanya MYSverse:
+
+- Teks sembang, bahasa pilihan dan halaman awam yang sedang anda lihat dihantar kepada OpenAI untuk menjana dan menyederhanakan jawapan. Jawapan yang dijana oleh AI mungkin tidak tepat dan hendaklah disemak dengan halaman MYSverse yang dipetik.
+- Cloudflare Turnstile memproses maklumat teknikal dan peranti untuk melindungi penciptaan sesi daripada penyalahgunaan automatik.
+- MYSverse tidak menyimpan transkrip sembang atau mengaitkannya dengan akaun. Perbualan semasa, token sesi tanpa nama dan pengakuan umur disimpan dalam storan sesi pelayar anda dan biasanya dipadam apabila sesi pelayar tamat.
+- Respons dihantar kepada OpenAI dengan `store: false`. Di bawah kawalan data API lalai OpenAI, OpenAI masih boleh menyimpan arahan dan respons dalam log pemantauan penyalahgunaan sehingga 30 hari. OpenAI tidak menggunakan data API untuk melatih modelnya melainkan pemilik akaun memilih untuk berbuat demikian.
+- Pengecam sehala yang menjaga privasi dan kaunter had kadar bercincang yang luput digunakan untuk keselamatan dan pencegahan penyalahgunaan. Ia tidak mengandungi teks sembang.
+- Pemprosesan oleh OpenAI, Cloudflare dan penyedia infrastruktur kami mungkin berlaku di luar Malaysia, tertakluk kepada perlindungan mereka dan undang-undang yang berkenaan.
+
+Tanya MYSverse ialah alat maklumat, bukan ahli kakitangan, dan tidak boleh memutuskan kes moderasi, mengendalikan rayuan, mengakses akaun atau memberikan nasihat undang-undang atau perubatan. Untuk perkara rasmi atau khusus akaun, gunakan saluran hubungan yang ditunjukkan di laman web kami.
+
+## 12. Perubahan kepada Dasar Ini
 
 Kami mungkin mengemas kini Dasar Privasi ini dari semasa ke semasa. Perubahan akan dipaparkan di halaman ini dengan tarikh berkuat kuasa yang dikemas kini. Untuk perubahan material yang menjejaskan cara kami mengendalikan maklumat pembayaran pembangun, kami akan berusaha secara munasabah untuk memberitahu individu yang terjejas secara langsung.
 
-## 12. Hubungi Kami
+## 13. Hubungi Kami
 
 Jika anda mempunyai sebarang soalan atau kebimbangan mengenai Dasar Privasi ini atau amalan data kami, sila hubungi kami di [{{email}}](mailto:{{email}}).
 
